@@ -1,17 +1,22 @@
 export type RootStackParamList = {
   Root: undefined;
-  NotFound: undefined;
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Search: undefined;
+  Profile: undefined;
+  Settings:undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
-};
-
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type defaultDict = {
+  [key: string]: string
+}
+export type ProfileStackParamList = {
+  MyProfile:undefined;
+  Login: undefined;
+  Registration:undefined;
+  MyLists:undefined;
+  MyChords:undefined;
+  WriteChord:undefined;
+  PreviewScreen:{ lyric:string, chords_lines:defaultDict };
 };
