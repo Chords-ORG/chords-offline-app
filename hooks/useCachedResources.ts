@@ -16,6 +16,7 @@ export default function useCachedResources() {
         await Font.loadAsync({
           ...Ionicons.font,
           'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
+          'raleway': require('../assets/fonts/Raleway-VariableFont_wght.ttf'),
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service

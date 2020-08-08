@@ -21,6 +21,8 @@ export type SearchStackParamList = {
   Search:undefined;
   ChoseVersion:undefined;
   ChordScreen:undefined;
+  ProfileView:undefined;
+  ArtistScreen:undefined;
 }
 
 export type SettingsStackParamList = {

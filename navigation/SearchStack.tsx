@@ -26,6 +26,16 @@ export default function SearchStack() {
                 component={ SampleScreen }
                 options={{ headerTitle: 'ChordScreen' }}
             />
+            <Stack.Screen
+                name="ProfileView"
+                component={ SampleScreen }
+                options={{ headerTitle: 'ProfileView' }}
+            />
+            <Stack.Screen
+                name="ArtistScreen"
+                component={ SampleScreen }
+                options={{ headerTitle: 'ArtistScreen' }}
+            />
         </Stack.Navigator>
     )
 }

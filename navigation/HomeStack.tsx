@@ -5,6 +5,7 @@ import * as React from 'react';
 import { HomeStackParamList } from '../types';
 import { createStackNavigator } from '@react-navigation/stack';
 import SampleScreen from '../screens/SampleScreen';
+import { StyleSheet, Text, Image, View } from 'react-native';
 
 const Stack = createStackNavigator<HomeStackParamList>();
 
@@ -13,9 +14,38 @@ export default function HomeStack() {
         <Stack.Navigator>
             <Stack.Screen
                 name="Home"
-                component={ SampleScreen }
-                options={{ headerTitle: 'Home' }}
+                component={SampleScreen}
+                options={{ headerTitle: Header }}
             />
         </Stack.Navigator>
     )
 }
+
+function Header() {
+    return (
+        <View style={styles.container}>
+            <Image
+                style = {styles.logo}
+                source= { require('../assets/images/app_logo.png') }
+            />
+            <Text style={styles.title}> Chords </Text>
+        </View>
+    )
+}
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row'
+    },
+    logo: {
+        height: 30,
+        width: 30,
+        marginRight:15,
+    },
+    title:{
+        color:'#333333',
+        fontSize:18,
+        fontWeight:'bold',
+        alignSelf:'center',
+        fontFamily:'raleway'
+    }
+});
