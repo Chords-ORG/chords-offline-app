@@ -6,6 +6,7 @@ import { HomeStackParamList } from '../types';
 import { createStackNavigator } from '@react-navigation/stack';
 import SampleScreen from '../screens/SampleScreen';
 import { StyleSheet, Text, Image, View } from 'react-native';
+import HomeScreen from '../screens/HomeScreen'
 
 const Stack = createStackNavigator<HomeStackParamList>();
 
@@ -14,7 +15,7 @@ export default function HomeStack() {
         <Stack.Navigator>
             <Stack.Screen
                 name="Home"
-                component={SampleScreen}
+                component={HomeScreen}
                 options={{ headerTitle: Header }}
             />
         </Stack.Navigator>
