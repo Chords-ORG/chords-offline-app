@@ -5,6 +5,7 @@ import * as React from 'react';
 import { SearchStackParamList } from '../types';
 import { createStackNavigator } from '@react-navigation/stack';
 import SampleScreen from '../screens/SampleScreen';
+import SearchScreen from '../screens/SearchScreen'
 
 const Stack = createStackNavigator<SearchStackParamList>();
 
@@ -13,8 +14,8 @@ export default function SearchStack() {
         <Stack.Navigator>
             <Stack.Screen
                 name="Search"
-                component={ SampleScreen }
-                options={{ headerTitle: 'Search' }}
+                component={ SearchScreen }
+                options={{ headerShown: false, }}
             />
             <Stack.Screen
                 name="ChoseVersion"
