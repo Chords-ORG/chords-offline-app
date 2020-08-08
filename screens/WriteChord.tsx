@@ -28,7 +28,10 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
                 style={styles.input_style}
                 onChangeText= { (text) => {
                   var obj:defaultDict = {  ...chords_lines }
-                  obj[i] = text;
+                  let j = text.length-1;
+                  while(j>=0 && text[j]==' ') --j;
+                  text = text.substring(0, j+1);
+                  obj[i] = text
                   setChordsLines(obj);
                   console.log('chords_lines', chords_lines)
                 }}
@@ -59,6 +62,7 @@ const styles = StyleSheet.create({
     borderColor: 'gray', 
     borderWidth: 0.5,
     fontSize:14,
+    fontWeight:'bold',
     fontFamily:'monospace',
   },
   button_container:{

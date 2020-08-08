@@ -1,10 +1,10 @@
-import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
-
-import SampleScreen from '../screens/SampleScreen';
 import { BottomTabParamList } from '../types';
+import HomeStack from './HomeStack';
+import SearchStack from './SearchStack';
 import ProfileStack from './ProfileStack';
+import SettingsStack from './SettingsStack';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -12,21 +12,21 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator>
       <BottomTab.Screen
+        name="Home"
+        component={HomeStack}
+      />
+      <BottomTab.Screen
         name="Search"
-        component={ SampleScreen }
+        component={SearchStack}
       />
       <BottomTab.Screen
         name="Profile"
-        component={ ProfileStack }
+        component={ProfileStack}
       />
       <BottomTab.Screen
         name="Settings"
-        component={ SampleScreen }
+        component={SettingsStack}
       />
     </BottomTab.Navigator>
   );
-}
-
-function TabBarIcon(props: { name: string; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
