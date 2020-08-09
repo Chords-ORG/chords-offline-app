@@ -16,13 +16,13 @@ export default function HomeStack() {
             <Stack.Screen
                 name="Home"
                 component={HomeScreen}
-                options={{ headerTitle: Header }}
+                options={{ headerTitle: HomeHeader }}
             />
         </Stack.Navigator>
     )
 }
 
-function Header() {
+function HomeHeader() {
     return (
         <View style={styles.container}>
             <Image

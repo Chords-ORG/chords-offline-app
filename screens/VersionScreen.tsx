@@ -9,7 +9,10 @@ export default function VersionScreen({ navigation }: StackScreenProps<SearchSta
   return (
     <View style={[styles.container, { width: '100%', height: '100%', padding: 15 }]}>
       <ScrollView>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity 
+          style={styles.card}
+          
+        >
           <Image
             style={styles.icon_30}
             source={require('../assets/images/paper_icon.png')}
@@ -19,10 +22,14 @@ export default function VersionScreen({ navigation }: StackScreenProps<SearchSta
         {
           chords_versions.map((version, i) => {
             return (
-              <TouchableOpacity key={i} style={styles.card}>
+              <TouchableOpacity
+                key={i}
+                style={styles.card}
+                onPress={() => navigation.navigate('ChordScreen', { chord_id: version.id })}
+              >
                 <View style={styles.left}>
                   <Text style={styles.card_h1}>{version.name}</Text>
-                  <Text style={styles.card_h2}> Escrito por <Text style={{color:'#2F80ED'}}>{`@${version.author.username}`}</Text></Text>
+                  <Text style={styles.card_h2}> Escrito por <Text style={{ color: '#2F80ED' }}>{`@${version.author.username}`}</Text></Text>
                 </View>
                 <View style={styles.right}>
                   <View style={styles.like_container}>
@@ -61,7 +68,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
     alignItems: 'center',
-    marginTop:10,
+    marginTop: 10,
   },
   icon_30: {
     height: 30,
@@ -107,6 +114,7 @@ const styles = StyleSheet.create({
 
 const chords_versions = [
   {
+    id: '1',
     name: 'Original',
     author: {
       username: 'fulano'
@@ -115,6 +123,7 @@ const chords_versions = [
     unlikes: 12,
   },
   {
+    id: '2',
     name: 'Simplificada',
     author: {
       username: 'gustavolima00'
