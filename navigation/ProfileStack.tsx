@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import SampleScreen from '../screens/SampleScreen';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
 
 const Stack = createStackNavigator<ProfileStackParamList>();
 
@@ -16,7 +17,7 @@ export default function ProfileStack() {
             <Stack.Screen
                 name="ProfileTabs"
                 component={ProfileTabs}
-                options={{ header: () => profileHeader(false) }}
+                options={({ route, navigation }) => ({ header: () => profileHeader({ route, navigation } , false) })}
             />
             <Stack.Screen
                 name="MyList"
@@ -111,7 +112,7 @@ function ProfileTabs() {
     );
 }
 
-function profileHeader(logged: boolean) {
+function profileHeader({ route, navigation }:StackScreenProps<ProfileStackParamList>, logged: boolean) {
     if (logged)
         return (
             <View style={styles.header}>
@@ -148,10 +149,16 @@ function profileHeader(logged: boolean) {
                     </View>
                 </View>
                 <View style={styles.right}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity 
+                        style={styles.button}
+                        onPress={()=> navigation.navigate('Login')}
+                    >
                         <Text style={styles.button_text}> Entrar </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.button, { backgroundColor: '#F2F2F2' }]}>
+                    <TouchableOpacity 
+                        style={[styles.button, { backgroundColor: '#F2F2F2' }]}
+                        onPress={()=> navigation.navigate('Register')}
+                    >
                         <Text style={[styles.button_text, { color: '#333333' }]}> Criar Conta </Text>
                     </TouchableOpacity>
                 </View>
