@@ -6,6 +6,7 @@ import { ProfileStackParamList, ProfileTabsParamList } from '../types';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import SampleScreen from '../screens/SampleScreen';
+import Login from '../screens/Login'
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 
@@ -17,7 +18,7 @@ export default function ProfileStack() {
             <Stack.Screen
                 name="ProfileTabs"
                 component={ProfileTabs}
-                options={({ route, navigation }) => ({ header: () => profileHeader({ route, navigation } , false) })}
+                options={({ route, navigation }) => ({ header: () => profileHeader({ route, navigation } , true) })}
             />
             <Stack.Screen
                 name="MyList"
@@ -56,7 +57,7 @@ export default function ProfileStack() {
             />
             <Stack.Screen
                 name="Login"
-                component={SampleScreen}
+                component={Login}
                 options={{ headerTitle: 'Login' }}
             />
             <Stack.Screen
