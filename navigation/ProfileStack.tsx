@@ -1,15 +1,15 @@
 
 
 
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ProfileStackParamList, ProfileTabsParamList } from '../types';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import SampleScreen from '../screens/SampleScreen';
 import Login from '../screens/Login'
 import Registration from '../screens/Registration'
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
+import { StyleSheet, Image } from 'react-native';
+import ProfileHeader from '../components/ProfileHeader'
 
 const Stack = createStackNavigator<ProfileStackParamList>();
 
@@ -19,7 +19,7 @@ export default function ProfileStack() {
             <Stack.Screen
                 name="ProfileTabs"
                 component={ProfileTabs}
-                options={({ route, navigation }) => ({ header: () => profileHeader({ route, navigation } , false) })}
+                options={({ route, navigation }) => ({ header: () => ProfileHeader({ route, navigation }) })}
             />
             <Stack.Screen
                 name="MyList"
@@ -114,59 +114,6 @@ function ProfileTabs() {
     );
 }
 
-function profileHeader({ route, navigation }:StackScreenProps<ProfileStackParamList>, logged: boolean) {
-    if (logged)
-        return (
-            <View style={styles.header}>
-                <View style={styles.left}>
-                    <Image
-                        style={styles.avatar}
-                        source={require('../assets/images/sample_avatar.png')}
-                    />
-                    <View style={styles.name_container}>
-                        <Text style={styles.h1}> Fulano da silva </Text>
-                        <Text style={styles.h2}> @fulano </Text>
-                    </View>
-                </View>
-                <View style={styles.right}>
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.button_text}> Editar perfil </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={[styles.button, { backgroundColor: '#F2F2F2' }]}>
-                        <Text style={[styles.button_text, { color: '#333333' }]}> Sair </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        );
-    else
-        return (
-            <View style={styles.header}>
-                <View style={styles.left}>
-                    <Image
-                        style={styles.avatar}
-                        source={require('../assets/images/sample_avatar.png')}
-                    />
-                    <View style={styles.name_container}>
-                        <Text style={[styles.h1, { textAlign: 'center' }]}> Você ainda não está cadastrado </Text>
-                    </View>
-                </View>
-                <View style={styles.right}>
-                    <TouchableOpacity 
-                        style={styles.button}
-                        onPress={()=> navigation.navigate('Login')}
-                    >
-                        <Text style={styles.button_text}> Entrar </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity 
-                        style={[styles.button, { backgroundColor: '#F2F2F2' }]}
-                        onPress={()=> navigation.navigate('Register')}
-                    >
-                        <Text style={[styles.button_text, { color: '#333333' }]}> Criar Conta </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        );
-}
 function chordsIcon(focus: boolean) {
     const focused = require('../assets/images/chord_icon.png')
     const unfocused = require('../assets/images/chord_icon_gray.png')
@@ -237,7 +184,7 @@ const styles = StyleSheet.create({
     name_container: {
         marginLeft: 10,
         width: 150,
-        justifyContent:'center'
+        justifyContent: 'center'
     },
     button: {
         width: 100,

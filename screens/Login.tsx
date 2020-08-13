@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, TextInput, Image } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, TextInput, Image, Alert } from 'react-native';
 import { ProfileStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
+import { login } from '../functions/requests'
+import Spinner from '../components/Spinner'
 
 export default function SampleScreen({ navigation }: StackScreenProps<ProfileStackParamList, 'Login'>) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   return (
     <View style={[styles.container, { width: '100%', height: '100%' }]}>
+      <Spinner visible={loading} />
       <View style={styles.title_container}>
         <Text style={styles.h1}> Bem Vindo de volta </Text>
         <Text style={styles.h2}> Ultilize sua conta no chords para publicar e avaliar cifras da plataforma </Text>
@@ -21,8 +25,9 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
           />
           <TextInput
             style={{ flex: 1 }}
-            placeholder="Username ou email"
+            placeholder="Username"
             onChangeText={(text) => setUsername(text)}
+            autoCapitalize={"none"}
           />
         </View>
 
@@ -41,7 +46,23 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
       </View>
 
       <View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            setLoading(true)
+            login(username, password)
+              .then((data) => {
+                setLoading(false);
+                console.log(data);
+                navigation.navigate('ProfileTabs')
+              })
+              .catch((error) => {
+                setLoading(false);
+                Alert.alert(error.title, error.message);
+              }
+              )
+          }}
+        >
           <Text style={styles.button_text}> Entrar </Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -87,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#333333',
     textAlign: 'center',
-    margin:5,
+    margin: 5,
   },
   input_container: {
     borderWidth: 1,
@@ -113,7 +134,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    margin:15,
+    margin: 15,
   },
   button_text: {
     fontFamily: 'roboto-bold',
