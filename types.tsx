@@ -20,7 +20,7 @@ export type HomeStackParamList = {
 export type SearchStackParamList = {
   Search: undefined;
   ChoseVersion: { music_id: string };
-  ChordScreen: { chord_id: string };
+  ChordScreen: { chord_id: number };
   ProfileView: undefined;
   ArtistScreen: undefined;
 }

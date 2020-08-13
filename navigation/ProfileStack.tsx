@@ -12,6 +12,9 @@ import { StyleSheet, Image } from 'react-native';
 import ProfileHeader from '../components/ProfileHeader'
 import PickIconScreen from '../screens/PickIconScreen'
 import EditProfile from '../screens/EditProfile'
+import MyChords from '../screens/MyChords'
+import MyLists from '../screens/MyLists'
+
 
 const Stack = createStackNavigator<ProfileStackParamList>();
 
@@ -94,18 +97,17 @@ function ProfileTabs() {
                     backgroundColor: '#333333'
                 }
             }}
-
         >
             <Tab.Screen
                 name="Chords"
-                component={SampleScreen}
+                component={MyChords}
                 options={{
                     tabBarLabel: ({ focused }) => chordsIcon(focused)
                 }}
             />
             <Tab.Screen
                 name="Lists"
-                component={SampleScreen}
+                component={MyLists}
                 options={{
                     tabBarLabel: ({ focused }) => listsIcon(focused)
                 }}

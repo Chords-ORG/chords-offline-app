@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
 
 const chords_versions = [
   {
-    id: '1',
+    id: 1,
     name: 'Original',
     author: {
       username: 'fulano'
@@ -123,7 +123,7 @@ const chords_versions = [
     unlikes: 12,
   },
   {
-    id: '2',
+    id: 2,
     name: 'Simplificada',
     author: {
       username: 'gustavolima00'
