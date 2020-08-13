@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   },
   input_container: {
     borderWidth: 1,
-    borderColor: '#828282',
+    borderColor: '#E4E4E4',
     borderRadius: 5,
     flexDirection: 'row',
     padding: 10,

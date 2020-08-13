@@ -41,6 +41,7 @@ export type ProfileStackParamList = {
   Login: undefined;
   Register: undefined;
   PickIcon: { name: string };
+  EditProfile: undefined
 };
 
 export type ProfileTabsParamList = {

@@ -13,12 +13,14 @@ export default function profileHeader({ route, navigation }: StackScreenProps<Pr
     const [username, setUsername] = useState('')
     const [logged, setLogged] = useState(true)
     const [loading, setLoading] = useState(true)
+    const [photo_url, setPhotoUrl] = useState('')
 
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
             get_profile().then((profile) => {
                 setUsername(profile.user.username)
                 setName(profile.name)
+                setPhotoUrl(profile.photo_url)
                 setLoading(false);
                 setLogged(true);
             }).catch((error) => {
@@ -48,7 +50,7 @@ export default function profileHeader({ route, navigation }: StackScreenProps<Pr
                                 <View style={styles.left}>
                                     <Image
                                         style={styles.avatar}
-                                        source={require('../assets/images/sample_avatar.png')}
+                                        source={{uri:photo_url}}
                                     />
                                     <View style={styles.name_container}>
                                         <Text style={styles.h1}>{name}</Text>
@@ -56,7 +58,12 @@ export default function profileHeader({ route, navigation }: StackScreenProps<Pr
                                     </View>
                                 </View>
                                 <View style={styles.right}>
-                                    <TouchableOpacity style={styles.button}>
+                                    <TouchableOpacity 
+                                        style={styles.button}
+                                        onPress={()=>{
+                                            navigation.navigate('EditProfile')
+                                        }}
+                                    >
                                         <Text style={styles.button_text}> Editar perfil </Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity
