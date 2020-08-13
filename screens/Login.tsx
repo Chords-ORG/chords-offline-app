@@ -9,6 +9,7 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  
   return (
     <View style={[styles.container, { width: '100%', height: '100%' }]}>
       <Spinner visible={loading} />

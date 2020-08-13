@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, TextInput, Alert } from 'react-native';
 import { ProfileStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
+import { register } from '../functions/requests'
+import Spinner from '../components/Spinner';
 
 export default function SampleScreen({ navigation }: StackScreenProps<ProfileStackParamList, 'Registration'>) {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+  const [loading, setLoading] = useState(false)
 
   return (
     <View style={[styles.container, { width: '100%', height: '100%' }]}>
+      <Spinner visible={loading}/>
       <View style={styles.title_container}>
         <Text style={styles.h1}> Vamos começar </Text>
         <Text style={styles.h2}> Insira suas informaçoes para a criação da conta. É rapido e fácil </Text>
@@ -69,7 +73,19 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
       </View>
 
       <View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            setLoading(true);
+            register(username, email, password, password).then((response) => {
+              setLoading(false);
+              navigation.navigate('PickIcon', { name: name });
+            }).catch((error) => {
+              setLoading(false);
+              Alert.alert(error.title, error.message)
+            })
+          }}
+        >
           <Text style={styles.button_text}> Criar conta </Text>
         </TouchableOpacity>
         <TouchableOpacity

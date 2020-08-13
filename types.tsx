@@ -7,44 +7,44 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  Home:undefined;
+  Home: undefined;
   Search: undefined;
   Profile: undefined;
-  Settings:undefined;
+  Settings: undefined;
 };
 
 export type HomeStackParamList = {
-  Home:undefined;
+  Home: undefined;
 }
 
 export type SearchStackParamList = {
-  Search:undefined;
-  ChoseVersion:{ music_id:string };
-  ChordScreen:{ chord_id:string };
-  ProfileView:undefined;
-  ArtistScreen:undefined;
+  Search: undefined;
+  ChoseVersion: { music_id: string };
+  ChordScreen: { chord_id: string };
+  ProfileView: undefined;
+  ArtistScreen: undefined;
 }
 
 export type SettingsStackParamList = {
-  Settings:undefined;
+  Settings: undefined;
 }
 
 export type ProfileStackParamList = {
-  ProfileTabs:undefined;
-  MyList:undefined;
-  AddChord:undefined;
-  ChoseVersion:undefined;
-  ChoseMusic:undefined;
-  WriteChord:undefined;
-  PreviewScreen:undefined;
-  ChordsDict:undefined;
-  Login:undefined;
-  Register:undefined;
-  PickIcon:undefined;
+  ProfileTabs: undefined;
+  MyList: undefined;
+  AddChord: undefined;
+  ChoseVersion: undefined;
+  ChoseMusic: undefined;
+  WriteChord: undefined;
+  PreviewScreen: undefined;
+  ChordsDict: undefined;
+  Login: undefined;
+  Register: undefined;
+  PickIcon: { name: string };
 };
 
 export type ProfileTabsParamList = {
-  Chords:undefined;
-  Lists:undefined;
-  MoreOptions:undefined;
+  Chords: undefined;
+  Lists: undefined;
+  MoreOptions: undefined;
 }

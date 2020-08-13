@@ -10,6 +10,7 @@ import Login from '../screens/Login'
 import Registration from '../screens/Registration'
 import { StyleSheet, Image } from 'react-native';
 import ProfileHeader from '../components/ProfileHeader'
+import PickIconScreen from '../screens/PickIconScreen'
 
 const Stack = createStackNavigator<ProfileStackParamList>();
 
@@ -68,8 +69,8 @@ export default function ProfileStack() {
             />
             <Stack.Screen
                 name="PickIcon"
-                component={SampleScreen}
-                options={{ headerTitle: 'PickIcon' }}
+                component={PickIconScreen}
+                options={{ headerTitle: 'Registro' }}
             />
         </Stack.Navigator>
     )
