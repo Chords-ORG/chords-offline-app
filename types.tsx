@@ -4,6 +4,7 @@ export type defaultDict = {
 
 export type RootStackParamList = {
   Root: undefined;
+  ChordScreen:{ chord_id: number },
 };
 
 export type BottomTabParamList = {
@@ -20,7 +21,6 @@ export type HomeStackParamList = {
 export type SearchStackParamList = {
   Search: undefined;
   ChoseVersion: { music_id: string };
-  ChordScreen: { chord_id: number };
   ProfileView: undefined;
   ArtistScreen: undefined;
 }

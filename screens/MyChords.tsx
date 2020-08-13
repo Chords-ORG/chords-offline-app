@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image } from 'react-native';
-import { SearchStackParamList } from '../types';
+import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 
-export default function SampleScreen({ navigation }: StackScreenProps<SearchStackParamList>) {
+export default function SampleScreen({ navigation }: StackScreenProps<RootStackParamList>) {
   return (
     <View style={[styles.container, {}]}>
+      
       <Text style={styles.h1}> Cifras </Text>
       <View style={styles.separator} />
       <View>
@@ -44,9 +45,15 @@ export default function SampleScreen({ navigation }: StackScreenProps<SearchStac
               )
             })
           }
-          <View style={{ height: 60 }} />
+          <View style={{ height: 100 }} />
         </ScrollView>
       </View>
+      <TouchableOpacity style={styles.floating_button}>
+        <Image
+          source={require('../assets/images/pencil_plus_icon.png')}
+          style={styles.pencil_icon}
+        />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -105,10 +112,101 @@ const styles = StyleSheet.create({
   },
   right: {
     flexDirection: 'row',
+  },
+  floating_button:{
+    height:55,
+    width:55,
+    borderRadius:30,
+    backgroundColor:'#2F80ED',
+    position:'absolute',
+    right:30,
+    bottom:15,
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  pencil_icon:{
+    height:35,
+    width:35,
   }
 });
 
 const my_chords = [
+  {
+    id: 12,
+    name: 'Simplificada',
+    author: {
+      name: 'fulano',
+      user: {
+        username: 'fulano',
+      }
+    },
+    music: {
+      artist: {
+        name: 'Gabriela Rocha',
+      },
+      name: 'Creio que tu és a cura'
+    },
+    view_mode: 'public',
+    likes: 20,
+    unlikes: 25,
+  },
+  {
+    id: 12,
+    name: 'Simplificada',
+    author: {
+      name: 'fulano',
+      user: {
+        username: 'fulano',
+      }
+    },
+    music: {
+      artist: {
+        name: 'Gabriela Rocha',
+      },
+      name: 'Creio que tu és a cura'
+    },
+    view_mode: 'public',
+    likes: 20,
+    unlikes: 25,
+  },
+  {
+    id: 12,
+    name: 'Simplificada',
+    author: {
+      name: 'fulano',
+      user: {
+        username: 'fulano',
+      }
+    },
+    music: {
+      artist: {
+        name: 'Gabriela Rocha',
+      },
+      name: 'Creio que tu és a cura'
+    },
+    view_mode: 'public',
+    likes: 20,
+    unlikes: 25,
+  },
+  {
+    id: 12,
+    name: 'Simplificada',
+    author: {
+      name: 'fulano',
+      user: {
+        username: 'fulano',
+      }
+    },
+    music: {
+      artist: {
+        name: 'Gabriela Rocha',
+      },
+      name: 'Creio que tu és a cura'
+    },
+    view_mode: 'public',
+    likes: 20,
+    unlikes: 25,
+  },
   {
     id: 12,
     name: 'Simplificada',

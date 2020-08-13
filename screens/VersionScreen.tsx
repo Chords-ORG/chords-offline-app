@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
-import { SearchStackParamList } from '../types';
+import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { ScrollView } from 'react-native-gesture-handler';
 
 // 
-export default function VersionScreen({ navigation }: StackScreenProps<SearchStackParamList, 'ChoseVersion'>) {
+export default function VersionScreen({ navigation }: StackScreenProps<RootStackParamList>) {
   return (
     <View style={[styles.container, { width: '100%', height: '100%', padding: 15 }]}>
       <ScrollView>

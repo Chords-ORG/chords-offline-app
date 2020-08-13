@@ -30,12 +30,6 @@ export default function SearchStack() {
                 }
             />
             <Stack.Screen
-                name="ChordScreen"
-                component={ChordScreen}
-                options={{ headerShown: false, }}
-
-            />
-            <Stack.Screen
                 name="ProfileView"
                 component={SampleScreen}
                 options={{ headerTitle: 'ProfileView' }}
