@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
-import { HomeStackParamList } from '../types';
+import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
-export default function HomeScreen({ navigation, route }: StackScreenProps<HomeStackParamList, 'Home'>) {
+export default function HomeScreen({ navigation, route }: StackScreenProps<RootStackParamList>) {
   return (
     <View style={[styles.container, { width: '100%', height: '100%', padding: 15 }]}>
       <ScrollView>
@@ -16,7 +16,13 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<HomeS
         {
           hilight_chords.map((chord, i) => {
             return (
-              <TouchableOpacity key={i} style={styles.chord_card}>
+              <TouchableOpacity
+                key={i}
+                style={styles.chord_card}
+                onPress={() => {
+                  navigation.navigate('ChordScreen', { chord_id: chord.id })
+                }}
+              >
                 <View style={styles.left}>
                   <Text style={styles.card_h1}> {chord.music.name} </Text>
                   <Text style={styles.card_h2}> {chord.music.author.name} </Text>
@@ -43,14 +49,14 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<HomeS
           })
         }
 
-        <View style={[styles.container, {paddingTop:20}]}>
+        <View style={[styles.container, { paddingTop: 20 }]}>
           <Text style={styles.title}> Artistas em alta </Text>
           <View style={styles.separator} />
         </View>
 
         {
-          hilight_artists.map( (artist, i) => {
-            return(
+          hilight_artists.map((artist, i) => {
+            return (
               <TouchableOpacity key={i} style={styles.artist_card}>
                 <Text style={styles.card_h1}> {artist.name} </Text>
               </TouchableOpacity>
@@ -125,19 +131,20 @@ const styles = StyleSheet.create({
     fontFamily: 'roboto-bold',
     color: '#EB5757'
   },
-  artist_card:{
-    width:'100%',
-    height:50,
-    justifyContent:'center',
-    borderRadius:5,
-    backgroundColor:'#F2F2F2',
-    padding:10,
-    marginTop:15
+  artist_card: {
+    width: '100%',
+    height: 50,
+    justifyContent: 'center',
+    borderRadius: 5,
+    backgroundColor: '#F2F2F2',
+    padding: 10,
+    marginTop: 15
   }
 });
 
 const hilight_chords = [
   {
+    id: 1,
     author: {
       username: 'fulano'
     },
@@ -151,6 +158,7 @@ const hilight_chords = [
     unlikes: 12,
   },
   {
+    id: 1,
     author: {
       username: 'fulano'
     },
@@ -164,6 +172,7 @@ const hilight_chords = [
     unlikes: 12,
   },
   {
+    id: 1,
     author: {
       username: 'fulano'
     },
@@ -179,12 +188,12 @@ const hilight_chords = [
 ]
 const hilight_artists = [
   {
-    name:'Gabriela Rocha'
+    name: 'Gabriela Rocha'
   },
   {
-    name:'Gabriela Rocha'
+    name: 'Gabriela Rocha'
   },
   {
-    name:'Gabriela Rocha'
+    name: 'Gabriela Rocha'
   }
 ]

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image, Alert } from 'react-native';
-import { SearchStackParamList } from '../types';
+import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image, Alert, Animated } from 'react-native';
+import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Drawer from 'react-native-drawer-menu';
 import { Easing } from 'react-native';
 import Navigation from '../navigation';
 
-export default function ChordScreen({ navigation }: StackScreenProps<SearchStackParamList, 'ChordScreen'>) {
+export default function ChordScreen({ navigation }: StackScreenProps<RootStackParamList, 'ChordScreen'>) {
   const up_arrow = require('../assets/images/up_arrow.png');
   const down_arrow = require('../assets/images/down_arrow.png');
   const like_gray = require('../assets/images/like_icon_gray.png')
@@ -17,9 +17,12 @@ export default function ChordScreen({ navigation }: StackScreenProps<SearchStack
   const [loading, setLoading] = useState(false)
   const [showChords, setShowChords] = useState(true)
   const [drawer, setDrawner] = useState(drawner_holder)
+  const [selectedTone, selectTone] = useState(0);
+  const [version, setVersion] = useState(version_sample)
+  const [chords_lines, setChordsLines] = useState(chords_lines_sample)
 
   const drawerContent = (
-    <View>
+    <Animated.View>
       <View style={drawner_styles.header}>
         <Text style={drawner_styles.title}> Opções </Text>
       </View>
@@ -55,37 +58,37 @@ export default function ChordScreen({ navigation }: StackScreenProps<SearchStack
             <Text style={drawner_styles.h1}> Tom </Text>
             <View style={drawner_styles.separator} />
           </View>
-          <View style={[drawner_styles.tone_buttons_container, { marginTop: 20 }]}>
+          <View>
             {
-              top_tones.map((tone_name, i) => {
+              tone_lists.map((tones, i) => {
                 return (
-                  <TouchableOpacity
-                    key={i}
-                    style={[drawner_styles.circle_button, { backgroundColor: (false ? '#2F80ED' : '#BDBDBD') }]}
-                  >
-                    <Text style={[drawner_styles.button_text, { color: '#FFFFFF' }]}>{tone_name}</Text>
-                  </TouchableOpacity>
-                )
-              })
-            }
-          </View>
-          <View style={drawner_styles.tone_buttons_container}>
-            {
-              bottom_tones.map((tone_name, i) => {
-                return (
-                  <TouchableOpacity
-                    key={i}
-                    style={[drawner_styles.circle_button, { backgroundColor: (false ? '#2F80ED' : '#BDBDBD') }]}
-                  >
-                    <Text style={[drawner_styles.button_text, { color: '#FFFFFF' }]}>{tone_name}</Text>
-                  </TouchableOpacity>
+                  <View style={drawner_styles.tone_buttons_container} key={i}>
+                    {
+                      tones.map((tone_name, j) => {
+                        let idx = i * tones.length + j
+                        return (
+                          <TouchableOpacity
+                            key={j}
+                            style={[drawner_styles.circle_button, { backgroundColor: (selectedTone == idx ? '#2F80ED' : '#BDBDBD') }]}
+                            onPress={() => {
+                              selectTone(idx);
+                            }}
+                          >
+                            <Text style={[drawner_styles.button_text, { color: '#FFFFFF' }]}>{tone_name}</Text>
+                          </TouchableOpacity>
+                        )
+                      })
+                    }
+                  </View>
                 )
               })
             }
           </View>
           <TouchableOpacity style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}>
             <Text style={drawner_styles.button_text} > Capotraste </Text>
-            <Text style={[drawner_styles.button_text, { color: '#2F80EDs' }]} > Sem Capo </Text>
+            <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} >
+              {version.capo == 0 ? "Sem Capo" : `${version.capo}ª casa`}
+            </Text>
           </TouchableOpacity>
 
           <View style={drawner_styles.sub_header}>
@@ -95,12 +98,12 @@ export default function ChordScreen({ navigation }: StackScreenProps<SearchStack
 
           <TouchableOpacity style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}>
             <Text style={drawner_styles.button_text} > Artista </Text>
-            <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} > Artista desconhecido </Text>
+            <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} >{version.music.artist.name}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}>
             <Text style={drawner_styles.button_text} > Autor da cifra </Text>
-            <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} > @gustavolima00 </Text>
+            <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} > {`@${version.author.user.username}`} </Text>
           </TouchableOpacity>
 
           <View style={drawner_styles.sub_header}>
@@ -124,7 +127,7 @@ export default function ChordScreen({ navigation }: StackScreenProps<SearchStack
           </View>
         </ScrollView>
       </View>
-    </View>
+    </Animated.View>
   )
 
   return (
@@ -156,7 +159,7 @@ export default function ChordScreen({ navigation }: StackScreenProps<SearchStack
           />
         </TouchableOpacity>
       </View>
-      <View style={[styles.container, { padding: 15 }]}>
+      <View style={[styles.container, { padding: 15, width: '100%', height: '100%' }]}>
         {showChords &&
           <View style={styles.chords_container}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -190,8 +193,8 @@ export default function ChordScreen({ navigation }: StackScreenProps<SearchStack
           <ScrollView>
             <View style={styles.header_container}>
               <View style={styles.left}>
-                <Text style={styles.h1}> Parabéns pra você </Text>
-                <Text style={styles.h2}> Artista Desconhecido </Text>
+                <Text style={styles.h1}>{version.music.name}</Text>
+                <Text style={styles.h2}>{version.music.artist.name}</Text>
               </View>
             </View>
             <View style={styles.tone_container}>
@@ -199,10 +202,18 @@ export default function ChordScreen({ navigation }: StackScreenProps<SearchStack
                 <Text style={styles.tone_text}>Tom: <Text style={{ color: '#2F80ED' }}>{'G'}</Text></Text>
               </TouchableOpacity>
               <TouchableOpacity>
-                <Text style={styles.tone_text}>Capotraste: <Text style={{ color: '#2F80ED' }}>{'Sem capotraste'}</Text></Text>
+                <Text style={styles.tone_text}>Capotraste: <Text style={{ color: '#2F80ED' }}>{version.capo == 0 ? "Sem Capo" : `${version.capo}ª casa`} </Text></Text>
               </TouchableOpacity>
             </View>
-            <View style={{ height: 1000 }}>
+            <View>
+              {
+                chords_lines.map((chord_line, i) => (
+                  <View key={i}>
+                    <Text style={styles.chord_font}>{chord_line.chord_line}</Text>
+                    <Text style={styles.lyric_font}>{chord_line.music_line.line}</Text>
+                  </View>
+                ))
+              }
             </View>
           </ScrollView>
         </View>
@@ -214,10 +225,192 @@ export default function ChordScreen({ navigation }: StackScreenProps<SearchStack
 function saveChords() {
   Alert.alert('Save Chords', 'Salvar cifra foi pressionado')
 }
-const top_tones = ['C', 'C#', 'D', 'D#', 'E', 'F']
-const bottom_tones = ['F#', 'G', 'G#', 'A', 'A#', 'B']
+const tone_lists = [['C', 'C#', 'D', 'D#', 'E', 'F'], ['F#', 'G', 'G#', 'A', 'A#', 'B']]
 
+const chord_list = ['C#m7', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C']
 
+const version_sample = {
+  tone: 'C',
+  capo: 1,
+  name: 'Simplificada',
+  author: {
+    name: 'Gustavo',
+    user: {
+      username: 'gustavolima00'
+    }
+  },
+  music: {
+    name: 'Party Favor',
+    artist: {
+      name: 'Billie Eilish'
+    }
+  }
+}
+
+const chords_lines_sample = [
+  {
+    chord_line: "",
+    music_line: {
+      line: "Hey, leave a message",
+    }
+  },
+  {
+    chord_line: "C",
+    music_line: {
+      line: "Hey, call me back",
+    }
+  },
+  {
+    chord_line: "         Am    ",
+    music_line: {
+      line: "When you get this",
+    }
+  },
+  {
+    chord_line: "                     F    ",
+    music_line: {
+      line: "Or when you've got a minute",
+    }
+  },
+  {
+    chord_line: "               C      G    ",
+    music_line: {
+      line: "We really need to talk",
+    }
+  },
+  {
+    chord_line: " C    ",
+    music_line: {
+      line: "Wait, you know what",
+    }
+  },
+  {
+    chord_line: "               Am       ",
+    music_line: {
+      line: "Maybe just forget it",
+    }
+  },
+  {
+    chord_line: "                      F    ",
+    music_line: {
+      line: "Cause by the time you get this",
+    }
+  },
+  {
+    chord_line: "                  C         G    ",
+    music_line: {
+      line: "Your number might be blocked",
+    }
+  },
+  {
+    chord_line: "",
+    music_line: {
+      line: "",
+    }
+  },
+  {
+    chord_line: " Am                C           ",
+    music_line: {
+      line: "Stay and blah blah blah",
+    }
+  },
+  {
+    chord_line: "         F                       C  G    ",
+    music_line: {
+      line: "You just want what you can't have",
+    }
+  },
+  {
+    chord_line: " Am                    C    ",
+    music_line: {
+      line: "No wait, I'll call the cops",
+    }
+  },
+  {
+    chord_line: "             F                       C G",
+    music_line: {
+      line: "If you don't stop I'll call your dad      ",
+    }
+  },
+  {
+    chord_line: "",
+    music_line: {
+      line: "",
+    }
+  },
+  {
+    chord_line: "       F              G              C    ",
+    music_line: {
+      line: "And I hate to do this to you on your birthday      ",
+    }
+  },
+  {
+    chord_line: "      Am              E7    ",
+    music_line: {
+      line: "Happy birthday by the way      ",
+    }
+  },
+  {
+    chord_line: "         F               G              C    ",
+    music_line: {
+      line: "It's not you it's me and all that other bullshit      ",
+    }
+  },
+  {
+    chord_line: "        Am",
+    music_line: {
+      line: "You know that's bullshit      ",
+    }
+  },
+  {
+    chord_line: "       E7        F    ",
+    music_line: {
+      line: "Don't you, babe       ",
+    }
+  },
+  {
+    chord_line: "             Fm       C    ",
+    music_line: {
+      line: "I'm not your party favor      ",
+    }
+  },
+  {
+    chord_line: "",
+    music_line: {
+      line: "",
+    }
+  },
+  {
+    chord_line: "",
+    music_line: {
+      line: "",
+    }
+  },
+  {
+    chord_line: "",
+    music_line: {
+      line: "",
+    }
+  },
+  {
+    chord_line: "",
+    music_line: {
+      line: "",
+    }
+  },
+  {
+    chord_line: "",
+    music_line: {
+      line: "",
+    }
+  },
+  {
+    chord_line: "",
+    music_line: {
+      line: "",
+    }
+  }
+]
 const drawner_holder = {
   openDrawer: () => null,
 }
@@ -415,9 +608,16 @@ const styles = StyleSheet.create({
   drawer: {
 
   },
+  chord_font: {
+    color: '#2F80ED',
+    fontFamily: 'monospace',
+    fontSize: 14,
+    fontWeight: 'bold'
+  },
+  lyric_font: {
+    color: '#333333',
+    fontFamily: 'monospace',
+    fontSize: 14,
+  }
 
 });
-
-
-
-const chord_list = ['C#m7', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C'] 
