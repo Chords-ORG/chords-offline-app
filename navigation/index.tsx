@@ -6,6 +6,7 @@ import NotFoundScreen from '../screens/SampleScreen';
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import ChordScreen from '../screens/ChordScreen'
+
 export default function Navigation() {
   return (
     <NavigationContainer>

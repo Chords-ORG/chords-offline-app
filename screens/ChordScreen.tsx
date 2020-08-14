@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image, Alert, Animated } from 'react-native';
 import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Drawer from 'react-native-drawer-menu';
 import { Easing } from 'react-native';
 import Navigation from '../navigation';
+import { addToChordLines, numberToNote, noteToNumber, Chord } from '../functions/chords'
+import Spinner from '../components/Spinner';
+import { getItem } from '../functions/storage'
+import CapoDialog from '../components/CapoDialog'
+import GuitarChord from '../components/GuitarChord'
 
 export default function ChordScreen({ navigation }: StackScreenProps<RootStackParamList, 'ChordScreen'>) {
   const up_arrow = require('../assets/images/up_arrow.png');
@@ -17,9 +22,18 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
   const [loading, setLoading] = useState(false)
   const [showChords, setShowChords] = useState(true)
   const [drawer, setDrawner] = useState(drawner_holder)
-  const [selectedTone, selectTone] = useState(0);
+  const [selectedTone, selectTone] = useState('C');
+  const [selectedCapo, selectCapo] = useState(0);
   const [version, setVersion] = useState(version_sample)
   const [chords_lines, setChordsLines] = useState(chords_lines_sample)
+  const [dialog_visible, setDialogVisible] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      setChordsLines(addToChordLines(chords_lines, 0));
+    })
+    return unsubscribe;
+  }, [navigation])
 
   const drawerContent = (
     <Animated.View>
@@ -69,9 +83,23 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
                         return (
                           <TouchableOpacity
                             key={j}
-                            style={[drawner_styles.circle_button, { backgroundColor: (selectedTone == idx ? '#2F80ED' : '#BDBDBD') }]}
+                            style={[drawner_styles.circle_button, { backgroundColor: (noteToNumber(selectedTone) == idx ? '#2F80ED' : '#BDBDBD') }]}
                             onPress={() => {
-                              selectTone(idx);
+                              setLoading(true);
+                              getItem('dict').then((dict_) => {
+                                let dict = dict_ || 'sharp'
+                                let delta = idx - noteToNumber(selectedTone)
+                                setChordsLines(addToChordLines(chords_lines, delta, dict));
+                                var chord = new Chord(selectedTone);
+                                chord.add(delta)
+                                selectTone(dict == 'sharp' ? chord.toSharp() : chord.toBemol());
+                                setLoading(false);
+                                drawer.closeDrawer()
+                              }).catch((error) => {
+                                Alert.alert(error.title, error.message)
+                                setLoading(false);
+                                drawer.closeDrawer()
+                              })
                             }}
                           >
                             <Text style={[drawner_styles.button_text, { color: '#FFFFFF' }]}>{tone_name}</Text>
@@ -84,10 +112,15 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
               })
             }
           </View>
-          <TouchableOpacity style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}>
+          <TouchableOpacity
+            style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}
+            onPress={() => {
+              setDialogVisible(true);
+            }}
+          >
             <Text style={drawner_styles.button_text} > Capotraste </Text>
             <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} >
-              {version.capo == 0 ? "Sem Capo" : `${version.capo}ª casa`}
+              {selectedCapo == 0 ? "Sem Capo" : `${selectedCapo}ª casa`}
             </Text>
           </TouchableOpacity>
 
@@ -138,6 +171,29 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
       drawerPosition={Drawer.positions.Right}
       drawerContent={drawerContent}
     >
+      <Spinner visible={loading} />
+      <CapoDialog
+        visible={dialog_visible}
+        closeDialog={() => setDialogVisible(false)}
+        selected_capo={selectedCapo}
+        tone={selectedTone}
+        onSelect={(value, delta) => {
+          setLoading(true);
+          getItem('dict').then((dict_) => {
+            let dict = dict_ || 'sharp'
+            setChordsLines(addToChordLines(chords_lines, delta, dict));
+            selectCapo(value);
+            setLoading(false);
+            setDialogVisible(false);
+            drawer.closeDrawer();
+          }).catch((error) => {
+            Alert.alert(error.title, error.message)
+            setLoading(false);
+            setDialogVisible(false);
+            drawer.closeDrawer();
+          })
+        }}
+      />
       <View style={styles.header}>
         <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity onPress={navigation.goBack}>
@@ -166,13 +222,8 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
               {
                 chord_list.map((chord_name, i) => (
                   <View key={i} style={styles.chord_container}>
-                    <View style={styles.chord_image_container}>
-                      <Text style={styles.house_indicator}> {(true ? `${12}ª` : '')} </Text>
-                      <Image
-                        style={styles.chord_image}
-                        source={require(`../assets/guitar_chords/front/C.png`)}
-                      />
-                    </View>
+                    <GuitarChord
+                    />
                     <Text style={styles.chord_name}> {chord_name} </Text>
                   </View>
                 ))
@@ -198,11 +249,19 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
               </View>
             </View>
             <View style={styles.tone_container}>
-              <TouchableOpacity>
-                <Text style={styles.tone_text}>Tom: <Text style={{ color: '#2F80ED' }}>{'G'}</Text></Text>
+              <TouchableOpacity
+                onPress={() => {
+                  drawer.openDrawer()
+                }}
+              >
+                <Text style={styles.tone_text}>Tom: <Text style={{ color: '#2F80ED' }}>{selectedTone}</Text></Text>
               </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.tone_text}>Capotraste: <Text style={{ color: '#2F80ED' }}>{version.capo == 0 ? "Sem Capo" : `${version.capo}ª casa`} </Text></Text>
+              <TouchableOpacity
+                onPress={() => {
+                  setDialogVisible(true);
+                }}
+              >
+                <Text style={styles.tone_text}>Capotraste: <Text style={{ color: '#2F80ED' }}>{selectedCapo == 0 ? "Sem Capo" : `${selectedCapo}ª casa`} </Text></Text>
               </TouchableOpacity>
             </View>
             <View>

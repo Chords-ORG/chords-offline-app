@@ -17,11 +17,10 @@ export default function Spinner(props: SpinnerPropsType) {
             transparent
         >
             <View style={styles.container}>
-                <View style={styles.modalView}>
                 <ActivityIndicator
                     size="large"
+                    color="#FFFFFF"
                 />
-                </View>
             </View>
         </Modal>
     );

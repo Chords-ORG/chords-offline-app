@@ -14,6 +14,16 @@ export type BottomTabParamList = {
   Settings: undefined;
 };
 
+export type SpinnerPropsType = {
+  visible:boolean;
+}
+export type CapoDialogPropsType = {
+  visible:boolean;
+  closeDialog: () => void;
+  selected_capo:number;
+  tone:string;
+  onSelect:(value:number, delta:number) => void;
+}
 export type HomeStackParamList = {
   Home: undefined;
 }
