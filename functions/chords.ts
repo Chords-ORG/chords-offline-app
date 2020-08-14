@@ -167,7 +167,7 @@ export async function LoadChords(chords_lines:ChordLine[]) {
             let chord_name = new Chord(chords[j]).toSharp()
             if(!chord_positions.has(chord_name)){
                 var chord_position = await getItemObject(`guitar_chord@${chord_name}`)
-                chord_positions.set(chord_name, chord_position)
+                chord_positions.set(chords[j], chord_position)
             }
         }
     }

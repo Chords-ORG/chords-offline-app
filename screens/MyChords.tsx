@@ -1,13 +1,23 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image } from 'react-native';
 import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 
+
+
 export default function SampleScreen({ navigation }: StackScreenProps<RootStackParamList>) {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+
+    })
+    return unsubscribe;
+  }, [navigation])
   return (
     <View style={[styles.container, {}]}>
-      
-      <Text style={styles.h1}> Cifras </Text>
+
+      <Text style={styles.h1}> Minhas cifras </Text>
       <View style={styles.separator} />
       <View>
         <ScrollView>
@@ -113,20 +123,20 @@ const styles = StyleSheet.create({
   right: {
     flexDirection: 'row',
   },
-  floating_button:{
-    height:55,
-    width:55,
-    borderRadius:30,
-    backgroundColor:'#2F80ED',
-    position:'absolute',
-    right:30,
-    bottom:15,
-    alignItems:'center',
-    justifyContent:'center'
+  floating_button: {
+    height: 55,
+    width: 55,
+    borderRadius: 30,
+    backgroundColor: '#2F80ED',
+    position: 'absolute',
+    right: 30,
+    bottom: 15,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  pencil_icon:{
-    height:35,
-    width:35,
+  pencil_icon: {
+    height: 30,
+    width: 30,
   }
 });
 
