@@ -17,6 +17,32 @@ export type BottomTabParamList = {
 export type SpinnerPropsType = {
   visible:boolean;
 }
+
+export type MusicLine = {
+  //id:number,
+  line:string
+}
+export type ChordLine = {
+  //id:number
+  chord_line:string,
+  music_line:MusicLine,
+}
+
+export type GuitarFinger = {
+  house:number,
+  string:number,
+  size:number,
+}
+export  type GuitarChordPosition = {
+  start_house:number,
+  fingers:GuitarFinger[],
+  strings:string[],
+}
+
+export type GuitarChordPropsType = {
+  capo:number,
+  chordPosition?:GuitarChordPosition
+}
 export type CapoDialogPropsType = {
   visible:boolean;
   closeDialog: () => void;

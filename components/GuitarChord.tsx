@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Image, Text } from 'react-native'
-
+import { GuitarChordPropsType } from '../types'
 var houseDict = new Map()
 houseDict.set(0, { height: 0, width: 0 });
 houseDict.set(1, { top: 30 });
@@ -18,13 +18,13 @@ stringDict.set(4, { right: 41 });
 stringDict.set(5, { right: 55 });
 stringDict.set(6, { right: 68 });
 
-export default function GuitarChord() {
+export default function GuitarChord(props: GuitarChordPropsType) {
 
     const guitar_base = require('../assets/images/guitar_base.png')
     const guitar_capo = require('../assets/images/guitar_capo.png')
     const guitar_front = require('../assets/images/guitar_front.png')
 
-    const base_string = require('../assets/images/base_string.png')
+    const bass_string = require('../assets/images/bass_string.png')
     const none_string = require('../assets/images/none_string.png')
     const normal_string = require('../assets/images/normal_string.png')
 
@@ -40,74 +40,121 @@ export default function GuitarChord() {
     const finger_4 = require('../assets/images/finger_4.png')
     const finger_p = require('../assets/images/finger_p.png')
 
-    var slash_house_style = styles.slash_house_1;
-    if (chord_pos.finger_1.house == 2)
-        slash_house_style = styles.slash_house_2;
-    else if (chord_pos.finger_1.house == 3)
-        slash_house_style = styles.slash_house_3;
-    else if (chord_pos.finger_1.house == 4)
-        slash_house_style = styles.slash_house_4;
-
-    const start_house = chord_pos.start_house + (capo != 0 ? capo + 1 : 0);
-    return (
-        <View style={styles.container}>
-            <Text style={styles.house_text}>{(start_house!=0 ? `${start_house}ª`:'   ')}</Text>
-            <View>
-                <Image
-                    source={capo != 0 ? guitar_capo : (chord_pos.start_house != 0 ? guitar_front : guitar_base)}
-                    style={styles.back_image}
-                />
-                <Image
-                    source={slash_2}
-                    style={[styles.slash_2, (chord_pos.finger_1.size == 2 ? slash_house_style : styles.unactive)]}
-                />
-                <Image
-                    source={slash_3}
-                    style={[styles.slash_3, (chord_pos.finger_1.size == 3 ? slash_house_style : styles.unactive)]}
-                />
-                <Image
-                    source={slash_4}
-                    style={[styles.slash_4, (chord_pos.finger_1.size == 4 ? slash_house_style : styles.unactive)]}
-                />
-                <Image
-                    source={slash_5}
-                    style={[styles.slash_5, (chord_pos.finger_1.size == 5 ? slash_house_style : styles.unactive)]}
-                />
-                <Image
-                    source={slash_6}
-                    style={[styles.slash_6, (chord_pos.finger_1.size == 6 ? slash_house_style : styles.unactive)]}
-                />
-
-                <Image
-                    source={finger_1}
-                    style={[styles.finger, houseDict.get(chord_pos.finger_1.house), stringDict.get(chord_pos.finger_1.string)]}
-                />
-                <Image
-                    source={finger_2}
-                    style={[styles.finger, houseDict.get(chord_pos.finger_2.house), stringDict.get(chord_pos.finger_2.string)]}
-                />
-                <Image
-                    source={finger_3}
-                    style={[styles.finger, houseDict.get(chord_pos.finger_3.house), stringDict.get(chord_pos.finger_3.string)]}
-                />
-                <Image
-                    source={finger_4}
-                    style={[styles.finger, houseDict.get(chord_pos.finger_4.house), stringDict.get(chord_pos.finger_4.string)]}
-                />
-                <Image
-                    source={finger_p}
-                    style={[styles.finger, houseDict.get(chord_pos.finger_p.house), stringDict.get(chord_pos.finger_p.string)]}
-                />
+    const chord_pos = props.chordPosition;
+    const capo = props.capo;
+    if (!chord_pos) {
+        return (
+            <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+                <Text style={styles.message}> Acorde Indisponível </Text>
             </View>
-        </View>
-    );
+        );
+    }
+    else {
+        var slash_house_style = styles.slash_house_1;
+        if (chord_pos.fingers[0].house == 2)
+            slash_house_style = styles.slash_house_2;
+        else if (chord_pos.fingers[0].house == 3)
+            slash_house_style = styles.slash_house_3;
+        else if (chord_pos.fingers[0].house == 4)
+            slash_house_style = styles.slash_house_4;
+        const start_house = chord_pos.start_house + (capo != 0 ? capo + 1 : 0);
+        return (
+            <View style={styles.container}>
+                <Text style={styles.house_text}>{(start_house != 0 ? `${start_house}ª` : '   ')}</Text>
+                <View>
+                    <Image
+                        source={capo != 0 ? guitar_capo : (chord_pos.start_house != 0 ? guitar_front : guitar_base)}
+                        style={styles.back_image}
+                    />
+
+                    <Image
+                        source={finger_1}
+                        style={[
+                            (chord_pos.fingers[0].size == 1 ? styles.finger : styles.unactive),
+                            houseDict.get(chord_pos.fingers[0].house),
+                            stringDict.get(chord_pos.fingers[0].string)
+                        ]}
+                    />
+                    <Image
+                        source={slash_2}
+                        style={[styles.slash_2, (chord_pos.fingers[0].size == 2 ? slash_house_style : styles.unactive)]}
+                    />
+                    <Image
+                        source={slash_3}
+                        style={[styles.slash_3, (chord_pos.fingers[0].size == 3 ? slash_house_style : styles.unactive)]}
+                    />
+                    <Image
+                        source={slash_4}
+                        style={[styles.slash_4, (chord_pos.fingers[0].size == 4 ? slash_house_style : styles.unactive)]}
+                    />
+                    <Image
+                        source={slash_5}
+                        style={[styles.slash_5, (chord_pos.fingers[0].size == 5 ? slash_house_style : styles.unactive)]}
+                    />
+                    <Image
+                        source={slash_6}
+                        style={[styles.slash_6, (chord_pos.fingers[0].size == 6 ? slash_house_style : styles.unactive)]}
+                    />
+
+
+                    <Image
+                        source={finger_2}
+                        style={[styles.finger, houseDict.get(chord_pos.fingers[1].house), stringDict.get(chord_pos.fingers[1].string)]}
+                    />
+                    <Image
+                        source={finger_3}
+                        style={[styles.finger, houseDict.get(chord_pos.fingers[2].house), stringDict.get(chord_pos.fingers[2].string)]}
+                    />
+                    <Image
+                        source={finger_4}
+                        style={[styles.finger, houseDict.get(chord_pos.fingers[3].house), stringDict.get(chord_pos.fingers[3].string)]}
+                    />
+                    <Image
+                        source={finger_p}
+                        style={[styles.finger, houseDict.get(chord_pos.fingers[4].house), stringDict.get(chord_pos.fingers[4].string)]}
+                    />
+                    <Image
+                        source={chord_pos.strings[0] == 'bass' ? bass_string : (chord_pos.strings[0] == 'none' ? none_string : normal_string)}
+                        style={styles.string_1}
+                    />
+                    <Image
+                        source={chord_pos.strings[1] == 'bass' ? bass_string : (chord_pos.strings[1] == 'none' ? none_string : normal_string)}
+                        style={styles.string_2}
+                    />
+                    <Image
+                        source={chord_pos.strings[2] == 'bass' ? bass_string : (chord_pos.strings[2] == 'none' ? none_string : normal_string)}
+                        style={styles.string_3}
+                    />
+                    <Image
+                        source={chord_pos.strings[3] == 'bass' ? bass_string : (chord_pos.strings[3] == 'none' ? none_string : normal_string)}
+                        style={styles.string_4}
+                    />
+                    <Image
+                        source={chord_pos.strings[4] == 'bass' ? bass_string : (chord_pos.strings[4] == 'none' ? none_string : normal_string)}
+                        style={styles.string_5}
+                    />
+                    <Image
+                        source={chord_pos.strings[5] == 'bass' ? bass_string : (chord_pos.strings[5] == 'none' ? none_string : normal_string)}
+                        style={styles.string_6}
+                    />
+                </View>
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        width:100,
-        justifyContent:'space-between'
+        width: 100,
+        height: 120,
+        justifyContent: 'space-between',
+        paddingRight: 10,
+    },
+    message: {
+        fontFamily: 'roboto-bold',
+        fontSize: 12,
+        textAlign: 'center',
     },
     house_text: {
         marginTop: 25,
@@ -152,6 +199,48 @@ const styles = StyleSheet.create({
         height: 12,
         width: 12,
     },
+    string_1: {
+        position: 'absolute',
+        height: 8,
+        width: 8,
+        bottom: 0,
+        right: 2
+    },
+    string_2: {
+        position: 'absolute',
+        height: 8,
+        width: 8,
+        bottom: 0,
+        right: 15
+    },
+    string_3: {
+        position: 'absolute',
+        height: 8,
+        width: 8,
+        bottom: 0,
+        right: 29
+    },
+    string_4: {
+        position: 'absolute',
+        height: 8,
+        width: 8,
+        bottom: 0,
+        right: 42
+    },
+    string_5: {
+        position: 'absolute',
+        height: 8,
+        width: 8,
+        bottom: 0,
+        right: 56
+    },
+    string_6: {
+        position: 'absolute',
+        height: 8,
+        width: 8,
+        bottom: 0,
+        right: 70
+    },
     slash_house_1: {
         position: 'absolute',
         right: 1,
@@ -173,30 +262,3 @@ const styles = StyleSheet.create({
         top: 82,
     }
 });
-
-var capo = 0
-const chord_pos = {
-    start_house: 12,
-    finger_1: {
-        house: 1,
-        string: 2,
-        size: 1
-    },
-    finger_2: {
-        house: 3,
-        string: 4,
-    },
-    finger_3: {
-        house: 4,
-        string: 5,
-    },
-    finger_4: {
-        house: 0,
-        string: 0,
-    },
-    finger_p: {
-        house: 0,
-        string: 0,
-    },
-    strings: ['normal', 'normal', 'normal', 'normal', 'bass', 'none']
-} 

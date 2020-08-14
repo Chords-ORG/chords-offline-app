@@ -5,7 +5,7 @@ import { StackScreenProps } from '@react-navigation/stack';
 import Drawer from 'react-native-drawer-menu';
 import { Easing } from 'react-native';
 import Navigation from '../navigation';
-import { addToChordLines, numberToNote, noteToNumber, Chord } from '../functions/chords'
+import { addToChordLines, numberToNote, noteToNumber, Chord, LoadChords } from '../functions/chords'
 import Spinner from '../components/Spinner';
 import { getItem } from '../functions/storage'
 import CapoDialog from '../components/CapoDialog'
@@ -19,7 +19,7 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
   const unlike_gray = require('../assets/images/unlike_icon_gray.png')
   const unlike_red = require('../assets/images/unlike_icon_red.png')
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [showChords, setShowChords] = useState(true)
   const [drawer, setDrawner] = useState(drawner_holder)
   const [selectedTone, selectTone] = useState('C');
@@ -27,10 +27,15 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
   const [version, setVersion] = useState(version_sample)
   const [chords_lines, setChordsLines] = useState(chords_lines_sample)
   const [dialog_visible, setDialogVisible] = useState(false);
+  const [chords_positions, setChordsPositions] = useState(new Map<string, any>())
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       setChordsLines(addToChordLines(chords_lines, 0));
+      LoadChords(chords_lines).then((chords_positions) => {
+        setChordsPositions(chords_positions);
+        setLoading(false);
+      })
     })
     return unsubscribe;
   }, [navigation])
@@ -49,7 +54,6 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
 
           <TouchableOpacity
             style={drawner_styles.button}
-            onPress={saveChords}
           >
             <Image
               style={drawner_styles.icon}
@@ -87,16 +91,20 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
                             onPress={() => {
                               setLoading(true);
                               getItem('dict').then((dict_) => {
+
                                 let dict = dict_ || 'sharp'
                                 let delta = idx - noteToNumber(selectedTone)
                                 setChordsLines(addToChordLines(chords_lines, delta, dict));
                                 var chord = new Chord(selectedTone);
                                 chord.add(delta)
                                 selectTone(dict == 'sharp' ? chord.toSharp() : chord.toBemol());
-                                setLoading(false);
-                                drawer.closeDrawer()
+                                LoadChords(chords_lines).then((chords_positions) => {
+                                  setChordsPositions(chords_positions);
+                                  setLoading(false);
+                                  drawer.closeDrawer()
+                                })
                               }).catch((error) => {
-                                Alert.alert(error.title, error.message)
+                                Alert.alert(error.title, error.message);
                                 setLoading(false);
                                 drawer.closeDrawer()
                               })
@@ -183,9 +191,12 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
             let dict = dict_ || 'sharp'
             setChordsLines(addToChordLines(chords_lines, delta, dict));
             selectCapo(value);
-            setLoading(false);
-            setDialogVisible(false);
-            drawer.closeDrawer();
+            LoadChords(chords_lines).then((chords_positions) => {
+              setChordsPositions(chords_positions);
+              setLoading(false);
+              setDialogVisible(false);
+              drawer.closeDrawer();
+            })
           }).catch((error) => {
             Alert.alert(error.title, error.message)
             setLoading(false);
@@ -220,9 +231,11 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
           <View style={styles.chords_container}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {
-                chord_list.map((chord_name, i) => (
-                  <View key={i} style={styles.chord_container}>
+                Array.from(chords_positions.keys()).map((chord_name) => (
+                  <View key={chord_name} style={styles.chord_container}>
                     <GuitarChord
+                      capo={selectedCapo}
+                      chordPosition={chords_positions.get(chord_name)}
                     />
                     <Text style={styles.chord_name}> {chord_name} </Text>
                   </View>
@@ -233,14 +246,14 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
         }
         <TouchableOpacity
           onPress={() => setShowChords(!showChords)}
-          style={{ width: '100%', height: 30 }}
+          style={styles.arrow_container}
         >
           <Image
             style={styles.arrow_icon}
             source={(showChords ? up_arrow : down_arrow)}
           />
         </TouchableOpacity>
-        <View style={[styles.container, { paddingTop: 10 }]}>
+        <View style={styles.container}>
           <ScrollView>
             <View style={styles.header_container}>
               <View style={styles.left}>
@@ -281,9 +294,6 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
   );
 }
 
-function saveChords() {
-  Alert.alert('Save Chords', 'Salvar cifra foi pressionado')
-}
 const tone_lists = [['C', 'C#', 'D', 'D#', 'E', 'F'], ['F#', 'G', 'G#', 'A', 'A#', 'B']]
 
 const chord_list = ['C#m7', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C']
@@ -629,6 +639,12 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     color: '#333333'
   },
+  arrow_container:{
+    width: '100%', 
+    height: 25,
+    borderBottomColor:'#E4E4E4',
+    borderBottomWidth:1,
+  },
   h1: {
     fontFamily: 'roboto-bold',
     fontSize: 18,
@@ -647,6 +663,7 @@ const styles = StyleSheet.create({
   },
   header_container: {
     flexDirection: 'row',
+    paddingTop:10,
   },
   options_button: {
     alignSelf: 'center',

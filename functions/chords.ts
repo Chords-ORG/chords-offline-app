@@ -1,5 +1,6 @@
 import { TouchableWithoutFeedback } from "react-native-gesture-handler"
-
+import { ChordLine } from '../types'
+import { getItemObject, setItemObject } from '../functions/storage'
 var note_dict = new Map()
 var sharp_dict = new Map()
 var bemol_dict = new Map()
@@ -143,17 +144,64 @@ export const addToChordLine = (chord_line: string, value: number, dict: string =
 
 export const addToChordLines = (chord_lines: any, value: number, dict: string = 'sharp') => {
     var ans = chord_lines;
-    console.log('ans', ans)
-    for (let i = 0; i < chord_lines.length; ++i){
+    for (let i = 0; i < chord_lines.length; ++i) {
         ans[i].chord_line = addToChordLine(ans[i].chord_line, value, dict);
     }
     return ans
 }
 
-export const numberToNote = (value:number, dict:string = 'sharp') : string => {
-    return dict == 'bemol' ? bemol_dict.get(value) : sharp_dict.get(value); 
+export const numberToNote = (value: number, dict: string = 'sharp'): string => {
+    return dict == 'bemol' ? bemol_dict.get(value) : sharp_dict.get(value);
 }
-export const noteToNumber = (note:string) : number =>{
+export const noteToNumber = (note: string): number => {
     var chord = new Chord(note)
     return chord.base.base;
+}
+
+export async function LoadChords(chords_lines:ChordLine[]) {
+    var chord_positions = new Map()
+    for (let i = 0; i < chords_lines.length; i++) {
+        var chords = chords_lines[i].chord_line.split(' ')
+        for(let j=0; j<chords.length; ++j){
+            if(chords[j]=='') continue;
+            let chord_name = new Chord(chords[j]).toSharp()
+            if(!chord_positions.has(chord_name)){
+                var chord_position = await getItemObject(`guitar_chord@${chord_name}`)
+                chord_positions.set(chord_name, chord_position)
+            }
+        }
+    }
+    return chord_positions;
+}
+
+const chord_pos = {
+    start_house: 0,
+    fingers: [
+        {
+            house: 1,
+            string: 2,
+            size: 1
+        },
+        {
+            house: 3,
+            string: 4,
+            size: 1
+        },
+        {
+            house: 4,
+            string: 5,
+            size: 1
+        },
+        {
+            house: 0,
+            string: 0,
+            size: 1
+        },
+        {
+            house: 0,
+            string: 0,
+            size: 1
+        },
+    ],
+    strings: ['normal', 'normal', 'normal', 'normal', 'bass', 'none']
 }
