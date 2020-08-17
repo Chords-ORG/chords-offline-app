@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { RootStackParamList, ArtistType, MusicType, VersionType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
-import { get_other_profile, get_artist_musics } from '../functions/requests'
+import { get_other_profile, get_user_versions } from '../functions/requests'
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default function ProfileScreen({ navigation, route }: StackScreenProps<RootStackParamList, 'ProfileScreen'>) {
@@ -20,14 +20,20 @@ export default function ProfileScreen({ navigation, route }: StackScreenProps<Ro
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       setLoading(true);
-      get_other_profile(route.params.username).then((profile)=>{
+      get_other_profile(route.params.username).then((profile) => {
         setProfile(profile);
         setLoading(false);
       }).catch(error => {
         setLoading(false);
         Alert.alert(error.title, error.message)
       })
-      
+      get_user_versions(route.params.username).then((versions) => {
+        setVersions(versions);
+        setLoading(false);
+      }).catch(error => {
+        setLoading(false);
+        Alert.alert(error.title, error.message)
+      })
     })
     return unsubscribe;
   }, [navigation])
@@ -75,15 +81,30 @@ export default function ProfileScreen({ navigation, route }: StackScreenProps<Ro
                 {
                   versions.map((version: VersionType, i) => {
                     return (
-                      <TouchableOpacity style={styles.card} key={i}>
+                      <TouchableOpacity
+                        style={styles.card} key={i}
+                        onPress={() => {
+                          navigation.navigate('ChordScreen', { chord_id: version.id })
+                        }}
+                      >
                         <View style={styles.left}>
+                          <Text style={styles.card_h1}>{version.music.name}</Text>
+                          <Text style={styles.card_h2}>{version.name}</Text>
                         </View>
                         <View style={styles.right}>
                           <View style={styles.like_container}>
                             <Image
                               style={styles.like_icon}
+                              source={require('../assets/images/like_icon_green.png')}
                             />
                             <Text style={styles.like_text}>{version.likes}</Text>
+                          </View>
+                          <View style={styles.like_container}>
+                            <Image
+                              style={styles.like_icon}
+                              source={require('../assets/images/unlike_icon_red.png')}
+                            />
+                            <Text style={[styles.like_text, { color: '#EB5757' }]}>{version.likes}</Text>
                           </View>
                         </View>
                       </TouchableOpacity>
@@ -170,34 +191,43 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: '#F2F2F2',
     width: '100%',
-    height: 50,
+    height: 60,
     borderRadius: 5,
-    justifyContent: 'center',
+    alignItems: 'center',
     padding: 10,
     marginTop: 10,
+    flexDirection: 'row',
   },
   card_h1: {
     color: '#333333',
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: 'roboto-bold',
   },
-  left:{
-
+  card_h2: {
+    color: '#828282',
+    fontSize: 12,
+    fontFamily: 'roboto',
   },
-  right:{
-    
+  left: {
+    flex: 3,
   },
-  like_container:{
-
+  right: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
   },
-  like_icon:{
-    height:25,
-    width:25,
+  like_container: {
+    justifyContent: 'center'
   },
-  like_text:{
-    color:'#6FCF97',
-    fontFamily:'roboto',
-    fontSize:10
+  like_icon: {
+    height: 25,
+    width: 25,
+  },
+  like_text: {
+    color: '#6FCF97',
+    fontFamily: 'roboto-bold',
+    fontSize: 12,
+    textAlign: 'center'
   }
 });
 

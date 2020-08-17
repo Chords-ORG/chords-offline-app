@@ -102,3 +102,9 @@ export async function get_other_profile(username: string) {
     const response = await post(url, data);
     return response;
 }
+export async function get_user_versions(username: string) {
+    let data = { username: username }
+    let url = `${API_URL}/version/get_user_versions/`
+    const response = await post(url, data);
+    return response;
+}

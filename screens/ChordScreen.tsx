@@ -316,7 +316,7 @@ const version_sample = {
   author: {
     name: 'Gustavo',
     user: {
-      username: 'f'
+      username: 'lyrics'
     }
   },
   music: {

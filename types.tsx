@@ -42,6 +42,7 @@ export type MusicType = {
   name:string,
 }
 export type VersionType = {
+  name:string,
   id:number,
   likes:number,
   unlikes:number,
