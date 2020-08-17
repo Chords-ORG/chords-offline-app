@@ -20,19 +20,19 @@ export default function ArtistScreen({ navigation, route }: StackScreenProps<Roo
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       setLoading(true);
-      try {
-        get_artist(route.params.artist_id).then((artist) => {
-          setArtist(artist);
-        })
-        get_artist_musics(route.params.artist_id).then((musics) => {
-          setMusics(musics);
-          setLoading(false);
-        })
-      }
-      catch (error) {
+      get_artist(route.params.artist_id).then((artist) => {
+        setArtist(artist);
+      }).catch(error => {
         setLoading(false);
-        Alert.alert(error.title, error.message);
-      }
+        Alert.alert(error.title, error.message)
+      })
+      get_artist_musics(route.params.artist_id).then((musics) => {
+        setMusics(musics);
+        setLoading(false);
+      }).catch(error => {
+        setLoading(false);
+        Alert.alert(error.title, error.message)
+      })
     })
     return unsubscribe;
   }, [navigation])
@@ -135,8 +135,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'roboto-bold',
   },
-  h3:{
-    color:'#828282',
+  h3: {
+    color: '#828282',
     fontSize: 12,
     fontFamily: 'roboto',
   },

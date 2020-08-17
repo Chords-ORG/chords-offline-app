@@ -138,12 +138,22 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
             <View style={drawner_styles.separator} />
           </View>
 
-          <TouchableOpacity style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}>
+          <TouchableOpacity
+            style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}
+            onPress={() => {
+              navigation.navigate('ArtistScreen', { artist_id: version.music.artist.id })
+            }}
+          >
             <Text style={drawner_styles.button_text} > Artista </Text>
             <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} >{version.music.artist.name}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}>
+          <TouchableOpacity
+            style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}
+            onPress={() => {
+              navigation.navigate('ProfileScreen', { username: version.author.user.username })
+            }}
+          >
             <Text style={drawner_styles.button_text} > Autor da cifra </Text>
             <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} > {`@${version.author.user.username}`} </Text>
           </TouchableOpacity>
@@ -306,13 +316,14 @@ const version_sample = {
   author: {
     name: 'Gustavo',
     user: {
-      username: 'gustavolima00'
+      username: 'f'
     }
   },
   music: {
     name: 'Party Favor',
     artist: {
-      name: 'Billie Eilish'
+      id: 4,
+      name: 'Billie Eilish',
     }
   }
 }

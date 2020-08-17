@@ -82,17 +82,23 @@ export async function get_top_artists() {
     return response;
 }
 
-export async function get_artist(artist_id:number){
+export async function get_artist(artist_id: number) {
     var device_id = Constants.sessionId;
-    let data = {device_id:device_id, artist_id:artist_id}
+    let data = { device_id: device_id, artist_id: artist_id }
     let url = `${API_URL}/artist/get/`
     const response = await post(url, data);
     return response;
 }
 
-export async function get_artist_musics(artist_id:number){
-    let data = { artist_id:artist_id}
+export async function get_artist_musics(artist_id: number) {
+    let data = { artist_id: artist_id }
     let url = `${API_URL}/music/artist_musics/`
+    const response = await post(url, data);
+    return response;
+}
+export async function get_other_profile(username: string) {
+    let data = { username: username }
+    let url = `${API_URL}/profile/get/`
     const response = await post(url, data);
     return response;
 }
