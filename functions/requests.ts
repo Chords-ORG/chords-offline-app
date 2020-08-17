@@ -1,6 +1,9 @@
 import { API_URL } from '../constants/LocalConstants'
 import axios from 'axios'
 import { setItem, getItem } from './storage'
+import Constants from 'expo-constants';
+
+
 var dict = new Map()
 dict.set('password', 'Senha')
 dict.set('non_field_errors', 'Erro')
@@ -68,6 +71,28 @@ export async function set_profile(name: string, photo_url: string) {
 export async function get_top_versions() {
     let data = { list_size: TOP_LIST_SIZE }
     let url = `${API_URL}/version/top/`
+    const response = await post(url, data);
+    return response;
+}
+
+export async function get_top_artists() {
+    let data = { list_size: TOP_LIST_SIZE }
+    let url = `${API_URL}/artist/top/`
+    const response = await post(url, data);
+    return response;
+}
+
+export async function get_artist(artist_id:number){
+    var device_id = Constants.sessionId;
+    let data = {device_id:device_id, artist_id:artist_id}
+    let url = `${API_URL}/artist/get/`
+    const response = await post(url, data);
+    return response;
+}
+
+export async function get_artist_musics(artist_id:number){
+    let data = { artist_id:artist_id}
+    let url = `${API_URL}/music/artist_musics/`
     const response = await post(url, data);
     return response;
 }

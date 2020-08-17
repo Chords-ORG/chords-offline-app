@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
-import { RootStackParamList, VersionType } from '../types';
+import { RootStackParamList, VersionType, ArtistType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { get_top_versions } from '../functions/requests'
+import { get_top_versions, get_top_artists } from '../functions/requests'
 
 export default function HomeScreen({ navigation, route }: StackScreenProps<RootStackParamList>) {
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      setLoading(true);
+      setVersionsLoading(true); setArtistsLoading(true);
       get_top_versions().then((versions) => {
-        console.log(versions)
-        setLoading(false);
+        setVersionsLoading(false);
         setTopVersions(versions)
       }).catch(error => {
-        setLoading(false);
+        setVersionsLoading(false);
+        console.log(error)
+      })
+      get_top_artists().then((artists) => {
+        setArtistsLoading(false);
+        setTopArtists(artists)
+      }).catch(error => {
+        setArtistsLoading(false);
         console.log(error)
       })
     });
@@ -22,7 +28,8 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
   }, [navigation]);
   const [top_versions, setTopVersions] = useState([])
   const [top_artists, setTopArtists] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [versions_loading, setVersionsLoading] = useState(false)
+  const [artists_loading, setArtistsLoading] = useState(false)
 
   return (
     <View style={[styles.container, { width: '100%', height: '100%', padding: 15 }]}>
@@ -43,12 +50,12 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
               >
                 <View style={styles.left}>
                   <Text style={styles.card_h1}> {version.music.name} </Text>
-                  <Text style={styles.card_h2}> {version.music.artist.name} </Text>
+                  <Text style={styles.card_h3}> {version.music.artist.name} </Text>
                 </View>
-                <View style={styles.vertical_separator}/>
+                <View style={styles.vertical_separator} />
                 <View style={styles.right}>
                   <Text style={styles.card_h1}>{'version.name'}</Text>
-                  <Text style={styles.card_h3}> Escrita por <Text style={{ color: '#2F80ED' }}>{`@${version.author.user.username}`}</Text> </Text>
+                  <Text style={styles.card_h3}><Text style={{color:'#828282'}}> Escrita por </Text> {`@${version.author.user.username}`}</Text> 
                 </View>
               </TouchableOpacity>
             );
@@ -61,11 +68,14 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
         </View>
 
         {
-          top_artists.map((artist, i) => {
+          top_artists.map((artist: ArtistType, i) => {
             return (
               <TouchableOpacity
                 key={i}
                 style={styles.artist_card}
+                onPress={() => {
+                  navigation.push('ArtistScreen', { artist_id: artist.id })
+                }}
               >
                 <Text style={styles.card_h1}> {artist.name} </Text>
               </TouchableOpacity>
@@ -100,12 +110,12 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
   },
-  vertical_separator:{
-    height:'100%',
-    borderLeftColor:'#E4E4E4',
-    borderLeftWidth:1,
-    marginRight:10,
-    marginLeft:10
+  vertical_separator: {
+    height: '100%',
+    borderLeftColor: '#E4E4E4',
+    borderLeftWidth: 1,
+    marginRight: 10,
+    marginLeft: 10
   },
   left: {
     flex: 1
@@ -126,7 +136,7 @@ const styles = StyleSheet.create({
   card_h3: {
     fontSize: 12,
     fontFamily: 'roboto',
-    color: '#828282'
+    color: '#2F80ED'
   },
   like_container: {
     alignItems: 'center'
