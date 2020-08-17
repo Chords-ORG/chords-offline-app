@@ -19,22 +19,23 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
   const unlike_gray = require('../assets/images/unlike_icon_gray.png')
   const unlike_red = require('../assets/images/unlike_icon_red.png')
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [showChords, setShowChords] = useState(true)
   const [drawer, setDrawner] = useState(drawner_holder)
   const [selectedTone, selectTone] = useState('C');
   const [selectedCapo, selectCapo] = useState(0);
   const [version, setVersion] = useState(version_sample)
-  const [chords_lines, setChordsLines] = useState(chords_lines_sample)
+  const [chords_lines, setChordsLines] = useState([])
   const [dialog_visible, setDialogVisible] = useState(false);
   const [chords_positions, setChordsPositions] = useState(new Map<string, any>())
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
+      var chords_lines = JSON.parse(JSON.stringify(chords_lines_sample));
+      console.log('chords_lines', chords_lines)
       setChordsLines(addToChordLines(chords_lines, 0));
       LoadChords(chords_lines).then((chords_positions) => {
         setChordsPositions(chords_positions);
-        setLoading(false);
       })
     })
     return unsubscribe;
@@ -639,11 +640,11 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     color: '#333333'
   },
-  arrow_container:{
-    width: '100%', 
+  arrow_container: {
+    width: '100%',
     height: 25,
-    borderBottomColor:'#E4E4E4',
-    borderBottomWidth:1,
+    borderBottomColor: '#E4E4E4',
+    borderBottomWidth: 1,
   },
   h1: {
     fontFamily: 'roboto-bold',
@@ -663,7 +664,7 @@ const styles = StyleSheet.create({
   },
   header_container: {
     flexDirection: 'row',
-    paddingTop:10,
+    paddingTop: 10,
   },
   options_button: {
     alignSelf: 'center',

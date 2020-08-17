@@ -13,7 +13,7 @@ export default function profileHeader({ route, navigation }: StackScreenProps<Pr
     const [username, setUsername] = useState('')
     const [logged, setLogged] = useState(true)
     const [loading, setLoading] = useState(true)
-    const [photo_url, setPhotoUrl] = useState('')
+    const [photo_url, setPhotoUrl] = useState('https://res.cloudinary.com/gustavolima00/image/upload/v1597320189/avatar_1.png')
 
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {

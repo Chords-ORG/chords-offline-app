@@ -6,6 +6,8 @@ import NotFoundScreen from '../screens/SampleScreen';
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import ChordScreen from '../screens/ChordScreen'
+import ProfileScreen from '../screens/ProfileScreen'
+import ArtistScreen from '../screens/ArtistScreen'
 
 export default function Navigation() {
   return (
@@ -23,6 +25,8 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="ChordScreen" component={ChordScreen} />
+      <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+      <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
     </Stack.Navigator>
   );
 }

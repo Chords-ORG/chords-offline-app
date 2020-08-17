@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
-import { RootStackParamList } from '../types';
+import { RootStackParamList, VersionType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
+import { get_top_versions } from '../functions/requests'
 
 export default function HomeScreen({ navigation, route }: StackScreenProps<RootStackParamList>) {
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      setLoading(true);
+      get_top_versions().then((versions) => {
+        console.log(versions)
+        setLoading(false);
+        setTopVersions(versions)
+      }).catch(error => {
+        setLoading(false);
+        console.log(error)
+      })
+    });
+    return unsubscribe;
+  }, [navigation]);
+  const [top_versions, setTopVersions] = useState([])
+  const [top_artists, setTopArtists] = useState([])
+  const [loading, setLoading] = useState(false)
+
   return (
     <View style={[styles.container, { width: '100%', height: '100%', padding: 15 }]}>
       <ScrollView>
@@ -14,35 +32,23 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
           <View style={styles.separator} />
         </View>
         {
-          hilight_chords.map((chord, i) => {
+          top_versions.map((version: VersionType, i) => {
             return (
               <TouchableOpacity
                 key={i}
                 style={styles.chord_card}
                 onPress={() => {
-                  navigation.navigate('ChordScreen', { chord_id: chord.id })
+                  navigation.navigate('ChordScreen', { chord_id: version.id })
                 }}
               >
                 <View style={styles.left}>
-                  <Text style={styles.card_h1}> {chord.music.name} </Text>
-                  <Text style={styles.card_h2}> {chord.music.author.name} </Text>
-                  <Text style={styles.card_h3}> Cifra escrita por <Text style={{ color: '#2F80ED' }}>{`@${chord.author.username}`}</Text> </Text>
+                  <Text style={styles.card_h1}> {version.music.name} </Text>
+                  <Text style={styles.card_h2}> {version.music.artist.name} </Text>
                 </View>
+                <View style={styles.vertical_separator}/>
                 <View style={styles.right}>
-                  <View style={styles.like_container}>
-                    <Image
-                      style={styles.icon}
-                      source={require('../assets/images/like_icon_green.png')}
-                    />
-                    <Text style={styles.like_text}>{chord.likes}</Text>
-                  </View>
-                  <View style={styles.like_container}>
-                    <Image
-                      style={styles.icon}
-                      source={require('../assets/images/unlike_icon_red.png')}
-                    />
-                    <Text style={styles.unlike_text}>{chord.unlikes}</Text>
-                  </View>
+                  <Text style={styles.card_h1}>{'version.name'}</Text>
+                  <Text style={styles.card_h3}> Escrita por <Text style={{ color: '#2F80ED' }}>{`@${version.author.user.username}`}</Text> </Text>
                 </View>
               </TouchableOpacity>
             );
@@ -55,9 +61,12 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
         </View>
 
         {
-          hilight_artists.map((artist, i) => {
+          top_artists.map((artist, i) => {
             return (
-              <TouchableOpacity key={i} style={styles.artist_card}>
+              <TouchableOpacity
+                key={i}
+                style={styles.artist_card}
+              >
                 <Text style={styles.card_h1}> {artist.name} </Text>
               </TouchableOpacity>
             );
@@ -91,13 +100,18 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
   },
+  vertical_separator:{
+    height:'100%',
+    borderLeftColor:'#E4E4E4',
+    borderLeftWidth:1,
+    marginRight:10,
+    marginLeft:10
+  },
   left: {
-    flex: 3
+    flex: 1
   },
   right: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around'
   },
   card_h1: {
     fontSize: 14,

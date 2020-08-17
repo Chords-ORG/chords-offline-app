@@ -9,6 +9,7 @@ dict.set('email', 'Email')
 dict.set('password1', 'Senha')
 dict.set('password2', 'Senha')
 
+const TOP_LIST_SIZE = 10
 
 function translate(word: string) {
     if (dict.has(word))
@@ -56,10 +57,17 @@ export async function get_profile() {
     return response;
 }
 
-export async function set_profile(name:string, photo_url:string){
+export async function set_profile(name: string, photo_url: string) {
     const token = await getItem('token')
     let data = { token: token, name: name, photo_url: photo_url }
     let url = `${API_URL}/profile/set/`;
+    const response = await post(url, data);
+    return response;
+}
+
+export async function get_top_versions() {
+    let data = { list_size: TOP_LIST_SIZE }
+    let url = `${API_URL}/version/top/`
     const response = await post(url, data);
     return response;
 }

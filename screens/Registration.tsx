@@ -30,6 +30,7 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
             style={{ flex: 1 }}
             placeholder="Username"
             onChangeText={(text) => setUsername(text)}
+            autoCapitalize={"none"}
           />
         </View>
 
@@ -42,6 +43,7 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
             style={{ flex: 1 }}
             placeholder="Email"
             onChangeText={(text) => setEmail(text)}
+            autoCapitalize={"none"}
           />
         </View>
 
@@ -54,6 +56,7 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
             style={{ flex: 1 }}
             placeholder="Senha"
             onChangeText={(text) => setPassword(text)}
+            autoCapitalize={"none"}
             secureTextEntry
           />
         </View>
@@ -67,7 +70,6 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
             style={{ flex: 1 }}
             placeholder="Nome"
             onChangeText={(text) => setName(text)}
-            secureTextEntry
           />
         </View>
       </View>

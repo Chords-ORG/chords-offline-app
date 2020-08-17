@@ -14,7 +14,7 @@ import PickIconScreen from '../screens/PickIconScreen'
 import EditProfile from '../screens/EditProfile'
 import MyChords from '../screens/MyChords'
 import MyLists from '../screens/MyLists'
-
+import MoreOptions from '../screens/MoreOptions'
 
 const Stack = createStackNavigator<ProfileStackParamList>();
 
@@ -114,7 +114,7 @@ function ProfileTabs() {
             />
             <Tab.Screen
                 name="MoreOptions"
-                component={SampleScreen}
+                component={MoreOptions}
                 options={{
                     tabBarLabel: ({ focused }) => moreIcon(focused)
                 }}

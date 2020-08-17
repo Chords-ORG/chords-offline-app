@@ -5,6 +5,8 @@ export type defaultDict = {
 export type RootStackParamList = {
   Root: undefined;
   ChordScreen:{ chord_id: number },
+  ProfileScreen:{ profile_id:number },
+  ArtistScreen:{ artist_id:number }
 };
 
 export type BottomTabParamList = {
@@ -17,7 +19,39 @@ export type BottomTabParamList = {
 export type SpinnerPropsType = {
   visible:boolean;
 }
-
+export type UserType = {
+  username:string,
+  email?:string,
+  is_staff?:boolean,
+  is_superuser?:boolean,
+}
+export type ProfileType = {
+  name:string,
+  photo_url:string,
+  user:UserType,
+}
+export type ArtistType = {
+  id:number,
+  name:string,
+  total_visits:number,
+  season_visits:number,
+}
+export type MusicType = {
+  artist:ArtistType,
+  id:number,
+  name:string,
+}
+export type VersionType = {
+  id:number,
+  likes:number,
+  unlikes:number,
+  season_visits:number,
+  total_visits:number,
+  view_mode:string,
+  author:ProfileType,
+  music:MusicType
+  
+}
 export type MusicLine = {
   //id:number,
   line:string

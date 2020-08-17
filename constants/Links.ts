@@ -1,5 +1,5 @@
 export const avatar_lists = [
-    ['https://res.cloudinary.com/gustavolima00/image/upload/v1597320189/avatar_1.png',
+    [   'https://res.cloudinary.com/gustavolima00/image/upload/v1597320189/avatar_1.png',
         'https://res.cloudinary.com/gustavolima00/image/upload/v1597320189/avatar_2.png',
         'https://res.cloudinary.com/gustavolima00/image/upload/v1597320189/avatar_3.png',
         'https://res.cloudinary.com/gustavolima00/image/upload/v1597320189/avatar_4.png',
