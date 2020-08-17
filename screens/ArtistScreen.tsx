@@ -10,12 +10,12 @@ import {
   FlatList,
   SafeAreaView
 } from 'react-native';
-import { RootStackParamList, ArtistType, MusicType } from '../types';
+import { RootStackParamList, ArtistType, MusicType, SearchStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { get_artist, get_artist_musics } from '../functions/requests'
 import { ScrollView } from 'react-native-gesture-handler';
 
-export default function ArtistScreen({ navigation, route }: StackScreenProps<RootStackParamList, 'ArtistScreen'>) {
+export default function ArtistScreen({ navigation, route }: StackScreenProps<SearchStackParamList>) {
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -73,7 +73,13 @@ export default function ArtistScreen({ navigation, route }: StackScreenProps<Roo
                 {
                   musics.map((music: MusicType, i) => {
                     return (
-                      <TouchableOpacity style={styles.card} key={i}>
+                      <TouchableOpacity
+                        style={styles.card}
+                        key={i}
+                        onPress={() => {
+                          navigation.navigate('ChoseVersion', { music_id: music.id })
+                        }}
+                      >
                         <Text style={styles.card_h1}>{music.name}</Text>
                       </TouchableOpacity>
                     )

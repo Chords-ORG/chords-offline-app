@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image, Alert, Animated } from 'react-native';
-import { RootStackParamList } from '../types';
+import { RootStackParamList, ChordLineType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Drawer from 'react-native-drawer-menu';
 import { Easing } from 'react-native';
@@ -10,8 +10,8 @@ import Spinner from '../components/Spinner';
 import { getItem } from '../functions/storage'
 import CapoDialog from '../components/CapoDialog'
 import GuitarChord from '../components/GuitarChord'
-
-export default function ChordScreen({ navigation }: StackScreenProps<RootStackParamList, 'ChordScreen'>) {
+import { get_chords_lines, get_version } from '../functions/requests'
+export default function ChordScreen({ navigation, route }: StackScreenProps<RootStackParamList, 'ChordScreen'>) {
   const up_arrow = require('../assets/images/up_arrow.png');
   const down_arrow = require('../assets/images/down_arrow.png');
   const like_gray = require('../assets/images/like_icon_gray.png')
@@ -31,11 +31,21 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      var chords_lines = JSON.parse(JSON.stringify(chords_lines_sample));
-      console.log('chords_lines', chords_lines)
-      setChordsLines(addToChordLines(chords_lines, 0));
-      LoadChords(chords_lines).then((chords_positions) => {
-        setChordsPositions(chords_positions);
+      setLoading(true);
+      get_version(route.params.chord_id).then(version => {
+        setVersion(version);
+        setLoading(false);
+      }).catch(error => {
+        Alert.alert(error.title, error.message);
+      })
+      get_chords_lines(route.params.chord_id).then(chords_lines => {
+        setChordsLines(chords_lines);
+        LoadChords(chords_lines).then((chords_positions) => {
+          setChordsPositions(chords_positions);
+        })
+        setLoading(false);
+      }).catch(error => {
+        Alert.alert(error.title, error.message);
       })
     })
     return unsubscribe;
@@ -290,9 +300,9 @@ export default function ChordScreen({ navigation }: StackScreenProps<RootStackPa
             </View>
             <View>
               {
-                chords_lines.map((chord_line, i) => (
+                chords_lines.map((chord_line: ChordLineType, i) => (
                   <View key={i}>
-                    <Text style={styles.chord_font}>{chord_line.chord_line}</Text>
+                    <Text style={styles.chord_font}>{chord_line.chords_line}</Text>
                     <Text style={styles.lyric_font}>{chord_line.music_line.line}</Text>
                   </View>
                 ))

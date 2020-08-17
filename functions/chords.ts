@@ -1,5 +1,5 @@
 import { TouchableWithoutFeedback } from "react-native-gesture-handler"
-import { ChordLine } from '../types'
+import { ChordLineType } from '../types'
 import { getItemObject, setItemObject } from '../functions/storage'
 var note_dict = new Map()
 var sharp_dict = new Map()
@@ -158,10 +158,11 @@ export const noteToNumber = (note: string): number => {
     return chord.base.base;
 }
 
-export async function LoadChords(chords_lines:ChordLine[]) {
+export async function LoadChords(chords_lines:ChordLineType[]) {
     var chord_positions = new Map()
     for (let i = 0; i < chords_lines.length; i++) {
-        var chords = chords_lines[i].chord_line.split(' ')
+        console.log(chords_lines[i].chords_line)
+        var chords = chords_lines[i].chords_line.split(' ')
         for(let j=0; j<chords.length; ++j){
             if(chords[j]=='') continue;
             let chord_name = new Chord(chords[j]).toSharp()

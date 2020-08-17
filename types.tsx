@@ -53,14 +53,14 @@ export type VersionType = {
   music:MusicType
   
 }
-export type MusicLine = {
+export type MusicLineType = {
   //id:number,
   line:string
 }
-export type ChordLine = {
+export type ChordLineType = {
   //id:number
-  chord_line:string,
-  music_line:MusicLine,
+  chords_line:string,
+  music_line:MusicLineType,
 }
 
 export type GuitarFinger = {

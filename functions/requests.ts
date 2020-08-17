@@ -126,3 +126,16 @@ export async function get_lyrics(music_id:number){
     const response = await post(url, data);
     return response;
 }
+export async function get_chords_lines(version_id:number){
+    var device_id = Constants.sessionId;
+    let data = { version_id: version_id, device_id:device_id }
+    let url = `${API_URL}/version/get_chords/`
+    const response = await post(url, data);
+    return response;
+}
+export async function get_version(version_id:number){
+    let data = { version_id: version_id }
+    let url = `${API_URL}/version/get/`
+    const response = await post(url, data);
+    return response;
+}
