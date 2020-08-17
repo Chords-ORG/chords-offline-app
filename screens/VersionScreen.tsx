@@ -1,57 +1,86 @@
-import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
-import { RootStackParamList } from '../types';
+import React, { useState, useEffect, version } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View, Image, ActivityIndicator, Alert } from 'react-native';
+import { RootStackParamList, VersionType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { ScrollView } from 'react-native-gesture-handler';
+import { get_lyrics, get_music_versions } from '../functions/requests'
 
-// 
-export default function VersionScreen({ navigation }: StackScreenProps<RootStackParamList>) {
+
+export default function VersionScreen({ navigation, route }: StackScreenProps<RootStackParamList>) {
+  const [loading, setLoading] = useState(false);
+  const [versions, setVersions] = useState([]);
+  const [lyrics, setLyrics] = useState(null);
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      setLoading(true);
+      get_music_versions(route.params.music_id).then(versions => {
+        setLoading(false);
+        setVersions(versions);
+      }).catch(error => {
+        Alert.alert(error.title, error.message);
+      })
+      get_lyrics(route.params.music_id).then(lyrics => {
+        setLyrics(lyrics)
+      }).catch(error => {
+        setLyrics(null);
+      })
+    })
+    return unsubscribe;
+  }, [navigation])
   return (
     <View style={[styles.container, { width: '100%', height: '100%', padding: 15 }]}>
-      <ScrollView>
-        <TouchableOpacity 
-          style={styles.card}
-          
-        >
-          <Image
-            style={styles.icon_30}
-            source={require('../assets/images/paper_icon.png')}
-          />
-          <Text style={styles.card_h1}> Apenas a Letra </Text>
-        </TouchableOpacity>
-        {
-          chords_versions.map((version, i) => {
-            return (
-              <TouchableOpacity
-                key={i}
-                style={styles.card}
-                onPress={() => navigation.navigate('ChordScreen', { chord_id: version.id })}
-              >
-                <View style={styles.left}>
-                  <Text style={styles.card_h1}>{version.name}</Text>
-                  <Text style={styles.card_h2}> Escrito por <Text style={{ color: '#2F80ED' }}>{`@${version.author.username}`}</Text></Text>
-                </View>
-                <View style={styles.right}>
-                  <View style={styles.like_container}>
-                    <Image
-                      style={styles.icon_25}
-                      source={require('../assets/images/like_icon_green.png')}
-                    />
-                    <Text style={styles.like_text}>{version.likes}</Text>
-                  </View>
-                  <View style={styles.like_container}>
-                    <Image
-                      style={styles.icon_25}
-                      source={require('../assets/images/unlike_icon_red.png')}
-                    />
-                    <Text style={styles.unlike_text}>{version.unlikes}</Text>
-                  </View>
-                </View>
-              </TouchableOpacity>
-            )
-          })
-        }
-      </ScrollView>
+      {
+        loading ? <ActivityIndicator /> :
+          <ScrollView>
+            {
+              lyrics==null ? null :
+                <TouchableOpacity
+                  style={styles.card}
+                  onPress={()=>{
+                    navigation.navigate('ChordScreen', { chord_id: lyrics.id })
+                  }}
+                >
+                  <Image
+                    style={styles.icon_30}
+                    source={require('../assets/images/paper_icon.png')}
+                  />
+                  <Text style={styles.card_h1}> Apenas a Letra </Text>
+                </TouchableOpacity>
+            }
+            {
+              versions.map((version: VersionType, i) => {
+                return (
+                  <TouchableOpacity
+                    key={i}
+                    style={styles.card}
+                    onPress={() => navigation.navigate('ChordScreen', { chord_id: version.id })}
+                  >
+                    <View style={styles.left}>
+                      <Text style={styles.card_h1}>{version.name}</Text>
+                      <Text style={styles.card_h2}> Escrito por <Text style={{ color: '#2F80ED' }}>{`@${version.author.user.username}`}</Text></Text>
+                    </View>
+                    <View style={styles.right}>
+                      <View style={styles.like_container}>
+                        <Image
+                          style={styles.icon_25}
+                          source={require('../assets/images/like_icon_green.png')}
+                        />
+                        <Text style={styles.like_text}>{version.likes}</Text>
+                      </View>
+                      <View style={styles.like_container}>
+                        <Image
+                          style={styles.icon_25}
+                          source={require('../assets/images/unlike_icon_red.png')}
+                        />
+                        <Text style={styles.unlike_text}>{version.unlikes}</Text>
+                      </View>
+                    </View>
+                  </TouchableOpacity>
+                )
+              })
+            }
+          </ScrollView>
+      }
     </View>
   );
 }
@@ -111,24 +140,3 @@ const styles = StyleSheet.create({
     color: '#EB5757'
   }
 });
-
-const chords_versions = [
-  {
-    id: 1,
-    name: 'Original',
-    author: {
-      username: 'fulano'
-    },
-    likes: 255,
-    unlikes: 12,
-  },
-  {
-    id: 2,
-    name: 'Simplificada',
-    author: {
-      username: 'gustavolima00'
-    },
-    likes: 12,
-    unlikes: 1,
-  },
-]

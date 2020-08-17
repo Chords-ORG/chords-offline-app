@@ -114,3 +114,15 @@ export async function search_music(search:string) {
     const response = await post(url, data);
     return response;
 }
+export async function get_music_versions(music_id:number){
+    let data = { music_id: music_id }
+    let url = `${API_URL}/version/get_music_versions/`
+    const response = await post(url, data);
+    return response;
+}
+export async function get_lyrics(music_id:number){
+    let data = { music_id: music_id }
+    let url = `${API_URL}/version/get_lyrics/`
+    const response = await post(url, data);
+    return response;
+}
