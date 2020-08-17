@@ -108,3 +108,9 @@ export async function get_user_versions(username: string) {
     const response = await post(url, data);
     return response;
 }
+export async function search_music(search:string) {
+    let data = { search: search }
+    let url = `${API_URL}/music/filter/`
+    const response = await post(url, data);
+    return response;
+}

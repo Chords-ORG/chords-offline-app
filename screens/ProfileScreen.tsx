@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
 
 const sample_profile = {
   name: "",
-  photo_url: "",
+  photo_url: "https://res.cloudinary.com/gustavolima00/image/upload/v1597672174/app_logo.png",
   user: {
     username: "",
     email: "",

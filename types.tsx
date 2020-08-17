@@ -91,7 +91,7 @@ export type HomeStackParamList = {
 
 export type SearchStackParamList = {
   Search: undefined;
-  ChoseVersion: { music_id: string };
+  ChoseVersion: { music_id: number };
   ProfileView: undefined;
   ArtistScreen: undefined;
 }

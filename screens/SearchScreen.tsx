@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
-import { SearchStackParamList } from '../types';
+import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
+import { SearchStackParamList, MusicType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { ScrollView } from 'react-native-gesture-handler';
-
+import { search_music } from '../functions/requests'
 export default function SearchScreen({ navigation }: StackScreenProps<SearchStackParamList, 'Search'>) {
-  const [searchText, setSeachText] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [music_results, setMusics] = useState([])
   return (
     <View style={[styles.container, { width: '100%', height: '100%' }]}>
       <View style={styles.header}>
@@ -15,27 +16,37 @@ export default function SearchScreen({ navigation }: StackScreenProps<SearchStac
         />
         <TextInput
           style={styles.text_input}
-          onChangeText={text => setSeachText(text)}
+          onChangeText={(text) => {
+            setLoading(true);
+            search_music(text).then(results => {
+              setLoading(false);
+              setMusics(results);
+            }).catch(error => {
+              setLoading(false);
+              Alert.alert(error.title, error.message)
+            })
+          }}
           placeholder="Buscar"
           maxLength={40}
         />
       </View>
       <ScrollView style={[styles.container, { padding: 15 }]}>
         {
-          music_results.map((music, i) => {
-            return (
-              <TouchableOpacity 
-                style={styles.card} 
-                key={i}
-                onPress={ () => navigation.push('ChoseVersion', { music_id:music.id })}
-              >
-                <Text style={styles.card_h1}>{music.name}</Text>
-                <Text style={styles.card_h2}>{music.author.name}</Text>
-              </TouchableOpacity>
-            );
-          })
+          loading ? <ActivityIndicator /> :
+            music_results.map((music: MusicType, i) => {
+              return (
+                <TouchableOpacity
+                  style={styles.card}
+                  key={i}
+                  onPress={() => navigation.push('ChoseVersion', { music_id: music.id })}
+                >
+                  <Text style={styles.card_h1}>{music.name}</Text>
+                  <Text style={styles.card_h2}>{music.artist.name}</Text>
+                </TouchableOpacity>
+              );
+            })
         }
-        <View style={{height:30}}/>
+        <View style={{ height: 30 }} />
       </ScrollView>
     </View>
   );
@@ -68,18 +79,18 @@ const styles = StyleSheet.create({
   text_input: {
   },
   card: {
-    height:60,
-    borderRadius:5,
-    backgroundColor:'#F2F2F2',
-    justifyContent:'center',
-    padding:10,
-    marginTop:10,
+    height: 60,
+    borderRadius: 5,
+    backgroundColor: '#F2F2F2',
+    justifyContent: 'center',
+    padding: 10,
+    marginTop: 10,
   },
   card_h1: {
     fontSize: 14,
     fontFamily: 'roboto-bold',
     color: '#333333',
-    
+
   },
   card_h2: {
     fontSize: 12,
@@ -87,104 +98,3 @@ const styles = StyleSheet.create({
     color: '#828282'
   },
 });
-
-const music_results = [
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  },
-  {
-    id:'1',
-    name: 'Creio que tu és a cura',
-    author: {
-      name: 'Gabriela rocha'
-    }
-  }
-]
