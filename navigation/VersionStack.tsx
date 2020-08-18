@@ -20,7 +20,7 @@ export default function VersionStack() {
             <Stack.Screen
                 name="FindMusic"
                 component={FindMusic}
-                options={{ headerTitle: 'FindMusic' }}
+                options={{ headerTitle: 'Localize a música' }}
             />
             <Stack.Screen
                 name="WriteChords"

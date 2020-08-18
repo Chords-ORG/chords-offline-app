@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   text_input: {
+    flex:1,
   },
   card: {
     height: 60,
