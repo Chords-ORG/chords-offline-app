@@ -160,3 +160,9 @@ export async function get_rate_version(version_id:number){
     const response = await post(url, data);
     return response;
 }
+export async function get_music(music_id:number){
+    let data = { music_id: music_id }
+    let url = `${API_URL}/music/get/`
+    const response = await post(url, data);
+    return response;
+}

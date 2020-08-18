@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image, TextInput, Alert, ActivityIndicator, ScrollView } from 'react-native';
 import { VersionStackParamList, MusicType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
-import { search_music } from '../functions/requests'
+import { search_music, get_lyrics } from '../functions/requests'
 
 
 export default function FindMusic({ navigation }: StackScreenProps<VersionStackParamList, 'FindMusic'>) {
@@ -31,7 +31,7 @@ export default function FindMusic({ navigation }: StackScreenProps<VersionStackP
           maxLength={40}
         />
       </View>
-      <View style={styles.separator}/>
+      <View style={styles.separator} />
       <ScrollView style={[styles.container, { padding: 15 }]}>
         {
           loading ? <ActivityIndicator /> :
@@ -40,7 +40,17 @@ export default function FindMusic({ navigation }: StackScreenProps<VersionStackP
                 <TouchableOpacity
                   style={styles.card}
                   key={i}
-                  onPress={() => navigation.push('WriteChords', { music_id: music.id })}
+                  onPress={() => {
+                    setLoading(true);
+                    get_lyrics(music.id).then(version => {
+                      setLoading(false);
+                      navigation.push('WriteChords', { version_id: version.id });
+                    }).catch(error => {
+                      setLoading(false);
+                      Alert.alert(error.title, error.message);
+                    })
+
+                  }}
                 >
                   <Text style={styles.card_h1}>{music.name}</Text>
                   <Text style={styles.card_h2}>{music.artist.name}</Text>
@@ -60,22 +70,22 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#fff',
-    marginTop:10,
+    marginTop: 10,
     height: 60,
     width: '95%',
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
-    justifyContent:'center',
-    alignSelf:'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 3,
     shadowColor: '#000',
-    borderBottomWidth:1,
-    borderColor:'#BDBDBD',
-    borderRadius:5,
+    borderBottomWidth: 1,
+    borderColor: '#BDBDBD',
+    borderRadius: 5,
   },
   icon: {
     width: 25,
@@ -83,14 +93,14 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   text_input: {
-    flex:1
+    flex: 1
   },
-  separator:{
-    width:'100%',
-    borderBottomColor:'#E4E4E4',
-    borderBottomWidth:1,
-    marginTop:10,
-    marginBottom:10,
+  separator: {
+    width: '100%',
+    borderBottomColor: '#E4E4E4',
+    borderBottomWidth: 1,
+    marginTop: 10,
+    marginBottom: 10,
   },
   card: {
     height: 60,

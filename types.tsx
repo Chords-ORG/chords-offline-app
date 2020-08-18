@@ -12,7 +12,7 @@ export type RootStackParamList = {
 
 export type VersionStackParamList = {
   FindMusic: undefined;
-  WriteChords: { music_id: number };
+  WriteChords: { version_id: number };
   PreviewVersion: undefined;
 }
 

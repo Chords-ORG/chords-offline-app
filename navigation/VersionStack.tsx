@@ -27,7 +27,7 @@ export default function VersionStack() {
                 component={WriteChords}
                 options={
                     {
-                        headerTitle: () => (<Text style={styles.textHeader}>WriteChords</Text>)
+                        headerTitle: HomeHeader
                     }
                 }
             />
@@ -37,6 +37,18 @@ export default function VersionStack() {
                 options={{ headerTitle: 'PreviewVersion' }}
             />
         </Stack.Navigator>
+    )
+}
+
+function HomeHeader() {
+    return (
+        <View style={styles.container}>
+            <Image
+                style = {styles.logo}
+                source= { require('../assets/images/app_logo.png') }
+            />
+            <Text style={styles.title}> Chords </Text>
+        </View>
     )
 }
 
