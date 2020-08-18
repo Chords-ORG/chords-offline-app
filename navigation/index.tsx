@@ -8,7 +8,7 @@ import BottomTabNavigator from './BottomTabNavigator';
 import ChordScreen from '../screens/ChordScreen'
 import ProfileScreen from '../screens/ProfileScreen'
 import ArtistScreen from '../screens/ArtistScreen'
-
+import VersionStack from './VersionStack'
 export default function Navigation() {
   return (
     <NavigationContainer>
@@ -27,6 +27,7 @@ function RootNavigator() {
       <Stack.Screen name="ChordScreen" component={ChordScreen} />
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
       <Stack.Screen name="ArtistScreen" component={ArtistScreen} />
+      <Stack.Screen name="VersionStack" component={VersionStack} />
     </Stack.Navigator>
   );
 }

@@ -139,3 +139,24 @@ export async function get_version(version_id:number){
     const response = await post(url, data);
     return response;
 }
+export async function like_version(version_id:number){
+    const token = await getItem('token')
+    let data = { version_id: version_id, token:token }
+    let url = `${API_URL}/version/like/`
+    const response = await post(url, data);
+    return response;
+}
+export async function unlike_version(version_id:number){
+    const token = await getItem('token')
+    let data = { version_id: version_id, token:token }
+    let url = `${API_URL}/version/unlike/`
+    const response = await post(url, data);
+    return response;
+}
+export async function get_rate_version(version_id:number){
+    const token = await getItem('token')
+    let data = { version_id: version_id, token:token }
+    let url = `${API_URL}/version/get_rate/`
+    const response = await post(url, data);
+    return response;
+}

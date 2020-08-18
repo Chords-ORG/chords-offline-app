@@ -58,7 +58,12 @@ export default function SampleScreen({ navigation }: StackScreenProps<RootStackP
           <View style={{ height: 100 }} />
         </ScrollView>
       </View>
-      <TouchableOpacity style={styles.floating_button}>
+      <TouchableOpacity
+        style={styles.floating_button}
+        onPress={() => {
+          navigation.navigate('VersionStack')
+        }}
+      >
         <Image
           source={require('../assets/images/pencil_plus_icon.png')}
           style={styles.pencil_icon}

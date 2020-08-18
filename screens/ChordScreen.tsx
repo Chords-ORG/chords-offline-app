@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image, Alert, Animated } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image, Alert, Animated, ActivityIndicator } from 'react-native';
 import { RootStackParamList, ChordLineType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Drawer from 'react-native-drawer-menu';
@@ -10,7 +10,10 @@ import Spinner from '../components/Spinner';
 import { getItem } from '../functions/storage'
 import CapoDialog from '../components/CapoDialog'
 import GuitarChord from '../components/GuitarChord'
-import { get_chords_lines, get_version } from '../functions/requests'
+import { get_chords_lines, get_version, get_rate_version, like_version, unlike_version } from '../functions/requests'
+import useFloatingHeaderHeight from '@react-navigation/stack/lib/typescript/src/utils/useHeaderHeight';
+
+
 export default function ChordScreen({ navigation, route }: StackScreenProps<RootStackParamList, 'ChordScreen'>) {
   const up_arrow = require('../assets/images/up_arrow.png');
   const down_arrow = require('../assets/images/down_arrow.png');
@@ -28,10 +31,12 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const [chords_lines, setChordsLines] = useState([])
   const [dialog_visible, setDialogVisible] = useState(false);
   const [chords_positions, setChordsPositions] = useState(new Map<string, any>())
-
+  const [rate_type, setRateType] = useState('none')
+  const [like_loading, setLikeLoading] = useState(false)
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       setLoading(true);
+      setLikeLoading(true);
       get_version(route.params.chord_id).then(version => {
         setVersion(version);
         setLoading(false);
@@ -45,6 +50,15 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
         })
         setLoading(false);
       }).catch(error => {
+        Alert.alert(error.title, error.message);
+      })
+      get_rate_version(route.params.chord_id).then(response => {
+        setRateType('none')
+        if (response.rate_type)
+          setRateType(response.rate_type)
+        setLikeLoading(false);
+      }).catch(error => {
+        setLikeLoading(false);
         Alert.alert(error.title, error.message);
       })
     })
@@ -172,21 +186,54 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
             <Text style={drawner_styles.h1}> Avalie a cifra </Text>
             <View style={drawner_styles.separator} />
           </View>
+          {
+            like_loading ? <ActivityIndicator/> :
+            <View style={drawner_styles.rate_container}>
 
-          <View style={drawner_styles.rate_container}>
-            <TouchableOpacity>
-              <Image
-                source={like_gray}
-                style={drawner_styles.like_icon}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image
-                source={unlike_gray}
-                style={drawner_styles.like_icon}
-              />
-            </TouchableOpacity>
-          </View>
+              <TouchableOpacity
+                onPress={() => {
+                  setLikeLoading(true);
+                  like_version(route.params.chord_id).then(() => {
+                    get_rate_version(route.params.chord_id).then(response => {
+                      setRateType('none')
+                      if (response.rate_type)
+                        setRateType(response.rate_type);
+                      setLikeLoading(false);
+                    })
+                  }).catch(error => {
+                    setLikeLoading(false);
+                    Alert.alert(error.title, error.message);
+                  })
+                }}
+              >
+                <Image
+                  source={rate_type == 'like' ? like_green : like_gray}
+                  style={drawner_styles.like_icon}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  setLikeLoading(true);
+                  unlike_version(route.params.chord_id).then(() => {
+                    get_rate_version(route.params.chord_id).then(response => {
+                      setRateType('none')
+                      if (response.rate_type)
+                        setRateType(response.rate_type);
+                      setLikeLoading(false);
+                    })
+                  }).catch(error => {
+                    setLikeLoading(false);
+                    Alert.alert(error.title, error.message);
+                  })
+                }}
+              >
+                <Image
+                  source={rate_type == 'unlike' ? unlike_red : unlike_gray}
+                  style={drawner_styles.like_icon}
+                />
+              </TouchableOpacity>
+            </View>
+          }
         </ScrollView>
       </View>
     </Animated.View>

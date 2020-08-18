@@ -4,10 +4,17 @@ export type defaultDict = {
 
 export type RootStackParamList = {
   Root: undefined;
-  ChordScreen:{ chord_id: number },
-  ProfileScreen:{ username:string },
-  ArtistScreen:{ artist_id:number }
+  ChordScreen: { chord_id: number },
+  ProfileScreen: { username: string },
+  ArtistScreen: { artist_id: number },
+  VersionStack: undefined,
 };
+
+export type VersionStackParamList = {
+  FindMusic: undefined;
+  WriteChords: undefined;
+  PreviewVersion: undefined;
+}
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -17,73 +24,73 @@ export type BottomTabParamList = {
 };
 
 export type SpinnerPropsType = {
-  visible:boolean;
+  visible: boolean;
 }
 export type UserType = {
-  username:string,
-  email?:string,
-  is_staff?:boolean,
-  is_superuser?:boolean,
+  username: string,
+  email?: string,
+  is_staff?: boolean,
+  is_superuser?: boolean,
 }
 export type ProfileType = {
-  name:string,
-  photo_url:string,
-  user:UserType,
+  name: string,
+  photo_url: string,
+  user: UserType,
 }
 export type ArtistType = {
-  id:number,
-  name:string,
-  total_visits:number,
-  season_visits:number,
+  id: number,
+  name: string,
+  total_visits: number,
+  season_visits: number,
 }
 export type MusicType = {
-  artist:ArtistType,
-  id:number,
-  name:string,
+  artist: ArtistType,
+  id: number,
+  name: string,
 }
 export type VersionType = {
-  name:string,
-  id:number,
-  likes:number,
-  unlikes:number,
-  season_visits:number,
-  total_visits:number,
-  view_mode:string,
-  author:ProfileType,
-  music:MusicType
-  
+  name: string,
+  id: number,
+  likes: number,
+  unlikes: number,
+  season_visits: number,
+  total_visits: number,
+  view_mode: string,
+  author: ProfileType,
+  music: MusicType
+
 }
 export type MusicLineType = {
   //id:number,
-  line:string
+  line: string
 }
 export type ChordLineType = {
   //id:number
-  chords_line:string,
-  music_line:MusicLineType,
+  chords_line: string,
+  music_line: MusicLineType,
 }
 
 export type GuitarFinger = {
-  house:number,
-  string:number,
-  size:number,
+  house: number,
+  string: number,
+  size: number,
 }
-export  type GuitarChordPosition = {
-  start_house:number,
-  fingers:GuitarFinger[],
-  strings:string[],
+export type GuitarChordPosition = {
+  start_house: number,
+  fingers: GuitarFinger[],
+  strings: string[],
 }
 
 export type GuitarChordPropsType = {
-  capo:number,
-  chordPosition?:GuitarChordPosition
+  capo: number,
+  chordPosition?: GuitarChordPosition
 }
 export type CapoDialogPropsType = {
-  visible:boolean;
+  visible: boolean;
   closeDialog: () => void;
-  selected_capo:number;
-  tone:string;
-  onSelect:(value:number, delta:number) => void;
+  selected_capo: number;
+  tone: string;
+  onSelect: (value: number, delta: number) => void;
 }
 export type HomeStackParamList = {
   Home: undefined;
