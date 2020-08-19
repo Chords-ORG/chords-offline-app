@@ -5,13 +5,13 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { get_version, get_chords_lines } from '../functions/requests'
 import Spinner from '../components/Spinner'
 
-export default function PreviewVersion({ navigation, route }: StackScreenProps<VersionStackParamList, 'WriteChords'>) {
+export default function WriteChords({ navigation, route }: StackScreenProps<VersionStackParamList, 'WriteChords'>) {
   const [loading, setLoading] = useState(false);
   const [version, setVersion] = useState(version_sample);
   const [chords_lines, setChordsLines] = useState([]);
   const [selectedTone, selectTone] = useState('C');
   const [selectedCapo, setCapo] = useState(0);
-
+  const [version_name, setVersionName] = useState('')
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       setLoading(true);
@@ -24,7 +24,7 @@ export default function PreviewVersion({ navigation, route }: StackScreenProps<V
       })
       get_chords_lines(route.params.version_id).then(chords_lines => {
         for (let i = 0; i < chords_lines.length; ++i) {
-          while (chords_lines[i].chords_line.length < 200) chords_lines[i].chords_line += ' ';
+          while (chords_lines[i].chords_line.length < 40) chords_lines[i].chords_line += ' ';
         }
         setChordsLines(chords_lines);
         setLoading(false);
@@ -41,10 +41,18 @@ export default function PreviewVersion({ navigation, route }: StackScreenProps<V
       <ScrollView>
         <Spinner visible={loading} />
         <View>
+
           <Text style={styles.h1}>{version.music.name}</Text>
           <Text style={styles.h3}>{version.music.artist.name}</Text>
 
           <View style={{ marginTop: 25 }}>
+            <TextInput
+              placeholder="Nome da versão"
+              style={{ flex: 1 }}
+              onChangeText={(text) => setVersionName(text)}
+            />
+            <View style={[styles.separator, { marginBottom: 20 }]} />
+
             <Text style={styles.h2}> Tom </Text>
             <View style={styles.separator} />
             <View style={styles.tone_container}>
@@ -91,9 +99,14 @@ export default function PreviewVersion({ navigation, route }: StackScreenProps<V
           <View style={styles.separator} />
           {
             chords_lines.map((chord_line: ChordLineType, i) => {
+              var line_empty = chord_line.music_line.line == '';
               return (
                 <View key={i}>
-                  <View style={styles.input_container}>
+                  <View
+                    style={[
+                      styles.input_container,
+                      { marginTop: line_empty ? 20 : 0 }
+                    ]}>
                     <TextInput
                       style={styles.chord_line}
                       autoCorrect={false}
@@ -177,13 +190,14 @@ const styles = StyleSheet.create({
   },
   chord_line: {
     fontSize: 14,
-    fontFamily: 'roboto-bold',
+    fontFamily: 'monospace',
+    fontWeight: 'bold',
     color: '#2F80ED',
 
   },
   music_line: {
     fontSize: 14,
-    fontFamily: 'roboto',
+    fontFamily: 'monospace',
     color: '#333333',
     flex: 1,
   },
@@ -196,9 +210,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  input_container:{
-    borderWidth:1,
-    borderColor:'#E4E4E4',
+  input_container: {
+    borderWidth: 1,
+    borderColor: '#E4E4E4',
+    borderRadius: 5
   }
 });
 

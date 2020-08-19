@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image, Picker } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, Picker, Alert } from 'react-native';
 import { SettingsStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Constants from 'expo-constants';
+import Spinner from '../components/Spinner'
+import { setItem } from '../functions/storage'
 
 export default function SettingsScreen({ navigation }: StackScreenProps<SettingsStackParamList, 'Settings'>) {
-  const [noteView, setNoteView] = useState('auto');
+  const [dict, setDict] = useState('sharp');
+  const [instrument, setInstrument] = useState('guitar');
+  const [capo, setCapo] = useState('auto');
+  const [loading, setLoading] = useState(false);
+
   return (
     <View style={[styles.container, { width: '100%', height: '100%' }]}>
+      <Spinner visible={loading} />
       <View style={styles.top_container}>
         <Image
           source={require('../assets/images/app_logo.png')}
@@ -22,11 +29,19 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
           <Text style={styles.label}> Visualização de notas: </Text>
           <View style={styles.separator} />
           <Picker
-            selectedValue={noteView}
+            selectedValue={dict}
             style={styles.picker_style}
-            onValueChange={(itemValue, itemIndex) => setNoteView(itemValue)}
+            onValueChange={(itemValue, itemIndex) => {
+              setDict(itemValue);
+              setLoading(true);
+              setItem('dict', itemValue).then(() => {
+                setLoading(false);
+              }).catch(error => {
+                setLoading(false);
+                Alert.alert(error.title, error.message);
+              })
+            }}
           >
-            <Picker.Item label="Automatico" value="auto" />
             <Picker.Item label="Sustenido #" value="sharp" />
             <Picker.Item label="Bemol b" value="bemol" />
           </Picker>
@@ -36,12 +51,21 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
           <Text style={styles.label}> Instrumento: </Text>
           <View style={styles.separator} />
           <Picker
-            selectedValue={noteView}
+            selectedValue={instrument}
             style={styles.picker_style}
-            onValueChange={(itemValue, itemIndex) => setNoteView(itemValue)}
+            onValueChange={(itemValue, itemIndex) => {
+              setInstrument(itemValue);
+              setLoading(true);
+              setItem('instrument', itemValue).then(() => {
+                setLoading(false);
+              }).catch(error => {
+                setLoading(false);
+                Alert.alert(error.title, error.message);
+              })
+            }}
           >
             <Picker.Item label="Violão/Guitarra" value="guitar" />
-            <Picker.Item label="Teclado/Piano #" value="piano" />
+            <Picker.Item label="Teclado/Piano" value="piano" />
           </Picker>
         </View>
 
@@ -49,9 +73,18 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
           <Text style={styles.label}> Capotraste: </Text>
           <View style={styles.separator} />
           <Picker
-            selectedValue={noteView}
+            selectedValue={capo}
             style={styles.picker_style}
-            onValueChange={(itemValue, itemIndex) => setNoteView(itemValue)}
+            onValueChange={(itemValue, itemIndex) => {
+              setCapo(itemValue);
+              setLoading(true);
+              setItem('default_capo', itemValue).then(() => {
+                setLoading(false);
+              }).catch(error => {
+                setLoading(true);
+                Alert.alert(error.title, error.message);
+              })
+            }}
           >
             <Picker.Item label="Automático" value="auto" />
             <Picker.Item label="Nunca" value="never" />
@@ -109,7 +142,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#E4E4E4',
   },
-  picker:{
-    marginBottom:20,
+  picker: {
+    marginBottom: 20,
   }
 });

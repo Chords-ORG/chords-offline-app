@@ -112,21 +112,21 @@ export class Chord {
     }
 }
 
-export const addToChordLine = (chord_line: string, value: number, dict: string = 'sharp'): string => {
+export const addToChordLine = (chords_line: string, value: number, dict: string = 'sharp'): string => {
     var delta = 0
     var spaces = 0
     var i = 0
-    var n = chord_line.length
+    var n = chords_line.length
     var ans = ''
     while (i < n) {
-        if (chord_line[i] == ' ') {
+        if (chords_line[i] == ' ') {
             spaces += 1;
             ++i;
         }
         else {
             var note = '';
-            while (i < n && chord_line[i] != ' ') {
-                note += chord_line[i];
+            while (i < n && chords_line[i] != ' ') {
+                note += chords_line[i];
                 ++i;
             }
             var chord = new Chord(note);
@@ -142,10 +142,10 @@ export const addToChordLine = (chord_line: string, value: number, dict: string =
     return ans
 }
 
-export const addToChordLines = (chord_lines: any, value: number, dict: string = 'sharp') => {
-    var ans = chord_lines;
-    for (let i = 0; i < chord_lines.length; ++i) {
-        ans[i].chord_line = addToChordLine(ans[i].chord_line, value, dict);
+export const addToChordLines = (chords_lines: any, value: number, dict: string = 'sharp') => {
+    var ans = chords_lines;
+    for (let i = 0; i < chords_lines.length; ++i) {
+        ans[i].chords_line = addToChordLine(ans[i].chords_line, value, dict);
     }
     return ans
 }
@@ -158,18 +158,18 @@ export const noteToNumber = (note: string): number => {
     return chord.base.base;
 }
 
-export async function LoadChords(chords_lines:ChordLineType[]) {
-    var chord_positions = new Map()
+export function get_positions(chord_name: string) {
+    return chord_pos;
+}
+export function LoadChords(chords_lines: ChordLineType[]) {
+    var chord_positions = new Set<string>()
     for (let i = 0; i < chords_lines.length; i++) {
         console.log(chords_lines[i].chords_line)
         var chords = chords_lines[i].chords_line.split(' ')
-        for(let j=0; j<chords.length; ++j){
-            if(chords[j]=='') continue;
+        for (let j = 0; j < chords.length; ++j) {
+            if (chords[j] == '') continue;
             let chord_name = new Chord(chords[j]).toSharp()
-            if(!chord_positions.has(chord_name)){
-                var chord_position = await getItemObject(`guitar_chord@${chord_name}`)
-                chord_positions.set(chords[j], chord_position)
-            }
+            chord_positions.add(chord_name);
         }
     }
     return chord_positions;

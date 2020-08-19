@@ -31,13 +31,13 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({focused}) => SearchIcon(focused)
         }}
       />
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="Profile"
         component={ProfileStack}
         options={{
           tabBarIcon: ({focused}) => ProfileIcon(focused)
         }}
-      />
+      /> */}
       <BottomTab.Screen
         name="Settings"
         component={SettingsStack}

@@ -1,0 +1,954 @@
+{
+    "C": [
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 2,
+                    "size": 1
+                },
+                {
+                    "house": 2,
+                    "string": 4
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 2,
+                    "size": 1
+                },
+                {
+                    "house": 2,
+                    "string": 4
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 3,
+                    "string": 1
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "x",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 2,
+                    "size": 1
+                },
+                {
+                    "house": 2,
+                    "string": 4
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 3,
+                    "string": 5,
+                    "size": 5
+                },
+                {
+                    "house": 5,
+                    "string": 4
+                },
+                {
+                    "house": 5,
+                    "string": 3
+                },
+                {
+                    "house": 5,
+                    "string": 2
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "n",
+                "b"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 4,
+                    "size": 4
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 4,
+                    "string": 6
+                },
+                {
+                    "house": 4,
+                    "string": 1
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 5
+        },
+        {
+            "strings": [
+                "x",
+                "n",
+                "n",
+                "n",
+                "n",
+                "b"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 4,
+                    "size": 4
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 4,
+                    "string": 6
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 5
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "n",
+                "b"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 6,
+                    "size": 6
+                },
+                {
+                    "house": 2,
+                    "string": 3
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 3,
+                    "string": 4
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 8
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "b",
+                "x",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 2,
+                    "size": 1
+                },
+                {
+                    "house": 1,
+                    "string": 1
+                },
+                {
+                    "house": 2,
+                    "string": 3
+                },
+                {
+                    "house": 3,
+                    "string": 4
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 8
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "b",
+                "x",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 4,
+                    "size": 1
+                },
+                {
+                    "house": 3,
+                    "string": 3
+                },
+                {
+                    "house": 3,
+                    "string": 1
+                },
+                {
+                    "house": 4,
+                    "string": 2
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 10
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 3,
+                    "size": 3
+                },
+                {
+                    "house": 2,
+                    "string": 2
+                },
+                {
+                    "house": 3,
+                    "string": 4
+                },
+                {
+                    "house": 4,
+                    "string": 5
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "x",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 3,
+                    "size": 1
+                },
+                {
+                    "house": 2,
+                    "string": 2
+                },
+                {
+                    "house": 3,
+                    "string": 4
+                },
+                {
+                    "house": 4,
+                    "string": 5
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 12
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 5,
+                    "size": 5
+                },
+                {
+                    "house": 3,
+                    "string": 4
+                },
+                {
+                    "house": 3,
+                    "string": 3
+                },
+                {
+                    "house": 3,
+                    "string": 2
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 15
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "n",
+                "b"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 4,
+                    "size": 4
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 4,
+                    "string": 6
+                },
+                {
+                    "house": 4,
+                    "string": 1
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 17
+        },
+        {
+            "strings": [
+                "x",
+                "n",
+                "n",
+                "n",
+                "n",
+                "b"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 4,
+                    "size": 4
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 4,
+                    "string": 6
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 17
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "n",
+                "b"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 6,
+                    "size": 6
+                },
+                {
+                    "house": 2,
+                    "string": 3
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 3,
+                    "string": 4
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 20
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "b",
+                "x",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 2,
+                    "size": 1
+                },
+                {
+                    "house": 1,
+                    "string": 1
+                },
+                {
+                    "house": 2,
+                    "string": 3
+                },
+                {
+                    "house": 3,
+                    "string": 4
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 20
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 3,
+                    "string": 5,
+                    "size": 1
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 5,
+                    "string": 4
+                },
+                {
+                    "house": 5,
+                    "string": 2
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "x",
+                "x",
+                "x",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 2,
+                    "string": 4,
+                    "size": 1
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "x",
+                "x",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 2,
+                    "string": 4,
+                    "size": 1
+                },
+                {
+                    "house": 3,
+                    "string": 5
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "x",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 5,
+                    "string": 4,
+                    "size": 4
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "n",
+                "n",
+                "b",
+                "x",
+                "x",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 3,
+                    "size": 3
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 2,
+                    "string": 2
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 12
+        },
+        {
+            "strings": [
+                "n",
+                "x",
+                "n",
+                "x",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 2,
+                    "string": 5,
+                    "size": 1
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        },
+        {
+            "strings": [
+                "x",
+                "n",
+                "n",
+                "n",
+                "x",
+                "b"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 2,
+                    "size": 1
+                },
+                {
+                    "house": 2,
+                    "string": 3
+                },
+                {
+                    "house": 3,
+                    "string": 6
+                },
+                {
+                    "house": 3,
+                    "string": 4
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 8
+        },
+        {
+            "strings": [
+                "x",
+                "n",
+                "n",
+                "b",
+                "x",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 1,
+                    "string": 2,
+                    "size": 1
+                },
+                {
+                    "house": 2,
+                    "string": 3
+                },
+                {
+                    "house": 3,
+                    "string": 4
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 8
+        },
+        {
+            "strings": [
+                "x",
+                "n",
+                "n",
+                "n",
+                "b",
+                "x"
+            ],
+            "fingers": [
+                {
+                    "house": 3,
+                    "string": 5,
+                    "size": 1
+                },
+                {
+                    "house": 5,
+                    "string": 4
+                },
+                {
+                    "house": 5,
+                    "string": 3
+                },
+                {
+                    "house": 5,
+                    "string": 2
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                },
+                {
+                    "house": 0,
+                    "string": 0
+                }
+            ],
+            "start_house": 0
+        }
+    ]
+}

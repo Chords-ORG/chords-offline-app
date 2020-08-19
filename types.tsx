@@ -82,8 +82,8 @@ export type GuitarChordPosition = {
 }
 
 export type GuitarChordPropsType = {
-  capo: number,
-  chordPosition?: GuitarChordPosition
+  Capo: number,
+  ChordName: string,
 }
 export type CapoDialogPropsType = {
   visible: boolean;

@@ -34,7 +34,7 @@ export default function CapoDialog(props: CapoDialogPropsType) {
                                     {
                                         values.map((value) => {
                                             var text = value == 0 ? 'Sem capotraste\n' : `${value}ª casa\n`
-                                            var delta = props.selected_capo-value;
+                                            var delta = value-props.selected_capo;
                                             var chord = new Chord(props.tone)
                                             chord.add(-props.selected_capo)
                                             chord.add(delta);

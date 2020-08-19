@@ -13,7 +13,6 @@ import GuitarChord from '../components/GuitarChord'
 import { get_chords_lines, get_version, get_rate_version, like_version, unlike_version } from '../functions/requests'
 import useFloatingHeaderHeight from '@react-navigation/stack/lib/typescript/src/utils/useHeaderHeight';
 
-
 export default function ChordScreen({ navigation, route }: StackScreenProps<RootStackParamList, 'ChordScreen'>) {
   const up_arrow = require('../assets/images/up_arrow.png');
   const down_arrow = require('../assets/images/down_arrow.png');
@@ -30,35 +29,41 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const [version, setVersion] = useState(version_sample)
   const [chords_lines, setChordsLines] = useState([])
   const [dialog_visible, setDialogVisible] = useState(false);
-  const [chords_positions, setChordsPositions] = useState(new Map<string, any>())
+  const [chords_positions, setChordsPositions] = useState(new Set<string>())
   const [rate_type, setRateType] = useState('none')
   const [like_loading, setLikeLoading] = useState(false)
+  const [dict, setDictType] = useState('sharp');
+  const [instrument, setInstrument] = useState('guitar');
+
+
+  const load_data = async () => {
+    setLoading(true);
+    const dict = await getItem('dict');
+    const instrument = await getItem('instrument');
+    const version = await get_version(route.params.chord_id);
+    const chords_lines = await get_chords_lines(route.params.chord_id);
+    const default_capo = await getItem('default_capo');
+    if (dict) setDictType(dict);
+    if (instrument) setInstrument(instrument);
+    setVersion(version);
+    selectTone(version.tone);
+    if (default_capo == 'auto') {
+      selectCapo(version.capo);
+    }
+    else {
+      setChordsLines(addToChordLines(chords_lines, -version.capo, dict));
+    }
+    setChordsPositions(LoadChords(chords_lines));
+    setChordsLines(chords_lines);
+    setLoading(false);
+  }
+  const getNote = (tone: string) => {
+    return dict == 'sharp' ? new Chord(tone).toSharp() : new Chord(tone).toBemol();
+  }
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      setLoading(true);
-      setLikeLoading(true);
-      get_version(route.params.chord_id).then(version => {
-        setVersion(version);
+      load_data().catch(error => {
         setLoading(false);
-      }).catch(error => {
-        Alert.alert(error.title, error.message);
-      })
-      get_chords_lines(route.params.chord_id).then(chords_lines => {
-        setChordsLines(chords_lines);
-        LoadChords(chords_lines).then((chords_positions) => {
-          setChordsPositions(chords_positions);
-        })
-        setLoading(false);
-      }).catch(error => {
-        Alert.alert(error.title, error.message);
-      })
-      get_rate_version(route.params.chord_id).then(response => {
-        setRateType('none')
-        if (response.rate_type)
-          setRateType(response.rate_type)
-        setLikeLoading(false);
-      }).catch(error => {
-        setLikeLoading(false);
         Alert.alert(error.title, error.message);
       })
     })
@@ -72,31 +77,37 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
       </View>
       <View style={drawner_styles.container}>
         <ScrollView>
-          <View style={[drawner_styles.sub_header, { marginTop: 0 }]}>
-            <Text style={drawner_styles.h1}> Cifra </Text>
-            <View style={drawner_styles.separator} />
-          </View>
-
-          <TouchableOpacity
-            style={drawner_styles.button}
-          >
-            <Image
-              style={drawner_styles.icon}
-              source={require('../assets/images/save_icon.png')}
-            />
-            <Text style={drawner_styles.button_text}> Salvar Cifra </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={drawner_styles.button}
-          >
-            <Image
-              style={drawner_styles.icon}
-              source={require('../assets/images/pencil_icon.png')}
-            />
-            <Text style={drawner_styles.button_text}> Criar cifra a partir dessa </Text>
-          </TouchableOpacity>
-
+          {true ? null :
+            <View style={[drawner_styles.sub_header, { marginTop: 0 }]}>
+              <Text style={drawner_styles.h1}> Cifra </Text>
+              <View style={drawner_styles.separator} />
+            </View>
+          }
+          {true ? null :
+            <TouchableOpacity
+              style={drawner_styles.button}
+            >
+              <Image
+                style={drawner_styles.icon}
+                source={require('../assets/images/save_icon.png')}
+              />
+              <Text style={drawner_styles.button_text}> Salvar Cifra </Text>
+            </TouchableOpacity>
+          }
+          {true ? null :
+            <TouchableOpacity
+              style={drawner_styles.button}
+              onPress={() => {
+                navigation.navigate('VersionStack', { screen: 'WriteChords', params: { version_id: version.id } })
+              }}
+            >
+              <Image
+                style={drawner_styles.icon}
+                source={require('../assets/images/pencil_icon.png')}
+              />
+              <Text style={drawner_styles.button_text}> Criar cifra a partir dessa </Text>
+            </TouchableOpacity>
+          }
           <View style={drawner_styles.sub_header}>
             <Text style={drawner_styles.h1}> Tom </Text>
             <View style={drawner_styles.separator} />
@@ -114,25 +125,14 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                             key={j}
                             style={[drawner_styles.circle_button, { backgroundColor: (noteToNumber(selectedTone) == idx ? '#2F80ED' : '#BDBDBD') }]}
                             onPress={() => {
-                              setLoading(true);
-                              getItem('dict').then((dict_) => {
+                              let delta = idx - noteToNumber(selectedTone)
+                              setChordsLines(addToChordLines(chords_lines, delta, dict));
+                              var chord = new Chord(selectedTone);
+                              chord.add(delta)
+                              selectTone(dict == 'sharp' ? chord.toSharp() : chord.toBemol());
+                              setChordsPositions(LoadChords(chords_lines));
+                              drawer.closeDrawer();
 
-                                let dict = dict_ || 'sharp'
-                                let delta = idx - noteToNumber(selectedTone)
-                                setChordsLines(addToChordLines(chords_lines, delta, dict));
-                                var chord = new Chord(selectedTone);
-                                chord.add(delta)
-                                selectTone(dict == 'sharp' ? chord.toSharp() : chord.toBemol());
-                                LoadChords(chords_lines).then((chords_positions) => {
-                                  setChordsPositions(chords_positions);
-                                  setLoading(false);
-                                  drawer.closeDrawer()
-                                })
-                              }).catch((error) => {
-                                Alert.alert(error.title, error.message);
-                                setLoading(false);
-                                drawer.closeDrawer()
-                              })
                             }}
                           >
                             <Text style={[drawner_styles.button_text, { color: '#FFFFFF' }]}>{tone_name}</Text>
@@ -171,68 +171,70 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
             <Text style={drawner_styles.button_text} > Artista </Text>
             <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} >{version.music.artist.name}</Text>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}
-            onPress={() => {
-              navigation.navigate('ProfileScreen', { username: version.author.user.username })
-            }}
-          >
-            <Text style={drawner_styles.button_text} > Autor da cifra </Text>
-            <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} > {`@${version.author.user.username}`} </Text>
-          </TouchableOpacity>
-
-          <View style={drawner_styles.sub_header}>
-            <Text style={drawner_styles.h1}> Avalie a cifra </Text>
-            <View style={drawner_styles.separator} />
-          </View>
-          {
-            like_loading ? <ActivityIndicator/> :
-            <View style={drawner_styles.rate_container}>
-
-              <TouchableOpacity
-                onPress={() => {
-                  setLikeLoading(true);
-                  like_version(route.params.chord_id).then(() => {
-                    get_rate_version(route.params.chord_id).then(response => {
-                      setRateType('none')
-                      if (response.rate_type)
-                        setRateType(response.rate_type);
-                      setLikeLoading(false);
-                    })
-                  }).catch(error => {
-                    setLikeLoading(false);
-                    Alert.alert(error.title, error.message);
-                  })
-                }}
-              >
-                <Image
-                  source={rate_type == 'like' ? like_green : like_gray}
-                  style={drawner_styles.like_icon}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  setLikeLoading(true);
-                  unlike_version(route.params.chord_id).then(() => {
-                    get_rate_version(route.params.chord_id).then(response => {
-                      setRateType('none')
-                      if (response.rate_type)
-                        setRateType(response.rate_type);
-                      setLikeLoading(false);
-                    })
-                  }).catch(error => {
-                    setLikeLoading(false);
-                    Alert.alert(error.title, error.message);
-                  })
-                }}
-              >
-                <Image
-                  source={rate_type == 'unlike' ? unlike_red : unlike_gray}
-                  style={drawner_styles.like_icon}
-                />
-              </TouchableOpacity>
+          {true ? null :
+            <TouchableOpacity
+              style={[drawner_styles.button, { flexDirection: 'row', justifyContent: 'space-between' }]}
+              onPress={() => {
+                navigation.navigate('ProfileScreen', { username: version.author.user.username })
+              }}
+            >
+              <Text style={drawner_styles.button_text} > Autor da cifra </Text>
+              <Text style={[drawner_styles.button_text, { color: '#2F80ED' }]} > {`@${version.author.user.username}`} </Text>
+            </TouchableOpacity>
+          }
+          {true ? null :
+            <View style={drawner_styles.sub_header}>
+              <Text style={drawner_styles.h1}> Avalie a cifra </Text>
+              <View style={drawner_styles.separator} />
             </View>
+          }
+          {
+            true ? null :
+              <View style={drawner_styles.rate_container}>
+
+                <TouchableOpacity
+                  onPress={() => {
+                    setLikeLoading(true);
+                    like_version(route.params.chord_id).then(() => {
+                      get_rate_version(route.params.chord_id).then(response => {
+                        setRateType('none')
+                        if (response.rate_type)
+                          setRateType(response.rate_type);
+                        setLikeLoading(false);
+                      })
+                    }).catch(error => {
+                      setLikeLoading(false);
+                      Alert.alert(error.title, error.message);
+                    })
+                  }}
+                >
+                  <Image
+                    source={rate_type == 'like' ? like_green : like_gray}
+                    style={drawner_styles.like_icon}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    setLikeLoading(true);
+                    unlike_version(route.params.chord_id).then(() => {
+                      get_rate_version(route.params.chord_id).then(response => {
+                        setRateType('none')
+                        if (response.rate_type)
+                          setRateType(response.rate_type);
+                        setLikeLoading(false);
+                      })
+                    }).catch(error => {
+                      setLikeLoading(false);
+                      Alert.alert(error.title, error.message);
+                    })
+                  }}
+                >
+                  <Image
+                    source={rate_type == 'unlike' ? unlike_red : unlike_gray}
+                    style={drawner_styles.like_icon}
+                  />
+                </TouchableOpacity>
+              </View>
           }
         </ScrollView>
       </View>
@@ -254,23 +256,11 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
         selected_capo={selectedCapo}
         tone={selectedTone}
         onSelect={(value, delta) => {
-          setLoading(true);
-          getItem('dict').then((dict_) => {
-            let dict = dict_ || 'sharp'
-            setChordsLines(addToChordLines(chords_lines, delta, dict));
-            selectCapo(value);
-            LoadChords(chords_lines).then((chords_positions) => {
-              setChordsPositions(chords_positions);
-              setLoading(false);
-              setDialogVisible(false);
-              drawer.closeDrawer();
-            })
-          }).catch((error) => {
-            Alert.alert(error.title, error.message)
-            setLoading(false);
-            setDialogVisible(false);
-            drawer.closeDrawer();
-          })
+          setChordsLines(addToChordLines(chords_lines, delta, dict));
+          selectCapo(value);
+          setChordsPositions(LoadChords(chords_lines));
+          setDialogVisible(false);
+          drawer.closeDrawer();
         }}
       />
       <View style={styles.header}>
@@ -299,13 +289,13 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
           <View style={styles.chords_container}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {
-                Array.from(chords_positions.keys()).map((chord_name) => (
+                Array.from(chords_positions).map((chord_name) => (
                   <View key={chord_name} style={styles.chord_container}>
                     <GuitarChord
-                      capo={selectedCapo}
-                      chordPosition={chords_positions.get(chord_name)}
+                      Capo={selectedCapo}
+                      ChordName={chord_name}
                     />
-                    <Text style={styles.chord_name}> {chord_name} </Text>
+                    <Text style={styles.chord_name}> {getNote(chord_name)} </Text>
                   </View>
                 ))
               }
@@ -335,7 +325,9 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                   drawer.openDrawer()
                 }}
               >
-                <Text style={styles.tone_text}>Tom: <Text style={{ color: '#2F80ED' }}>{selectedTone}</Text></Text>
+                <Text style={styles.tone_text}>Tom: <Text style={{ color: '#2F80ED' }}>
+                  {getNote(selectedTone)}
+                </Text></Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
@@ -345,16 +337,20 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                 <Text style={styles.tone_text}>Capotraste: <Text style={{ color: '#2F80ED' }}>{selectedCapo == 0 ? "Sem Capo" : `${selectedCapo}ª casa`} </Text></Text>
               </TouchableOpacity>
             </View>
-            <View>
+            <View style={{ marginTop: 20 }}>
               {
                 chords_lines.map((chord_line: ChordLineType, i) => (
                   <View key={i}>
-                    <Text style={styles.chord_font}>{chord_line.chords_line}</Text>
+                    {
+                      chord_line.chords_line == '' ? null :
+                        <Text style={styles.chord_font}>{chord_line.chords_line}</Text>
+                    }
                     <Text style={styles.lyric_font}>{chord_line.music_line.line}</Text>
                   </View>
                 ))
               }
             </View>
+            <View style={{ height: 300 }} />
           </ScrollView>
         </View>
       </View>
@@ -367,20 +363,21 @@ const tone_lists = [['C', 'C#', 'D', 'D#', 'E', 'F'], ['F#', 'G', 'G#', 'A', 'A#
 const chord_list = ['C#m7', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C']
 
 const version_sample = {
+  id: 1,
   tone: 'C',
   capo: 1,
-  name: 'Simplificada',
+  name: '',
   author: {
-    name: 'Gustavo',
+    name: '',
     user: {
-      username: 'lyrics'
+      username: ''
     }
   },
   music: {
-    name: 'Party Favor',
+    name: '',
     artist: {
       id: 4,
-      name: 'Billie Eilish',
+      name: '',
     }
   }
 }

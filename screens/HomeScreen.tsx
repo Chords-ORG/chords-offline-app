@@ -54,8 +54,9 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
                 </View>
                 <View style={styles.vertical_separator} />
                 <View style={styles.right}>
-                  <Text style={styles.card_h1}>{'version.name'}</Text>
-                  <Text style={styles.card_h3}><Text style={{color:'#828282'}}> Escrita por </Text> {`@${version.author.user.username}`}</Text> 
+                  <Text style={styles.card_h1}>Versão</Text>
+
+                  <Text style={styles.card_h3}><Text style={{ color: '#828282' }}>{version.name} </Text></Text>
                 </View>
               </TouchableOpacity>
             );
