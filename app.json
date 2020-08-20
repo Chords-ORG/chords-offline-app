@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "chords",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -19,7 +19,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.gustavolima00.chords",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.gustavolima00.chords",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/images/favicon.png"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image, Picker, Alert } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, Picker, Alert, Linking } from 'react-native';
 import { SettingsStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Constants from 'expo-constants';
@@ -23,7 +23,14 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
         <Text style={styles.app_name}> Chords </Text>
         <Text style={styles.version}>{`Versão: alpha ${Constants.nativeAppVersion}`}</Text>
       </View>
-
+      <TouchableOpacity 
+        style={styles.flaticon_container}
+        onPress={()=>{
+          Linking.openURL('https://www.flaticon.com/br/autores/freepik')
+        }}
+      > 
+        <Text style={styles.refer_text}> Ícones feitos por<Text style={{color:'#2F80ED'}}> FreePick </Text>from  Flaticon</Text>
+      </TouchableOpacity>
       <View style={styles.bottom_container}>
         <View style={styles.picker}>
           <Text style={styles.label}> Visualização de notas: </Text>
@@ -65,7 +72,6 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
             }}
           >
             <Picker.Item label="Violão/Guitarra" value="guitar" />
-            <Picker.Item label="Teclado/Piano" value="piano" />
           </Picker>
         </View>
 
@@ -144,5 +150,16 @@ const styles = StyleSheet.create({
   },
   picker: {
     marginBottom: 20,
+  },
+  flaticon_container:{
+    marginTop:20,
+    alignSelf:'center'
+  },
+  refer_text:{
+    fontFamily: 'roboto',
+    fontSize: 14,
+    //fontWeight:'bold',
+    color:'#828282',
+    textAlign:'center'
   }
 });
