@@ -80,7 +80,6 @@ export default function ProfileScreen({ navigation, route }: StackScreenProps<Ro
               <ScrollView>
                 {
                   versions.map((version: VersionType, i) => {
-                    console.log(version)
                     return (
                       <TouchableOpacity
                         style={styles.card} key={i}

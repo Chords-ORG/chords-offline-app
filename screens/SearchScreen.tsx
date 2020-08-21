@@ -5,8 +5,9 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { ScrollView } from 'react-native-gesture-handler';
 import { search_music } from '../functions/requests'
 export default function SearchScreen({ navigation }: StackScreenProps<SearchStackParamList, 'Search'>) {
-  const [loading, setLoading] = useState(false)
-  const [music_results, setMusics] = useState([])
+  const [loading, setLoading] = useState(false);
+  const [music_results, setMusics] = useState([]);
+  const [search, setSearch] = useState('');
   return (
     <View style={[styles.container, { width: '100%', height: '100%' }]}>
       <View style={styles.header}>
@@ -16,15 +17,18 @@ export default function SearchScreen({ navigation }: StackScreenProps<SearchStac
         />
         <TextInput
           style={styles.text_input}
-          onChangeText={(text) => {
+          onEndEditing={()=>{
             setLoading(true);
-            search_music(text).then(results => {
+            search_music(search).then(results => {
               setLoading(false);
               setMusics(results);
             }).catch(error => {
               setLoading(false);
               Alert.alert(error.title, error.message)
             })
+          }}
+          onChangeText={(text) => {
+            setSearch(text);
           }}
           placeholder="Buscar"
           maxLength={40}

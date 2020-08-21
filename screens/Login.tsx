@@ -54,7 +54,6 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
             login(username, password)
               .then((data) => {
                 setLoading(false);
-                console.log(data);
                 navigation.navigate('ProfileTabs')
               })
               .catch((error) => {

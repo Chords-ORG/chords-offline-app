@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Image, ActivityIndicator, Alert } from 'react-native';
 import { RootStackParamList, VersionType, ArtistType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { get_top_versions, get_top_artists } from '../functions/requests'
+import Spinner from '../components/Spinner'
 
 export default function HomeScreen({ navigation, route }: StackScreenProps<RootStackParamList>) {
+
+  const load_data = async () => {
+    setVersionsLoading(true);
+    setArtistsLoading(true);
+    const versions = await get_top_versions();
+    setTopVersions(versions);
+    setVersionsLoading(false);
+    const artists = await get_top_artists();
+    setTopArtists(artists);
+    setArtistsLoading(false);
+  }
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      setVersionsLoading(true); setArtistsLoading(true);
-      get_top_versions().then((versions) => {
-        setVersionsLoading(false);
-        setTopVersions(versions)
-      }).catch(error => {
-        setVersionsLoading(false);
-        console.log(error)
-      })
-      get_top_artists().then((artists) => {
-        setArtistsLoading(false);
-        setTopArtists(artists)
-      }).catch(error => {
-        setArtistsLoading(false);
+      setVersionsLoading(true); 
+      load_data().catch(error => {
+        Alert.alert(error.title, error.message);
         console.log(error)
       })
     });
@@ -39,6 +41,7 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
           <View style={styles.separator} />
         </View>
         {
+          versions_loading ? <ActivityIndicator/> :
           top_versions.map((version: VersionType, i) => {
             return (
               <TouchableOpacity
@@ -69,6 +72,7 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
         </View>
 
         {
+          artists_loading ? <ActivityIndicator/> :
           top_artists.map((artist: ArtistType, i) => {
             return (
               <TouchableOpacity

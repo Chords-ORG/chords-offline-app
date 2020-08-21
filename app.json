@@ -2,10 +2,10 @@
   "expo": {
     "name": "Chords",
     "slug": "Chords",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "chords",
+    "scheme": "chordsapp",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -19,11 +19,11 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.gustavolima00.chords",
+      "bundleIdentifier": "com.gustavolima00.chordsapp",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.gustavolima00.chords",
+      "package": "com.gustavolima00.chordsapp",
       "versionCode": 1
     },
     "web": {

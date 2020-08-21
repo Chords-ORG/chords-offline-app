@@ -33,7 +33,6 @@ export default function SampleScreen({ navigation }: StackScreenProps<ProfileSta
                   text = text.substring(0, j+1);
                   obj[i] = text
                   setChordsLines(obj);
-                  console.log('chords_lines', chords_lines)
                 }}
                 defaultValue={default_text}
               > 

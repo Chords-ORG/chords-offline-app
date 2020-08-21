@@ -164,7 +164,6 @@ export function get_positions(chord_name: string) {
 export function LoadChords(chords_lines: ChordLineType[]) {
     var chord_positions = new Set<string>()
         for (let i = 0; i < chords_lines.length; i++) {
-        console.log(chords_lines[i].chords_line)
         var chords = chords_lines[i].chords_line.split(' ')
         for (let j = 0; j < chords.length; ++j) {
             if (chords[j] == '') continue;

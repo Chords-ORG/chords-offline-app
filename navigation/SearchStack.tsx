@@ -14,7 +14,7 @@ const Stack = createStackNavigator<SearchStackParamList>();
 
 export default function SearchStack() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Search">
             <Stack.Screen
                 name="Search"
                 component={SearchScreen}
