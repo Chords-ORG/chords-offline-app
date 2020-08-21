@@ -10,19 +10,18 @@ export default function VersionScreen({ navigation, route }: StackScreenProps<Ro
   const [loading, setLoading] = useState(false);
   const [versions, setVersions] = useState([]);
   const [lyrics, setLyrics] = useState(null);
+
+  const load_data = async (music_id: number) => {
+    setLoading(true);
+    const versions = await get_music_versions(music_id);
+    setVersions(versions);
+    setLoading(false);
+  }
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      setLoading(true);
-      get_music_versions(route.params.music_id).then(versions => {
-        setLoading(false);
-        setVersions(versions);
-      }).catch(error => {
+      const music_id = route.params.music_id
+      load_data(music_id).catch(error => {
         Alert.alert(error.title, error.message);
-      })
-      get_lyrics(route.params.music_id).then(lyrics => {
-        setLyrics(lyrics)
-      }).catch(error => {
-        setLyrics(null);
       })
     })
     return unsubscribe;
@@ -32,21 +31,6 @@ export default function VersionScreen({ navigation, route }: StackScreenProps<Ro
       {
         loading ? <ActivityIndicator /> :
           <ScrollView>
-            {
-              lyrics==null ? null :
-                <TouchableOpacity
-                  style={styles.card}
-                  onPress={()=>{
-                    navigation.navigate('ChordScreen', { chord_id: lyrics.id })
-                  }}
-                >
-                  <Image
-                    style={styles.icon_30}
-                    source={require('../assets/images/paper_icon.png')}
-                  />
-                  <Text style={styles.card_h1}> Apenas a Letra </Text>
-                </TouchableOpacity>
-            }
             {
               versions.map((version: VersionType, i) => {
                 return (

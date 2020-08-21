@@ -36,12 +36,14 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const [instrument, setInstrument] = useState('guitar');
 
 
-  const load_data = async () => {
+  const load_data = async (chord_id: number) => {
+    drawer.closeDrawer();
+    setDialogVisible(false);
     setLoading(true);
     const dict = await getItem('dict');
     const instrument = await getItem('instrument');
-    const version = await get_version(route.params.chord_id);
-    const chords_lines = await get_chords_lines(route.params.chord_id);
+    const version = await get_version(chord_id);
+    const chords_lines = await get_chords_lines(chord_id);
     const default_capo = await getItem('default_capo');
     if (dict) setDictType(dict);
     if (instrument) setInstrument(instrument);
@@ -62,7 +64,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   }
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      load_data().catch(error => {
+      load_data(route.params.chord_id).catch(error => {
         setLoading(false);
         Alert.alert(error.title, error.message);
       })
@@ -98,7 +100,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
             <TouchableOpacity
               style={drawner_styles.button}
               onPress={() => {
-                navigation.navigate('VersionStack', { screen: 'WriteChords', params: { version_id: version.id } })
+                //navigation.navigate('VersionStack', { screen: 'WriteChords', params: { version_id: version.id } })
               }}
             >
               <Image
@@ -291,10 +293,15 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
               {
                 Array.from(chords_positions).map((chord_name) => (
                   <View key={chord_name} style={styles.chord_container}>
-                    <GuitarChord
-                      Capo={selectedCapo}
-                      ChordName={chord_name}
-                    />
+                    {instrument == 'guitar' ?
+                      <GuitarChord
+                        Capo={selectedCapo}
+                        ChordName={chord_name}
+                      /> : null
+                    }
+                    {instrument == 'piano' ?
+                      null: null
+                    }
                     <Text style={styles.chord_name}> {getNote(chord_name)} </Text>
                   </View>
                 ))
@@ -548,6 +555,7 @@ const chords_lines_sample = [
 ]
 const drawner_holder = {
   openDrawer: () => null,
+  closeDrawer: () => null,
 }
 
 const drawner_styles = StyleSheet.create({
@@ -675,7 +683,8 @@ const styles = StyleSheet.create({
   },
   chords_container: {
     flexDirection: 'row',
-    height: 170,
+    paddingBottom: 10,
+    //height: 170,
   },
   arrow_icon: {
     height: 13,
@@ -701,7 +710,7 @@ const styles = StyleSheet.create({
   chord_name: {
     fontFamily: 'roboto-bold',
     fontSize: 14,
-    paddingLeft: 20,
+    textAlign: 'center',
     paddingTop: 5,
     color: '#333333'
   },
