@@ -1,9 +1,9 @@
 import { API_URL } from '../constants/LocalConstants'
 import axios from 'axios'
-import { setItem, getItem } from './storage'
+import { setItem, getItem, setItemObject, getItemObject } from './storage'
 import Constants from 'expo-constants';
 
-
+const CACHE_LIMIT = 10;
 var dict = new Map()
 dict.set('password', 'Senha')
 dict.set('non_field_errors', 'Erro')
@@ -108,59 +108,102 @@ export async function get_user_versions(username: string) {
     const response = await post(url, data);
     return response;
 }
-export async function search_music(search:string) {
+export async function search_music(search: string) {
     let data = { search: search }
     let url = `${API_URL}/music/filter/`
     const response = await post(url, data);
     return response;
 }
-export async function get_music_versions(music_id:number){
+export async function get_music_versions(music_id: number) {
     let data = { music_id: music_id }
     let url = `${API_URL}/version/get_music_versions/`
     const response = await post(url, data);
     return response;
 }
-export async function get_lyrics(music_id:number){
+export async function get_lyrics(music_id: number) {
     let data = { music_id: music_id }
     let url = `${API_URL}/version/get_lyrics/`
     const response = await post(url, data);
     return response;
 }
-export async function get_chords_lines(version_id:number){
+export async function get_chords_lines(version_id: number) {
     var device_id = Constants.sessionId;
-    let data = { version_id: version_id, device_id:device_id }
+    let data = { version_id: version_id, device_id: device_id }
     let url = `${API_URL}/version/get_chords/`
-    const response = await post(url, data);
+
+    var idx = -1;
+    var my_versions = await getItemObject('cache@versions', []);
+    for (let i = 0; i < my_versions.length; ++i)
+        if (my_versions[i].id == version_id) idx = i;
+
+    var response = await post(url, data).catch((error) => {
+        if (idx != -1 && error.title == 'Erro ao se comunicar com o servidor')
+            return my_versions[idx]['chords_lines'];
+        throw (error);
+    });
+
+    if (idx == -1) {
+        var version = { id: version_id, chords_lines: response }
+        my_versions.push(version);
+    }
+    else{
+        my_versions[idx]['chords_lines'] = response;
+    }
+    if (my_versions.length > CACHE_LIMIT) my_versions.shift();
+    await setItemObject('cache@versions', my_versions);
+
     return response;
 }
-export async function get_version(version_id:number){
+export async function get_version(version_id: number) {
     let data = { version_id: version_id }
     let url = `${API_URL}/version/get/`
-    const response = await post(url, data);
+
+    var idx = -1;
+    var my_versions = await getItemObject('cache@versions', []);
+    for (let i = 0; i < my_versions.length; ++i)
+        if (my_versions[i].id == version_id) idx = i;
+
+    var response = await post(url, data).catch((error) => {
+        if (idx != -1 && error.title == 'Erro ao se comunicar com o servidor')
+            return my_versions[idx];
+        throw (error);
+    });
+
+    if (idx == -1) {
+        response['chords_lines'] = [];
+        my_versions.push(response);
+    }
+    else {
+        response['chords_lines'] = my_versions[idx]['chords_lines'];
+        my_versions[idx] = response;
+    }
+    if (my_versions.length > CACHE_LIMIT) my_versions.shift();
+    await setItemObject('cache@versions', my_versions);
+
     return response;
 }
-export async function like_version(version_id:number){
+export async function like_version(version_id: number) {
     const token = await getItem('token')
-    let data = { version_id: version_id, token:token }
+    let data = { version_id: version_id, token: token }
     let url = `${API_URL}/version/like/`
     const response = await post(url, data);
     return response;
 }
-export async function unlike_version(version_id:number){
+export async function unlike_version(version_id: number) {
     const token = await getItem('token')
-    let data = { version_id: version_id, token:token }
+    let data = { version_id: version_id, token: token }
     let url = `${API_URL}/version/unlike/`
     const response = await post(url, data);
     return response;
 }
-export async function get_rate_version(version_id:number){
+export async function get_rate_version(version_id: number) {
     const token = await getItem('token')
-    let data = { version_id: version_id, token:token }
+    let data = { version_id: version_id, token: token }
     let url = `${API_URL}/version/get_rate/`
     const response = await post(url, data);
     return response;
 }
-export async function get_music(music_id:number){
+export async function get_music(music_id: number) {
     let data = { music_id: music_id }
     let url = `${API_URL}/music/get/`
     const response = await post(url, data);

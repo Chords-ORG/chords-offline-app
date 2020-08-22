@@ -43,9 +43,11 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
     setLoading(true);
     const dict = await getItem('dict');
     const instrument = await getItem('instrument');
+    const default_capo = await getItem('default_capo');
+    
     const version = await get_version(chord_id);
     const chords_lines = await get_chords_lines(chord_id);
-    const default_capo = await getItem('default_capo');
+    
     if (dict) setDictType(dict);
     if (instrument) setInstrument(instrument);
     setVersion(version);
@@ -391,171 +393,6 @@ const version_sample = {
     }
   }
 }
-
-const chords_lines_sample = [
-  {
-    chord_line: "",
-    music_line: {
-      line: "Hey, leave a message",
-    }
-  },
-  {
-    chord_line: "C",
-    music_line: {
-      line: "Hey, call me back",
-    }
-  },
-  {
-    chord_line: "         Am    ",
-    music_line: {
-      line: "When you get this",
-    }
-  },
-  {
-    chord_line: "                     F    ",
-    music_line: {
-      line: "Or when you've got a minute",
-    }
-  },
-  {
-    chord_line: "               C      G    ",
-    music_line: {
-      line: "We really need to talk",
-    }
-  },
-  {
-    chord_line: " C    ",
-    music_line: {
-      line: "Wait, you know what",
-    }
-  },
-  {
-    chord_line: "               Am       ",
-    music_line: {
-      line: "Maybe just forget it",
-    }
-  },
-  {
-    chord_line: "                      F    ",
-    music_line: {
-      line: "Cause by the time you get this",
-    }
-  },
-  {
-    chord_line: "                  C         G    ",
-    music_line: {
-      line: "Your number might be blocked",
-    }
-  },
-  {
-    chord_line: "",
-    music_line: {
-      line: "",
-    }
-  },
-  {
-    chord_line: " Am                C           ",
-    music_line: {
-      line: "Stay and blah blah blah",
-    }
-  },
-  {
-    chord_line: "         F                       C  G    ",
-    music_line: {
-      line: "You just want what you can't have",
-    }
-  },
-  {
-    chord_line: " Am                    C    ",
-    music_line: {
-      line: "No wait, I'll call the cops",
-    }
-  },
-  {
-    chord_line: "             F                       C G",
-    music_line: {
-      line: "If you don't stop I'll call your dad      ",
-    }
-  },
-  {
-    chord_line: "",
-    music_line: {
-      line: "",
-    }
-  },
-  {
-    chord_line: "       F              G              C    ",
-    music_line: {
-      line: "And I hate to do this to you on your birthday      ",
-    }
-  },
-  {
-    chord_line: "      Am              E7    ",
-    music_line: {
-      line: "Happy birthday by the way      ",
-    }
-  },
-  {
-    chord_line: "         F               G              C    ",
-    music_line: {
-      line: "It's not you it's me and all that other bullshit      ",
-    }
-  },
-  {
-    chord_line: "        Am",
-    music_line: {
-      line: "You know that's bullshit      ",
-    }
-  },
-  {
-    chord_line: "       E7        F    ",
-    music_line: {
-      line: "Don't you, babe       ",
-    }
-  },
-  {
-    chord_line: "             Fm       C    ",
-    music_line: {
-      line: "I'm not your party favor      ",
-    }
-  },
-  {
-    chord_line: "",
-    music_line: {
-      line: "",
-    }
-  },
-  {
-    chord_line: "",
-    music_line: {
-      line: "",
-    }
-  },
-  {
-    chord_line: "",
-    music_line: {
-      line: "",
-    }
-  },
-  {
-    chord_line: "",
-    music_line: {
-      line: "",
-    }
-  },
-  {
-    chord_line: "",
-    music_line: {
-      line: "",
-    }
-  },
-  {
-    chord_line: "",
-    music_line: {
-      line: "",
-    }
-  }
-]
 const drawner_holder = {
   openDrawer: () => null,
   closeDrawer: () => null,

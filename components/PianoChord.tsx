@@ -28,7 +28,7 @@ export default function PianoChord(props: PianoChordPropsType) {
 
     const chords = piano_chords[props.ChordName];
     const [idx, setIdx] = useState(0);
-    if (!chords) {
+    if (!chords || chords.length==0) {
         return (
             <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
                 <Text style={styles.message}> Acorde Indisponível </Text>

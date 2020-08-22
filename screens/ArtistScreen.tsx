@@ -77,7 +77,7 @@ export default function ArtistScreen({ navigation, route }: StackScreenProps<Roo
                         style={styles.card}
                         key={i}
                         onPress={() => {
-                          navigation.push('Root', { screen: 'Search', params: { screen: 'ChoseVersion', params: { music_id: music.id } } },)
+                          navigation.push('Root', { screen: 'Search', params: { screen: 'ChoseVersion', params: { music_id: music.id } } })
                         }}
                       >
                         <Text style={styles.card_h1}>{music.name}</Text>
