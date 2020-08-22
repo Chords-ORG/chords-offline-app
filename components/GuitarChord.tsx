@@ -42,7 +42,7 @@ export default function GuitarChord(props: GuitarChordPropsType) {
     const finger_4 = require('../assets/images/finger_4.png')
     const finger_p = require('../assets/images/finger_p.png')
 
-    var guitar_chords = require('../constants/chords_dict.json');
+    var guitar_chords = require('../constants/guitar_chords.json');
 
     const chords = guitar_chords[props.ChordName];
     const [idx, setIdx] = useState(0);

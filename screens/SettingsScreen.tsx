@@ -72,6 +72,7 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
             }}
           >
             <Picker.Item label="Violão/Guitarra" value="guitar" />
+            <Picker.Item label="Teclado/Piano" value="piano" />
           </Picker>
         </View>
 

@@ -85,6 +85,10 @@ export type GuitarChordPropsType = {
   Capo: number,
   ChordName: string,
 }
+
+export type PianoChordPropsType = {
+  ChordName: string,
+}
 export type CapoDialogPropsType = {
   visible: boolean;
   closeDialog: () => void;

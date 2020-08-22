@@ -10,6 +10,7 @@ import Spinner from '../components/Spinner';
 import { getItem } from '../functions/storage'
 import CapoDialog from '../components/CapoDialog'
 import GuitarChord from '../components/GuitarChord'
+import PianoChord from '../components/PianoChord'
 import { get_chords_lines, get_version, get_rate_version, like_version, unlike_version } from '../functions/requests'
 import useFloatingHeaderHeight from '@react-navigation/stack/lib/typescript/src/utils/useHeaderHeight';
 
@@ -300,7 +301,9 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                       /> : null
                     }
                     {instrument == 'piano' ?
-                      null: null
+                      <PianoChord
+                        ChordName={chord_name}
+                      /> : null
                     }
                     <Text style={styles.chord_name}> {getNote(chord_name)} </Text>
                   </View>
