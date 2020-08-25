@@ -12,7 +12,7 @@ import CapoDialog from '../components/CapoDialog'
 import GuitarChord from '../components/GuitarChord'
 import PianoChord from '../components/PianoChord'
 import { get_chords_lines, get_version, get_rate_version, like_version, unlike_version } from '../functions/requests'
-import useFloatingHeaderHeight from '@react-navigation/stack/lib/typescript/src/utils/useHeaderHeight';
+import { light_style, dark_style } from '../constants/Styles'
 
 export default function ChordScreen({ navigation, route }: StackScreenProps<RootStackParamList, 'ChordScreen'>) {
   const up_arrow = require('../assets/images/up_arrow.png');
@@ -22,6 +22,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const unlike_gray = require('../assets/images/unlike_icon_gray.png')
   const unlike_red = require('../assets/images/unlike_icon_red.png')
 
+  const [basic_style, setBasicStyle] = useState(light_style);
   const [loading, setLoading] = useState(false)
   const [showChords, setShowChords] = useState(false)
   const [drawer, setDrawner] = useState(drawner_holder)
@@ -31,13 +32,28 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const [version, setVersion] = useState(version_sample)
   const [chords_lines, setChordsLines] = useState([])
   const [dialog_visible, setDialogVisible] = useState(false);
-  const [chords_positions, setChordsPositions] = useState(new Set<string>())
+  const [chords_positions, setChordsPositions] = useState([])
   const [rate_type, setRateType] = useState('none')
   const [like_loading, setLikeLoading] = useState(false)
   const [dict, setDictType] = useState('sharp');
   const [instrument, setInstrument] = useState('guitar');
+  const [selected_note, setSelectedNote] = useState('')
+  const [chord_idx, setChordIdx] = useState(new Map<string, number>());
 
-  var chord_idx = new Map<string, number>();
+  const getNote = (tone: string) => {
+    return dict == 'sharp' ? new Chord(tone).toSharp() : new Chord(tone).toBemol();
+  }
+
+  const load_chords = (chords_lines: ChordLineType[]) => {
+    console.log(chords_lines)
+    var positions = Array.from(LoadChords(chords_lines))
+    console.log(positions)
+    setChordsPositions(positions);
+    var mp = new Map<string, number>();
+    for (let i = 0; i < positions.length; ++i)
+      mp.set(getNote(positions[i]), i);
+    setChordIdx(mp);
+  }
 
   const load_data = async (chord_id: number) => {
     drawer.closeDrawer();
@@ -56,18 +72,18 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
     selectTone(version.tone);
     if (default_capo == 'auto') {
       selectCapo(version.capo);
+      setChordsLines(chords_lines);
     }
     else {
+      selectCapo(0);
       setChordsLines(addToChordLines(chords_lines, -version.capo, dict));
     }
-    setChordsPositions(LoadChords(chords_lines));
-    chord_idx.clear()
-    setChordsLines(chords_lines);
+
+    load_chords(chords_lines);
     setLoading(false);
   }
-  const getNote = (tone: string) => {
-    return dict == 'sharp' ? new Chord(tone).toSharp() : new Chord(tone).toBemol();
-  }
+
+
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       load_data(route.params.chord_id).catch(error => {
@@ -81,14 +97,14 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const drawerContent = (
     <Animated.View>
       <View style={drawner_styles.header}>
-        <Text style={drawner_styles.title}> Opções </Text>
+        <Text style={[basic_style.h1, basic_style.primary_color, basic_style.bold]}> Opções </Text>
       </View>
-      <View style={drawner_styles.container}>
+      <View style={[basic_style.container, { padding: 10, height: '100%' }]}>
         <ScrollView>
           {true ? null :
             <View style={[drawner_styles.sub_header, { marginTop: 0 }]}>
-              <Text style={drawner_styles.h1}> Cifra </Text>
-              <View style={drawner_styles.separator} />
+              <Text style={[basic_style.h2, basic_style.primary_color, basic_style.bold]}> Cifra </Text>
+              <View style={basic_style.horizontal_separator} />
             </View>
           }
           {true ? null :
@@ -118,7 +134,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
           }
           <View style={drawner_styles.sub_header}>
             <Text style={drawner_styles.h1}> Tom </Text>
-            <View style={drawner_styles.separator} />
+            <View style={basic_style.horizontal_separator} />
           </View>
           <View>
             {
@@ -138,12 +154,12 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                               var chord = new Chord(selectedTone);
                               chord.add(delta)
                               selectTone(dict == 'sharp' ? chord.toSharp() : chord.toBemol());
-                              setChordsPositions(LoadChords(chords_lines));
+                              load_chords(chords_lines)
                               drawer.closeDrawer();
 
                             }}
                           >
-                            <Text style={[drawner_styles.button_text, { color: '#FFFFFF' }]}>{tone_name}</Text>
+                            <Text style={[basic_style.h3, basic_style.bold, { color: '#FFFFFF' }]}>{tone_name}</Text>
                           </TouchableOpacity>
                         )
                       })
@@ -167,7 +183,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
 
           <View style={drawner_styles.sub_header}>
             <Text style={drawner_styles.h1}> Informações </Text>
-            <View style={drawner_styles.separator} />
+            <View style={basic_style.horizontal_separator} />
           </View>
 
           <TouchableOpacity
@@ -193,7 +209,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
           {true ? null :
             <View style={drawner_styles.sub_header}>
               <Text style={drawner_styles.h1}> Avalie a cifra </Text>
-              <View style={drawner_styles.separator} />
+              <View style={basic_style.horizontal_separator} />
             </View>
           }
           {
@@ -266,7 +282,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
         onSelect={(value, delta) => {
           setChordsLines(addToChordLines(chords_lines, delta, dict));
           selectCapo(value);
-          setChordsPositions(LoadChords(chords_lines));
+          load_chords(chords_lines);
           setDialogVisible(false);
           drawer.closeDrawer();
         }}
@@ -283,7 +299,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
             style={styles.logo}
             source={require('../assets/images/app_logo.png')}
           />
-          <Text style={styles.title}> Chords </Text>
+          <Text style={[basic_style.h1, basic_style.primary_color, basic_style.bold]}> Chords </Text>
         </View>
         <TouchableOpacity onPress={drawer.openDrawer} style={styles.options_button}>
           <Image
@@ -292,7 +308,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
           />
         </TouchableOpacity>
       </View>
-      <View style={[styles.container, { padding: 15, width: '100%', height: '100%' }]}>
+      <View style={[basic_style.container, { padding: 15, width: '100%', height: '100%' }]}>
         {
           <View style={styles.chords_container}>
             <ScrollView
@@ -301,8 +317,9 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
               ref={(scroll: any) => setNotesScroll(scroll)}
             >
               {
-                Array.from(chords_positions).map((chord_name, i) => {
+                chords_positions.map((chord_name, i) => {
                   chord_idx.set(chord_name, i);
+                  const selected = getNote(chord_name) == selected_note;
                   return (
                     <View
                       key={chord_name}
@@ -319,7 +336,10 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                           ChordName={chord_name}
                         /> : null
                       }
-                      <Text style={styles.chord_name}> {getNote(chord_name)} </Text>
+                      <Text style={[basic_style.h3, (selected ? basic_style.active_color : basic_style.primary_color), basic_style.bold]}> {getNote(chord_name)} </Text>
+                      {
+                        selected ? <View style={basic_style.selected_line} /> : null
+                      }
                     </View>
                   )
                 })
@@ -336,12 +356,13 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
             source={(showChords ? up_arrow : down_arrow)}
           />
         </TouchableOpacity>
-        <View style={styles.container}>
+        <View style={basic_style.horizontal_separator} />
+        <View style={basic_style.container}>
           <ScrollView>
             <View style={styles.header_container}>
               <View style={styles.left}>
-                <Text style={styles.h1}>{version.music.name}</Text>
-                <Text style={styles.h2}>{version.music.artist.name}</Text>
+                <Text style={[basic_style.h2, basic_style.primary_color, basic_style.bold]}>{version.music.name}</Text>
+                <Text style={[basic_style.h3, basic_style.secondary_color]}>{version.music.artist.name}</Text>
               </View>
             </View>
             <View style={styles.tone_container}>
@@ -350,7 +371,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                   drawer.openDrawer()
                 }}
               >
-                <Text style={styles.tone_text}>Tom: <Text style={{ color: '#2F80ED' }}>
+                <Text style={[basic_style.h3, basic_style.primary_color, basic_style.bold]}>Tom: <Text style={basic_style.active_color}>
                   {getNote(selectedTone)}
                 </Text></Text>
               </TouchableOpacity>
@@ -359,7 +380,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                   setDialogVisible(true);
                 }}
               >
-                <Text style={styles.tone_text}>Capotraste: <Text style={{ color: '#2F80ED' }}>{selectedCapo == 0 ? "Sem Capo" : `${selectedCapo}ª casa`} </Text></Text>
+                <Text style={[basic_style.h3, basic_style.primary_color, basic_style.bold]}>Capotraste: <Text style={basic_style.active_color}>{selectedCapo == 0 ? "Sem Capo" : `${selectedCapo}ª casa`} </Text></Text>
               </TouchableOpacity>
             </View>
             <View style={{ marginTop: 20 }}>
@@ -368,29 +389,33 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                   <View key={i}>
                     <View style={{ flexDirection: 'row' }}>
                       {
-                        false ? <Text style={styles.chord_font}>{chord_line.chords_line}</Text> :
-                          chord_line.chords_line.split(' ').map((chord_name, i) => {
-                            return (
-                              chord_name == '' ?
-                                <View key={i}>
-                                  <Text style={styles.chord_font} >{" "}</Text>
-                                </View>
-                                :
-                                <TouchableOpacity
-                                  onPress={() => {
-                                    setShowChords(!showChords)
-                                    if (showChords)
-                                      notes_scroll.scrollTo({ x: 100, y: 0, animated: true });
-                                  }}
-                                  key={i}
-                                >
-                                  <Text style={styles.chord_font}>{chord_name} </Text>
-                                </TouchableOpacity>
-                            )
-                          })
+                        chord_line.chords_line.split(' ').map((chord_name, i) => {
+                          return (
+                            chord_name == '' ?
+                              <View key={i}>
+                                <Text style={[basic_style.h3, basic_style.active_color, basic_style.bold, { fontFamily: 'monospace' }]} >{" "}</Text>
+                              </View>
+                              :
+                              <TouchableOpacity
+                                onPress={() => {
+                                  if (!showChords) setShowChords(true);
+                                  setSelectedNote(getNote(chord_name));
+                                  var pos = chord_idx.get(getNote(chord_name)) || 0;
+                                  var width = 0
+                                  if (instrument == 'guitar') width = 100
+                                  if (instrument == 'piano') width = 200;
+                                  console.log(getNote(chord_name), chord_idx.get(getNote(chord_name)))
+                                  notes_scroll.scrollTo({ x: (width * pos) });
+                                }}
+                                key={i}
+                              >
+                                <Text style={[basic_style.h3, basic_style.active_color, basic_style.bold, { fontFamily: 'monospace' }]}>{chord_name} </Text>
+                              </TouchableOpacity>
+                          )
+                        })
                       }
                     </View>
-                    <Text style={styles.lyric_font}>{chord_line.music_line.line}</Text>
+                    <Text style={[basic_style.h3, basic_style.primary_color, { fontFamily: 'monospace' }]}>{chord_line.music_line.line}</Text>
                   </View>
                 ))
               }
@@ -468,11 +493,6 @@ const drawner_styles = StyleSheet.create({
     fontSize: 16,
     color: '#333333'
   },
-  separator: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#E4E4E4',
-    width: '100%',
-  },
   button: {
     width: '100%',
     borderRadius: 5,
@@ -549,13 +569,6 @@ const styles = StyleSheet.create({
     width: 30,
     marginRight: 15,
   },
-  title: {
-    color: '#333333',
-    fontSize: 18,
-    fontWeight: 'bold',
-    alignSelf: 'center',
-    fontFamily: 'raleway'
-  },
   chords_container: {
     flexDirection: 'row',
     paddingBottom: 10,
@@ -566,44 +579,12 @@ const styles = StyleSheet.create({
     width: 20,
     alignSelf: 'center',
   },
-  chord_image: {
-    height: 120,
-    width: 80,
-  },
   chord_container: {
     alignItems: 'center',
     marginRight: 20,
   },
-  chord_image_container: {
-    flexDirection: 'row'
-  },
-  house_indicator: {
-    fontFamily: 'roboto-bold',
-    fontSize: 10,
-    paddingTop: 30,
-  },
-  chord_name: {
-    fontFamily: 'roboto-bold',
-    fontSize: 14,
-    textAlign: 'center',
-    paddingTop: 5,
-    color: '#333333'
-  },
   arrow_container: {
     width: '100%',
-    height: 25,
-    borderBottomColor: '#E4E4E4',
-    borderBottomWidth: 1,
-  },
-  h1: {
-    fontFamily: 'roboto-bold',
-    fontSize: 18,
-    color: '#333333'
-  },
-  h2: {
-    fontFamily: 'roboto',
-    fontSize: 14,
-    color: '#828282'
   },
   left: {
     flex: 2
@@ -618,32 +599,11 @@ const styles = StyleSheet.create({
   options_button: {
     alignSelf: 'center',
   },
-  options_text: {
-    fontFamily: 'roboto-bold',
-    fontSize: 12,
-    color: '#F2F2F2'
-  },
   tone_container: {
     paddingTop: 20,
-  },
-  tone_text: {
-    fontFamily: 'roboto-bold',
-    fontSize: 14,
-    color: '#333333'
   },
   drawer: {
 
   },
-  chord_font: {
-    color: '#2F80ED',
-    fontFamily: 'monospace',
-    fontSize: 14,
-    fontWeight: 'bold'
-  },
-  lyric_font: {
-    color: '#333333',
-    fontFamily: 'monospace',
-    fontSize: 14,
-  }
 
 });

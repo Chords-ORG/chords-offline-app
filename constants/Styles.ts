@@ -5,7 +5,7 @@ export const light_style = StyleSheet.create({
         backgroundColor:'#FFFFFF'
     },
     bold: {
-        fontFamily: 'roboto-bold',
+        fontWeight: 'bold',
     },
     primary_color: {
         color: '#333333'
@@ -70,7 +70,13 @@ export const light_style = StyleSheet.create({
         marginRight: 10,
         marginLeft: 10
     },
-    
+    selected_line:{ 
+        width:'100%', 
+        borderBottomWidth:2, 
+        borderBottomColor: '#2F80ED',
+        marginTop:5,
+        marginBottom:5,
+    }
 })
 
 export const dark_style = StyleSheet.create({
@@ -78,7 +84,7 @@ export const dark_style = StyleSheet.create({
         backgroundColor:'#1E201D'
     },
     bold: {
-        fontFamily: 'roboto-bold',
+        fontWeight: 'bold',
     },
     primary_color: {
         color: '#FFFFFF'
@@ -143,5 +149,11 @@ export const dark_style = StyleSheet.create({
         marginRight: 10,
         marginLeft: 10
     },
-    
+    selected_line:{ 
+        width:'100%', 
+        borderBottomWidth:2, 
+        borderBottomColor: '#2F80ED',
+        marginTop:5,
+        marginBottom:5,
+    }
 })
