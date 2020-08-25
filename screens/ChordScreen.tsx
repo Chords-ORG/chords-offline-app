@@ -13,6 +13,7 @@ import GuitarChord from '../components/GuitarChord'
 import PianoChord from '../components/PianoChord'
 import { get_chords_lines, get_version, get_rate_version, like_version, unlike_version } from '../functions/requests'
 import { light_style, dark_style } from '../constants/Styles'
+import { Picker } from '@react-native-community/picker';
 
 export default function ChordScreen({ navigation, route }: StackScreenProps<RootStackParamList, 'ChordScreen'>) {
   const up_arrow = require('../assets/images/up_arrow.png');
@@ -43,7 +44,6 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const getNote = (tone: string) => {
     return dict == 'sharp' ? new Chord(tone).toSharp() : new Chord(tone).toBemol();
   }
-
   const load_chords = (chords_lines: ChordLineType[]) => {
     console.log(chords_lines)
     var positions = Array.from(LoadChords(chords_lines))
@@ -133,7 +133,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
             </TouchableOpacity>
           }
           <View style={drawner_styles.sub_header}>
-            <Text style={drawner_styles.h1}> Tom </Text>
+            <Text style={drawner_styles.h1}> Cifra </Text>
             <View style={basic_style.horizontal_separator} />
           </View>
           <View>
@@ -180,7 +180,22 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
               {selectedCapo == 0 ? "Sem Capo" : `${selectedCapo}ª casa`}
             </Text>
           </TouchableOpacity>
-
+          <View style={[basic_style.small_card, { justifyContent: 'center', }]}>
+            <Picker
+              style={{ position: 'absolute', height: '50%', width: '100%', color: '#F2F2F2', alignSelf: 'center' }}
+              mode="dropdown"
+              selectedValue={instrument}
+              onValueChange={(itemValue: React.ReactText, itemIndex: number) => {
+                setInstrument(itemValue.toString());
+              }}
+            >
+              <Picker.Item label="Violão/Guitarra" value="guitar" />
+              <Picker.Item label="Piano/Teclado" value="piano" />
+            </Picker>
+            <Text style={[basic_style.h3, basic_style.bold]}>
+              {(instrument == 'guitar' ? "Violão/Guitarra" : "Piano/Teclado")}
+            </Text>
+          </View>
           <View style={drawner_styles.sub_header}>
             <Text style={drawner_styles.h1}> Informações </Text>
             <View style={basic_style.horizontal_separator} />

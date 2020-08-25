@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image, Picker, Alert, Linking } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, Alert, Linking } from 'react-native';
 import { SettingsStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Constants from 'expo-constants';
 import Spinner from '../components/Spinner'
 import { setItem, getItem } from '../functions/storage'
+import { Picker } from '@react-native-community/picker';
 
 export default function SettingsScreen({ navigation }: StackScreenProps<SettingsStackParamList, 'Settings'>) {
   const [dict, setDict] = useState('sharp');
@@ -52,10 +53,10 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
           <Picker
             selectedValue={dict}
             style={styles.picker_style}
-            onValueChange={(itemValue, itemIndex) => {
-              setDict(itemValue);
+            onValueChange={(itemValue:React.ReactText, itemIndex:number) => {
+              setDict(itemValue.toString());
               setLoading(true);
-              setItem('dict', itemValue).then(() => {
+              setItem('dict', itemValue.toString()).then(() => {
                 setLoading(false);
               }).catch(error => {
                 setLoading(false);
@@ -74,10 +75,10 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
           <Picker
             selectedValue={instrument}
             style={styles.picker_style}
-            onValueChange={(itemValue, itemIndex) => {
-              setInstrument(itemValue);
+            onValueChange={(itemValue:React.ReactText, itemIndex:number) => {
+              setInstrument(itemValue.toString());
               setLoading(true);
-              setItem('instrument', itemValue).then(() => {
+              setItem('instrument', itemValue.toString()).then(() => {
                 setLoading(false);
               }).catch(error => {
                 setLoading(false);
