@@ -13,6 +13,7 @@ dict.set('password1', 'Senha')
 dict.set('password2', 'Senha')
 
 const TOP_LIST_SIZE = 10
+const CHAR_LIMIT = 20
 
 function translate(word: string) {
     if (dict.has(word))
@@ -141,18 +142,43 @@ export async function get_chords_lines(version_id: number) {
             return my_versions[idx]['chords_lines'];
         throw (error);
     });
+    var chords_lines = []
+    console.log(response)
+    for(let i =0; i<response.length; ++i){
+        var chord_line = response[i]
+        let j = 0;
+        let n = chord_line.chords_line.length, m = chord_line.music_line.line.length;
+        while(j<n && i<m){
+            let c1 = chord_line.chords_line[j]; // Char da linha da cifra
+            let c2 = chord_line.music_line.line[j]; // Char da linha da letra
+            ++j;
+            if(j>CHAR_LIMIT && c1==' ' && c2==' '){
+                var res = JSON.parse(JSON.stringify(chord_line));
+                res.chords_line = res.chords_line.substring(0, j-1);
+                res.music_line.line = res.music_line.line.substring(0, j-1);
+                chords_lines.push(res);
 
+                chord_line.chords_line = chord_line.chords_line.substring(j-1);
+                chord_line.music_line.line = chord_line.music_line.line.substring(j-1);
+                n = chord_line.chords_line.length; 
+                m = chord_line.music_line.line.length;
+                j = 0;
+                continue;
+            }
+        }
+        chords_lines.push(chord_line);
+    }
     if (idx == -1) {
-        var version = { id: version_id, chords_lines: response }
+        var version = { id: version_id, chords_lines: chords_lines }
         my_versions.push(version);
     }
     else{
-        my_versions[idx]['chords_lines'] = response;
+        my_versions[idx]['chords_lines'] = chords_lines;
     }
     if (my_versions.length > CACHE_LIMIT) my_versions.shift();
     await setItemObject('cache@versions', my_versions);
-
-    return response;
+    console.log(chords_lines);
+    return chords_lines;
 }
 export async function get_version(version_id: number) {
     let data = { version_id: version_id }

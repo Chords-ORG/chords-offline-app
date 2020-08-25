@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image, Picker, Alert, Linking } from 'react-native';
 import { SettingsStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Constants from 'expo-constants';
 import Spinner from '../components/Spinner'
-import { setItem } from '../functions/storage'
+import { setItem, getItem } from '../functions/storage'
 
 export default function SettingsScreen({ navigation }: StackScreenProps<SettingsStackParamList, 'Settings'>) {
   const [dict, setDict] = useState('sharp');
@@ -12,6 +12,20 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
   const [capo, setCapo] = useState('auto');
   const [loading, setLoading] = useState(false);
 
+  const load_page = async () => {
+    setDict(await getItem('dict', 'sharp'));
+    setInstrument(await getItem('instrument', 'guitar'));
+    setCapo(await getItem('default_capo', 'auto'));
+  }
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      load_page().catch(error => {
+        Alert.alert(error.title, error.message);
+      })
+    });
+    return unsubscribe;
+  }, [navigation])
   return (
     <View style={[styles.container, { width: '100%', height: '100%' }]}>
       <Spinner visible={loading} />
@@ -23,13 +37,13 @@ export default function SettingsScreen({ navigation }: StackScreenProps<Settings
         <Text style={styles.app_name}> Chords </Text>
         <Text style={styles.version}>{`Versão: alpha ${Constants.nativeAppVersion}`}</Text>
       </View>
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.flaticon_container}
-        onPress={()=>{
+        onPress={() => {
           Linking.openURL('https://www.flaticon.com/br/autores/freepik')
         }}
-      > 
-        <Text style={styles.refer_text}> Ícones feitos por<Text style={{color:'#2F80ED'}}> FreePick </Text>from  Flaticon</Text>
+      >
+        <Text style={styles.refer_text}> Ícones feitos por<Text style={{ color: '#2F80ED' }}> FreePick </Text>from  Flaticon</Text>
       </TouchableOpacity>
       <View style={styles.bottom_container}>
         <View style={styles.picker}>
@@ -152,15 +166,15 @@ const styles = StyleSheet.create({
   picker: {
     marginBottom: 20,
   },
-  flaticon_container:{
-    marginTop:20,
-    alignSelf:'center'
+  flaticon_container: {
+    marginTop: 20,
+    alignSelf: 'center'
   },
-  refer_text:{
+  refer_text: {
     fontFamily: 'roboto',
     fontSize: 14,
     //fontWeight:'bold',
-    color:'#828282',
-    textAlign:'center'
+    color: '#828282',
+    textAlign: 'center'
   }
 });

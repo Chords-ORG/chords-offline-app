@@ -23,8 +23,9 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const unlike_red = require('../assets/images/unlike_icon_red.png')
 
   const [loading, setLoading] = useState(false)
-  const [showChords, setShowChords] = useState(true)
+  const [showChords, setShowChords] = useState(false)
   const [drawer, setDrawner] = useState(drawner_holder)
+  const [notes_scroll, setNotesScroll] = useState(scroll_holder);
   const [selectedTone, selectTone] = useState('C');
   const [selectedCapo, selectCapo] = useState(0);
   const [version, setVersion] = useState(version_sample)
@@ -36,6 +37,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const [dict, setDictType] = useState('sharp');
   const [instrument, setInstrument] = useState('guitar');
 
+  var chord_idx = new Map<string, number>();
 
   const load_data = async (chord_id: number) => {
     drawer.closeDrawer();
@@ -44,10 +46,10 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
     const dict = await getItem('dict');
     const instrument = await getItem('instrument');
     const default_capo = await getItem('default_capo');
-    
+
     const version = await get_version(chord_id);
     const chords_lines = await get_chords_lines(chord_id);
-    
+
     if (dict) setDictType(dict);
     if (instrument) setInstrument(instrument);
     setVersion(version);
@@ -59,6 +61,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
       setChordsLines(addToChordLines(chords_lines, -version.capo, dict));
     }
     setChordsPositions(LoadChords(chords_lines));
+    chord_idx.clear()
     setChordsLines(chords_lines);
     setLoading(false);
   }
@@ -290,26 +293,36 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
         </TouchableOpacity>
       </View>
       <View style={[styles.container, { padding: 15, width: '100%', height: '100%' }]}>
-        {showChords &&
+        {
           <View style={styles.chords_container}>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              ref={(scroll: any) => setNotesScroll(scroll)}
+            >
               {
-                Array.from(chords_positions).map((chord_name) => (
-                  <View key={chord_name} style={styles.chord_container}>
-                    {instrument == 'guitar' ?
-                      <GuitarChord
-                        Capo={selectedCapo}
-                        ChordName={chord_name}
-                      /> : null
-                    }
-                    {instrument == 'piano' ?
-                      <PianoChord
-                        ChordName={chord_name}
-                      /> : null
-                    }
-                    <Text style={styles.chord_name}> {getNote(chord_name)} </Text>
-                  </View>
-                ))
+                Array.from(chords_positions).map((chord_name, i) => {
+                  chord_idx.set(chord_name, i);
+                  return (
+                    <View
+                      key={chord_name}
+                      style={[styles.chord_container, { height: (showChords) ? undefined : 0 }]}
+                    >
+                      {instrument == 'guitar' ?
+                        <GuitarChord
+                          Capo={selectedCapo}
+                          ChordName={chord_name}
+                        /> : null
+                      }
+                      {instrument == 'piano' ?
+                        <PianoChord
+                          ChordName={chord_name}
+                        /> : null
+                      }
+                      <Text style={styles.chord_name}> {getNote(chord_name)} </Text>
+                    </View>
+                  )
+                })
               }
             </ScrollView>
           </View>
@@ -353,10 +366,30 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
               {
                 chords_lines.map((chord_line: ChordLineType, i) => (
                   <View key={i}>
-                    {
-                      chord_line.chords_line == '' ? null :
-                        <Text style={styles.chord_font}>{chord_line.chords_line}</Text>
-                    }
+                    <View style={{ flexDirection: 'row' }}>
+                      {
+                        false ? <Text style={styles.chord_font}>{chord_line.chords_line}</Text> :
+                          chord_line.chords_line.split(' ').map((chord_name, i) => {
+                            return (
+                              chord_name == '' ?
+                                <View key={i}>
+                                  <Text style={styles.chord_font} >{" "}</Text>
+                                </View>
+                                :
+                                <TouchableOpacity
+                                  onPress={() => {
+                                    setShowChords(!showChords)
+                                    if (showChords)
+                                      notes_scroll.scrollTo({ x: 100, y: 0, animated: true });
+                                  }}
+                                  key={i}
+                                >
+                                  <Text style={styles.chord_font}>{chord_name} </Text>
+                                </TouchableOpacity>
+                            )
+                          })
+                      }
+                    </View>
                     <Text style={styles.lyric_font}>{chord_line.music_line.line}</Text>
                   </View>
                 ))
@@ -397,7 +430,9 @@ const drawner_holder = {
   openDrawer: () => null,
   closeDrawer: () => null,
 }
-
+const scroll_holder = {
+  scrollTo: (arg: any) => null
+}
 const drawner_styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
@@ -441,7 +476,7 @@ const drawner_styles = StyleSheet.create({
   button: {
     width: '100%',
     borderRadius: 5,
-    height: 45,
+    height: 50,
     backgroundColor: '#F2F2F2',
     alignItems: 'center',
     flexDirection: 'row',
