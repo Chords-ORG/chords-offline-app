@@ -65,7 +65,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
 
     const version = await get_version(chord_id);
     const chords_lines = await get_chords_lines(chord_id);
-
+    console.log(chords_lines)
     if (dict) setDictType(dict);
     if (instrument) setInstrument(instrument);
     setVersion(version);
@@ -424,7 +424,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
                                 }}
                                 key={i}
                               >
-                                <Text style={[basic_style.h3, basic_style.active_color, basic_style.bold, { fontFamily: 'monospace' }]}>{chord_name} </Text>
+                                <Text style={[basic_style.h3, basic_style.active_color, basic_style.bold, { fontFamily: 'monospace' }]}>{getNote(chord_name)} </Text>
                               </TouchableOpacity>
                           )
                         })
