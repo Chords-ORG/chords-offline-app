@@ -40,6 +40,7 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
   const [instrument, setInstrument] = useState('guitar');
   const [selected_note, setSelectedNote] = useState('')
   const [chord_idx, setChordIdx] = useState(new Map<string, number>());
+  const [page_scroll, setPageScroll] = useState(scroll_holder)
 
   const getNote = (tone: string) => {
     return dict == 'sharp' ? new Chord(tone).toSharp() : new Chord(tone).toBemol();
@@ -373,7 +374,9 @@ export default function ChordScreen({ navigation, route }: StackScreenProps<Root
         </TouchableOpacity>
         <View style={basic_style.horizontal_separator} />
         <View style={basic_style.container}>
-          <ScrollView>
+          <ScrollView
+            ref={(scroll: any) => { setPageScroll(scroll) }}
+          >
             <View style={styles.header_container}>
               <View style={styles.left}>
                 <Text style={[basic_style.h2, basic_style.primary_color, basic_style.bold]}>{version.music.name}</Text>
@@ -471,7 +474,8 @@ const drawner_holder = {
   closeDrawer: () => null,
 }
 const scroll_holder = {
-  scrollTo: (arg: any) => null
+  scrollTo: (arg: any) => null,
+  scrollToEnd: (arg: any) => null,
 }
 const drawner_styles = StyleSheet.create({
   container: {

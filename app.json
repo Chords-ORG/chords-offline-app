@@ -24,7 +24,7 @@
     },
     "android": {
       "package": "com.gustavolima00.chordsapp",
-      "versionCode": 5.1,
+      "versionCode": 6,
       "permissions":[]
     },
     "web": {

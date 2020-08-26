@@ -96,14 +96,14 @@ export class Chord {
         var res = `${sharp_dict.get(this.base.base)}${this.base.complement}`
         if (this.inversion)
             res += `/${sharp_dict.get(this.inversion.base)}${this.inversion.complement}`
-        return res;
+        return res.replace('\\' ,'/');
     }
 
     public toBemol = (): string => {
         var res = `${bemol_dict.get(this.base.base)}${this.base.complement}`
         if (this.inversion)
             res += `/${bemol_dict.get(this.inversion.base)}${this.inversion.complement}`
-        return res;
+        return res.replace('\\' ,'/');
     }
     public add(n: number) {
         this.base.add(n)
@@ -167,7 +167,7 @@ export function LoadChords(chords_lines: ChordLineType[]) {
         var chords = chords_lines[i].chords_line.split(' ')
         for (let j = 0; j < chords.length; ++j) {
             if (chords[j] == '') continue;
-            let chord_name = new Chord(chords[j]).toSharp()
+            let chord_name = chords[j]
             chord_positions.add(chord_name);
         }
     }

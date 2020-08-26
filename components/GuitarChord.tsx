@@ -143,7 +143,7 @@ export default function GuitarChord(props: GuitarChordPropsType) {
                         style={styles.string_5}
                     />
                     <Image
-                        source={chords[idx].strings[5] == 'bass' ? bass_string : (chords[idx].strings[5] == 'none' ? none_string : normal_string)}
+                        source={chords[idx].strings[5] == 'b' ? bass_string : (chords[idx].strings[5] == 'x' ? none_string : normal_string)}
                         style={styles.string_6}
                     />
 
