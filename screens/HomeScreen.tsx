@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, ScrollView, View, Image, ActivityIndicator, Alert } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Image, ActivityIndicator, Alert, Button } from 'react-native';
 import { RootStackParamList, VersionType, ArtistType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -37,6 +37,13 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
 
   return (
     <View style={[basic_style.container, { width: '100%', height: '100%', padding: 15 }]}>
+      <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('CreateChordScreen')
+          }}
+        >
+          <Text>Create chord</Text> 
+      </TouchableOpacity>
       <ScrollView>
         <View style={basic_style.container}>
           <Text style={[basic_style.h2, basic_style.primary_color, basic_style.bold]}> Cifras em alta </Text>

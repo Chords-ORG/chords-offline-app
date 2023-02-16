@@ -5,6 +5,7 @@ export type defaultDict = {
 export type RootStackParamList = {
   Root: undefined;
   ChordScreen: { chord_id: number },
+  CreateChordScreen: undefined,
   ProfileScreen: { username: string },
   ArtistScreen: { artist_id: number },
   VersionStack: undefined,

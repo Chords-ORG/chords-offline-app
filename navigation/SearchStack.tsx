@@ -7,7 +7,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SampleScreen from '../screens/SampleScreen';
 import SearchScreen from '../screens/SearchScreen';
 import VersionScreen from '../screens/VersionScreen';
-import ChordScreen from '../screens/ChordScreen';
 import { StyleSheet, Text, Image, View } from 'react-native';
 
 const Stack = createStackNavigator<SearchStackParamList>();
