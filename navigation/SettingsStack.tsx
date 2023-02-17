@@ -4,7 +4,6 @@
 import * as React from 'react';
 import { SettingsStackParamList } from '../types';
 import { createStackNavigator } from '@react-navigation/stack';
-import SampleScreen from '../screens/SampleScreen';
 import Settings from '../screens/SettingsScreen'
 
 const Stack = createStackNavigator<SettingsStackParamList>();

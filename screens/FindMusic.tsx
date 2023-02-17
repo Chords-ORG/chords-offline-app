@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image, TextInput, Alert, ActivityIndicator, ScrollView } from 'react-native';
 import { VersionStackParamList, MusicType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
-import { search_music, get_lyrics } from '../functions/requests'
 
 
 export default function FindMusic({ navigation }: StackScreenProps<VersionStackParamList, 'FindMusic'>) {
@@ -17,16 +16,7 @@ export default function FindMusic({ navigation }: StackScreenProps<VersionStackP
         />
         <TextInput
           style={styles.text_input}
-          onChangeText={(text) => {
-            setLoading(true);
-            search_music(text).then(results => {
-              setLoading(false);
-              setMusics(results);
-            }).catch(error => {
-              setLoading(false);
-              Alert.alert(error.title, error.message)
-            })
-          }}
+          onChangeText={() => {}}
           placeholder="Escolha a musica"
           maxLength={40}
         />
@@ -40,17 +30,7 @@ export default function FindMusic({ navigation }: StackScreenProps<VersionStackP
                 <TouchableOpacity
                   style={styles.card}
                   key={i}
-                  onPress={() => {
-                    setLoading(true);
-                    get_lyrics(music.id).then(version => {
-                      setLoading(false);
-                      navigation.push('WriteChords', { version_id: version.id });
-                    }).catch(error => {
-                      setLoading(false);
-                      Alert.alert(error.title, error.message);
-                    })
-
-                  }}
+                  onPress={() => {}}
                 >
                   <Text style={styles.card_h1}>{music.name}</Text>
                   <Text style={styles.card_h2}>{music.artist.name}</Text>

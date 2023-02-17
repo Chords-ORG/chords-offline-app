@@ -4,7 +4,6 @@
 import * as React from 'react';
 import { HomeStackParamList } from '../types';
 import { createStackNavigator } from '@react-navigation/stack';
-import SampleScreen from '../screens/SampleScreen';
 import { StyleSheet, Text, Image, View } from 'react-native';
 import HomeScreen from '../screens/HomeScreen'
 

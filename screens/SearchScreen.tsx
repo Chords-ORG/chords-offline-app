@@ -3,7 +3,6 @@ import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity, ActivityInd
 import { SearchStackParamList, MusicType, VersionType, RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import { ScrollView } from 'react-native-gesture-handler';
-import { search_music } from '../functions/requests'
 import { getItemObject, setItemObject } from '../functions/storage'
 
 export default function SearchScreen({ navigation }: StackScreenProps<RootStackParamList>) {
@@ -33,17 +32,7 @@ export default function SearchScreen({ navigation }: StackScreenProps<RootStackP
         <TextInput
           style={styles.text_input}
           value={search}
-          onEndEditing={() => {
-            setLoading(true);
-            setIdle(false);
-            search_music(search).then(results => {
-              setLoading(false);
-              setMusics(results);
-            }).catch(error => {
-              setLoading(false);
-              Alert.alert(error.title, error.message)
-            })
-          }}
+          onEndEditing={() => {}}
           onChangeText={(text) => {
             setSearch(text);
             if (text == '') setIdle(true);

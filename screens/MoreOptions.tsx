@@ -2,24 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image } from 'react-native';
 import { RootStackParamList, ProfileTabsParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
-import { get_profile } from '../functions/requests'
 
 
 export default function MoreOptions({ navigation }: StackScreenProps<ProfileTabsParamList>) {
     const [loading, setLoading] = useState(false);
     const [staff, setStaff] = useState(false);
 
-    useEffect(() => {
-        const unsubscribe = navigation.addListener('focus', () => {
-            get_profile().then((profile) => {
-                setStaff(profile.user.is_staff);
-            }).catch((error)=>{
-                console.log(error);
-                setStaff(false);
-            })
-        })
-        return unsubscribe;
-    }, [navigation])
     return (
         <View style={[styles.container, {}]}>
             <View>

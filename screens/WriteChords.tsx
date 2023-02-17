@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image, Alert, ActivityIndicator, ScrollView, TextInput } from 'react-native';
 import { VersionStackParamList, ChordLineType } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
-import { get_version, get_chords_lines } from '../functions/requests'
 import Spinner from '../components/Spinner'
 
 export default function WriteChords({ navigation, route }: StackScreenProps<VersionStackParamList, 'WriteChords'>) {
@@ -13,26 +12,7 @@ export default function WriteChords({ navigation, route }: StackScreenProps<Vers
   const [selectedCapo, setCapo] = useState(0);
   const [version_name, setVersionName] = useState('')
   useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      setLoading(true);
-      get_version(route.params.version_id).then(version => {
-        setVersion(version);
-        setLoading(false);
-      }).catch(error => {
-        Alert.alert(error.title, error.message);
-        setLoading(false);
-      })
-      get_chords_lines(route.params.version_id).then(chords_lines => {
-        for (let i = 0; i < chords_lines.length; ++i) {
-          while (chords_lines[i].chords_line.length < 40) chords_lines[i].chords_line += ' ';
-        }
-        setChordsLines(chords_lines);
-        setLoading(false);
-      }).catch(error => {
-        Alert.alert(error.title, error.message);
-        setLoading(false);
-      })
-    })
+    const unsubscribe = navigation.addListener('focus', () => {})
     return unsubscribe;
   }, [navigation])
   return (
@@ -99,7 +79,7 @@ export default function WriteChords({ navigation, route }: StackScreenProps<Vers
           <View style={styles.separator} />
           {
             chords_lines.map((chord_line: ChordLineType, i) => {
-              var line_empty = chord_line.music_line.line == '';
+              var line_empty = chord_line.music_line == '';
               return (
                 <View key={i}>
                   <View
@@ -114,7 +94,7 @@ export default function WriteChords({ navigation, route }: StackScreenProps<Vers
 
                     />
                   </View>
-                  <Text style={styles.music_line}>{chord_line.music_line.line}</Text>
+                  <Text style={styles.music_line}>{chord_line.music_line}</Text>
                 </View>
               )
             })

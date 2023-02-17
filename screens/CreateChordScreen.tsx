@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image, TextInput, Alert, ActivityIndicator, ScrollView } from 'react-native';
 import { VersionStackParamList, MusicType, RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
-import { search_music, get_lyrics } from '../functions/requests'
 
 
 export default function CreateChordScreen({ navigation }: StackScreenProps<RootStackParamList, 'CreateChordScreen'>) {

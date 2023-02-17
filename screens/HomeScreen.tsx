@@ -18,6 +18,14 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
         >
           <Text>Chord page</Text> 
       </TouchableOpacity>
+
+      <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('WriteChordScreen')
+          }}
+        >
+          <Text>Chord page</Text> 
+      </TouchableOpacity>
     </View>
   );
 }

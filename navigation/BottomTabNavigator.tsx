@@ -3,9 +3,8 @@ import * as React from 'react';
 import { BottomTabParamList } from '../types';
 import HomeStack from './HomeStack';
 import SearchStack from './SearchStack';
-import ProfileStack from './ProfileStack';
 import SettingsStack from './SettingsStack';
-import { Image, Text, View } from 'react-native';
+import { Image } from 'react-native';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 

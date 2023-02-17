@@ -4,10 +4,8 @@
 import * as React from 'react';
 import { SearchStackParamList } from '../types';
 import { createStackNavigator } from '@react-navigation/stack';
-import SampleScreen from '../screens/SampleScreen';
 import SearchScreen from '../screens/SearchScreen';
-import VersionScreen from '../screens/VersionScreen';
-import { StyleSheet, Text, Image, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const Stack = createStackNavigator<SearchStackParamList>();
 
@@ -18,25 +16,6 @@ export default function SearchStack() {
                 name="Search"
                 component={SearchScreen}
                 options={{ headerShown: false, }}
-            />
-            <Stack.Screen
-                name="ChoseVersion"
-                component={VersionScreen}
-                options={
-                    {
-                        headerTitle: () => (<Text style={ styles.textHeader }> Escolha a versão da cifra</Text>)
-                    }
-                }
-            />
-            <Stack.Screen
-                name="ProfileView"
-                component={SampleScreen}
-                options={{ headerTitle: 'ProfileView' }}
-            />
-            <Stack.Screen
-                name="ArtistScreen"
-                component={SampleScreen}
-                options={{ headerTitle: 'ArtistScreen' }}
             />
         </Stack.Navigator>
     )
