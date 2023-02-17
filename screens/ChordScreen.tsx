@@ -8,33 +8,25 @@ import {
   Image,
   Alert,
   Animated,
-  ActivityIndicator,
 } from "react-native";
 import { RootStackParamList, ChordLineType } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
 import Drawer from "react-native-drawer-menu";
 import { Easing } from "react-native";
-import Navigation from "../navigation";
 import {
   addToChordLines,
-  numberToNote,
   noteToNumber,
   Chord,
-  LoadChords,
 } from "../functions/chords";
 import Spinner from "../components/Spinner";
 import { getItem } from "../functions/storage";
 import CapoDialog from "../components/CapoDialog";
-import GuitarChord from "../components/GuitarChord";
-import PianoChord from "../components/PianoChord";
 import {
-  get_chords_lines,
-  get_version,
   get_rate_version,
   like_version,
   unlike_version,
 } from "../functions/requests";
-import { light_style, dark_style } from "../constants/Styles";
+import { light_style } from "../constants/Styles";
 import { Picker } from "@react-native-picker/picker";
 import ChordView from "../components/ChordsView";
 import useChordsImageState from "../hooks/useChordsImageState";

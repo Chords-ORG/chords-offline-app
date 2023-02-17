@@ -119,7 +119,7 @@ export default function ChordView({
                         { fontFamily: "monospace" },
                       ]}
                     >
-                      {Chord.toChord(chord_name, chordType)}{" "}
+                      {chord_name}{" "}
                     </Text>
                   </TouchableOpacity>
                 );

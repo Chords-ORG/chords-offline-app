@@ -16,7 +16,7 @@ export default function useChordsState({
   tone = "C",
   capo = 0,
 }: ChordStateProps) {
-  const { chordType, instrument } = useLocalConfiguration();
+  const { chordType } = useLocalConfiguration();
   const [chordsLines, setChordsLines] = React.useState<ChordLineType[]>([]);
   const [chordsList, setChordsList] = React.useState<Chord[]>([]);
   const [rawChordList, setRawChordList] = React.useState<string[]>([]);
@@ -36,14 +36,17 @@ export default function useChordsState({
       const chords = chordsLines[i].chords_line.split(" ");
       for (let j = 0; j < chords.length; ++j) {
         if (chords[j] == "") continue;
-        let chord_name = chords[j];
-        rawChordsList.push(chord_name);
+        let originalChordName = chords[j];
+        let chordName = Chord.toChord(originalChordName, chordType);
+        chords[j].replace(originalChordName, chordName);
+        rawChordsList.push(chordName);
       }
     }
     // Remove duplicates
     rawChordsList = rawChordsList.filter(
       (chord, index) => rawChordsList.indexOf(chord) === index
     );
+
     setRawChordList(rawChordsList);
 
     // Create Chord objects
@@ -56,6 +59,6 @@ export default function useChordsState({
     setChordsList(chordsList);
     setChordsLines(chordsLines);
 
-  }, [lyrics]);
+  }, [lyrics, chordType]);
   return { rawChordList, chordsLines, chordsList };
 }
