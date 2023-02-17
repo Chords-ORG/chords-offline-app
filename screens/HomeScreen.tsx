@@ -1,40 +1,40 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { RootStackParamList } from '../types';
-import { StackScreenProps } from '@react-navigation/stack';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { light_style } from '../constants/Styles'
+import React from "react";
+import { View } from "react-native";
+import { RootStackParamList } from "../types";
+import { StackScreenProps } from "@react-navigation/stack";
+import { Button, Divider } from "@react-native-material/core";
+import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 
-export default function HomeScreen({ navigation, route }: StackScreenProps<RootStackParamList>) {
-
-  const [basic_style, setBasicStyle] = useState(light_style);
-
+export default function HomeScreen({
+  navigation,
+}: StackScreenProps<RootStackParamList>) {
+  const basic_style = useAdaptativeStyle();
   return (
-    <View style={[basic_style.container, { width: '100%', height: '100%', padding: 15 }]}>
-      <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('ChordScreen', { chord_id: 1 })
-          }}
-        >
-          <Text>Chord page</Text> 
-      </TouchableOpacity>
+    <View
+      style={[
+        basic_style.container,
+        { width: "100%", height: "100%", padding: 15 },
+      ]}
+    >
+      <Button
+        title="ChordScreen"
+        color={basic_style.active_color.color}
+        tintColor={basic_style.tint_color.color}
+        onPress={() => {
+          navigation.navigate("ChordScreen", { chord_id: 1 });
+        }}
+      />
 
-      <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('WriteChordScreen')
-          }}
-        >
-          <Text>Chord page</Text> 
-      </TouchableOpacity>
+      <Divider style={{ marginVertical: 20 }} leadingInset={16} />
+
+      <Button
+        color={basic_style.active_color.color}
+        tintColor={basic_style.tint_color.color}
+        title="WriteChordScreen"
+        onPress={() => {
+          navigation.navigate("WriteChordScreen");
+        }}
+      />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  left: {
-    flex: 1
-  },
-  right: {
-    flex: 1,
-  }
-});

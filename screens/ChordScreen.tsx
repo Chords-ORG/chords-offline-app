@@ -89,8 +89,7 @@ Sou seu despenteado leão`;
               basic_style.bold,
             ]}
           >
-            {" "}
-            Chords{" "}
+            Chords
           </Text>
         </View>
       </View>
@@ -107,7 +106,7 @@ Sou seu despenteado leão`;
           <ChordView
             chordsLines={chordsLines}
             musicName="Leão"
-            artistName="Marília Mendonça"
+            authorName="Marília Mendonça"
             selectedTone={tone}
             selectedCapo={capo}
             onPressTone={() => {
@@ -189,5 +188,4 @@ const styles = StyleSheet.create({
   tone_container: {
     paddingTop: 20,
   },
-  drawer: {},
 });

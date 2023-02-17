@@ -16,6 +16,9 @@ export const light_style = StyleSheet.create({
     active_color: {
         color: '#2F80ED'
     },
+    tint_color: {
+        color: '#FFFFFF'
+    },
     h1: {
         fontFamily: 'roboto',
         fontSize: 18,
@@ -97,6 +100,9 @@ export const dark_style = StyleSheet.create({
     },
     active_color: {
         color: '#2F80ED'
+    },
+    tint_color: {
+        color: '#FFFFFF'
     },
     h1: {
         fontFamily: 'roboto',

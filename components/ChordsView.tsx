@@ -14,7 +14,7 @@ import { Chord } from "../functions/chords";
 interface ChordViewProps {
   chordsLines?: ChordLineType[];
   musicName?: string;
-  artistName?: string;
+  authorName?: string;
   onPressTone?: () => void;
   selectedTone?: string;
   onPressCapo?: () => void;
@@ -25,7 +25,7 @@ interface ChordViewProps {
 export default function ChordView({
   chordsLines = [],
   musicName = "",
-  artistName = "",
+  authorName: artistName = "",
   selectedTone = "C",
   selectedCapo = 0,
   onPressTone = () => {},

@@ -1,34 +1,58 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
-import { ProfileStackParamList, RootStackParamList } from "../types";
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { RootStackParamList } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
-import { TextInput, ScrollView } from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
 import ChordView from "../components/ChordsView";
 import useChordsState from "../hooks/useChordsState";
+import { Header } from "../components/Header";
+import { Button } from "@react-native-material/core";
+import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 
 export default function PreviewScreen({
   navigation,
   route,
 }: StackScreenProps<RootStackParamList, "PreviewScreen">) {
-  const { lyrics, artistName, musicName, tone:originalTone, capo:originalCapo } = route.params;
-  const { chordsLines, capo, setCapo, tone, setTone } =
-    useChordsState({ lyrics, originalTone: originalTone, originalCapo: originalCapo });
+  const {
+    lyrics,
+    authorName,
+    musicName,
+    tone: originalTone,
+    capo: originalCapo,
+  } = route.params;
+  const { chordsLines, capo, setCapo, tone, setTone } = useChordsState({
+    lyrics,
+    originalTone: originalTone,
+    originalCapo: originalCapo,
+  });
 
-  const up_arrow = require("../assets/images/up_arrow.png");
-  const down_arrow = require("../assets/images/down_arrow.png");
+  const basic_style = useAdaptativeStyle();
 
-  const [show_menu, setMenu] = useState(true);
-
+  const handleSave = () => {
+    navigation.push("Root");
+  };
   return (
-    <ScrollView style={[styles.container, { padding: 10 }]}>
-      <ChordView
-        chordsLines={chordsLines}
-        musicName={musicName}
-        artistName={artistName}
-        selectedTone={tone}
-        selectedCapo={capo}
+    <View>
+      <Header
+        onBackPress={() => navigation.goBack()}
+        title="Pré-visualização"
       />
-    </ScrollView>
+      <Button
+        title="Salvar cifra"
+        color={basic_style.active_color.color}
+        tintColor={basic_style.tint_color.color}
+        onPress={handleSave}
+      />
+      <ScrollView style={[styles.container, { padding: 10 }]}>
+        <ChordView
+          chordsLines={chordsLines}
+          musicName={musicName}
+          authorName={authorName}
+          selectedTone={tone}
+          selectedCapo={capo}
+        />
+      </ScrollView>
+    </View>
   );
 }
 
@@ -59,27 +83,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     textAlign: "center",
-  },
-  chord_text: {
-    color: "blue",
-    fontSize: 14,
-    fontWeight: "bold",
-    fontFamily: "monospace",
-  },
-  separator: {
-    width: "100%",
-    borderBottomWidth: 1,
-    borderBottomColor: "#828282",
-  },
-  arrow: {
-    height: 13,
-    width: 20,
-    marginTop: 5,
-  },
-  like_icon: {
-    height: 30,
-    width: 30,
-    marginRight: 20,
-    marginTop: 10,
   },
 });

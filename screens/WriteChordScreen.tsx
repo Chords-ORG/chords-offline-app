@@ -1,84 +1,121 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import {
-  ProfileStackParamList,
-  RootStackParamList,
-  defaultDict,
-} from "../types";
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  ScrollView,
+} from "react-native";
+import { RootStackParamList } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
-import { TextInput, ScrollView } from "react-native-gesture-handler";
+import {
+  AppBar,
+  Button,
+  Divider,
+  HStack,
+  Icon,
+  IconButton,
+  Spacer,
+  Stack,
+  TextInput,
+} from "@react-native-material/core";
+import { Header } from "../components/Header";
+import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 
 export default function WriteChordScreen({
   navigation,
 }: StackScreenProps<RootStackParamList>) {
+  const basic_style = useAdaptativeStyle();
   const [authorName, setAuthorName] = useState("");
   const [musicName, setMusicName] = useState("");
   const [tone, setTone] = useState("C");
   const [capo, setCapo] = useState("0");
   const [lyrics, setLyrics] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    return true;
+  };
+
+  const handlePreview = () => {
+    if (validate()) {
+      navigation.push("PreviewScreen", {
+        lyrics,
+        musicName,
+        authorName,
+        tone,
+        capo: parseInt(capo),
+      });
+    }
+  };
 
   return (
-    <ScrollView style={styles.container}>
-      <View>
-        <TouchableOpacity
-          style={styles.button_container}
-          onPress={() =>
-            navigation.push("PreviewScreen", {
-              lyrics,
-              musicName,
-              authorName,
-              tone,
-              capo: parseInt(capo)
-            })
-          }
-        >
-          <Text style={styles.button_text}> Preview </Text>
-        </TouchableOpacity>
-      </View>
-      <View>
-        <Text style={styles.label}> Author Name </Text>
-        <TextInput
-          style={styles.input_style}
-          onChangeText={(text) => setAuthorName(text)}
-          value={authorName}
-        />
-      </View>
-      <View>
-        <Text style={styles.label}> Music Name </Text>
-        <TextInput
-          style={styles.input_style}
-          onChangeText={(text) => setMusicName(text)}
-          value={musicName}
-        />
-      </View>
-      <View>
-        <Text style={styles.label}> Tone </Text>
-        <TextInput
-          style={styles.input_style}
-          onChangeText={(text) => setTone(text)}
-          value={tone}
-        />
-      </View>
-      <View>
-        <Text style={styles.label}> Capo </Text>
-        <TextInput
-          style={styles.input_style}
-          onChangeText={(text) => setCapo(text)}
-          value={capo}
-        />
-      </View>
-
-      <View>
-        <Text style={styles.label}> Lyrics </Text>
-        <TextInput
-          multiline={true}
-          style={styles.input_style}
-          onChangeText={(text) => setLyrics(text)}
-          value={lyrics}
-          
-        />
-      </View>
-    </ScrollView>
+    <View>
+      <Header
+        onBackPress={() => navigation.goBack()}
+        title="Criação de cifra"
+      />
+      <Button
+        title="Pré-visualizar"
+        color={basic_style.active_color.color}
+        tintColor={basic_style.tint_color.color}
+        onPress={handlePreview}
+      />
+      <ScrollView style={styles.container}>
+        <Stack spacing={2} style={{ margin: 5 }}>
+          <TextInput
+            label="Nome do autor"
+            variant="outlined"
+            onChange={(e) => setAuthorName(e.nativeEvent.text)}
+            value={authorName}
+            color={basic_style.active_color.color}
+          />
+          <TextInput
+            label="Nome da música"
+            variant="outlined"
+            onChange={(e) => setMusicName(e.nativeEvent.text)}
+            value={musicName}
+            color={basic_style.active_color.color}
+          />
+          <View style={{ marginVertical: 20 }} />
+          <HStack>
+            <TextInput
+              label="Tom"
+              variant="outlined"
+              onChange={(e) => setTone(e.nativeEvent.text)}
+              value={tone}
+              color={basic_style.active_color.color}
+              style={{ width: 100 }}
+            />
+            <View style={{ marginHorizontal: 20 }} />
+            <TextInput
+              label="Capotraste"
+              variant="outlined"
+              onChange={(e) => setCapo(e.nativeEvent.text)}
+              value={capo}
+              color={basic_style.active_color.color}
+              style={{ width: 100 }}
+              keyboardType="numeric"
+            />
+          </HStack>
+          <View style={{ marginVertical: 20 }} />
+          <TextInput
+            label="Letra"
+            variant="outlined"
+            onChange={(e) => setLyrics(e.nativeEvent.text)}
+            value={lyrics}
+            color={basic_style.active_color.color}
+            multiline
+            numberOfLines={40}
+            style={{ height: 800 }}
+            editable
+            textAlignVertical="top"
+            autoComplete="off"
+          />
+        </Stack>
+        <View style={{ marginVertical: 50 }} />
+      </ScrollView>
+    </View>
   );
 }
 
@@ -98,7 +135,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     fontFamily: "monospace",
-    alignContent: 'flex-start'
+    alignContent: "flex-start",
   },
   button_container: {
     alignSelf: "center",
