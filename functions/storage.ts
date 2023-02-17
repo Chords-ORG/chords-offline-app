@@ -6,7 +6,7 @@ export async function setItem(item: string, value:string) {
             throw ({ title: 'Erro', message: error })
         })
 }
-export async function getItem(item:string, def:any=null) {
+export async function getItem(item:string, def:string|null=null) {
     const value = await AsyncStorage.getItem(item)
         .catch((error: Error) => {
             throw ({ title: 'Erro', message: error })

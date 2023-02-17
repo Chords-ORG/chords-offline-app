@@ -27,15 +27,25 @@ export default function ChordScreen({
   const [capoDialogVisible, setCapoDialogVisible] = useState(false);
   const [toneDialogVisible, setToneDialogVisible] = useState(false);
 
-  const lyrics = `A      B
-  RegExr was created by gskinner.com.
-  C/F   G
-  Edit the Expression & Text to see matches. Roll over matches or the expression for details. PCRE & JavaScript flavors of RegEx are supported. Validate your expression with Tests mode.
-  C9     D#
-  The side bar includes a Cheatsheet, full Reference, and Help. You can also Save & Share with the Community and view patterns you create or favorite in`;
+  const lyrics = `
+[Intro]  
+B  F# A#  D#m
+
+B  F# A#  D#m
+
+
+[Primeira Parte]
+ B                  F#
+Que o Sol da manhã te dissolva
+  A#                  D#m
+Seu vampiro de filmes pastelão
+B                   F#
+Mas quem vai nos julgar?
+   A#           D#m
+Sou seu despenteado leão`;
 
   const { rawChordList, chordsLines, capo, setCapo, tone, setTone } =
-    useChordsState({ lyrics, originalTone: "A" });
+    useChordsState({ lyrics, originalTone: "B" });
   const chordsImagesState = useChordsImageState(rawChordList);
 
 
@@ -96,8 +106,8 @@ export default function ChordScreen({
         <View style={basic_style.container}>
           <ChordView
             chordsLines={chordsLines}
-            musicName="Music Name"
-            artistName="Artist Name"
+            musicName="Leão"
+            artistName="Marília Mendonça"
             selectedTone={tone}
             selectedCapo={capo}
             onPressTone={() => {
