@@ -1,23 +1,18 @@
-import React, { useState, version } from "react";
+import React from "react";
 import {
-  Alert,
-  Modal,
   StyleSheet,
   Text,
-  TouchableHighlight,
   View,
-  ActivityIndicator,
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { ChordLineType, SpinnerPropsType } from "../types";
+import { ChordLineType } from "../types";
 import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
-import useChordsLines from "../hooks/useChordsLines";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { Chord } from "../functions/chords";
 
 interface ChordViewProps {
-  chords?: string;
+  chordsLines?: ChordLineType[];
   musicName?: string;
   artistName?: string;
   onPressTone?: () => void;
@@ -28,25 +23,17 @@ interface ChordViewProps {
 }
 
 export default function ChordView({
-  chords = '',
-  musicName = '',
-  artistName = '',
-  selectedTone = 'C',
+  chordsLines = [],
+  musicName = "",
+  artistName = "",
+  selectedTone = "C",
   selectedCapo = 0,
-  onPressTone = () => { },
-  onPressCapo = () => { },
-  onPressNote = () => { },
+  onPressTone = () => {},
+  onPressCapo = () => {},
+  onPressNote = () => {},
 }: ChordViewProps) {
   const basic_style = useAdaptativeStyle();
-  const { chordType, defaultCapo, instrument } = useLocalConfiguration();
-  const chords_lines = useChordsLines(chords);
-  console.log(chords_lines)
-
-  const getNote = (tone: string) => {
-    return chordType === "sharp"
-      ? new Chord(tone).toSharp()
-      : new Chord(tone).toBemol();
-  };
+  const { chordType } = useLocalConfiguration();
 
   return (
     <ScrollView>
@@ -77,11 +64,16 @@ export default function ChordView({
           >
             Tom:{" "}
             <Text style={basic_style.active_color}>
-              {getNote(selectedTone)}
+              {Chord.toChord(selectedTone, chordType)}
             </Text>
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={onPressCapo}>
+        <TouchableOpacity
+          onPress={() => {
+            console.log("onPressCapo");
+            onPressCapo();
+          }}
+        >
           <Text
             style={[
               basic_style.h3,
@@ -97,7 +89,7 @@ export default function ChordView({
         </TouchableOpacity>
       </View>
       <View style={{ marginTop: 20 }}>
-        {chords_lines.map((chord_line: ChordLineType, i) => (
+        {chordsLines.map((chord_line: ChordLineType, i) => (
           <View key={i}>
             <View style={{ flexDirection: "row" }}>
               {chord_line.chords_line.split(" ").map((chord_name, i) => {
@@ -127,7 +119,7 @@ export default function ChordView({
                         { fontFamily: "monospace" },
                       ]}
                     >
-                      {getNote(chord_name)}{" "}
+                      {Chord.toChord(chord_name, chordType)}{" "}
                     </Text>
                   </TouchableOpacity>
                 );
@@ -151,27 +143,6 @@ export default function ChordView({
 }
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#fff",
-    height: 85,
-    width: "100%",
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-    paddingTop: 35,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 3,
-    shadowColor: "#000",
-    justifyContent: "space-between",
-    //borderBottomWidth:1,
-  },
-  chords_container: {
-    flexDirection: "row",
-    paddingBottom: 10,
-    //height: 170,
-  },
   chord_container: {
     alignItems: "center",
     marginRight: 20,
@@ -179,14 +150,11 @@ const styles = StyleSheet.create({
   left: {
     flex: 2,
   },
-  right: {
-    flex: 1,
-  },
   header_container: {
     flexDirection: "row",
     paddingTop: 10,
   },
   tone_container: {
     paddingTop: 20,
-  }
+  },
 });

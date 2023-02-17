@@ -110,6 +110,11 @@ export class Chord {
         if (this.inversion)
             this.inversion.add(n)
     }
+    public static toChord = (tone: string, chordType: string) => {
+        return chordType === "sharp"
+          ? new Chord(tone).toSharp()
+          : new Chord(tone).toBemol();
+      }; 
 }
 
 export const addToChordLine = (chords_line: string, value: number, dict: string = 'sharp'): string => {

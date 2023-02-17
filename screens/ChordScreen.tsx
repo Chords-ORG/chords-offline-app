@@ -37,13 +37,14 @@ import {
 import { light_style, dark_style } from "../constants/Styles";
 import { Picker } from "@react-native-picker/picker";
 import ChordView from "../components/ChordsView";
+import useChordsImageState from "../hooks/useChordsImageState";
+import ChordsImages from "../components/ChordsImages";
+import useChordsState from "../hooks/useChordsState";
 
 export default function ChordScreen({
   navigation,
   route,
 }: StackScreenProps<RootStackParamList, "ChordScreen">) {
-  const up_arrow = require("../assets/images/up_arrow.png");
-  const down_arrow = require("../assets/images/down_arrow.png");
   const like_gray = require("../assets/images/like_icon_gray.png");
   const like_green = require("../assets/images/like_icon_green.png");
   const unlike_gray = require("../assets/images/unlike_icon_gray.png");
@@ -51,37 +52,28 @@ export default function ChordScreen({
 
   const [basic_style, setBasicStyle] = useState(light_style);
   const [loading, setLoading] = useState(false);
-  const [showChords, setShowChords] = useState(false);
   const [drawer, setDrawner] = useState(drawner_holder);
-  const [notes_scroll, setNotesScroll] = useState(scroll_holder);
   const [selectedTone, selectTone] = useState("C");
   const [selectedCapo, selectCapo] = useState(0);
   const [version, setVersion] = useState(version_sample);
   const [chords_lines, setChordsLines] = useState<ChordLineType[]>([]);
   const [dialog_visible, setDialogVisible] = useState(false);
-  const [chords_positions, setChordsPositions] = useState([]);
   const [rate_type, setRateType] = useState("none");
   const [like_loading, setLikeLoading] = useState(false);
   const [dict, setDictType] = useState("sharp");
   const [instrument, setInstrument] = useState("guitar");
-  const [selected_note, setSelectedNote] = useState("");
-  const [chord_idx, setChordIdx] = useState(new Map<string, number>());
-  const [page_scroll, setPageScroll] = useState(scroll_holder);
 
-  const getNote = (tone: string) => {
-    return dict == "sharp"
-      ? new Chord(tone).toSharp()
-      : new Chord(tone).toBemol();
-  };
-  const load_chords = (chords_lines: ChordLineType[]) => {
-    console.log(chords_lines);
-    var positions = Array.from(LoadChords(chords_lines));
-    console.log(positions);
-    setChordsPositions(positions);
-    var mp = new Map<string, number>();
-    for (let i = 0; i < positions.length; ++i) mp.set(getNote(positions[i]), i);
-    setChordIdx(mp);
-  };
+
+  const lyrics = `A      B
+  RegExr was created by gskinner.com.
+  C/F   G
+  Edit the Expression & Text to see matches. Roll over matches or the expression for details. PCRE & JavaScript flavors of RegEx are supported. Validate your expression with Tests mode.
+  C9     D#
+  The side bar includes a Cheatsheet, full Reference, and Help. You can also Save & Share with the Community and view patterns you create or favorite in`;
+
+  const { rawChordList, chordsLines } = useChordsState({ lyrics });
+
+  const chordsImagesState = useChordsImageState(rawChordList);
 
   const load_data = async (chord_id: number) => {
     drawer.closeDrawer();
@@ -102,14 +94,6 @@ export default function ChordScreen({
       },
     };
 
-    const chords_lines = [];
-    // Aggregate from 2 lines
-    for (let i = 0; i < lines.length; i += 2) {
-      const chords_line = lines[i];
-      const music_line = lines[i + 1] || "";
-      chords_lines.push({ chords_line, music_line });
-    }
-
     if (dict) setDictType(dict);
     if (instrument) setInstrument(instrument);
     selectTone(version.tone);
@@ -121,16 +105,9 @@ export default function ChordScreen({
       setChordsLines(addToChordLines(chords_lines, -version.capo, dict));
     }
 
-    load_chords(chords_lines);
+    //load_chords(chords_lines);
     setLoading(false);
   };
-
-  const chords = `A      B
-  RegExr was created by gskinner.com.
-  C/F   G
-  Edit the Expression & Text to see matches. Roll over matches or the expression for details. PCRE & JavaScript flavors of RegEx are supported. Validate your expression with Tests mode.
-  C9     D#
-  The side bar includes a Cheatsheet, full Reference, and Help. You can also Save & Share with the Community and view patterns you create or favorite in`;
 
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {
@@ -227,7 +204,7 @@ export default function ChordScreen({
                           selectTone(
                             dict == "sharp" ? chord.toSharp() : chord.toBemol()
                           );
-                          load_chords(chords_lines);
+                          //load_chords(chords_lines);
                           drawer.closeDrawer();
                         }}
                       >
@@ -408,7 +385,7 @@ export default function ChordScreen({
         onSelect={(value, delta) => {
           setChordsLines(addToChordLines(chords_lines, delta, dict));
           selectCapo(value);
-          load_chords(chords_lines);
+          // load_chords(chords_lines);
           setDialogVisible(false);
           drawer.closeDrawer();
         }}
@@ -453,64 +430,11 @@ export default function ChordScreen({
           { padding: 15, width: "100%", height: "100%" },
         ]}
       >
-        {
-          <View style={styles.chords_container}>
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              ref={(scroll: any) => setNotesScroll(scroll)}
-            >
-              {chords_positions.map((chord_name, i) => {
-                chord_idx.set(chord_name, i);
-                const selected = getNote(chord_name) == selected_note;
-                return (
-                  <View
-                    key={chord_name}
-                    style={[
-                      styles.chord_container,
-                      { height: showChords ? undefined : 0 },
-                    ]}
-                  >
-                    {instrument == "guitar" ? (
-                      <GuitarChord Capo={selectedCapo} ChordName={chord_name} />
-                    ) : null}
-                    {instrument == "piano" ? (
-                      <PianoChord ChordName={chord_name} />
-                    ) : null}
-                    <Text
-                      style={[
-                        basic_style.h3,
-                        selected
-                          ? basic_style.active_color
-                          : basic_style.primary_color,
-                        basic_style.bold,
-                      ]}
-                    >
-                      {" "}
-                      {getNote(chord_name)}{" "}
-                    </Text>
-                    {selected ? (
-                      <View style={basic_style.selected_line} />
-                    ) : null}
-                  </View>
-                );
-              })}
-            </ScrollView>
-          </View>
-        }
-        <TouchableOpacity
-          onPress={() => setShowChords(!showChords)}
-          style={styles.arrow_container}
-        >
-          <Image
-            style={styles.arrow_icon}
-            source={showChords ? up_arrow : down_arrow}
-          />
-        </TouchableOpacity>
+        <ChordsImages state={chordsImagesState} />
         <View style={basic_style.horizontal_separator} />
         <View style={basic_style.container}>
           <ChordView
-            chords={chords}
+            chordsLines={chordsLines}
             musicName="Music Name"
             artistName="Artist Name"
             selectedTone={selectedTone}
@@ -521,19 +445,9 @@ export default function ChordScreen({
             onPressCapo={() => {
               setDialogVisible(true);
             }}
-            onPressNote={(chord_name) => {
-              if (!showChords) setShowChords(true);
-              setSelectedNote(getNote(chord_name));
-              var pos = chord_idx.get(getNote(chord_name)) || 0;
-              var width = 0;
-              if (instrument == "guitar") width = 100;
-              if (instrument == "piano") width = 200;
-              console.log(
-                getNote(chord_name),
-                chord_idx.get(getNote(chord_name))
-              );
-              notes_scroll.scrollTo({ x: width * pos });
-            }}
+            onPressNote={(chordName) =>
+              chordsImagesState.scrollToChord(chordName)
+            }
           />
         </View>
       </View>

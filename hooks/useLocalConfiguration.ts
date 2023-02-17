@@ -16,9 +16,15 @@ export default function useLocalConfiguration() {
 
     React.useEffect(() => {
         get_local_configuration().then((local_configuration) => {
-            setChordType(local_configuration.chordType);
-            setInstrument(local_configuration.instrument);
-            setDefaultCapo(local_configuration.default_capo);
+            if(local_configuration.chordType !== null){
+                setChordType(local_configuration.chordType);
+            }
+            if(local_configuration.instrument !== null){
+                setInstrument(local_configuration.instrument);
+            }
+            if(local_configuration.default_capo !== null){
+                setDefaultCapo(local_configuration.default_capo);
+            }
             setLoading(false);
         }).catch((error) => {
             console.log(error);
