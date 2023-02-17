@@ -21,6 +21,7 @@ import {
 } from "@react-native-material/core";
 import { Header } from "../components/Header";
 import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
+import NumberedTextInput from "../components/NumberedTextInput";
 
 export default function WriteChordScreen({
   navigation,
@@ -99,18 +100,18 @@ export default function WriteChordScreen({
             />
           </HStack>
           <View style={{ marginVertical: 20 }} />
-          <TextInput
+          <NumberedTextInput
             label="Letra"
             variant="outlined"
             onChange={(e) => setLyrics(e.nativeEvent.text)}
             value={lyrics}
             color={basic_style.active_color.color}
-            multiline
             numberOfLines={40}
             style={{ height: 800 }}
             editable
             textAlignVertical="top"
             autoComplete="off"
+            helperText="As linhas marcadas em azul representam os acordes, as cinza é referente a letra"
           />
         </Stack>
         <View style={{ marginVertical: 50 }} />
