@@ -68,7 +68,7 @@ export type MusicLineType = {
 export type ChordLineType = {
   //id:number
   chords_line: string,
-  music_line: MusicLineType,
+  music_line: string,
 }
 
 export type GuitarFinger = {

@@ -39,7 +39,7 @@ export default function HomeScreen({ navigation, route }: StackScreenProps<RootS
     <View style={[basic_style.container, { width: '100%', height: '100%', padding: 15 }]}>
       <TouchableOpacity
           onPress={() => {
-            navigation.navigate('CreateChordScreen')
+            navigation.navigate('ChordScreen', { chord_id: 1 })
           }}
         >
           <Text>Create chord</Text> 
