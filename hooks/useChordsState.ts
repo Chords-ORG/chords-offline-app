@@ -1,25 +1,24 @@
 import React from "react";
-import { Chord } from "../functions/chords";
+import { Chord, addSemiTonesToChordLine } from "../functions/chords";
 import { ChordLineType } from "../types";
 import useLocalConfiguration from "./useLocalConfiguration";
-
 
 export interface ChordStateProps {
   lyrics?: string;
   originalTone?: string;
-  tone?: string;
-  capo?: number;
+  originalCapo?: number;
 }
 export default function useChordsState({
   lyrics = "",
   originalTone = "C",
-  tone = "C",
-  capo = 0,
+  originalCapo = 0,
 }: ChordStateProps) {
   const { chordType } = useLocalConfiguration();
   const [chordsLines, setChordsLines] = React.useState<ChordLineType[]>([]);
   const [chordsList, setChordsList] = React.useState<Chord[]>([]);
   const [rawChordList, setRawChordList] = React.useState<string[]>([]);
+  const [tone, setToneState] = React.useState<string>(originalTone);
+  const [capo, setCapoState] = React.useState<number>(originalCapo);
 
   React.useEffect(() => {
     const lines = lyrics.split("\n");
@@ -28,7 +27,16 @@ export default function useChordsState({
     let rawChordsList: string[] = [];
     // Aggregate from 2 lines
     for (let i = 0; i < lines.length; i += 2) {
-      const chords_line = lines[i];
+      const toneBaseNote = new Chord(tone).base.base;
+      const originalToneBaseNote = new Chord(originalTone).base.base;
+      const toneDelta = originalToneBaseNote - toneBaseNote;
+      const capoDelta = originalCapo - capo;
+      const chords_line = addSemiTonesToChordLine(
+        lines[i],
+        capoDelta - toneDelta,
+        chordType
+      );
+
       const music_line = lines[i + 1] || "";
       chordsLines.push({ chords_line, music_line });
     }
@@ -58,7 +66,29 @@ export default function useChordsState({
 
     setChordsList(chordsList);
     setChordsLines(chordsLines);
+  }, [lyrics, chordType, tone, capo]);
 
-  }, [lyrics, chordType]);
-  return { rawChordList, chordsLines, chordsList };
+  const setCapo = React.useCallback(
+    (newCapo: number) => {
+      setCapoState(newCapo);
+    },
+    [setCapoState]
+  );
+
+  const setTone = React.useCallback(
+    (newTone: string) => {
+      setToneState(newTone);
+    },
+    [setToneState]
+  );
+
+  return {
+    rawChordList,
+    chordsLines,
+    chordsList,
+    setCapo,
+    setTone,
+    capo,
+    tone,
+  };
 }

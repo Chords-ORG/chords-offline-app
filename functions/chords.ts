@@ -117,7 +117,7 @@ export class Chord {
       }; 
 }
 
-export const addToChordLine = (chords_line: string, value: number, dict: string = 'sharp'): string => {
+export const addSemiTonesToChordLine = (chords_line: string, value: number, dict: string = 'sharp'): string => {
     var delta = 0
     var spaces = 0
     var i = 0
@@ -150,7 +150,7 @@ export const addToChordLine = (chords_line: string, value: number, dict: string 
 export const addToChordLines = (chords_lines: any, value: number, dict: string = 'sharp') => {
     var ans = chords_lines;
     for (let i = 0; i < chords_lines.length; ++i) {
-        ans[i].chords_line = addToChordLine(ans[i].chords_line, value, dict);
+        ans[i].chords_line = addSemiTonesToChordLine(ans[i].chords_line, value, dict);
     }
     return ans
 }
