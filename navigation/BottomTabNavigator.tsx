@@ -5,17 +5,21 @@ import HomeStack from "./HomeStack";
 import SettingsStack from "./SettingsStack";
 import { Image } from "react-native";
 import { ThemeContext } from "../providers/ThemeProvider";
+import { Icon } from "@react-native-material/core";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
-  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+  const { styleSheet: themeStyle, theme } = React.useContext(ThemeContext);
+  const lightTheme = theme === "light";
+  const activeTintColor = lightTheme ? "#2F80ED" : "#FFFFFF";
+  const inactiveTintColor = lightTheme ? "#828282" : "#BDBDBD";
 
   return (
     <BottomTab.Navigator
       tabBarOptions={{
-        activeTintColor: "#2F80ED",
-        inactiveTintColor: "#828282",
+        activeTintColor: activeTintColor,
+        inactiveTintColor: inactiveTintColor,
         activeBackgroundColor: themeStyle.bottom_tab.backgroundColor,
         inactiveBackgroundColor: themeStyle.bottom_tab.backgroundColor,
         style: {
@@ -28,14 +32,26 @@ export default function BottomTabNavigator() {
         name="Home"
         component={HomeStack}
         options={{
-          tabBarIcon: ({ focused }) => HomeIcon(focused),
+          tabBarIcon: ({ focused }) => (
+            <Icon
+              size={30}
+              color={focused ? activeTintColor : inactiveTintColor}
+              name="home"
+            />
+          ),
         }}
       />
       <BottomTab.Screen
         name="Settings"
         component={SettingsStack}
         options={{
-          tabBarIcon: ({ focused }) => SettingsIcon(focused),
+          tabBarIcon: ({ focused }) => (
+            <Icon
+              size={30}
+              color={focused ? activeTintColor : inactiveTintColor}
+              name="apple-keyboard-option"
+            />
+          ),
         }}
       />
     </BottomTab.Navigator>

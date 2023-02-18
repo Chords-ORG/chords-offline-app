@@ -7,12 +7,14 @@ export interface HeaderProps {
   title?: string;
   subTitle?: string;
   showBackButton?: boolean;
+  showLogo?: boolean;
   onPressBackButton?: () => void;
 }
 export const Header = ({
   title = "Chords",
   subTitle = "",
   showBackButton: backVisible = true,
+  showLogo = true,
   onPressBackButton: onBackPress = () => {},
 }: HeaderProps) => {
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
@@ -32,11 +34,13 @@ export const Header = ({
             onPress={onBackPress}
           />
         )}
+        {showLogo && (
+          <Image
+            style={styles.logo}
+            source={require("../assets/images/app_logo.png")}
+          />
+        )}
 
-        <Image
-          style={styles.logo}
-          source={require("../assets/images/app_logo.png")}
-        />
         <Stack>
           <Text
             style={[

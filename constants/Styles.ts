@@ -125,7 +125,7 @@ export const DarkStyle = StyleSheet.create({
         width: '100%',
     },
     bottom_tab:{
-        backgroundColor:'#1E201D',
+        backgroundColor:'#2F80ED',
         shadowColor: "#fff",
     },
     button:{
@@ -136,7 +136,7 @@ export const DarkStyle = StyleSheet.create({
         color: '#FFFFFF'
     },
     text_secondary:{
-        color: '#828282'
+        color: '#BDBDBD'
     },
     text_highlight:{
         color: '#2F80ED'
