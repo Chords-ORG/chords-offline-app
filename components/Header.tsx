@@ -1,19 +1,21 @@
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
 import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
-import { Icon, IconButton } from "@react-native-material/core";
+import { Icon, IconButton, Stack } from "@react-native-material/core";
 
 export interface HeaderProps {
   title?: string;
+  subTitle?: string;
   showBackButton?: boolean;
   onPressBackButton?: () => void;
 }
 export const Header = ({
   title = "Chords",
+  subTitle = "",
   showBackButton: backVisible = true,
   onPressBackButton: onBackPress = () => {},
 }: HeaderProps) => {
   const { styleSheet: basic_style, colorScheme } = useAdaptativeStyle();
-  const backIconLight = colorScheme === "dark" ? true : false;
+
   return (
     <View
       style={[
@@ -34,15 +36,26 @@ export const Header = ({
           style={styles.logo}
           source={require("../assets/images/app_logo.png")}
         />
-        <Text
-          style={[
-            basic_style.h1,
-            basic_style.bold,
-            { color: basic_style.header_tint_color.color },
-          ]}
-        >
-          {title}
-        </Text>
+        <Stack>
+          <Text
+            style={[
+              styles.title,
+              { color: basic_style.header_tint_color.color },
+            ]}
+          >
+            {title}
+          </Text>
+          {subTitle && (
+            <Text
+              style={[
+                styles.subTitle,
+                { color: basic_style.header_tint_color.color },
+              ]}
+            >
+              {subTitle}
+            </Text>
+          )}
+        </Stack>
       </View>
     </View>
   );
@@ -72,5 +85,12 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30,
     marginRight: 15,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  subTitle: {
+    fontSize: 12,
   },
 });

@@ -20,6 +20,15 @@ export const light_style = StyleSheet.create({
         backgroundColor:'#2F80ED',
         color:'#FFFFFF'
     },
+    text_primary:{
+        color: '#333333'
+    },
+    text_secondary:{
+        color: '#828282'
+    },
+    text_highlight:{
+        color: '#2F80ED'
+    },
 
     // Deprecated
     bold: {
@@ -123,6 +132,16 @@ export const dark_style = StyleSheet.create({
         backgroundColor:'#2F80ED',
         color:'#FFFFFF'
     },
+    text_primary:{
+        color: '#FFFFFF'
+    },
+    text_secondary:{
+        color: '#828282'
+    },
+    text_highlight:{
+        color: '#2F80ED'
+    },
+
 
     // Deprecated
     bold: {

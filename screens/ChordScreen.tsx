@@ -62,21 +62,18 @@ export default function ChordScreen({
         }}
         closeDialog={() => setToneDialogVisible(false)}
       />
-      <Header onPressBackButton={navigation.goBack} />
+      <Header
+        onPressBackButton={navigation.goBack}
+        title="Leão"
+        subTitle="Marília Mendonça"
+      />
 
-      <View
-        style={[
-          basic_style.content,
-          { padding: 15, width: "100%", height: "100%" },
-        ]}
-      >
+      <View style={[basic_style.content, styles.content]}>
         <ChordsImages state={chordsImagesState} />
         <View style={basic_style.horizontal_separator} />
         <View>
           <ChordView
             chordsLines={chordsLines}
-            musicName="Leão"
-            authorName="Marília Mendonça"
             selectedTone={tone}
             selectedCapo={capo}
             onPressTone={() => {
@@ -96,66 +93,7 @@ export default function ChordScreen({
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#fff",
-  },
-  header: {
-    backgroundColor: "#fff",
-    height: 85,
-    width: "100%",
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-    paddingTop: 35,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 3,
-    shadowColor: "#000",
-    justifyContent: "space-between",
-    //borderBottomWidth:1,
-  },
-  icon: {
-    width: 25,
-    height: 25,
-    marginRight: 15,
-  },
-  logo: {
-    height: 30,
-    width: 30,
-    marginRight: 15,
-  },
-  chords_container: {
-    flexDirection: "row",
-    paddingBottom: 10,
-    //height: 170,
-  },
-  arrow_icon: {
-    height: 13,
-    width: 20,
-    alignSelf: "center",
-  },
-  chord_container: {
-    alignItems: "center",
-    marginRight: 20,
-  },
-  arrow_container: {
-    width: "100%",
-  },
-  left: {
-    flex: 2,
-  },
-  right: {
-    flex: 1,
-  },
-  header_container: {
-    flexDirection: "row",
-    paddingTop: 10,
-  },
-  options_button: {
-    alignSelf: "center",
-  },
-  tone_container: {
-    paddingTop: 20,
+  content: {
+    padding: 5,
   },
 });
