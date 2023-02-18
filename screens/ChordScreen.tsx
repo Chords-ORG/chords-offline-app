@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
 import { RootStackParamList } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
 import CapoDialog from "../components/CapoDialog";
@@ -11,6 +11,9 @@ import ToneDialog from "../components/ToneDialog";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
 import useModalDialogState from "../hooks/useModalDialogState";
+import { Button, Spacer, Stack } from "@react-native-material/core";
+import { Chord } from "../functions/chords";
+import useLocalConfiguration from "../hooks/useLocalConfiguration";
 
 const lyrics = `
 [Intro]  
@@ -33,13 +36,14 @@ export default function ChordScreen({
   navigation,
 }: StackScreenProps<RootStackParamList, "ChordScreen">) {
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
-  const [toneDialogVisible, setToneDialogVisible] = useState(false);
 
   const { rawChordList, chordsLines, capo, setCapo, tone, setTone } =
     useChordsState({ lyrics, originalTone: "B" });
   const chordsImagesState = useChordsImageState(rawChordList);
+  const { chordType } = useLocalConfiguration();
 
   const capoDialogState = useModalDialogState();
+  const toneDialogState = useModalDialogState();
 
   return (
     <>
@@ -50,37 +54,63 @@ export default function ChordScreen({
         onSelect={setCapo}
       />
       <ToneDialog
-        visible={toneDialogVisible}
+        dialogState={toneDialogState}
         selectedTone={tone}
         onSelectTone={(value) => {
           setTone(value);
         }}
-        closeDialog={() => setToneDialogVisible(false)}
       />
       <Header
         onPressBackButton={navigation.goBack}
         title="Leão"
         subTitle="Marília Mendonça"
       />
-
       <View style={[themeStyle.content, styles.content]}>
-        <ChordsImages state={chordsImagesState} />
+        <ChordsImages state={chordsImagesState} selectedCapo={capo}/>
         <View style={themeStyle.horizontal_separator} />
         <View>
-          <ChordView
-            chordsLines={chordsLines}
-            selectedTone={tone}
-            selectedCapo={capo}
-            onPressTone={() => {
-              setToneDialogVisible(true);
-            }}
-            onPressCapo={() => {
-              capoDialogState.show();
-            }}
-            onPressNote={(chordName) =>
-              chordsImagesState.scrollToChord(chordName)
-            }
-          />
+          <Stack spacing={2}>
+            <Button
+              title="Tom"
+              onPress={() => {
+                toneDialogState.show();
+              }}
+              trailing={
+                <Text style={{ color: themeStyle.button.color }}>
+                  {Chord.toChord(tone, chordType)}
+                </Text>
+              }
+              color={themeStyle.button.backgroundColor}
+              tintColor={themeStyle.button.color}
+              compact
+            />
+            <Spacer />
+            <Button
+              onPress={() => {
+                capoDialogState.show();
+              }}
+              title="Capostraste"
+              trailing={
+                <Text style={{ color: themeStyle.button.color }}>
+                  {capo == 0 ? "Sem Capo" : `${capo}ª casa`}{" "}
+                </Text>
+              }
+              color={themeStyle.button.backgroundColor}
+              tintColor={themeStyle.button.color}
+              compact
+            />
+          </Stack>
+          <ScrollView>
+            <Stack>
+              <ChordView
+                chordsLines={chordsLines}
+                onPressNote={(chordName) =>
+                  chordsImagesState.scrollToChord(chordName)
+                }
+              />
+              <View style={{ height: 300 }} />
+            </Stack>
+          </ScrollView>
         </View>
       </View>
     </>

@@ -49,7 +49,7 @@ export default function ChordsImages({
                 ]}
               >
                 {instrument === "guitar" ? (
-                  <GuitarChord Capo={selectedCapo} ChordName={chordName} />
+                  <GuitarChord capo={selectedCapo} chordName={chordName} />
                 ) : null}
                 {instrument === "piano" ? (
                   <PianoChord ChordName={chordName} />

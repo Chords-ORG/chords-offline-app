@@ -30,8 +30,8 @@ export const LightStyle = StyleSheet.create({
     color: "#2F80ED",
   },
   dialog: {
-    backgroundColor: "#313337",
-    color: "#FFFFFF",
+    backgroundColor: "#FFFFFF",
+    color: "#333333",
   },
 
   // Deprecated

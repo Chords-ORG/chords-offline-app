@@ -6,7 +6,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import ChordView from "../components/ChordsView";
 import useChordsState from "../hooks/useChordsState";
 import { Header } from "../components/Header";
-import { Button } from "@react-native-material/core";
+import { Button, Stack, Text } from "@react-native-material/core";
 import { ThemeContext } from "../providers/ThemeProvider";
 
 export default function PreviewScreen({
@@ -20,7 +20,7 @@ export default function PreviewScreen({
     tone: originalTone,
     capo: originalCapo,
   } = route.params;
-  const { chordsLines, capo, setCapo, tone, setTone } = useChordsState({
+  const { chordsLines, capo, tone } = useChordsState({
     lyrics,
     originalTone: originalTone,
     originalCapo: originalCapo,
@@ -35,7 +35,8 @@ export default function PreviewScreen({
     <View>
       <Header
         onPressBackButton={() => navigation.goBack()}
-        title="Pré-visualização"
+        title={`${authorName} (Pré-visualização)`}
+        subTitle={musicName}
       />
       <Button
         title="Salvar cifra"
@@ -43,13 +44,18 @@ export default function PreviewScreen({
         tintColor={themeStyle.tint_color.color}
         onPress={handleSave}
       />
-      <ScrollView style={[styles.container, { padding: 10 }]}>
-        <ChordView
-          chordsLines={chordsLines}
-          selectedTone={tone}
-          selectedCapo={capo}
-        />
-      </ScrollView>
+      <View style={[themeStyle.content]}>
+        <ScrollView>
+          <Text style={themeStyle.primary_color}>Tom: {tone}</Text>
+          <Text style={themeStyle.primary_color}>
+            Capotraste: {capo === 0 ? "Sem capotraste\n" : `${capo}ª casa\n`}
+          </Text>
+          <Stack>
+            <ChordView chordsLines={chordsLines} />
+            <View style={{ height: 300 }} />
+          </Stack>
+        </ScrollView>
+      </View>
     </View>
   );
 }

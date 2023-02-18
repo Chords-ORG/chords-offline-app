@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
-import { GuitarChordPropsType } from "../types";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import useGuitarChordImages from "../hooks/useGuitarChordImages";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 var houseDict = new Map();
 houseDict.set(0, { height: 0, width: 0 });
@@ -21,7 +21,12 @@ stringDict.set(4, { right: 41 });
 stringDict.set(5, { right: 55 });
 stringDict.set(6, { right: 68 });
 
-export default function GuitarChord(props: GuitarChordPropsType) {
+export interface GuitarChordProps {
+  capo: number;
+  chordName: string;
+}
+
+export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
   const {
     guitar_base,
     guitar_capo,
@@ -44,7 +49,7 @@ export default function GuitarChord(props: GuitarChordPropsType) {
 
   const guitar_chords = require("../constants/guitar_chords.json");
 
-  const chords = guitar_chords[props.ChordName];
+  const chords = guitar_chords[chordName];
   const [idx, setIdx] = useState(0);
   if (!chords || chords.length == 0) {
     return (
@@ -58,8 +63,7 @@ export default function GuitarChord(props: GuitarChordPropsType) {
       </View>
     );
   } else {
-    const tam = guitar_chords[props.ChordName].length;
-    const capo = props.Capo;
+    const tam = guitar_chords[chordName].length;
     var slash_house_style = styles.slash_house_1;
     if (chords[idx].fingers[0].house == 2)
       slash_house_style = styles.slash_house_2;
@@ -68,12 +72,14 @@ export default function GuitarChord(props: GuitarChordPropsType) {
     else if (chords[idx].fingers[0].house == 4)
       slash_house_style = styles.slash_house_4;
     const start_house = chords[idx].start_house + (capo != 0 ? capo + 1 : 0);
+
+    const { styleSheet: themeStyle } = React.useContext(ThemeContext);
     return (
       <TouchableOpacity
         style={styles.container}
         onPress={() => setIdx((idx + 1) % tam)}
       >
-        <Text style={styles.house_text}>
+        <Text style={[styles.house_text, themeStyle.primary_color ]}>
           {start_house != 0 ? `${start_house}ª` : "   "}
         </Text>
         <View>

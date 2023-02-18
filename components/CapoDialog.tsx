@@ -35,16 +35,15 @@ export default function CapoDialog({
               <HStack spacing={10} key={i} center>
                 {values.map((value) => {
                   let text =
-                    value == 0 ? "Sem capotraste\n" : `${value}ª casa\n`;
-                  const chord = new Chord(tone);
-                  chord.add(value);
-                  text += `(Forma de ${chord.toSharp()})`;
+                    value === 0 ? "Sem capotraste\n" : `${value}ª casa\n`;
+                  const newChordsForm = new Chord(tone);
+                  newChordsForm.add(-value);
+                  text += `(Forma de ${newChordsForm.toSharp()})`;
                   return (
                     <Button
                       style={{ width: 160 }}
                       color={themeStyle.button.backgroundColor}
                       tintColor={themeStyle.button.color}
-                      disabled={selectedCapo == value}
                       key={value}
                       onPress={() => {
                         onSelect(value);

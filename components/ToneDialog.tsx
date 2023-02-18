@@ -1,14 +1,16 @@
 import React from "react";
-import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Pressable, StyleSheet, TouchableOpacity, View } from "react-native";
 import { Chord, noteToNumber } from "../functions/chords";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { ThemeContext } from "../providers/ThemeProvider";
+import { ModalDialogState } from "../hooks/useModalDialogState";
+import ModalDialog from "./ModalDialog";
+import { Button, Chip, HStack, Stack, Text } from "@react-native-material/core";
 
 export interface ToneDialogProps {
+  dialogState: ModalDialogState;
   onSelectTone?: (tone: string) => void;
-  visible?: boolean;
   selectedTone?: string;
-  closeDialog?: () => void;
 }
 
 const toneLists = [
@@ -18,63 +20,54 @@ const toneLists = [
 
 export default function ToneDialog({
   onSelectTone = () => {},
-  visible = false,
   selectedTone = "C",
-  closeDialog = () => {},
+  dialogState,
 }: ToneDialogProps) {
   const { chordType } = useLocalConfiguration();
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   return (
-    <Modal visible={visible} transparent>
-      <TouchableOpacity
-        style={styles.container}
-        onPress={closeDialog}
-        activeOpacity={0}
-      >
-        <View style={styles.modalView}>
-          <Text style={styles.h1}> Selecione o tom </Text>
-          <View style={styles.separator} />
+    <ModalDialog state={dialogState}>
+      <Stack style={[styles.modalView, themeStyle.dialog]} spacing={20}>
+        <Text style={{ color: themeStyle.dialog.color }}>Selecione o tom</Text>
+        <Stack spacing={10}>
           {toneLists.map((tones, i) => {
             return (
-              <View style={styles.tone_buttons_container} key={i}>
-                {tones.map((tone_name, j) => {
-                  let idx = i * tones.length + j;
+              <HStack key={i} spacing={10}>
+                {tones.map((toneName, j) => {
+                  const idx = i * tones.length + j;
+                  const isSelectedTone = noteToNumber(selectedTone) === idx
+                  // Fill with spaces
                   return (
-                    <TouchableOpacity
+                    <Pressable
                       key={j}
                       style={[
                         styles.circle_button,
-                        {
-                          backgroundColor:
-                            noteToNumber(selectedTone) == idx
-                              ? "#2F80ED"
-                              : "#BDBDBD",
-                        },
+                        themeStyle.button,
                       ]}
                       onPress={() => {
-                        onSelectTone(Chord.toChord(tone_name, chordType));
-                        closeDialog();
+                        onSelectTone(Chord.toChord(toneName, chordType));
+                        dialogState.hide();
                       }}
                     >
                       <Text
                         style={[
                           themeStyle.h3,
                           themeStyle.bold,
-                          { color: "#FFFFFF" },
+                          themeStyle.button,
                         ]}
                       >
-                        {tone_name}
+                        {toneName}
                       </Text>
-                    </TouchableOpacity>
+                    </Pressable>
                   );
                 })}
-              </View>
+              </HStack>
             );
           })}
-        </View>
-      </TouchableOpacity>
-    </Modal>
+        </Stack>
+      </Stack>
+    </ModalDialog>
   );
 }
 
