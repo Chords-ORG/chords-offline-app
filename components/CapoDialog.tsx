@@ -1,61 +1,67 @@
 import React from "react";
-import {
-  Modal,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import { CapoDialogPropsType } from "../types";
+import { StyleSheet } from "react-native";
 import { Chord } from "../functions/chords";
+import { ModalDialogState } from "../hooks/useModalDialogState";
+import ModalDialog from "./ModalDialog";
+import { ThemeContext } from "../providers/ThemeProvider";
+import {
+  Button,
+  HStack,
+  Stack,
+  Text,
+} from "@react-native-material/core";
 
-export default function CapoDialog(props: CapoDialogPropsType) {
+export interface CapoDialogProps {
+  dialogState: ModalDialogState;
+  selectedCapo: number;
+  tone: string;
+  onSelect: (value: number) => void;
+}
+
+export default function CapoDialog({
+  dialogState,
+  selectedCapo,
+  tone,
+  onSelect,
+}: CapoDialogProps) {
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
   return (
-    <Modal visible={props.visible} transparent>
-      <TouchableOpacity
-        style={styles.container}
-        onPress={() => {
-          props.closeDialog();
-        }}
-        activeOpacity={0}
-      >
-        <View style={styles.modalView}>
-          <Text style={styles.h1}> Selecione a casa </Text>
-          <View style={styles.separator} />
+    <ModalDialog state={dialogState}>
+      <Stack style={[styles.modalView, themeStyle.dialog]} spacing={20}>
+        <Text style={{ color: themeStyle.dialog.color }}>Selecione a casa</Text>
+        <Stack spacing={10}>
           {value_lists.map((values, i) => {
             return (
-              <View style={styles.buttons_container} key={i}>
+              <HStack spacing={10} key={i} center>
                 {values.map((value) => {
-                  var text =
+                  let text =
                     value == 0 ? "Sem capotraste\n" : `${value}ª casa\n`;
-                  var delta = props.selected_capo - value;
-                  var chord = new Chord(props.tone);
-                  chord.add(props.selected_capo);
-                  chord.add(delta);
+                  const chord = new Chord(tone);
+                  chord.add(value);
                   text += `(Forma de ${chord.toSharp()})`;
                   return (
-                    <TouchableOpacity
-                      style={[
-                        styles.button,
-                        props.selected_capo == value
-                          ? { backgroundColor: "#2F80ED" }
-                          : {},
-                      ]}
+                    <Button
+                      style={{ width: 160 }}
+                      color={themeStyle.button.backgroundColor}
+                      tintColor={themeStyle.button.color}
+                      disabled={selectedCapo == value}
                       key={value}
                       onPress={() => {
-                        props.onSelect(value, delta);
+                        onSelect(value);
+                        dialogState.hide();
                       }}
-                    >
-                      <Text style={styles.button_text}>{text}</Text>
-                    </TouchableOpacity>
+                      title={text}
+                      uppercase={false}
+                      titleStyle={{ textAlign: "center", fontSize: 14 }}
+                    />
                   );
                 })}
-              </View>
+              </HStack>
             );
           })}
-        </View>
-      </TouchableOpacity>
-    </Modal>
+        </Stack>
+      </Stack>
+    </ModalDialog>
   );
 }
 
@@ -83,7 +89,6 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: "white",
     borderRadius: 5,
     padding: 15,
     //alignItems: "center",
@@ -96,7 +101,6 @@ const styles = StyleSheet.create({
   separator: {
     width: 300,
     borderBottomWidth: 1,
-    borderBottomColor: "#E4E4E4",
     height: 10,
   },
   buttons_container: {

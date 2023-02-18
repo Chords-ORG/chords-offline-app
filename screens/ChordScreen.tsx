@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import { RootStackParamList } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
-import Spinner from "../components/Spinner";
 import CapoDialog from "../components/CapoDialog";
 import ChordView from "../components/ChordsView";
 import useChordsImageState from "../hooks/useChordsImageState";
@@ -11,6 +10,7 @@ import useChordsState from "../hooks/useChordsState";
 import ToneDialog from "../components/ToneDialog";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
+import useModalDialogState from "../hooks/useModalDialogState";
 
 const lyrics = `
 [Intro]  
@@ -33,26 +33,21 @@ export default function ChordScreen({
   navigation,
 }: StackScreenProps<RootStackParamList, "ChordScreen">) {
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
-  const [loading, setLoading] = useState(false);
-  const [capoDialogVisible, setCapoDialogVisible] = useState(false);
   const [toneDialogVisible, setToneDialogVisible] = useState(false);
 
   const { rawChordList, chordsLines, capo, setCapo, tone, setTone } =
     useChordsState({ lyrics, originalTone: "B" });
   const chordsImagesState = useChordsImageState(rawChordList);
 
+  const capoDialogState = useModalDialogState();
+
   return (
     <>
-      <Spinner visible={loading} />
       <CapoDialog
-        visible={capoDialogVisible}
-        closeDialog={() => setCapoDialogVisible(false)}
-        selected_capo={capo}
+        dialogState={capoDialogState}
+        selectedCapo={capo}
         tone={tone}
-        onSelect={(value, delta) => {
-          setCapo(value);
-          setCapoDialogVisible(false);
-        }}
+        onSelect={setCapo}
       />
       <ToneDialog
         visible={toneDialogVisible}
@@ -80,7 +75,7 @@ export default function ChordScreen({
               setToneDialogVisible(true);
             }}
             onPressCapo={() => {
-              setCapoDialogVisible(true);
+              capoDialogState.show();
             }}
             onPressNote={(chordName) =>
               chordsImagesState.scrollToChord(chordName)
