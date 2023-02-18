@@ -57,16 +57,3 @@ export default function BottomTabNavigator() {
     </BottomTab.Navigator>
   );
 }
-const icon_style = { height: 25, width: 25 };
-
-function HomeIcon(focused: boolean) {
-  let gray = require("../assets/images/home_icon_gray.png");
-  let blue = require("../assets/images/home_icon_blue.png");
-  return <Image style={icon_style} source={focused ? blue : gray} />;
-}
-
-function SettingsIcon(focused: boolean) {
-  let gray = require("../assets/images/settings_icon_gray.png");
-  let blue = require("../assets/images/settings_icon_blue.png");
-  return <Image style={icon_style} source={focused ? blue : gray} />;
-}
