@@ -4,9 +4,7 @@ import { light_style, dark_style } from "../constants/Styles";
 import useLocalConfiguration from "./useLocalConfiguration";
 import React from "react";
 
-export default function useAdaptativeStyle():
-  | typeof light_style
-  | typeof dark_style {
+export default function useAdaptativeStyle() {
   const systemColorScheme = useColorScheme();
   const { colorScheme: localColorScheme } = useLocalConfiguration();
   const [colorScheme, setColorScheme] = React.useState<"light" | "dark">(
@@ -21,5 +19,7 @@ export default function useAdaptativeStyle():
     }
   }, [localColorScheme, systemColorScheme]);
 
-  return colorScheme === "light" ? light_style : dark_style;
+  const styleSheet = colorScheme === "light" ? light_style : dark_style;
+
+  return { colorScheme, styleSheet };
 }

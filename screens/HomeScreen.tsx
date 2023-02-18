@@ -9,8 +9,8 @@ import { Header } from "../components/Header";
 export default function HomeScreen({
   navigation,
 }: StackScreenProps<RootStackParamList>) {
-  const basic_style = useAdaptativeStyle();
-  
+  const { styleSheet: basic_style } = useAdaptativeStyle();
+
   return (
     <View>
       <Header showBackButton={false} />

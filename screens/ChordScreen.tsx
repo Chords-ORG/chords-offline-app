@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Image,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import { RootStackParamList } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
 import Spinner from "../components/Spinner";
@@ -16,18 +10,9 @@ import ChordsImages from "../components/ChordsImages";
 import useChordsState from "../hooks/useChordsState";
 import ToneDialog from "../components/ToneDialog";
 import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
+import { Header } from "../components/Header";
 
-export default function ChordScreen({
-  navigation,
-  route,
-}: StackScreenProps<RootStackParamList, "ChordScreen">) {
-
-  const basic_style = useAdaptativeStyle();
-  const [loading, setLoading] = useState(false);
-  const [capoDialogVisible, setCapoDialogVisible] = useState(false);
-  const [toneDialogVisible, setToneDialogVisible] = useState(false);
-
-  const lyrics = `
+const lyrics = `
 [Intro]  
 B  F# A#  D#m
 
@@ -44,13 +29,20 @@ Mas quem vai nos julgar?
    A#           D#m
 Sou seu despenteado leão`;
 
+export default function ChordScreen({
+  navigation,
+}: StackScreenProps<RootStackParamList, "ChordScreen">) {
+  const { styleSheet: basic_style } = useAdaptativeStyle();
+  const [loading, setLoading] = useState(false);
+  const [capoDialogVisible, setCapoDialogVisible] = useState(false);
+  const [toneDialogVisible, setToneDialogVisible] = useState(false);
+
   const { rawChordList, chordsLines, capo, setCapo, tone, setTone } =
     useChordsState({ lyrics, originalTone: "B" });
   const chordsImagesState = useChordsImageState(rawChordList);
 
-
   return (
-    <View style={styles.container}>
+    <>
       <Spinner visible={loading} />
       <CapoDialog
         visible={capoDialogVisible}
@@ -70,39 +62,17 @@ Sou seu despenteado leão`;
         }}
         closeDialog={() => setToneDialogVisible(false)}
       />
-      <View style={styles.header}>
-        <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity onPress={navigation.goBack}>
-            <Image
-              style={styles.icon}
-              source={require("../assets/images/back_icon.png")}
-            />
-          </TouchableOpacity>
-          <Image
-            style={styles.logo}
-            source={require("../assets/images/app_logo.png")}
-          />
-          <Text
-            style={[
-              basic_style.h1,
-              basic_style.primary_color,
-              basic_style.bold,
-            ]}
-          >
-            Chords
-          </Text>
-        </View>
-      </View>
+      <Header onPressBackButton={navigation.goBack} />
 
       <View
         style={[
-          basic_style.container,
+          basic_style.content,
           { padding: 15, width: "100%", height: "100%" },
         ]}
       >
         <ChordsImages state={chordsImagesState} />
         <View style={basic_style.horizontal_separator} />
-        <View style={basic_style.container}>
+        <View>
           <ChordView
             chordsLines={chordsLines}
             musicName="Leão"
@@ -121,7 +91,7 @@ Sou seu despenteado leão`;
           />
         </View>
       </View>
-    </View>
+    </>
   );
 }
 

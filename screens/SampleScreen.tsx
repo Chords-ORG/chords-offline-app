@@ -1,15 +1,15 @@
-import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { RootStackParamList } from '../types';
-import { StackScreenProps } from '@react-navigation/stack';
-import { Header } from '../components/Header';
-import useAdaptativeStyle from '../hooks/useAdaptativeStyle';
-import { Button, Divider } from '@react-native-material/core';
+import * as React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { RootStackParamList } from "../types";
+import { StackScreenProps } from "@react-navigation/stack";
+import { Header } from "../components/Header";
+import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
+import { Button, Divider } from "@react-native-material/core";
 
 // { navigation }: StackScreenProps<RootStackParamList, 'SampleScreen'>
 export default function SampleScreen() {
-  const basic_style = useAdaptativeStyle();
-  
+  const { styleSheet: basic_style } = useAdaptativeStyle();
+
   return (
     <View>
       <Header showBackButton={false} />

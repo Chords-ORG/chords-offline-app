@@ -1,5 +1,6 @@
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
 import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
+import { Icon, IconButton } from "@react-native-material/core";
 
 export interface HeaderProps {
   title?: string;
@@ -11,7 +12,8 @@ export const Header = ({
   showBackButton: backVisible = true,
   onPressBackButton: onBackPress = () => {},
 }: HeaderProps) => {
-  const basic_style = useAdaptativeStyle();
+  const { styleSheet: basic_style, colorScheme } = useAdaptativeStyle();
+  const backIconLight = colorScheme === "dark" ? true : false;
   return (
     <View
       style={[
@@ -19,14 +21,13 @@ export const Header = ({
         { backgroundColor: basic_style.header_color.backgroundColor },
       ]}
     >
-      <View style={{ flexDirection: "row" }}>
+      <View style={styles.contentContainer}>
         {backVisible && (
-          <TouchableOpacity onPress={onBackPress}>
-            <Image
-              style={styles.icon}
-              source={require("../assets/images/back_icon.png")}
-            />
-          </TouchableOpacity>
+          <IconButton
+            color={basic_style.header_tint_color.color}
+            icon={(props) => <Icon name="arrow-left" {...props} />}
+            onPress={onBackPress}
+          />
         )}
 
         <Image
@@ -63,10 +64,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     //borderBottomWidth:1,
   },
-  icon: {
-    width: 25,
-    height: 25,
-    marginRight: 15,
+  contentContainer: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   logo: {
     height: 30,

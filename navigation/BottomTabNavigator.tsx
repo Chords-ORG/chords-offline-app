@@ -9,7 +9,7 @@ import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
-  const basic_style = useAdaptativeStyle();
+  const { styleSheet: basic_style } = useAdaptativeStyle();
   return (
     <BottomTab.Navigator
       tabBarOptions={{
@@ -21,7 +21,6 @@ export default function BottomTabNavigator() {
           borderTopWidth: 0,
           shadowColor: basic_style.bottom_tab.shadowColor,
         },
-        
       }}
     >
       <BottomTab.Screen
