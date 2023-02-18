@@ -40,7 +40,6 @@ export default function ChordsImages({
         >
           {chordsList.map((chordName, i) => {
             const selected = chordName === selectedNote;
-              console.log(instrument)
             return (
               <View
                 key={chordName}

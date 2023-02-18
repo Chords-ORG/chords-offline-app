@@ -25,7 +25,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const { localColorScheme } = useLocalConfiguration();
 
   const toggleTheme = async () => {
-    console.log("toggleTheme", localColorScheme, systemColorScheme);
     if (localColorScheme === "system") {
       setTheme(systemColorScheme || "light");
     } else {
