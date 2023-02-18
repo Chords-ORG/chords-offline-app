@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const light_style = StyleSheet.create({
+export const LightStyle = StyleSheet.create({
     header_color:{
         backgroundColor:'#2F80ED'
     },
@@ -112,7 +112,7 @@ export const light_style = StyleSheet.create({
     }
 })
 
-export const dark_style = StyleSheet.create({
+export const DarkStyle = StyleSheet.create({
     header_color:{
         backgroundColor:'#2F80ED'
     },

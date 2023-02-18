@@ -9,14 +9,20 @@ import WriteChordScreen from "../screens/WriteChordScreen";
 import PreviewScreen from "../screens/PreviewScreen";
 import { IconComponentProvider, Icon } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { ThemeProvider } from "../providers/ThemeProvider";
+import { LocalSettingsProvider } from "../providers/LocalSettingsProvider";
 
 export default function Navigation() {
   return (
-    <IconComponentProvider IconComponent={MaterialCommunityIcons }>
-      <NavigationContainer>
-        <RootNavigator />
-      </NavigationContainer>
-    </IconComponentProvider>
+    <LocalSettingsProvider>
+      <ThemeProvider>
+        <IconComponentProvider IconComponent={MaterialCommunityIcons}>
+          <NavigationContainer>
+            <RootNavigator />
+          </NavigationContainer>
+        </IconComponentProvider>
+      </ThemeProvider>
+    </LocalSettingsProvider>
   );
 }
 

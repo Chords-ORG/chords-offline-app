@@ -3,28 +3,28 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { RootStackParamList } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
 import { Header } from "../components/Header";
-import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 import { Button, Divider } from "@react-native-material/core";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 // { navigation }: StackScreenProps<RootStackParamList, 'SampleScreen'>
 export default function SampleScreen() {
-  const { styleSheet: basic_style } = useAdaptativeStyle();
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   return (
     <View>
       <Header showBackButton={false} />
-      <View style={[basic_style.content, { padding: 10 }]}>
+      <View style={[themeStyle.content, { padding: 10 }]}>
         <Button
           title="Button 1"
-          color={basic_style.button.backgroundColor}
-          tintColor={basic_style.button.color}
+          color={themeStyle.button.backgroundColor}
+          tintColor={themeStyle.button.color}
         />
 
         <Divider style={{ marginVertical: 20 }} leadingInset={16} />
 
         <Button
-          color={basic_style.button.backgroundColor}
-          tintColor={basic_style.button.color}
+          color={themeStyle.button.backgroundColor}
+          tintColor={themeStyle.button.color}
           title="Button 2"
         />
       </View>

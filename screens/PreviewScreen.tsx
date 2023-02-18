@@ -7,7 +7,7 @@ import ChordView from "../components/ChordsView";
 import useChordsState from "../hooks/useChordsState";
 import { Header } from "../components/Header";
 import { Button } from "@react-native-material/core";
-import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 export default function PreviewScreen({
   navigation,
@@ -26,7 +26,7 @@ export default function PreviewScreen({
     originalCapo: originalCapo,
   });
 
-  const basic_style = useAdaptativeStyle();
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   const handleSave = () => {
     navigation.push("Root");
@@ -39,15 +39,13 @@ export default function PreviewScreen({
       />
       <Button
         title="Salvar cifra"
-        color={basic_style.active_color.color}
-        tintColor={basic_style.tint_color.color}
+        color={themeStyle.active_color.color}
+        tintColor={themeStyle.tint_color.color}
         onPress={handleSave}
       />
       <ScrollView style={[styles.container, { padding: 10 }]}>
         <ChordView
           chordsLines={chordsLines}
-          musicName={musicName}
-          authorName={authorName}
           selectedTone={tone}
           selectedCapo={capo}
         />

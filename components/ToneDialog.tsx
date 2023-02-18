@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Chord, noteToNumber } from "../functions/chords";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
-import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 export interface ToneDialogProps {
   onSelectTone?: (tone: string) => void;
@@ -23,7 +23,7 @@ export default function ToneDialog({
   closeDialog = () => {},
 }: ToneDialogProps) {
   const { chordType } = useLocalConfiguration();
-  const basic_style = useAdaptativeStyle();
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   return (
     <Modal visible={visible} transparent>
@@ -59,8 +59,8 @@ export default function ToneDialog({
                     >
                       <Text
                         style={[
-                          basic_style.h3,
-                          basic_style.bold,
+                          themeStyle.h3,
+                          themeStyle.bold,
                           { color: "#FFFFFF" },
                         ]}
                       >

@@ -20,13 +20,13 @@ import {
   TextInput,
 } from "@react-native-material/core";
 import { Header } from "../components/Header";
-import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
+import { ThemeContext } from "../providers/ThemeProvider";
 import NumberedTextInput from "../components/NumberedTextInput";
 
 export default function WriteChordScreen({
   navigation,
 }: StackScreenProps<RootStackParamList>) {
-  const basic_style = useAdaptativeStyle();
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
   const [authorName, setAuthorName] = useState("");
   const [musicName, setMusicName] = useState("");
   const [tone, setTone] = useState("C");
@@ -58,8 +58,8 @@ export default function WriteChordScreen({
       />
       <Button
         title="Pré-visualizar"
-        color={basic_style.active_color.color}
-        tintColor={basic_style.tint_color.color}
+        color={themeStyle.active_color.color}
+        tintColor={themeStyle.tint_color.color}
         onPress={handlePreview}
       />
       <ScrollView style={styles.container}>
@@ -69,14 +69,14 @@ export default function WriteChordScreen({
             variant="outlined"
             onChange={(e) => setAuthorName(e.nativeEvent.text)}
             value={authorName}
-            color={basic_style.active_color.color}
+            color={themeStyle.active_color.color}
           />
           <TextInput
             label="Nome da música"
             variant="outlined"
             onChange={(e) => setMusicName(e.nativeEvent.text)}
             value={musicName}
-            color={basic_style.active_color.color}
+            color={themeStyle.active_color.color}
           />
           <View style={{ marginVertical: 20 }} />
           <HStack>
@@ -85,7 +85,7 @@ export default function WriteChordScreen({
               variant="outlined"
               onChange={(e) => setTone(e.nativeEvent.text)}
               value={tone}
-              color={basic_style.active_color.color}
+              color={themeStyle.active_color.color}
               style={{ width: 100 }}
             />
             <View style={{ marginHorizontal: 20 }} />
@@ -94,7 +94,7 @@ export default function WriteChordScreen({
               variant="outlined"
               onChange={(e) => setCapo(e.nativeEvent.text)}
               value={capo}
-              color={basic_style.active_color.color}
+              color={themeStyle.active_color.color}
               style={{ width: 100 }}
               keyboardType="numeric"
             />
@@ -105,7 +105,7 @@ export default function WriteChordScreen({
             variant="outlined"
             onChange={(e) => setLyrics(e.nativeEvent.text)}
             value={lyrics}
-            color={basic_style.active_color.color}
+            color={themeStyle.active_color.color}
             numberOfLines={40}
             style={{ height: 800 }}
             editable

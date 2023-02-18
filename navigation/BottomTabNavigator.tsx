@@ -4,22 +4,23 @@ import { BottomTabParamList } from "../types";
 import HomeStack from "./HomeStack";
 import SettingsStack from "./SettingsStack";
 import { Image } from "react-native";
-import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
-  const { styleSheet: basic_style } = useAdaptativeStyle();
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+
   return (
     <BottomTab.Navigator
       tabBarOptions={{
         activeTintColor: "#2F80ED",
         inactiveTintColor: "#828282",
-        activeBackgroundColor: basic_style.bottom_tab.backgroundColor,
-        inactiveBackgroundColor: basic_style.bottom_tab.backgroundColor,
+        activeBackgroundColor: themeStyle.bottom_tab.backgroundColor,
+        inactiveBackgroundColor: themeStyle.bottom_tab.backgroundColor,
         style: {
           borderTopWidth: 0,
-          shadowColor: basic_style.bottom_tab.shadowColor,
+          shadowColor: themeStyle.bottom_tab.shadowColor,
         },
       }}
     >

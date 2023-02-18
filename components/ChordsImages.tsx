@@ -7,12 +7,12 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { Chord } from "../functions/chords";
 import GuitarChord from "./GuitarChord";
 import PianoChord from "./PianoChord";
 import { ChordsImageStateProps } from "../hooks/useChordsImageState";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 interface ChordsImagesProps {
   state: ChordsImageStateProps;
@@ -25,7 +25,7 @@ export default function ChordsImages({
 }: ChordsImagesProps): JSX.Element {
   const up_arrow = require("../assets/images/up_arrow.png");
   const down_arrow = require("../assets/images/down_arrow.png");
-  const basic_style = useAdaptativeStyle();
+  const { styleSheet: themeStyle }  = React.useContext(ThemeContext)
   const { chordType, instrument } = useLocalConfiguration();
 
   const { chordsList, selectedNote, scrollRef, visible, open, close } = state;
@@ -57,17 +57,17 @@ export default function ChordsImages({
                 ) : null}
                 <Text
                   style={[
-                    basic_style.h3,
+                    themeStyle.h3,
                     selected
-                      ? basic_style.active_color
-                      : basic_style.primary_color,
-                    basic_style.bold,
+                      ? themeStyle.active_color
+                      : themeStyle.primary_color,
+                    themeStyle.bold,
                   ]}
                 >
                   {" "}
                   {Chord.toChord(chordName, chordType)}{" "}
                 </Text>
-                {selected ? <View style={basic_style.selected_line} /> : null}
+                {selected ? <View style={themeStyle.selected_line} /> : null}
               </View>
             );
           })}

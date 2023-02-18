@@ -9,8 +9,8 @@ import useChordsImageState from "../hooks/useChordsImageState";
 import ChordsImages from "../components/ChordsImages";
 import useChordsState from "../hooks/useChordsState";
 import ToneDialog from "../components/ToneDialog";
-import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 import { Header } from "../components/Header";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 const lyrics = `
 [Intro]  
@@ -32,7 +32,7 @@ Sou seu despenteado leão`;
 export default function ChordScreen({
   navigation,
 }: StackScreenProps<RootStackParamList, "ChordScreen">) {
-  const { styleSheet: basic_style } = useAdaptativeStyle();
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
   const [loading, setLoading] = useState(false);
   const [capoDialogVisible, setCapoDialogVisible] = useState(false);
   const [toneDialogVisible, setToneDialogVisible] = useState(false);
@@ -68,9 +68,9 @@ export default function ChordScreen({
         subTitle="Marília Mendonça"
       />
 
-      <View style={[basic_style.content, styles.content]}>
+      <View style={[themeStyle.content, styles.content]}>
         <ChordsImages state={chordsImagesState} />
-        <View style={basic_style.horizontal_separator} />
+        <View style={themeStyle.horizontal_separator} />
         <View>
           <ChordView
             chordsLines={chordsLines}

@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { ChordLineType } from "../types";
-import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { Chord } from "../functions/chords";
 import {
@@ -17,6 +16,7 @@ import {
   Spacer,
   Stack,
 } from "@react-native-material/core";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 interface ChordViewProps {
   chordsLines?: ChordLineType[];
@@ -35,7 +35,7 @@ export default function ChordView({
   onPressCapo = () => {},
   onPressNote = () => {},
 }: ChordViewProps) {
-  const { styleSheet: basic_style } = useAdaptativeStyle();
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
   const { chordType } = useLocalConfiguration();
 
   return (
@@ -46,12 +46,12 @@ export default function ChordView({
             title="Tom"
             onPress={onPressTone}
             trailing={
-              <Text style={{ color: basic_style.button.color }}>
+              <Text style={{ color: themeStyle.button.color }}>
                 {Chord.toChord(selectedTone, chordType)}
               </Text>
             }
-            color={basic_style.button.backgroundColor}
-            tintColor={basic_style.button.color}
+            color={themeStyle.button.backgroundColor}
+            tintColor={themeStyle.button.color}
             compact
           />
           <Spacer></Spacer>
@@ -59,12 +59,12 @@ export default function ChordView({
             onPress={onPressCapo}
             title="Capostraste"
             trailing={
-              <Text style={{ color: basic_style.button.color }}>
+              <Text style={{ color: themeStyle.button.color }}>
                 {selectedCapo == 0 ? "Sem Capo" : `${selectedCapo}ª casa`}{" "}
               </Text>
             }
-            color={basic_style.button.backgroundColor}
-            tintColor={basic_style.button.color}
+            color={themeStyle.button.backgroundColor}
+            tintColor={themeStyle.button.color}
             compact
           />
         </Stack>
@@ -76,10 +76,7 @@ export default function ChordView({
                   return chord_name == "" ? (
                     <View key={i}>
                       <Text
-                        style={[
-                          styles.chord_text,
-                          basic_style.text_highlight,
-                        ]}
+                        style={[styles.chord_text, themeStyle.text_highlight]}
                       >
                         {" "}
                       </Text>
@@ -91,9 +88,9 @@ export default function ChordView({
                     >
                       <Text
                         style={[
-                          basic_style.h3,
-                          basic_style.active_color,
-                          basic_style.bold,
+                          themeStyle.h3,
+                          themeStyle.active_color,
+                          themeStyle.bold,
                           { fontFamily: "monospace" },
                         ]}
                       >
@@ -106,7 +103,7 @@ export default function ChordView({
               <Text
                 style={[
                   styles.lyrics_text,
-                  basic_style.text_primary,
+                  themeStyle.text_primary,
                   { fontFamily: "monospace" },
                 ]}
               >
@@ -122,13 +119,13 @@ export default function ChordView({
 }
 
 const styles = StyleSheet.create({
-  chord_text:{
+  chord_text: {
     fontFamily: "monospace",
     fontSize: 14,
     fontWeight: "bold",
   },
-  lyrics_text:{
+  lyrics_text: {
     fontFamily: "monospace",
-    fontSize: 14
+    fontSize: 14,
   },
 });

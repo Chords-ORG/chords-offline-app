@@ -1,6 +1,7 @@
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
-import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 import { Icon, IconButton, Stack } from "@react-native-material/core";
+import { ThemeContext } from "../providers/ThemeProvider";
+import React from "react";
 
 export interface HeaderProps {
   title?: string;
@@ -14,19 +15,19 @@ export const Header = ({
   showBackButton: backVisible = true,
   onPressBackButton: onBackPress = () => {},
 }: HeaderProps) => {
-  const { styleSheet: basic_style, colorScheme } = useAdaptativeStyle();
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   return (
     <View
       style={[
         styles.header,
-        { backgroundColor: basic_style.header_color.backgroundColor },
+        { backgroundColor: themeStyle.header_color.backgroundColor },
       ]}
     >
       <View style={styles.contentContainer}>
         {backVisible && (
           <IconButton
-            color={basic_style.header_tint_color.color}
+            color={themeStyle.header_tint_color.color}
             icon={(props) => <Icon name="arrow-left" {...props} />}
             onPress={onBackPress}
           />
@@ -40,7 +41,7 @@ export const Header = ({
           <Text
             style={[
               styles.title,
-              { color: basic_style.header_tint_color.color },
+              { color: themeStyle.header_tint_color.color },
             ]}
           >
             {title}
@@ -49,7 +50,7 @@ export const Header = ({
             <Text
               style={[
                 styles.subTitle,
-                { color: basic_style.header_tint_color.color },
+                { color: themeStyle.header_tint_color.color },
               ]}
             >
               {subTitle}

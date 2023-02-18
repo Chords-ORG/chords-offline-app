@@ -12,26 +12,28 @@ import { StackScreenProps } from "@react-navigation/stack";
 import Spinner from "../components/Spinner";
 import { Picker } from "@react-native-picker/picker";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 export default function SettingsScreen({
   navigation,
 }: StackScreenProps<SettingsStackParamList, "Settings">) {
   const {
-    loading,
     chordType,
     instrument,
-    defaultCapo,
-    colorScheme,
+    capoConfig,
+    localColorScheme,
     setChordType,
     setInstrument,
-    setDefaultCapo,
-    setColorScheme,
+    setCapoConfig,
+    setLocalColorScheme,
   } = useLocalConfiguration();
 
+  const { styleSheet: themeStyle, toggleTheme } =
+    React.useContext(ThemeContext);
+
   return (
-    <View style={[styles.container, { width: "100%", height: "100%" }]}>
-      <Spinner visible={loading} />
-      <View style={styles.top_container}>
+    <View style={[styles.content, themeStyle.content]}>
+      <View>
         <Image
           source={require("../assets/images/app_logo.png")}
           style={styles.app_logo}
@@ -85,10 +87,10 @@ export default function SettingsScreen({
           <Text style={styles.label}> Capotraste: </Text>
           <View style={styles.separator} />
           <Picker
-            selectedValue={defaultCapo}
+            selectedValue={capoConfig}
             style={styles.picker_style}
             onValueChange={(itemValue) => {
-              setDefaultCapo(itemValue);
+              setCapoConfig(itemValue);
             }}
           >
             <Picker.Item label="Automático" value="auto" />
@@ -100,10 +102,11 @@ export default function SettingsScreen({
           <Text style={styles.label}> Esquema de cores: </Text>
           <View style={styles.separator} />
           <Picker
-            selectedValue={colorScheme}
+            selectedValue={localColorScheme}
             style={styles.picker_style}
             onValueChange={(itemValue) => {
-              setColorScheme(itemValue);
+              setLocalColorScheme(itemValue);
+              toggleTheme();
             }}
           >
             <Picker.Item label="Sistema" value="system" />
@@ -117,11 +120,9 @@ export default function SettingsScreen({
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#fff",
+  content: {
     padding: 15,
   },
-  top_container: {},
   bottom_container: {
     marginTop: 50,
   },
