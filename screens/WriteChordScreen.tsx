@@ -53,7 +53,7 @@ export default function WriteChordScreen({
   return (
     <View>
       <Header
-        onBackPress={() => navigation.goBack()}
+        onPressBackButton={() => navigation.goBack()}
         title="Criação de cifra"
       />
       <Button

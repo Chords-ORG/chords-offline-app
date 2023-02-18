@@ -1,9 +1,27 @@
 import { StyleSheet } from 'react-native';
 
 export const light_style = StyleSheet.create({
-    container:{
-        backgroundColor:'#FFFFFF'
+    header_color:{
+        backgroundColor:'#2F80ED'
     },
+    header_tint_color:{
+        color:'#FFFFFF'
+    },
+    content:{
+        backgroundColor:'#FFFFFF',
+        height: '100%',
+        width: '100%',
+    },
+    bottom_tab:{
+        backgroundColor:'#FFFFFF',
+        shadowColor: "#000",
+    },
+    button:{
+        backgroundColor:'#2F80ED',
+        color:'#FFFFFF'
+    },
+
+    // Deprecated
     bold: {
         fontWeight: 'bold',
     },
@@ -86,9 +104,27 @@ export const light_style = StyleSheet.create({
 })
 
 export const dark_style = StyleSheet.create({
-    container:{
-        backgroundColor:'#1E201D'
+    header_color:{
+        backgroundColor:'#2F80ED'
     },
+    header_tint_color:{
+        color:'#FFFFFF'
+    },
+    content:{
+        backgroundColor:'#1E201D',
+        height: '100%',
+        width: '100%',
+    },
+    bottom_tab:{
+        backgroundColor:'#1E201D',
+        shadowColor: "#fff",
+    },
+    button:{
+        backgroundColor:'#2F80ED',
+        color:'#FFFFFF'
+    },
+
+    // Deprecated
     bold: {
         fontWeight: 'bold',
     },

@@ -34,7 +34,7 @@ export default function PreviewScreen({
   return (
     <View>
       <Header
-        onBackPress={() => navigation.goBack()}
+        onPressBackButton={() => navigation.goBack()}
         title="Pré-visualização"
       />
       <Button

@@ -3,17 +3,22 @@ import useAdaptativeStyle from "../hooks/useAdaptativeStyle";
 
 export interface HeaderProps {
   title?: string;
-  backVisible?: boolean;
-  onBackPress?: () => void;
+  showBackButton?: boolean;
+  onPressBackButton?: () => void;
 }
 export const Header = ({
   title = "Chords",
-  backVisible = true,
-  onBackPress = () => {},
+  showBackButton: backVisible = true,
+  onPressBackButton: onBackPress = () => {},
 }: HeaderProps) => {
   const basic_style = useAdaptativeStyle();
   return (
-    <View style={styles.header}>
+    <View
+      style={[
+        styles.header,
+        { backgroundColor: basic_style.header_color.backgroundColor },
+      ]}
+    >
       <View style={{ flexDirection: "row" }}>
         {backVisible && (
           <TouchableOpacity onPress={onBackPress}>
@@ -29,7 +34,11 @@ export const Header = ({
           source={require("../assets/images/app_logo.png")}
         />
         <Text
-          style={[basic_style.h1, basic_style.primary_color, basic_style.bold]}
+          style={[
+            basic_style.h1,
+            basic_style.bold,
+            { color: basic_style.header_tint_color.color },
+          ]}
         >
           {title}
         </Text>
@@ -40,7 +49,6 @@ export const Header = ({
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: "#fff",
     height: 85,
     width: "100%",
     flexDirection: "row",
@@ -48,10 +56,10 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingTop: 35,
     shadowOffset: { width: 0, height: 2 },
+    borderRadiusBottom: 1000,
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 3,
-    shadowColor: "#000",
     justifyContent: "space-between",
     //borderBottomWidth:1,
   },

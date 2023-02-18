@@ -1,17 +1,20 @@
 import React from "react";
 import { getItem, setItem } from "../functions/storage";
 
+type ColorScheme = "light" | "dark" | "system"
 export default function useLocalConfiguration() {
   const [loading, setLoading] = React.useState(true);
   const [chordType, setChordTypeState] = React.useState("sharp");
   const [instrument, setInstrumentState] = React.useState("guitar");
-  const [defaultCapo, setDefaultCapoState] = React.useState(0);
+  const [defaultCapo, setDefaultCapoState] = React.useState("auto");
+  const [colorScheme, setColorSchemeState] = React.useState<ColorScheme>("system");
 
   const get_local_configuration = async () => {
     const chordType = await getItem("chord_type");
     const instrument = await getItem("instrument");
-    const default_capo = await getItem("default_capo");
-    return { chordType, instrument, default_capo };
+    const defaultCapo = await getItem("default_capo");
+    const colorScheme = await getItem("color_scheme");
+    return { chordType, instrument, defaultCapo, colorScheme };
   };
 
   React.useEffect(() => {
@@ -23,8 +26,11 @@ export default function useLocalConfiguration() {
         if (local_configuration.instrument !== null) {
           setInstrumentState(local_configuration.instrument);
         }
-        if (local_configuration.default_capo !== null) {
-          setDefaultCapoState(parseInt(local_configuration.default_capo));
+        if (local_configuration.defaultCapo !== null) {
+          setDefaultCapoState(local_configuration.defaultCapo);
+        }
+        if (local_configuration.colorScheme !== null) {
+          setColorSchemeState(local_configuration.colorScheme as ColorScheme);
         }
         setLoading(false);
       })
@@ -32,7 +38,7 @@ export default function useLocalConfiguration() {
         console.log(error);
         setLoading(false);
       });
-  }, []);
+  }, [loading, setLoading, setChordTypeState, setInstrumentState, setDefaultCapoState]);
 
   const setChordType = React.useCallback((chordType: string) => {
     setLoading(true);
@@ -45,7 +51,7 @@ export default function useLocalConfiguration() {
         setLoading(false);
         throw error;
       });
-  }, []);
+  }, [setLoading, setChordTypeState]);
 
   const setInstrument = React.useCallback((instrument: string) => {
     setLoading(true);
@@ -58,9 +64,9 @@ export default function useLocalConfiguration() {
         setLoading(false);
         throw error;
       });
-  }, []);
+  }, [setLoading, setInstrumentState]);
 
-  const setDefaultCapo = React.useCallback((defaultCapo: number) => {
+  const setDefaultCapo = React.useCallback((defaultCapo: string) => {
     setLoading(true);
     setItem("default_capo", defaultCapo.toString())
       .then(() => {
@@ -71,7 +77,30 @@ export default function useLocalConfiguration() {
         setLoading(false);
         throw error;
       });
-  }, []);
+  }, [setLoading, setDefaultCapoState]);
 
-  return { loading, chordType, instrument, defaultCapo, setChordType, setInstrument, setDefaultCapo };
+  const setColorScheme = React.useCallback((colorScheme: "light" | "dark" | "system") => {
+    setLoading(true);
+    setItem("color_scheme", colorScheme)
+      .then(() => {
+        setColorSchemeState(colorScheme);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        throw error;
+      });
+  }, [setLoading, setColorSchemeState]);
+
+  return {
+    loading,
+    chordType,
+    instrument,
+    defaultCapo,
+    colorScheme,
+    setChordType,
+    setInstrument,
+    setDefaultCapo,
+    setColorScheme,
+  };
 }

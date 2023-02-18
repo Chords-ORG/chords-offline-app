@@ -21,9 +21,11 @@ export default function SettingsScreen({
     chordType,
     instrument,
     defaultCapo,
+    colorScheme,
     setChordType,
     setInstrument,
     setDefaultCapo,
+    setColorScheme,
   } = useLocalConfiguration();
 
   return (
@@ -91,6 +93,22 @@ export default function SettingsScreen({
           >
             <Picker.Item label="Automático" value="auto" />
             <Picker.Item label="Nunca" value="never" />
+          </Picker>
+        </View>
+
+        <View style={styles.picker}>
+          <Text style={styles.label}> Esquema de cores: </Text>
+          <View style={styles.separator} />
+          <Picker
+            selectedValue={colorScheme}
+            style={styles.picker_style}
+            onValueChange={(itemValue) => {
+              setColorScheme(itemValue);
+            }}
+          >
+            <Picker.Item label="Sistema" value="system" />
+            <Picker.Item label="Claro" value="light" />
+            <Picker.Item label="Escuro" value="dark" />
           </Picker>
         </View>
       </View>
