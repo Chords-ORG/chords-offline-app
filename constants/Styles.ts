@@ -33,7 +33,13 @@ export const LightStyle = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     color: "#333333",
   },
-
+  card:{
+    backgroundColor: "#F2F2F2",
+    borderRadius: 5,
+  },
+  divider: {
+    color: "#E4E4E4",
+  },
   // Deprecated
   bold: {
     fontWeight: "bold",
@@ -149,7 +155,13 @@ export const DarkStyle = StyleSheet.create({
     backgroundColor: "#313337",
     color: "#FFFFFF",
   },
-
+  card:{
+    backgroundColor: "#313337",
+    borderRadius: 5,
+  },
+  divider: {
+    color: "#828282",
+  },
   // Deprecated
   bold: {
     fontWeight: "bold",

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 export interface PianoChordProps {
   chordName: string;
@@ -10,6 +11,7 @@ export default function PianoChord(props: PianoChordProps) {
   const piano_back = require("../assets/images/piano_chord/piano_back.png");
   const black_finger = require("../assets/images/piano_chord/black_finger.png");
   const white_finger = require("../assets/images/piano_chord/white_finger.png");
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   const white_fingers_houses = [2, 4, 7, 9, 11, 14, 16, 19, 21, 23, 26, 28];
 
@@ -25,7 +27,7 @@ export default function PianoChord(props: PianoChordProps) {
           { justifyContent: "center", alignItems: "center" },
         ]}
       >
-        <Text style={styles.message}> Acorde Indisponível </Text>
+        <Text style={[styles.message, themeStyle.primary_color]}> Acorde Indisponível </Text>
       </View>
     );
   } else {

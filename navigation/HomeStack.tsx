@@ -17,17 +17,6 @@ export default function HomeStack() {
   );
 }
 
-function HomeHeader() {
-  return (
-    <View style={styles.container}>
-      <Image
-        style={styles.logo}
-        source={require("../assets/images/app_logo.png")}
-      />
-      <Text style={styles.title}> Chords </Text>
-    </View>
-  );
-}
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",

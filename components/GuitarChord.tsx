@@ -63,6 +63,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
 
     finger_p,
   } = useGuitarChordImages();
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   const guitarChords: Record<
     string,
@@ -79,7 +80,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
           { justifyContent: "center", alignItems: "center" },
         ]}
       >
-        <Text style={styles.message}> Acorde Indisponível </Text>
+        <Text style={[styles.message, themeStyle.primary_color]}> Acorde Indisponível </Text>
       </View>
     );
   } else {
@@ -93,7 +94,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
       slash_house_style = styles.slash_house_4;
     const startHouse = chords[idx].startHouse + (capo != 0 ? capo + 1 : 0);
 
-    const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+    
     return (
       <TouchableOpacity
         style={styles.container}
