@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { Chord } from "../functions/chords";
+import { Chord } from "../services/chords";
 import { ModalDialogState } from "../hooks/useModalDialogState";
 import ModalDialog from "./ModalDialog";
 import { ThemeContext } from "../providers/ThemeProvider";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Chord, addSemiTonesToChordLine } from "../functions/chords";
+import { Chord, addSemiTonesToChordLine } from "../services/chords";
 import { ChordLineType } from "../types";
 import useLocalConfiguration from "./useLocalConfiguration";
 
@@ -31,15 +31,16 @@ export default function useChordsState({
       const originalToneBaseNote = new Chord(originalTone).base.base;
       const toneDelta = originalToneBaseNote - toneBaseNote;
       const capoDelta = originalCapo - capo;
-      const chords_line = addSemiTonesToChordLine(
+      const chordsLine = addSemiTonesToChordLine(
         lines[i],
         capoDelta - toneDelta,
         chordType
       );
 
       const music_line = lines[i + 1] || "";
-      chordsLines.push({ chords_line, music_line });
+      chordsLines.push({ chords_line: chordsLine, music_line });
     }
+
     for (let i = 0; i < chordsLines.length; i++) {
       const chords = chordsLines[i].chords_line.split(" ");
       for (let j = 0; j < chords.length; ++j) {

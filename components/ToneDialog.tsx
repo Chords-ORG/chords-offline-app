@@ -1,6 +1,6 @@
 import React from "react";
 import { Pressable, StyleSheet, TouchableOpacity, View } from "react-native";
-import { Chord } from "../functions/chords";
+import { Chord } from "../services/chords";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { ModalDialogState } from "../hooks/useModalDialogState";

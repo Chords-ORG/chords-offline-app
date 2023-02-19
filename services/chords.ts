@@ -66,10 +66,7 @@ class Note {
     this.valid = this.base !== undefined && this.complement !== undefined;
   }
   public toString = (): string => {
-    if (!this.valid) {
-      return "Invalid note " + this.rawString;
-    }
-    return `Base: ${this.base} - Complement:${this.complement}`;
+    return this.rawString;
   };
   public add(n: number) {
     if (n < 0) n = (11 * -n) % 12;
@@ -91,12 +88,7 @@ export class Chord {
       this.base.valid && (this.inversion === undefined || this.inversion.valid);
   }
   public toString = (): string => {
-    if (!this.valid) {
-      return "Invalid chord " + this.rawString;
-    }
-    if (this.inversion)
-      return `Base:\n${this.base.toString()}\nInversion:\n${this.inversion.toString()}`;
-    else return `Base:\n${this.base.toString()}`;
+    return this.rawString;
   };
 
   public toSharp = (): string => {
@@ -129,7 +121,7 @@ export class Chord {
   public static getChordNumber = (note: string) => {
     const chord = new Chord(note);
     return chord.base.base;
-  }
+  };
 }
 
 export const addSemiTonesToChordLine = (

@@ -12,7 +12,7 @@ import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
 import useModalDialogState from "../hooks/useModalDialogState";
 import { Button, Spacer, Stack } from "@react-native-material/core";
-import { Chord } from "../functions/chords";
+import { Chord } from "../services/chords";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 
 const lyrics = `

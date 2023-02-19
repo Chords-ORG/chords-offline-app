@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
-import { Chord } from "../functions/chords";
+import { Chord } from "../services/chords";
 import GuitarChord from "./GuitarChord";
 import PianoChord from "./PianoChord";
 import { ChordsImageStateProps } from "../hooks/useChordsImageState";

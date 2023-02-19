@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { Chord } from "../functions/chords";
+import { Chord } from "../services/chords";
 import useLocalConfiguration from "./useLocalConfiguration";
 
 export interface ChordsImageStateProps {
