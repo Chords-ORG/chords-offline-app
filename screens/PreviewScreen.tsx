@@ -6,10 +6,17 @@ import { ScrollView } from "react-native-gesture-handler";
 import ChordView from "../components/ChordsView";
 import useChordsState from "../hooks/useChordsState";
 import { Header } from "../components/Header";
-import { Button, Stack, Text } from "@react-native-material/core";
+import {
+  Banner,
+  Button,
+  HStack,
+  Stack,
+  Text,
+} from "@react-native-material/core";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { saveMusic } from "../services/musicStorage";
 import { RootStackParamList } from "../navigation";
+import { Chord } from "../services/chords";
 
 export default function PreviewScreen({
   navigation,
@@ -22,13 +29,15 @@ export default function PreviewScreen({
     tone: originalTone,
     capo: originalCapo,
   } = route.params;
-  const { chordsLines, capo, tone } = useChordsState({
+  const { rawChordList, chordsLines, capo, tone } = useChordsState({
     lyrics,
     originalTone: originalTone,
     originalCapo: originalCapo,
   });
 
-  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+  const errorChords = rawChordList.filter((chord) => !new Chord(chord).valid);
+  const { styleSheet: themeStyle, colors: themeColors } =
+    React.useContext(ThemeContext);
 
   const [loading, setLoading] = React.useState(false);
 
@@ -52,6 +61,8 @@ export default function PreviewScreen({
     }
   };
 
+  console.log(errorChords);
+
   return (
     <View>
       <Header
@@ -60,19 +71,43 @@ export default function PreviewScreen({
         subTitle={musicName}
       />
       <Button
+        disabled={errorChords.length > 0}
         title="Salvar cifra"
-        color={themeStyle.active_color.color}
-        tintColor={themeStyle.tint_color.color}
+        color={themeColors.buttonBackground}
+        tintColor={themeColors.buttonTint}
         onPress={handleSave}
       />
+
       <View style={[themeStyle.content]}>
+        {errorChords.length > 0 && (
+          <Stack p={10}>
+            <Text style={themeStyle.text_primary}>
+              As seguintes notas não são válidas:{" "}
+              {errorChords.map((chord) => {
+                return (
+                  <Text
+                    style={[
+                      themeStyle.chordText,
+                      { color: themeColors.chordErrorColor },
+                    ]}
+                  >
+                    {chord}{" "}
+                  </Text>
+                );
+              })}
+            </Text>
+          </Stack>
+        )}
         <ScrollView>
-          <Text style={themeStyle.primary_color}>Tom: {tone}</Text>
-          <Text style={themeStyle.primary_color}>
+          <Text style={themeStyle.text_primary}>Tom: {tone}</Text>
+          <Text style={themeStyle.text_primary}>
             Capotraste: {capo === 0 ? "Sem capotraste\n" : `${capo}ª casa\n`}
           </Text>
           <Stack>
-            <ChordView chordsLines={chordsLines} />
+            <ChordView
+              highlightInvalidChords={true}
+              chordsLines={chordsLines}
+            />
             <View style={{ height: 300 }} />
           </Stack>
         </ScrollView>

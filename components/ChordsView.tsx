@@ -2,44 +2,49 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { ChordLineType } from "../types";
 import { ThemeContext } from "../providers/ThemeProvider";
+import { Chord } from "../services/chords";
 
 interface ChordViewProps {
   chordsLines?: ChordLineType[];
   onPressNote?: (note: string) => void;
+  highlightInvalidChords?: boolean;
 }
 
 export default function ChordView({
   chordsLines = [],
   onPressNote = () => {},
+  highlightInvalidChords = false,
 }: ChordViewProps) {
-  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+  const { styleSheet: themeStyle, colors: themeColors } =
+    React.useContext(ThemeContext);
 
   return (
     <View>
       {chordsLines.map((chord_line: ChordLineType, i) => (
         <View key={i}>
           <View style={{ flexDirection: "row" }}>
-            {chord_line.chordsLine.split(" ").map((chord_name, i) => {
-              return chord_name == "" ? (
+            {chord_line.chordsLine.split(" ").map((chordName, i) => {
+              const chordIsValid = new Chord(chordName).valid;
+              const chordColor =
+                !highlightInvalidChords || chordIsValid
+                  ? themeColors.chordColor
+                  : themeColors.chordErrorColor;
+
+              console.log("chordName", chordName);
+              console.log("chordIsValid", chordIsValid);
+              console.log("chordColor", chordColor);
+
+              return chordName == "" ? (
                 <View key={i}>
-                  <Text style={[styles.chord_text, themeStyle.text_highlight]}>
-                    {" "}
-                  </Text>
+                  <Text style={[styles.chordText]}> </Text>
                 </View>
               ) : (
                 <TouchableOpacity
-                  onPress={() => onPressNote(chord_name)}
+                  onPress={() => onPressNote(chordName)}
                   key={i}
                 >
-                  <Text
-                    style={[
-                      themeStyle.h3,
-                      themeStyle.active_color,
-                      themeStyle.bold,
-                      { fontFamily: "monospace" },
-                    ]}
-                  >
-                    {chord_name}{" "}
+                  <Text style={[styles.chordText, { color: chordColor }]}>
+                    {chordName}{" "}
                   </Text>
                 </TouchableOpacity>
               );
@@ -61,7 +66,7 @@ export default function ChordView({
 }
 
 const styles = StyleSheet.create({
-  chord_text: {
+  chordText: {
     fontFamily: "monospace",
     fontSize: 14,
     fontWeight: "bold",

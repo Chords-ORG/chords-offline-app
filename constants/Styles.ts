@@ -7,27 +7,32 @@ export type ColorsType = {
 
   // Content
   contentBackground: string;
-  
+
   // Bottom Tab
   bottomTabBackground: string;
   bottomTabTint: string;
-  
+
   // Button
   buttonBackground: string;
   buttonTint: string;
-  
+
   // Text
   textPrimary: string;
   textSecondary: string;
   textHighlight: string;
-  
+
+  // Chords
+  chordColor: string;
+  chordWarningColor: string;
+  chordErrorColor: string;
+
   // Dialog
   dialogBackground: string;
   dialogTint: string;
-  
+
   // Card
   cardBackground: string;
-  
+
   // Divider
   divider: string;
 
@@ -36,7 +41,6 @@ export type ColorsType = {
   textInputTint: string;
   textInputPlaceholder: string;
   textInputBorder: string;
-
 };
 
 export const LightColors: ColorsType = {
@@ -49,6 +53,9 @@ export const LightColors: ColorsType = {
   buttonTint: "#FFFFFF",
   textPrimary: "#333333",
   textSecondary: "#828282",
+  chordColor: "#2F80ED",
+  chordWarningColor: "#F2994A",
+  chordErrorColor: "#EB5757",
   textHighlight: "#2F80ED",
   dialogBackground: "#FFFFFF",
   dialogTint: "#333333",
@@ -71,6 +78,9 @@ export const DarkColors: ColorsType = {
   textPrimary: "#FFFFFF",
   textSecondary: "#BDBDBD",
   textHighlight: "#2F80ED",
+  chordColor: "#2F80ED",
+  chordWarningColor: "#F2994A",
+  chordErrorColor: "#EB5757",
   dialogBackground: "#313337",
   dialogTint: "#FFFFFF",
   cardBackground: "#313337",
@@ -120,6 +130,12 @@ export const LightStyle = StyleSheet.create({
   },
   divider: {
     color: "#E4E4E4",
+  },
+  chordText: {
+    fontFamily: "monospace",
+    fontSize: 14,
+    fontWeight: "bold",
+    color: LightColors.chordColor,
   },
   // Deprecated
   bold: {
@@ -242,6 +258,12 @@ export const DarkStyle = StyleSheet.create({
   },
   divider: {
     color: "#828282",
+  },
+  chordText: {
+    fontFamily: "monospace",
+    fontSize: 14,
+    fontWeight: "bold",
+    color: DarkColors.chordColor,
   },
   // Deprecated
   bold: {
