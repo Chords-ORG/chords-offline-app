@@ -1,6 +1,6 @@
 import React from "react";
 import { Pressable, StyleSheet, TouchableOpacity, View } from "react-native";
-import { Chord, noteToNumber } from "../functions/chords";
+import { Chord } from "../functions/chords";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { ModalDialogState } from "../hooks/useModalDialogState";
@@ -36,15 +36,13 @@ export default function ToneDialog({
               <HStack key={i} spacing={10}>
                 {tones.map((toneName, j) => {
                   const idx = i * tones.length + j;
-                  const isSelectedTone = noteToNumber(selectedTone) === idx
+                  const isSelectedTone =
+                    Chord.getChordNumber(selectedTone) === idx;
                   // Fill with spaces
                   return (
                     <Pressable
                       key={j}
-                      style={[
-                        styles.circle_button,
-                        themeStyle.button,
-                      ]}
+                      style={[styles.circle_button, themeStyle.button]}
                       onPress={() => {
                         onSelectTone(Chord.toChord(toneName, chordType));
                         dialogState.hide();
