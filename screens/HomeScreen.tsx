@@ -28,7 +28,6 @@ export default function HomeScreen({
   const fetchMusics = async () => {
     const musicsInfos = await getMusicsInfo();
     setMusics(musicsInfos);
-    console.log(musicsInfos);
   };
 
   const onDeleteMusic = (musicId: string) => {

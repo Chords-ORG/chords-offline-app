@@ -1,67 +1,104 @@
-import { TextInput } from "@react-native-material/core";
+import {
+  Stack,
+  Text,
+} from "@react-native-material/core";
+import TextInput from "./TextInput";
 import React from "react";
-import { StyleSheet, View, Text, TextInputProps } from "react-native";
+import { StyleSheet, TextInputProps } from "react-native";
+import { ThemeContext } from "../providers/ThemeProvider";
 
 export interface NumberedTextInputProps extends TextInputProps {
-  label: string;
-  variant: "outlined" | "filled" | "standard";
-  color: string;
+  label?: string;
   helperText?: string;
+  error?: string;
 }
 
 const NumberedTextInput = (props: NumberedTextInputProps) => {
-  const { label, color, variant, value, helperText } = props;
+  const { label = "", value, helperText, error } = props;
 
   const lines = value?.split("\n") || [];
-  const lineNumbers = Array.from({ length: lines.length }, (_, i) => i + 1);
+  const lineNumbers = Array.from({ length: lines.length }, (_, i) =>
+    (i + 1).toString()
+  );
+  // padd 0 line number
+  const maxLineNumber = lineNumbers[lineNumbers.length - 1];
+  const maxLineNumberLength = maxLineNumber.toString().length;
+  lineNumbers.forEach((lineNumber, i) => {
+    const lineNumberLength = lineNumber.toString().length;
+    const diff = maxLineNumberLength - lineNumberLength;
+    if (diff > 0) {
+      lineNumbers[i] = "0".repeat(diff) + lineNumber;
+    }
+  });
 
+  const { colors: themeColors } = React.useContext(ThemeContext);
+  const lineEvenStyle = {
+    color: themeColors.textHighlight,
+    ...styles.lineEvenNumber,
+  };
+  const lineOddStyle = {
+    color: themeColors.textSecondary,
+    ...styles.lineOddNumber,
+  };
+
+  const inputChildrenProps = {
+    ...props,
+    label: undefined,
+    helperText: undefined,
+  };
   return (
-    <View style={styles.container}>
-      <View style={styles.lineNumberContainer}>
-        {lineNumbers.map((lineNumber, i) => (
-          <Text
-            key={lineNumber}
-            style={i % 2 === 0 ? styles.lineEvenNumber : styles.lineOddNumber}
-          >
-            {lineNumber} |
-          </Text>
-        ))}
-      </View>
-      <TextInput
-        {...props}
-        label={label}
-        variant={variant}
-        color={color}
-        helperText={helperText}
-        style={styles.input}
-        multiline
-      />
-    </View>
+    <Stack>
+      <Text style={{ color: error ? "red" : themeColors.textInputTint }}>
+        {label}
+      </Text>
+      {helperText && (
+        <Text style={{ color: themeColors.textSecondary, fontSize: 12 }}>
+          {helperText}
+        </Text>
+      )}
+      <Stack>
+        <Text style={styles.lineNumberContainer}>
+          {lineNumbers.map((lineNumber, i) => (
+            <Text
+              key={lineNumber}
+              style={i % 2 === 0 ? lineEvenStyle : lineOddStyle}
+            >
+              {`${lineNumber}|\n`}
+            </Text>
+          ))}
+        </Text>
+        <TextInput
+          {...inputChildrenProps}
+          style={[styles.input, { paddingLeft: 10 + 8 * maxLineNumberLength }]}
+          multiline
+        />
+      </Stack>
+    </Stack>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-  },
   lineNumberContainer: {
-    marginTop: 5,
-    marginRight: 5,
+    position: "absolute",
+    top: 10,
+    left: 3,
+    zIndex: 1,
   },
   lineEvenNumber: {
-    color: "#2F80ED",
     marginRight: 5,
+    fontFamily: "monospace",
+    fontSize: 12,
+    marginTop: 1,
   },
   lineOddNumber: {
-    color: "gray",
     marginRight: 5,
+    fontFamily: "monospace",
+    fontSize: 12,
   },
   input: {
     flex: 1,
-    fontSize: 16,
-    lineHeight: 24,
-    paddingTop: 4,
+    fontFamily: "monospace",
+    fontSize: 12,
   },
 });
 

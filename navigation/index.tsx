@@ -6,7 +6,7 @@ import BottomTabNavigator from "./BottomTabNavigator";
 import ChordScreen from "../screens/ChordScreen";
 import WriteChordScreen from "../screens/WriteChordScreen";
 import PreviewScreen from "../screens/PreviewScreen";
-import { IconComponentProvider, Provider } from "@react-native-material/core";
+import { IconComponentProvider } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import { LocalSettingsProvider } from "../providers/LocalSettingsProvider";
@@ -26,7 +26,6 @@ export type RootStackParamList = {
 
 export default function Navigation() {
   return (
-    <Provider>
       <LocalSettingsProvider>
         <ThemeProvider>
           <IconComponentProvider IconComponent={MaterialCommunityIcons}>
@@ -36,7 +35,6 @@ export default function Navigation() {
           </IconComponentProvider>
         </ThemeProvider>
       </LocalSettingsProvider>
-    </Provider>
   );
 }
 

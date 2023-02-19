@@ -1,5 +1,86 @@
 import { StyleSheet } from "react-native";
 
+export type ColorsType = {
+  // Header
+  headerBackground: string;
+  headerTint: string;
+
+  // Content
+  contentBackground: string;
+  
+  // Bottom Tab
+  bottomTabBackground: string;
+  bottomTabTint: string;
+  
+  // Button
+  buttonBackground: string;
+  buttonTint: string;
+  
+  // Text
+  textPrimary: string;
+  textSecondary: string;
+  textHighlight: string;
+  
+  // Dialog
+  dialogBackground: string;
+  dialogTint: string;
+  
+  // Card
+  cardBackground: string;
+  
+  // Divider
+  divider: string;
+
+  // TextInput
+  textInputBackground: string;
+  textInputTint: string;
+  textInputPlaceholder: string;
+  textInputBorder: string;
+
+};
+
+export const LightColors: ColorsType = {
+  headerBackground: "#2F80ED",
+  headerTint: "#FFFFFF",
+  contentBackground: "#FFFFFF",
+  bottomTabBackground: "#FFFFFF",
+  bottomTabTint: "#2F80ED",
+  buttonBackground: "#2F80ED",
+  buttonTint: "#FFFFFF",
+  textPrimary: "#333333",
+  textSecondary: "#828282",
+  textHighlight: "#2F80ED",
+  dialogBackground: "#FFFFFF",
+  dialogTint: "#333333",
+  cardBackground: "#F2F2F2",
+  divider: "#E4E4E4",
+  textInputBackground: "#FFFFFF",
+  textInputTint: "#333333",
+  textInputPlaceholder: "#828282",
+  textInputBorder: "#E4E4E4",
+};
+
+export const DarkColors: ColorsType = {
+  headerBackground: "#2F80ED",
+  headerTint: "#FFFFFF",
+  contentBackground: "#1E201D",
+  bottomTabBackground: "#2F80ED",
+  bottomTabTint: "#FFFFFF",
+  buttonBackground: "#2F80ED",
+  buttonTint: "#FFFFFF",
+  textPrimary: "#FFFFFF",
+  textSecondary: "#BDBDBD",
+  textHighlight: "#2F80ED",
+  dialogBackground: "#313337",
+  dialogTint: "#FFFFFF",
+  cardBackground: "#313337",
+  divider: "#828282",
+  textInputBackground: "#313337",
+  textInputTint: "#FFFFFF",
+  textInputPlaceholder: "#828282",
+  textInputBorder: "#828282",
+};
+
 export const LightStyle = StyleSheet.create({
   header_color: {
     backgroundColor: "#2F80ED",
@@ -33,7 +114,7 @@ export const LightStyle = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     color: "#333333",
   },
-  card:{
+  card: {
     backgroundColor: "#F2F2F2",
     borderRadius: 5,
   },
@@ -155,7 +236,7 @@ export const DarkStyle = StyleSheet.create({
     backgroundColor: "#313337",
     color: "#FFFFFF",
   },
-  card:{
+  card: {
     backgroundColor: "#313337",
     borderRadius: 5,
   },
