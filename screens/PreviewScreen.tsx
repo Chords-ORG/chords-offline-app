@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { RootStackParamList } from "../types";
+import { RootStackParamList } from "../navigation";
 import { StackScreenProps } from "@react-navigation/stack";
 import { ScrollView } from "react-native-gesture-handler";
 import ChordView from "../components/ChordsView";

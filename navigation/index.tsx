@@ -2,7 +2,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
 
-import { RootStackParamList } from "../types";
 import BottomTabNavigator from "./BottomTabNavigator";
 import ChordScreen from "../screens/ChordScreen";
 import WriteChordScreen from "../screens/WriteChordScreen";
@@ -11,6 +10,19 @@ import { IconComponentProvider, Provider } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import { LocalSettingsProvider } from "../providers/LocalSettingsProvider";
+
+export type RootStackParamList = {
+  Root: undefined;
+  ChordScreen: { chord_id: number };
+  WriteChordScreen: undefined;
+  PreviewScreen: {
+    lyrics: string;
+    musicName: string;
+    authorName: string;
+    tone: string;
+    capo: number;
+  };
+};
 
 export default function Navigation() {
   return (

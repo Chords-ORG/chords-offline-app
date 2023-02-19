@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
-import { PianoChordPropsType } from "../types";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function PianoChord(props: PianoChordPropsType) {
+export interface PianoChordProps {
+  chordName: string;
+}
+
+export default function PianoChord(props: PianoChordProps) {
   const piano_back = require("../assets/images/piano_chord/piano_back.png");
   const black_finger = require("../assets/images/piano_chord/black_finger.png");
   const white_finger = require("../assets/images/piano_chord/white_finger.png");
@@ -12,7 +15,7 @@ export default function PianoChord(props: PianoChordPropsType) {
 
   var piano_chords = require("../constants/piano_chords.json");
 
-  const chords = piano_chords[props.ChordName];
+  const chords = piano_chords[props.chordName];
   const [idx, setIdx] = useState(0);
   if (!chords || chords.length == 0) {
     return (

@@ -6,7 +6,6 @@ import {
   Image,
   Linking,
 } from "react-native";
-import { SettingsStackParamList } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
 import Spinner from "../components/Spinner";
 import { Picker } from "@react-native-picker/picker";
@@ -14,6 +13,7 @@ import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { Pressable, Stack, Text } from "@react-native-material/core";
 import { Header } from "../components/Header";
+import { SettingsStackParamList } from "../navigation/SettingsStack";
 
 export default function SettingsScreen({}: StackScreenProps<
   SettingsStackParamList,
@@ -87,7 +87,10 @@ export default function SettingsScreen({}: StackScreenProps<
           </Stack>
 
           <Stack style={styles.picker}>
-            <Text style={{ color: themeStyle.secondary_color.color }}> Instrumento: </Text>
+            <Text style={{ color: themeStyle.secondary_color.color }}>
+              {" "}
+              Instrumento:{" "}
+            </Text>
             <Picker
               selectedValue={instrument}
               style={{ color: themeStyle.primary_color.color }}
@@ -102,7 +105,10 @@ export default function SettingsScreen({}: StackScreenProps<
           </Stack>
 
           <Stack style={styles.picker}>
-            <Text style={{ color: themeStyle.secondary_color.color }}> Capotraste: </Text>
+            <Text style={{ color: themeStyle.secondary_color.color }}>
+              {" "}
+              Capotraste:{" "}
+            </Text>
             <Picker
               selectedValue={capoConfig}
               style={{ color: themeStyle.primary_color.color }}
@@ -117,7 +123,10 @@ export default function SettingsScreen({}: StackScreenProps<
           </Stack>
 
           <Stack style={styles.picker}>
-            <Text style={{ color: themeStyle.secondary_color.color }}> Esquema de cores: </Text>
+            <Text style={{ color: themeStyle.secondary_color.color }}>
+              {" "}
+              Esquema de cores:{" "}
+            </Text>
             <Picker
               selectedValue={localColorScheme}
               style={{ color: themeStyle.primary_color.color }}

@@ -1,11 +1,17 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as React from "react";
-import { BottomTabParamList } from "../types";
 import HomeStack from "./HomeStack";
 import SettingsStack from "./SettingsStack";
 import { Image } from "react-native";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { Icon } from "@react-native-material/core";
+
+export type BottomTabParamList = {
+  Home: undefined;
+  Search: undefined;
+  Profile: undefined;
+  Settings: undefined;
+};
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 

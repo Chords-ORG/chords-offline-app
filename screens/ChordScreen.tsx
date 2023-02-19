@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
-import { RootStackParamList } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
 import CapoDialog from "../components/CapoDialog";
 import ChordView from "../components/ChordsView";
@@ -14,6 +13,7 @@ import useModalDialogState from "../hooks/useModalDialogState";
 import { Button, Spacer, Stack } from "@react-native-material/core";
 import { Chord } from "../services/chords";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
+import { RootStackParamList } from "../navigation";
 
 const lyrics = `
 [Intro]  

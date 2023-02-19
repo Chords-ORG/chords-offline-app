@@ -4,27 +4,44 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import useGuitarChordImages from "../hooks/useGuitarChordImages";
 import { ThemeContext } from "../providers/ThemeProvider";
 
-var houseDict = new Map();
-houseDict.set(0, { height: 0, width: 0 });
-houseDict.set(1, { top: 30 });
-houseDict.set(2, { top: 47 });
-houseDict.set(3, { top: 63 });
-houseDict.set(4, { top: 80 });
-houseDict.set(5, { top: 97 });
+type DictStyle = Record<
+  number,
+  { height?: number; width?: number; top?: number; right?: number }
+>;
+const houseDict: DictStyle = {
+  0: { height: 0, width: 0 },
+  1: { top: 30 },
+  2: { top: 47 },
+  3: { top: 63 },
+  4: { top: 80 },
+  5: { top: 97 },
+};
 
-var stringDict = new Map();
-stringDict.set(0, { height: 0, width: 0 });
-stringDict.set(1, { right: 1 });
-stringDict.set(2, { right: 15 });
-stringDict.set(3, { right: 28 });
-stringDict.set(4, { right: 41 });
-stringDict.set(5, { right: 55 });
-stringDict.set(6, { right: 68 });
+const stringDict: DictStyle = {
+  0: { height: 0, width: 0 },
+  1: { right: 1 },
+  2: { right: 15 },
+  3: { right: 28 },
+  4: { right: 41 },
+  5: { right: 55 },
+  6: { right: 68 },
+};
 
 export interface GuitarChordProps {
   capo: number;
   chordName: string;
 }
+export type GuitarFinger = {
+  house: number;
+  string: number;
+  size: number;
+};
+
+export type GuitarChordPosition = {
+  startHouse: number;
+  fingers: GuitarFinger[];
+  strings: string[];
+};
 
 export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
   const {
@@ -47,9 +64,12 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
     finger_p,
   } = useGuitarChordImages();
 
-  const guitar_chords = require("../constants/guitar_chords.json");
+  const guitarChords: Record<
+    string,
+    GuitarChordPosition[]
+  > = require("../constants/guitar_chords.json");
 
-  const chords = guitar_chords[chordName];
+  const chords = guitarChords[chordName];
   const [idx, setIdx] = useState(0);
   if (!chords || chords.length == 0) {
     return (
@@ -63,7 +83,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
       </View>
     );
   } else {
-    const tam = guitar_chords[chordName].length;
+    const tam = guitarChords[chordName].length;
     var slash_house_style = styles.slash_house_1;
     if (chords[idx].fingers[0].house == 2)
       slash_house_style = styles.slash_house_2;
@@ -71,7 +91,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
       slash_house_style = styles.slash_house_3;
     else if (chords[idx].fingers[0].house == 4)
       slash_house_style = styles.slash_house_4;
-    const start_house = chords[idx].start_house + (capo != 0 ? capo + 1 : 0);
+    const startHouse = chords[idx].startHouse + (capo != 0 ? capo + 1 : 0);
 
     const { styleSheet: themeStyle } = React.useContext(ThemeContext);
     return (
@@ -79,15 +99,15 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
         style={styles.container}
         onPress={() => setIdx((idx + 1) % tam)}
       >
-        <Text style={[styles.house_text, themeStyle.primary_color ]}>
-          {start_house != 0 ? `${start_house}ª` : "   "}
+        <Text style={[styles.house_text, themeStyle.primary_color]}>
+          {startHouse != 0 ? `${startHouse}ª` : "   "}
         </Text>
         <View>
           <Image
             source={
               capo != 0
                 ? guitar_capo
-                : chords[idx].start_house != 0
+                : chords[idx].startHouse != 0
                 ? guitar_front
                 : guitar_base
             }
@@ -100,8 +120,8 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
               chords[idx].fingers[0].size == 1
                 ? styles.finger
                 : styles.unactive,
-              houseDict.get(chords[idx].fingers[0].house),
-              stringDict.get(chords[idx].fingers[0].string),
+              houseDict[chords[idx].fingers[0].house],
+              stringDict[chords[idx].fingers[0].string],
             ]}
           />
           <Image
@@ -154,32 +174,32 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
             source={finger_2}
             style={[
               styles.finger,
-              houseDict.get(chords[idx].fingers[1].house),
-              stringDict.get(chords[idx].fingers[1].string),
+              houseDict[chords[idx].fingers[1].house],
+              stringDict[chords[idx].fingers[1].string],
             ]}
           />
           <Image
             source={finger_3}
             style={[
               styles.finger,
-              houseDict.get(chords[idx].fingers[2].house),
-              stringDict.get(chords[idx].fingers[2].string),
+              houseDict[chords[idx].fingers[2].house],
+              stringDict[chords[idx].fingers[2].string],
             ]}
           />
           <Image
             source={finger_4}
             style={[
               styles.finger,
-              houseDict.get(chords[idx].fingers[3].house),
-              stringDict.get(chords[idx].fingers[3].string),
+              houseDict[chords[idx].fingers[3].house],
+              stringDict[chords[idx].fingers[3].string],
             ]}
           />
           <Image
             source={finger_p}
             style={[
               styles.finger,
-              houseDict.get(chords[idx].fingers[4].house),
-              stringDict.get(chords[idx].fingers[4].string),
+              houseDict[chords[idx].fingers[4].house],
+              stringDict[chords[idx].fingers[4].string],
             ]}
           />
           <Image
@@ -382,35 +402,3 @@ const styles = StyleSheet.create({
     height: "50%",
   },
 });
-
-const sample_chord = {
-  start_house: 0,
-  fingers: [
-    {
-      house: 1,
-      string: 2,
-      size: 1,
-    },
-    {
-      house: 1,
-      string: 2,
-    },
-    {
-      house: 1,
-      string: 2,
-    },
-    {
-      house: 1,
-      string: 2,
-    },
-    {
-      house: 1,
-      string: 2,
-    },
-    {
-      house: 1,
-      string: 2,
-    },
-  ],
-  strings: ["n", "n", "n", "n", "b", "x"],
-};

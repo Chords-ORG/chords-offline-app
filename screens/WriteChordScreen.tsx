@@ -6,7 +6,7 @@ import {
   View,
   ScrollView,
 } from "react-native";
-import { RootStackParamList } from "../types";
+import { RootStackParamList } from "../navigation";
 import { StackScreenProps } from "@react-navigation/stack";
 import {
   AppBar,

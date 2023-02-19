@@ -8,9 +8,11 @@ import {
     View,
     ActivityIndicator
 } from "react-native";
-import { SpinnerPropsType } from '../types';
 
-export default function Spinner(props: SpinnerPropsType) {
+export interface SpinnerProps{
+    visible: boolean;
+  };
+export default function Spinner(props: SpinnerProps) {
     return (
         <Modal
             visible={props.visible}

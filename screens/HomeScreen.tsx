@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { RootStackParamList } from "../types";
+import { RootStackParamList } from "../navigation";
 import { StackScreenProps } from "@react-navigation/stack";
 import { Button, Divider } from "@react-native-material/core";
 import { Header } from "../components/Header";

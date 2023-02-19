@@ -1,7 +1,10 @@
 import * as React from "react";
-import { SettingsStackParamList } from "../types";
 import { createStackNavigator } from "@react-navigation/stack";
 import Settings from "../screens/SettingsScreen";
+
+export type SettingsStackParamList = {
+  Settings: undefined;
+};
 
 const Stack = createStackNavigator<SettingsStackParamList>();
 

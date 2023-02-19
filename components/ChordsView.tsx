@@ -19,8 +19,8 @@ export default function ChordView({
       {chordsLines.map((chord_line: ChordLineType, i) => (
         <View key={i}>
           <View style={{ flexDirection: "row" }}>
-            {chord_line.chords_line !== "" &&
-              chord_line.chords_line.split(" ").map((chord_name, i) => {
+            {chord_line.chordsLine !== "" &&
+              chord_line.chordsLine.split(" ").map((chord_name, i) => {
                 return chord_name == "" ? (
                   <View key={i}>
                     <Text
@@ -48,7 +48,7 @@ export default function ChordView({
                 );
               })}
           </View>
-          {chord_line.music_line !== "" && (
+          {chord_line.musicLine !== "" && (
             <Text
               style={[
                 styles.lyrics_text,
@@ -56,7 +56,7 @@ export default function ChordView({
                 { fontFamily: "monospace" },
               ]}
             >
-              {chord_line.music_line}
+              {chord_line.musicLine}
             </Text>
           )}
         </View>

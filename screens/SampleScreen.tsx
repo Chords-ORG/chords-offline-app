@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { RootStackParamList } from "../types";
+import { RootStackParamList } from "../navigation";
 import { StackScreenProps } from "@react-navigation/stack";
 import { Header } from "../components/Header";
 import { Button, Divider } from "@react-native-material/core";

@@ -37,12 +37,12 @@ export default function useChordsState({
         chordType
       );
 
-      const music_line = lines[i + 1] || "";
-      chordsLines.push({ chords_line: chordsLine, music_line });
+      const musicLine = lines[i + 1] || "";
+      chordsLines.push({ chordsLine: chordsLine, musicLine });
     }
 
     for (let i = 0; i < chordsLines.length; i++) {
-      const chords = chordsLines[i].chords_line.split(" ");
+      const chords = chordsLines[i].chordsLine.split(" ");
       for (let j = 0; j < chords.length; ++j) {
         if (chords[j] == "") continue;
         let originalChordName = chords[j];

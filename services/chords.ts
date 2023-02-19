@@ -125,23 +125,23 @@ export class Chord {
 }
 
 export const addSemiTonesToChordLine = (
-  chords_line: string,
+  chordsLine: string,
   value: number,
   dict: string = "sharp"
 ): string => {
   var delta = 0;
   var spaces = 0;
   var i = 0;
-  var n = chords_line.length;
+  var n = chordsLine.length;
   var ans = "";
   while (i < n) {
-    if (chords_line[i] == " ") {
+    if (chordsLine[i] == " ") {
       spaces += 1;
       ++i;
     } else {
       var note = "";
-      while (i < n && chords_line[i] != " ") {
-        note += chords_line[i];
+      while (i < n && chordsLine[i] != " ") {
+        note += chordsLine[i];
         ++i;
       }
       var chord = new Chord(note);

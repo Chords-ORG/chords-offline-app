@@ -52,7 +52,7 @@ export default function ChordsImages({
                   <GuitarChord capo={selectedCapo} chordName={chordName} />
                 ) : null}
                 {instrument === "piano" ? (
-                  <PianoChord ChordName={chordName} />
+                  <PianoChord chordName={chordName} />
                 ) : null}
                 <Text
                   style={[
