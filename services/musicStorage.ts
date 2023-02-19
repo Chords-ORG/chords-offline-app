@@ -5,6 +5,7 @@ import {
   tryGetItemObject,
 } from "../functions/storage";
 import { Music, MusicInfo } from "../types";
+import uuid from "react-native-uuid";
 
 const MUSICS_INFO_KEY = "musics_info";
 const MUSIC_KEY_PREFIX = "music_";
@@ -24,7 +25,7 @@ export const getMusicsInfo = () => {
 };
 
 export const saveMusic = async (music: Music) => {
-  music.id = music.id || crypto.randomUUID();
+  music.id = music.id || uuid.v4().toString();
   const musics = await getMusicsInfo();
   const index = musics.findIndex((m) => m.id === music.id);
   if (index >= 0) musics[index] = toMusicInfo(music);

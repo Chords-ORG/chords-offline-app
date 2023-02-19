@@ -19,46 +19,41 @@ export default function ChordView({
       {chordsLines.map((chord_line: ChordLineType, i) => (
         <View key={i}>
           <View style={{ flexDirection: "row" }}>
-            {chord_line.chordsLine !== "" &&
-              chord_line.chordsLine.split(" ").map((chord_name, i) => {
-                return chord_name == "" ? (
-                  <View key={i}>
-                    <Text
-                      style={[styles.chord_text, themeStyle.text_highlight]}
-                    >
-                      {" "}
-                    </Text>
-                  </View>
-                ) : (
-                  <TouchableOpacity
-                    onPress={() => onPressNote(chord_name)}
-                    key={i}
+            {chord_line.chordsLine.split(" ").map((chord_name, i) => {
+              return chord_name == "" ? (
+                <View key={i}>
+                  <Text style={[styles.chord_text, themeStyle.text_highlight]}>
+                    {" "}
+                  </Text>
+                </View>
+              ) : (
+                <TouchableOpacity
+                  onPress={() => onPressNote(chord_name)}
+                  key={i}
+                >
+                  <Text
+                    style={[
+                      themeStyle.h3,
+                      themeStyle.active_color,
+                      themeStyle.bold,
+                      { fontFamily: "monospace" },
+                    ]}
                   >
-                    <Text
-                      style={[
-                        themeStyle.h3,
-                        themeStyle.active_color,
-                        themeStyle.bold,
-                        { fontFamily: "monospace" },
-                      ]}
-                    >
-                      {chord_name}{" "}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              })}
+                    {chord_name}{" "}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
           </View>
-          {chord_line.musicLine !== "" && (
-            <Text
-              style={[
-                styles.lyrics_text,
-                themeStyle.text_primary,
-                { fontFamily: "monospace" },
-              ]}
-            >
-              {chord_line.musicLine}
-            </Text>
-          )}
+          <Text
+            style={[
+              styles.lyrics_text,
+              themeStyle.text_primary,
+              { fontFamily: "monospace" },
+            ]}
+          >
+            {chord_line.musicLine}
+          </Text>
         </View>
       ))}
     </View>

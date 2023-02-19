@@ -13,7 +13,7 @@ import { LocalSettingsProvider } from "../providers/LocalSettingsProvider";
 
 export type RootStackParamList = {
   Root: undefined;
-  ChordScreen: { chord_id: number };
+  ChordScreen: { musicId?: string; sampleMusic?: boolean };
   WriteChordScreen: undefined;
   PreviewScreen: {
     lyrics: string;

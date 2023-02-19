@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
 import CapoDialog from "../components/CapoDialog";
 import ChordView from "../components/ChordsView";
@@ -14,31 +14,39 @@ import { Button, Spacer, Stack } from "@react-native-material/core";
 import { Chord } from "../services/chords";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { RootStackParamList } from "../navigation";
-
-const lyrics = `
-[Intro]  
-B  F# A#  D#m
-
-B  F# A#  D#m
-
-
-[Primeira Parte]
- B                  F#
-Que o Sol da manhã te dissolva
-  A#                  D#m
-Seu vampiro de filmes pastelão
-B                   F#
-Mas quem vai nos julgar?
-   A#           D#m
-Sou seu despenteado leão`;
+import { Music } from "../types";
+import { getMusic } from "../services/musicStorage";
 
 export default function ChordScreen({
   navigation,
+  route,
 }: StackScreenProps<RootStackParamList, "ChordScreen">) {
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+  const { musicId, sampleMusic: isSampleMusic = false } = route.params;
+  const [music, setMusic] = useState<Music | undefined>(undefined);
+
+  const fetchMusic = React.useCallback(async () => {
+    if (isSampleMusic) {
+      const sampleMusic: Music = require("../assets/sample_muisc.json");
+      setMusic(sampleMusic);
+      return;
+    }
+    if (!musicId) return;
+
+    const music = await getMusic(musicId);
+    setMusic(music);
+  }, [musicId, isSampleMusic, setMusic]);
+
+  React.useEffect(() => {
+    fetchMusic();
+  }, [musicId, setMusic]);
 
   const { rawChordList, chordsLines, capo, setCapo, tone, setTone } =
-    useChordsState({ lyrics, originalTone: "B" });
+    useChordsState({
+      lyrics: music?.lyricsWithChords,
+      originalTone: music?.originalTone,
+      originalCapo: music?.capo,
+    });
   const chordsImagesState = useChordsImageState(rawChordList);
   const { chordType } = useLocalConfiguration();
 
@@ -62,11 +70,11 @@ export default function ChordScreen({
       />
       <Header
         onPressBackButton={navigation.goBack}
-        title="Leão"
-        subTitle="Marília Mendonça"
+        title={music?.name}
+        subTitle={music?.author}
       />
       <View style={[themeStyle.content, styles.content]}>
-        <ChordsImages state={chordsImagesState} selectedCapo={capo}/>
+        <ChordsImages state={chordsImagesState} selectedCapo={capo} />
         <View style={themeStyle.horizontal_separator} />
         <View>
           <Stack spacing={2}>

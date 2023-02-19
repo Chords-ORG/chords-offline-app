@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { RootStackParamList } from "../navigation";
+import { Alert, StyleSheet, View } from "react-native";
+import { Music } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
 import { ScrollView } from "react-native-gesture-handler";
 import ChordView from "../components/ChordsView";
@@ -8,6 +8,8 @@ import useChordsState from "../hooks/useChordsState";
 import { Header } from "../components/Header";
 import { Button, Stack, Text } from "@react-native-material/core";
 import { ThemeContext } from "../providers/ThemeProvider";
+import { saveMusic } from "../services/musicStorage";
+import { RootStackParamList } from "../navigation";
 
 export default function PreviewScreen({
   navigation,
@@ -28,9 +30,28 @@ export default function PreviewScreen({
 
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
-  const handleSave = () => {
-    navigation.push("Root");
+  const [loading, setLoading] = React.useState(false);
+
+  const handleSave = async () => {
+    const music: Music = {
+      lyricsWithChords: lyrics,
+      author: authorName,
+      name: musicName,
+      originalTone: originalTone,
+      capo: originalCapo,
+    };
+    try {
+      setLoading(true);
+      await saveMusic(music);
+      setLoading(false);
+      Alert.alert("Sucesso", "Cifra salva com sucesso!");
+      navigation.push("Root");
+    } catch (err) {
+      setLoading(false);
+      Alert.alert("Erro", "Erro ao salvar cifra!");
+    }
   };
+
   return (
     <View>
       <Header

@@ -33,7 +33,7 @@ export default function HomeScreen({
           color={themeStyle.button.backgroundColor}
           tintColor={themeStyle.button.color}
           onPress={() => {
-            navigation.navigate("ChordScreen", { chord_id: 1 });
+            navigation.navigate("ChordScreen", { sampleMusic: true });
           }}
         />
 
@@ -50,12 +50,19 @@ export default function HomeScreen({
         <Stack>
           {musics.map((music) => {
             return (
-              <Button
-                key={music.id}
-                title={music.name}
-                color={themeStyle.button.backgroundColor}
-                tintColor={themeStyle.button.color}
-              />
+              music.id !== undefined && (
+                <Button
+                  key={music.id}
+                  title={music.name}
+                  color={themeStyle.button.backgroundColor}
+                  tintColor={themeStyle.button.color}
+                  onPress={() => {
+                    navigation.navigate("ChordScreen", {
+                      musicId: music.id as string,
+                    });
+                  }}
+                />
+              )
             );
           })}
         </Stack>

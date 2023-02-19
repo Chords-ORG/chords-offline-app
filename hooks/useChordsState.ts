@@ -21,6 +21,14 @@ export default function useChordsState({
   const [capo, setCapoState] = React.useState<number>(originalCapo);
 
   React.useEffect(() => {
+    setToneState(originalTone);
+  }, [originalTone]);
+
+  React.useEffect(() => {
+    setCapoState(originalCapo);
+  }, [originalCapo]);
+
+  React.useEffect(() => {
     const lines = lyrics.split("\n");
     const chordsLines: ChordLineType[] = [];
     const chordsList: Chord[] = [];
