@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { Alert, View } from "react-native";
 import { RootStackParamList } from "../navigation";
 import { StackScreenProps } from "@react-navigation/stack";
 import {
@@ -15,8 +15,9 @@ import {
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { MusicInfo } from "../types";
-import { getMusicsInfo } from "../services/musicStorage";
+import { deleteMusic, getMusicsInfo } from "../services/musicStorage";
 import { ScrollView } from "react-native-gesture-handler";
+import MusicsList from "../components/MusicsInfoList";
 
 export default function HomeScreen({
   navigation,
@@ -28,6 +29,16 @@ export default function HomeScreen({
     const musicsInfos = await getMusicsInfo();
     setMusics(musicsInfos);
     console.log(musicsInfos);
+  };
+
+  const onDeleteMusic = (musicId: string) => {
+    deleteMusic(musicId)
+      .then(() => {
+        fetchMusics();
+      })
+      .catch((err) => {
+        Alert.alert("Erro", "Não foi possível deletar a cifra");
+      });
   };
 
   React.useEffect(() => {
@@ -67,30 +78,15 @@ export default function HomeScreen({
         />
 
         <ScrollView>
-          <Stack spacing={10}>
-            {musics.map((music) => {
-              return (
-                music.id !== undefined && (
-                  <Pressable
-                    onPress={() => {
-                      navigation.navigate("ChordScreen", {
-                        musicId: music.id as string,
-                      });
-                    }}
-                    key={music.id}
-                    style={[themeStyle.card, { padding: 10 }]}
-                  >
-                    <Text style={{ color: themeStyle.primary_color.color }}>
-                      {music.name}
-                    </Text>
-                    <Text style={{ color: themeStyle.secondary_color.color }}>
-                      {music.author}
-                    </Text>
-                  </Pressable>
-                )
-              );
-            })}
-          </Stack>
+          <MusicsList
+            musics={musics}
+            onPress={(musicId) => {
+              navigation.navigate("ChordScreen", {
+                musicId: musicId,
+              });
+            }}
+            onDelete={onDeleteMusic}
+          />
         </ScrollView>
       </Stack>
     </View>
