@@ -14,7 +14,9 @@ export type ColorsType = {
 
   // Button
   buttonBackground: string;
+  buttonDisabledBackground: string;
   buttonTint: string;
+  buttonTintSecondary: string;
 
   // Text
   textPrimary: string;
@@ -50,7 +52,9 @@ export const LightColors: ColorsType = {
   bottomTabBackground: "#FFFFFF",
   bottomTabTint: "#2F80ED",
   buttonBackground: "#2F80ED",
+  buttonDisabledBackground: "#828282",
   buttonTint: "#FFFFFF",
+  buttonTintSecondary: "#2F80ED",
   textPrimary: "#333333",
   textSecondary: "#828282",
   chordColor: "#2F80ED",
@@ -74,7 +78,9 @@ export const DarkColors: ColorsType = {
   bottomTabBackground: "#2F80ED",
   bottomTabTint: "#FFFFFF",
   buttonBackground: "#2F80ED",
+  buttonDisabledBackground: "#828282",
   buttonTint: "#FFFFFF",
+  buttonTintSecondary: "#2F80ED",
   textPrimary: "#FFFFFF",
   textSecondary: "#BDBDBD",
   textHighlight: "#2F80ED",
