@@ -1,19 +1,18 @@
 import React from "react";
-import {
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  Image,
-  Linking,
-} from "react-native";
+import { StyleSheet, View, Image, Linking } from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
-import Spinner from "../components/Spinner";
-import { Picker } from "@react-native-picker/picker";
-import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { Pressable, Stack, Text } from "@react-native-material/core";
 import { Header } from "../components/Header";
 import { SettingsStackParamList } from "../navigation/SettingsStack";
+import {
+  CapoConfig,
+  ChordType,
+  Instrument,
+  LocalColorScheme,
+  LocalSettingsContext,
+} from "../providers/LocalSettingsProvider";
+import Picker from "../components/Picker";
 
 export default function SettingsScreen({}: StackScreenProps<
   SettingsStackParamList,
@@ -28,10 +27,13 @@ export default function SettingsScreen({}: StackScreenProps<
     setInstrument,
     setCapoConfig,
     setLocalColorScheme,
-  } = useLocalConfiguration();
+  } = React.useContext(LocalSettingsContext);
 
-  const { styleSheet: themeStyle, toggleTheme } =
-    React.useContext(ThemeContext);
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+
+  const updateTheme = async (newTheme: LocalColorScheme) => {
+    await setLocalColorScheme(newTheme);
+  };
 
   return (
     <View>
@@ -65,82 +67,50 @@ export default function SettingsScreen({}: StackScreenProps<
             from Flaticon
           </Text>
         </Pressable>
-
-        <Stack spacing={20} mt={50}>
-          <Stack>
-            <Text style={{ color: themeStyle.secondary_color.color }}>
-              Visualização de notas
-            </Text>
-            <Picker
-              selectedValue={chordType}
-              style={{ color: themeStyle.primary_color.color }}
-              dropdownIconColor={themeStyle.primary_color.color}
-              onValueChange={(itemValue) => {
-                setChordType(itemValue);
-              }}
-              placeholder="Visualização de notas"
-              accessibilityLabel="Visualização de notas"
-            >
-              <Picker.Item label="Sustenido #" value="sharp" />
-              <Picker.Item label="Bemol b" value="bemol" />
-            </Picker>
-          </Stack>
-
-          <Stack style={styles.picker}>
-            <Text style={{ color: themeStyle.secondary_color.color }}>
-              {" "}
-              Instrumento:{" "}
-            </Text>
-            <Picker
-              selectedValue={instrument}
-              style={{ color: themeStyle.primary_color.color }}
-              dropdownIconColor={themeStyle.primary_color.color}
-              onValueChange={(itemValue) => {
-                setInstrument(itemValue);
-              }}
-            >
-              <Picker.Item label="Violão/Guitarra" value="guitar" />
-              <Picker.Item label="Teclado/Piano" value="piano" />
-            </Picker>
-          </Stack>
-
-          <Stack style={styles.picker}>
-            <Text style={{ color: themeStyle.secondary_color.color }}>
-              {" "}
-              Capotraste:{" "}
-            </Text>
-            <Picker
-              selectedValue={capoConfig}
-              style={{ color: themeStyle.primary_color.color }}
-              dropdownIconColor={themeStyle.primary_color.color}
-              onValueChange={(itemValue) => {
-                setCapoConfig(itemValue);
-              }}
-            >
-              <Picker.Item label="Automático" value="auto" />
-              <Picker.Item label="Nunca" value="never" />
-            </Picker>
-          </Stack>
-
-          <Stack style={styles.picker}>
-            <Text style={{ color: themeStyle.secondary_color.color }}>
-              {" "}
-              Esquema de cores:{" "}
-            </Text>
-            <Picker
-              selectedValue={localColorScheme}
-              style={{ color: themeStyle.primary_color.color }}
-              dropdownIconColor={themeStyle.primary_color.color}
-              onValueChange={(itemValue) => {
-                setLocalColorScheme(itemValue);
-                toggleTheme();
-              }}
-            >
-              <Picker.Item label="Sistema" value="system" />
-              <Picker.Item label="Claro" value="light" />
-              <Picker.Item label="Escuro" value="dark" />
-            </Picker>
-          </Stack>
+        <Stack mt={50} divider={<View style={{ marginTop: 5 }} />}>
+          <Picker
+            label="Visualização de notas"
+            items={[
+              { label: "Sustenido #", value: "sharp" },
+              { label: "Bemol b", value: "bemol" },
+            ]}
+            selectedValue={chordType}
+            onValueChange={(itemValue: ChordType) => {
+              setChordType(itemValue);
+            }}
+          />
+          <Picker
+            label="Instrumento"
+            items={[
+              { label: "Violão/Guitarra", value: "guitar" },
+              { label: "Teclado/Piano", value: "piano" },
+            ]}
+            selectedValue={instrument}
+            onValueChange={(itemValue: Instrument) => {
+              setInstrument(itemValue);
+            }}
+          />
+          <Picker
+            label="Capotraste"
+            items={[
+              { label: "Automático", value: "auto" },
+              { label: "Nunca", value: "never" },
+            ]}
+            selectedValue={capoConfig}
+            onValueChange={(itemValue: CapoConfig) => {
+              setCapoConfig(itemValue);
+            }}
+          />
+          <Picker
+            label="Esquema de cores"
+            items={[
+              { label: "Sistema", value: "system" },
+              { label: "Claro", value: "light" },
+              { label: "Escuro", value: "dark" },
+            ]}
+            selectedValue={localColorScheme}
+            onValueChange={updateTheme}
+          />
         </Stack>
       </Stack>
     </View>

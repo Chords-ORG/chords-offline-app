@@ -6,22 +6,19 @@ import {
   LightColors,
   DarkColors,
 } from "../constants/Styles";
-import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { useColorScheme } from "react-native";
-import { getItem } from "../functions/storage";
+import { LocalSettingsContext } from "./LocalSettingsProvider";
 
 interface ThemeContextProps {
   styleSheet: typeof LightStyle | typeof DarkStyle;
   colors: ColorsType;
   theme: "light" | "dark";
-  toggleTheme: () => void;
 }
 
 export const ThemeContext = React.createContext<ThemeContextProps>({
   styleSheet: LightStyle,
   theme: "light",
   colors: LightColors,
-  toggleTheme: () => {},
 });
 
 interface ThemeProviderProps {
@@ -30,9 +27,12 @@ interface ThemeProviderProps {
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = React.useState<"light" | "dark">("light");
   const systemColorScheme = useColorScheme();
-  const { localColorScheme } = useLocalConfiguration();
+  const { localColorScheme } = React.useContext(LocalSettingsContext);
 
   const toggleTheme = async () => {
+    console.log("toggleTheme");
+    console.log("localColorScheme", localColorScheme);
+    console.log("systemColorScheme", systemColorScheme);
     if (localColorScheme === "system") {
       setTheme(systemColorScheme || "light");
     } else {
@@ -42,7 +42,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   React.useEffect(() => {
     toggleTheme();
-  }, [systemColorScheme, localColorScheme]);
+  }, [localColorScheme, systemColorScheme]);
 
   return (
     <ThemeContext.Provider
@@ -50,7 +50,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         styleSheet: theme === "light" ? LightStyle : DarkStyle,
         colors: theme === "light" ? LightColors : DarkColors,
         theme,
-        toggleTheme,
       }}
     >
       {children}

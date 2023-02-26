@@ -1,8 +1,5 @@
 import React from "react";
-import { LightStyle, DarkStyle } from "../constants/Styles";
-import useLocalConfiguration from "../hooks/useLocalConfiguration";
-import { useColorScheme } from "react-native";
-import { getItem } from "../functions/storage";
+import { getItem, setItem } from "../functions/storage";
 
 export type ChordType = "sharp" | "bemol";
 export type Instrument = "guitar" | "piano";
@@ -19,7 +16,10 @@ interface LocalSettingsContextProps {
   instrument: Instrument;
   capoConfig: CapoConfig;
   localColorScheme: LocalColorScheme;
-  toggleLocalSettings: () => Promise<void>;
+  setChordType: (chordType: ChordType) => Promise<void>;
+  setInstrument: (instrument: Instrument) => Promise<void>;
+  setCapoConfig: (capoConfig: CapoConfig) => Promise<void>;
+  setLocalColorScheme: (localColorScheme: LocalColorScheme) => Promise<void>;
 }
 
 export const LocalSettingsContext =
@@ -28,7 +28,10 @@ export const LocalSettingsContext =
     instrument: "guitar",
     capoConfig: "auto",
     localColorScheme: "system",
-    toggleLocalSettings: async () => {},
+    setChordType: async () => {},
+    setInstrument: async () => {},
+    setCapoConfig: async () => {},
+    setLocalColorScheme: async () => {},
   });
 
 interface LocalSettingsProviderProps {
@@ -52,7 +55,8 @@ export const LocalSettingsProvider = ({
     return { chordType, instrument, capoConfig, localColorScheme };
   };
 
-  const toggleLocalSettings = React.useCallback(async () => {
+  const fetchLocalSettings = async () => {
+    console.log("fetchLocalSettings");
     const localConfiguration = await getLocalConfiguration();
     if (localConfiguration.chordType !== null) {
       setChordTypeState(localConfiguration.chordType as ChordType);
@@ -67,17 +71,43 @@ export const LocalSettingsProvider = ({
       setLocalColorSchemeState(
         localConfiguration.localColorScheme as LocalColorScheme
       );
+      console.log('Setting localColorSchemeState', localConfiguration.localColorScheme)
     }
-  }, [
-    setChordTypeState,
-    setInstrumentState,
-    setCapoConfigState,
-    setLocalColorSchemeState,
-  ]);
+  };
 
   React.useEffect(() => {
-    toggleLocalSettings();
+    fetchLocalSettings();
   }, []);
+
+  const setChordType = React.useCallback(
+    async (newChordType: ChordType) => {
+      await setItem(CHORD_TYPE_KEY, newChordType);
+      setChordTypeState(newChordType);
+    },
+    [setChordTypeState, getLocalConfiguration]
+  );
+
+  const setInstrument = React.useCallback(
+    async (newIntrument: Instrument) => {
+      await setItem(INSTRUMENT_KEY, newIntrument);
+      setInstrumentState(newIntrument);
+    },
+    [setInstrumentState, getLocalConfiguration]
+  );
+
+  const setCapoConfig = React.useCallback(
+    async (newCapoConfig: CapoConfig) => {
+      await setItem(CAPO_CONFIG_KEY, newCapoConfig);
+      setCapoConfigState(newCapoConfig);
+    },
+    [setCapoConfigState, getLocalConfiguration]
+  );
+
+  const setLocalColorScheme = async (newLocalColorScheme: LocalColorScheme) => {
+    await setItem(LOCAL_COLOR_SCHEME_KEY, newLocalColorScheme);
+    await fetchLocalSettings();
+    console.log('localColorScheme', localColorScheme)
+  };
 
   return (
     <LocalSettingsContext.Provider
@@ -86,7 +116,10 @@ export const LocalSettingsProvider = ({
         instrument,
         capoConfig,
         localColorScheme,
-        toggleLocalSettings,
+        setChordType,
+        setInstrument,
+        setCapoConfig,
+        setLocalColorScheme,
       }}
     >
       {children}
