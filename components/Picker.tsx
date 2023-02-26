@@ -5,6 +5,7 @@ import {
   Pressable,
   HStack,
   Spacer,
+  PressableProps,
 } from "@react-native-material/core";
 import ModalDialog from "./ModalDialog";
 import useModalDialogState, {
@@ -18,22 +19,23 @@ export interface PickerItem<T> {
   helpText?: string;
   value: T;
 }
-export interface PickerProps<T> {
+export interface PickerProps<T> extends PressableProps {
   label?: string;
   items: PickerItem<T>[];
-  selectedValue: string;
+  selectedValue: T;
   onValueChange?: (value: T) => void;
   columns?: number;
   buttonWidth?: number;
 }
-export default function Picker<T>({
-  items,
-  label = "",
-  selectedValue,
-  onValueChange = () => {},
-  columns,
-  buttonWidth,
-}: PickerProps<T>) {
+export default function Picker<T>(props: PickerProps<T>) {
+  const {
+    items,
+    label = "",
+    selectedValue,
+    onValueChange = () => {},
+    columns,
+    buttonWidth,
+  } = props;
   const modalDialogState = useModalDialogState();
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
   const labelSelected = items.find(
@@ -42,7 +44,8 @@ export default function Picker<T>({
   return (
     <Pressable
       onPress={modalDialogState.show}
-      style={[themeStyle.card, { padding: 10 }]}
+      {...props}
+      style={[themeStyle.card, { padding: 10 }, props.style]}
     >
       <PickerDialog
         state={modalDialogState}
@@ -63,7 +66,7 @@ export default function Picker<T>({
 interface PickerDialogProps<T> {
   state: ModalDialogState;
   items: PickerItem<T>[];
-  selectedValue: string;
+  selectedValue: T;
   onValueChange: (value: T) => void;
   columns?: number;
   buttonWidth?: number;
@@ -118,14 +121,14 @@ function PickerDialog<T>({
                       >
                         <Text style={{ color: themeColors.buttonTint }}>
                           {label}
+                          {helpText && (
+                            <Text
+                              style={{ color: themeColors.buttonTintSecondary }}
+                            >
+                              {helpText}
+                            </Text>
+                          )}
                         </Text>
-                        {helpText && (
-                          <Text
-                            style={{ color: themeColors.buttonTintSecondary }}
-                          >
-                            {helpText}
-                          </Text>
-                        )}
                       </Stack>
                     ) : (
                       <Pressable
@@ -139,20 +142,23 @@ function PickerDialog<T>({
                           onValueChange(value);
                           state.hide();
                         }}
-                        disabled={value === selectedValue}
                       >
-                        <Text style={{ color: themeColors.buttonTint }}>
+                        <Text
+                          style={{
+                            color: themeColors.buttonTint,
+                          }}
+                        >
                           {label}
+                          {helpText && (
+                            <Text
+                              style={{
+                                color: themeColors.buttonTintSecondary,
+                              }}
+                            >
+                              {helpText}
+                            </Text>
+                          )}
                         </Text>
-                        {helpText && (
-                          <Text
-                            style={{
-                              color: themeColors.buttonTintSecondary,
-                            }}
-                          >
-                            {helpText}
-                          </Text>
-                        )}
                       </Pressable>
                     )}
                   </>

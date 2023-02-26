@@ -10,7 +10,7 @@ import ToneDialog from "../components/ToneDialog";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
 import useModalDialogState from "../hooks/useModalDialogState";
-import { Button, Spacer, Stack } from "@react-native-material/core";
+import { Button, HStack, Spacer, Stack } from "@react-native-material/core";
 import { Chord } from "../services/chords";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { RootStackParamList } from "../navigation";
@@ -55,60 +55,20 @@ export default function ChordScreen({
 
   return (
     <>
-      <CapoDialog
-        dialogState={capoDialogState}
-        selectedCapo={capo}
-        tone={tone}
-        onSelect={setCapo}
-      />
-      <ToneDialog
-        dialogState={toneDialogState}
-        selectedTone={tone}
-        onSelectTone={(value) => {
-          setTone(value);
-        }}
-      />
       <Header
         onPressBackButton={navigation.goBack}
         title={music?.name}
         subTitle={music?.author}
       />
-      <View style={[themeStyle.content, styles.content]}>
+      <Stack style={[themeStyle.content, styles.content]}>
         <ChordsImages state={chordsImagesState} selectedCapo={capo} />
-        <View style={themeStyle.horizontal_separator} />
-        <View>
-          <Stack spacing={2}>
-            <Button
-              title="Tom"
-              onPress={() => {
-                toneDialogState.show();
-              }}
-              trailing={
-                <Text style={{ color: themeStyle.button.color }}>
-                  {Chord.toChord(tone, chordType)}
-                </Text>
-              }
-              color={themeStyle.button.backgroundColor}
-              tintColor={themeStyle.button.color}
-              compact
-            />
-            <Spacer />
-            <Button
-              onPress={() => {
-                capoDialogState.show();
-              }}
-              title="Capostraste"
-              trailing={
-                <Text style={{ color: themeStyle.button.color }}>
-                  {capo == 0 ? "Sem Capo" : `${capo}ª casa`}{" "}
-                </Text>
-              }
-              color={themeStyle.button.backgroundColor}
-              tintColor={themeStyle.button.color}
-              compact
-            />
-          </Stack>
+        <Stack style={themeStyle.horizontal_separator} />
+        <Stack>
           <ScrollView>
+            <HStack divider={<Stack style={{ width: 10 }} />} m={10}>
+              <CapoDialog selectedCapo={capo} tone={tone} onSelect={setCapo} />
+              <ToneDialog selectedTone={tone} onSelectTone={setTone} />
+            </HStack>
             <Stack>
               <ChordView
                 chordsLines={chordsLines}
@@ -119,8 +79,8 @@ export default function ChordScreen({
               <View style={{ height: 300 }} />
             </Stack>
           </ScrollView>
-        </View>
-      </View>
+        </Stack>
+      </Stack>
     </>
   );
 }

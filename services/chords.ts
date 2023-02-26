@@ -1,4 +1,4 @@
-const noteDict: Record<string, number> = {
+export const noteDict: Record<string, number> = {
   C: 0,
   Db: 1,
   "C#": 1,
@@ -22,7 +22,7 @@ const noteDict: Record<string, number> = {
   "B#": 0,
 };
 
-const sharpDict: Record<number, string> = {
+export const sharpDict: Record<number, string> = {
   0: "C",
   1: "C#",
   2: "D",
@@ -37,7 +37,7 @@ const sharpDict: Record<number, string> = {
   11: "B",
 };
 
-const bemolDict: Record<number, string> = {
+export const bemolDict: Record<number, string> = {
   0: "C",
   1: "Db",
   2: "D",
