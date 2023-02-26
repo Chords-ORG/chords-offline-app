@@ -30,9 +30,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const { localColorScheme } = React.useContext(LocalSettingsContext);
 
   const toggleTheme = async () => {
-    console.log("toggleTheme");
-    console.log("localColorScheme", localColorScheme);
-    console.log("systemColorScheme", systemColorScheme);
     if (localColorScheme === "system") {
       setTheme(systemColorScheme || "light");
     } else {

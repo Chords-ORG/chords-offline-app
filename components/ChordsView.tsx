@@ -30,10 +30,6 @@ export default function ChordView({
                   ? themeColors.chordColor
                   : themeColors.chordErrorColor;
 
-              console.log("chordName", chordName);
-              console.log("chordIsValid", chordIsValid);
-              console.log("chordColor", chordColor);
-
               return chordName == "" ? (
                 <View key={i}>
                   <Text style={[styles.chordText]}> </Text>

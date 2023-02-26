@@ -18,7 +18,6 @@ export default function CapoDialog({
   const { chordType } = React.useContext(LocalSettingsContext);
 
   const pickerItems = React.useMemo(() => {
-    console.log("pickerItems");
     const items = [];
     for (let i = 0; i < 12; i++) {
       const label = i === 0 ? "Sem capotraste\n" : `${i}ª casa\n`;

@@ -56,7 +56,6 @@ export const LocalSettingsProvider = ({
   };
 
   const fetchLocalSettings = async () => {
-    console.log("fetchLocalSettings");
     const localConfiguration = await getLocalConfiguration();
     if (localConfiguration.chordType !== null) {
       setChordTypeState(localConfiguration.chordType as ChordType);
@@ -71,7 +70,6 @@ export const LocalSettingsProvider = ({
       setLocalColorSchemeState(
         localConfiguration.localColorScheme as LocalColorScheme
       );
-      console.log('Setting localColorSchemeState', localConfiguration.localColorScheme)
     }
   };
 
@@ -106,7 +104,6 @@ export const LocalSettingsProvider = ({
   const setLocalColorScheme = async (newLocalColorScheme: LocalColorScheme) => {
     await setItem(LOCAL_COLOR_SCHEME_KEY, newLocalColorScheme);
     await fetchLocalSettings();
-    console.log('localColorScheme', localColorScheme)
   };
 
   return (

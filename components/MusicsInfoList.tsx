@@ -30,9 +30,6 @@ export default function MusicsInfoList({
               key={music.id}
               style={[themeStyle.card, { padding: 10 }]}
               onLongPress={(event) => {
-                console.log(event);
-
-                console.log("Long press");
                 Alert.alert("Excluir", "Deseja excluir essa cifra?", [
                   {
                     text: "Sim",

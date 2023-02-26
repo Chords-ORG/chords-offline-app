@@ -92,8 +92,6 @@ function PickerDialog<T>({
     return itemsColumns;
   }, [items, columns]);
 
-  console.log(itemsColumns.length);
-  console.log(itemsColumns);
   return (
     <ModalDialog state={state}>
       <HStack
