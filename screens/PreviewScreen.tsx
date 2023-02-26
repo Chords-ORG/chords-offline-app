@@ -59,8 +59,6 @@ export default function PreviewScreen({
     }
   };
 
-  console.log(errorChords);
-
   return (
     <View>
       <Header

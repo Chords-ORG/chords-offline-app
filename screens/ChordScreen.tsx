@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
 import CapoDialog from "../components/CapoDialog";
 import ChordView from "../components/ChordsView";
@@ -9,10 +9,7 @@ import useChordsState from "../hooks/useChordsState";
 import ToneDialog from "../components/ToneDialog";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
-import useModalDialogState from "../hooks/useModalDialogState";
-import { Button, HStack, Spacer, Stack } from "@react-native-material/core";
-import { Chord } from "../services/chords";
-import useLocalConfiguration from "../hooks/useLocalConfiguration";
+import { HStack, Stack } from "@react-native-material/core";
 import { RootStackParamList } from "../navigation";
 import { Music } from "../types";
 import { getMusic } from "../services/musicStorage";
@@ -38,20 +35,17 @@ export default function ChordScreen({
   }, [musicId, isSampleMusic, setMusic]);
 
   React.useEffect(() => {
-    fetchMusic();
+    console.log("fetching music");
+    fetchMusic().then(() => console.log("fetched music"));
   }, [musicId, setMusic]);
 
-  const { rawChordList, chordsLines, capo, setCapo, tone, setTone } =
+  const { sharpChordList, chordsLines, capo, setCapo, tone, setTone } =
     useChordsState({
       lyrics: music?.lyricsWithChords,
       originalTone: music?.originalTone,
       originalCapo: music?.capo,
     });
-  const chordsImagesState = useChordsImageState(rawChordList);
-  const { chordType } = useLocalConfiguration();
-
-  const capoDialogState = useModalDialogState();
-  const toneDialogState = useModalDialogState();
+  const chordsImagesState = useChordsImageState(sharpChordList);
 
   return (
     <>

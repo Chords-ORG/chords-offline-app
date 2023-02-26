@@ -59,7 +59,7 @@ class Note {
   rawString: string;
   constructor(note: string) {
     this.rawString = note;
-    if(note.length === 0) {
+    if (note.length === 0) {
       this.base = 0;
       this.complement = "";
       this.valid = false;

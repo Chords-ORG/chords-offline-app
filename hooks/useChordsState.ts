@@ -2,6 +2,7 @@ import React from "react";
 import { Chord, addSemiTonesToChordLine } from "../services/chords";
 import { ChordLineType } from "../types";
 import useLocalConfiguration from "./useLocalConfiguration";
+import { parseLyricsChords } from "../services/lyrics";
 
 export interface ChordStateProps {
   lyrics?: string;
@@ -16,7 +17,7 @@ export default function useChordsState({
   const { chordType } = useLocalConfiguration();
   const [chordsLines, setChordsLines] = React.useState<ChordLineType[]>([]);
   const [chordsList, setChordsList] = React.useState<Chord[]>([]);
-  const [rawChordList, setRawChordList] = React.useState<string[]>([]);
+  const [sharpChordList, setSharpChordList] = React.useState<string[]>([]);
   const [tone, setToneState] = React.useState<string>(originalTone);
   const [capo, setCapoState] = React.useState<number>(originalCapo);
 
@@ -29,53 +30,29 @@ export default function useChordsState({
   }, [originalCapo]);
 
   React.useEffect(() => {
-    const lines = lyrics.split("\n");
-    const chordsLines: ChordLineType[] = [];
-    const chordsList: Chord[] = [];
-    let rawChordsList: string[] = [];
-    // Aggregate from 2 lines
-    for (let i = 0; i < lines.length; i += 2) {
-      const toneBaseNote = new Chord(tone).base.base;
-      const originalToneBaseNote = new Chord(originalTone).base.base;
-      const toneDelta = originalToneBaseNote - toneBaseNote;
-      const capoDelta = originalCapo - capo;
-      const chordsLine = addSemiTonesToChordLine(
-        lines[i],
-        capoDelta - toneDelta,
-        chordType
-      );
+    const { chordsLines, chordsList, sharpChordList } = parseLyricsChords({
+      lyrics,
+      tone,
+      originalTone,
+      capo,
+      originalCapo,
+      chordType,
+    });
 
-      const musicLine = lines[i + 1] || "";
-      chordsLines.push({ chordsLine: chordsLine, musicLine });
-    }
-
-    for (let i = 0; i < chordsLines.length; i++) {
-      const chords = chordsLines[i].chordsLine.split(" ");
-      for (let j = 0; j < chords.length; ++j) {
-        if (chords[j] == "") continue;
-        let originalChordName = chords[j];
-        let chordName = Chord.toChord(originalChordName, chordType);
-        chords[j].replace(originalChordName, chordName);
-        rawChordsList.push(chordName);
-      }
-    }
-    // Remove duplicates
-    rawChordsList = rawChordsList.filter(
-      (chord, index) => rawChordsList.indexOf(chord) === index
-    );
-
-    setRawChordList(rawChordsList);
-
-    // Create Chord objects
-    for (let i = 0; i < rawChordsList.length; i++) {
-      const chord_name = rawChordsList[i];
-      const chord = new Chord(chord_name);
-      chordsList.push(chord);
-    }
-
-    setChordsList(chordsList);
     setChordsLines(chordsLines);
-  }, [lyrics, chordType, tone, capo]);
+    setChordsList(chordsList);
+    setSharpChordList(sharpChordList);
+  }, [
+    lyrics,
+    tone,
+    originalTone,
+    capo,
+    originalCapo,
+    chordType,
+    setChordsLines,
+    setChordsList,
+    setSharpChordList,
+  ]);
 
   const setCapo = React.useCallback(
     (newCapo: number) => {
@@ -92,7 +69,7 @@ export default function useChordsState({
   );
 
   return {
-    rawChordList,
+    sharpChordList,
     chordsLines,
     chordsList,
     setCapo,
