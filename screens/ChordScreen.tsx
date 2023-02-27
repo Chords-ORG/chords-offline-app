@@ -9,7 +9,7 @@ import useChordsState from "../hooks/useChordsState";
 import ToneDialog from "../components/ToneDialog";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
-import { HStack, Stack } from "@react-native-material/core";
+import { Divider, HStack, Stack } from "@react-native-material/core";
 import { RootStackParamList } from "../navigation";
 import { Music } from "../types";
 import { getMusic } from "../services/musicStorage";
@@ -18,7 +18,8 @@ export default function ChordScreen({
   navigation,
   route,
 }: StackScreenProps<RootStackParamList, "ChordScreen">) {
-  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+  const { styleSheet: themeStyle, colors: themeColors } =
+    React.useContext(ThemeContext);
   const { musicId, sampleMusic: isSampleMusic = false } = route.params;
   const [music, setMusic] = useState<Music | undefined>(undefined);
 
@@ -35,8 +36,7 @@ export default function ChordScreen({
   }, [musicId, isSampleMusic, setMusic]);
 
   React.useEffect(() => {
-    console.log("fetching music");
-    fetchMusic().then(() => console.log("fetched music"));
+    fetchMusic();
   }, [musicId, setMusic]);
 
   const { sharpChordList, chordsLines, capo, setCapo, tone, setTone } =
@@ -48,34 +48,36 @@ export default function ChordScreen({
   const chordsImagesState = useChordsImageState(sharpChordList);
 
   return (
-    <>
+    <Stack style={themeStyle.content}>
       <Header
         onPressBackButton={navigation.goBack}
         title={music?.name}
         subTitle={music?.author}
       />
-      <Stack style={[themeStyle.content, styles.content]}>
-        <ChordsImages state={chordsImagesState} selectedCapo={capo} />
-        <Stack style={themeStyle.horizontal_separator} />
+      <ScrollView style={styles.content}>
+        <HStack divider={<Stack style={{ width: 10 }} />} m={10}>
+          <CapoDialog selectedCapo={capo} tone={tone} onSelect={setCapo} />
+          <ToneDialog selectedTone={tone} onSelectTone={setTone} />
+        </HStack>
         <Stack>
-          <ScrollView>
-            <HStack divider={<Stack style={{ width: 10 }} />} m={10}>
-              <CapoDialog selectedCapo={capo} tone={tone} onSelect={setCapo} />
-              <ToneDialog selectedTone={tone} onSelectTone={setTone} />
-            </HStack>
-            <Stack>
-              <ChordView
-                chordsLines={chordsLines}
-                onPressNote={(chordName) =>
-                  chordsImagesState.scrollToChord(chordName)
-                }
-              />
-              <View style={{ height: 300 }} />
-            </Stack>
-          </ScrollView>
+          <ChordView
+            chordsLines={chordsLines}
+            onPressNote={(chordName) =>
+              chordsImagesState.scrollToChord(chordName)
+            }
+          />
+          <View style={{ height: 300 }} />
         </Stack>
-      </Stack>
-    </>
+      </ScrollView>
+
+      <Divider
+        color={themeColors.divider}
+        leadingInset={30}
+        trailingInset={30}
+      />
+
+      <ChordsImages state={chordsImagesState} selectedCapo={capo} />
+    </Stack>
   );
 }
 

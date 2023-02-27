@@ -14,7 +14,6 @@ export default function ToneDialog({
   selectedTone = "C",
 }: ToneDialogProps) {
   const { chordType } = useLocalConfiguration();
-  const { colors: themeColors } = React.useContext(ThemeContext);
   const toneDict = chordType === "sharp" ? sharpDict : bemolDict;
   const pickerItems = Object.values(toneDict).map((tone) => ({
     label: tone,

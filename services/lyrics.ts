@@ -30,7 +30,6 @@ export const parseLyricsChords = ({
   originalCapo,
   chordType,
 }: ParseLyricsChordsProps) => {
-  console.log("Start parsing lyrics chords");
   const lines = lyrics.split("\n");
   const chordsLines: ChordLineType[] = [];
 
@@ -54,8 +53,6 @@ export const parseLyricsChords = ({
     }
   }
 
-  console.log("Start replacing chords");
-
   chordsLines.forEach((chordsLine) => {
     chordsMap.forEach((chordName, originalChordName) => {
       chordsLine.chordsLine = chordsLine.chordsLine.replace(
@@ -65,14 +62,11 @@ export const parseLyricsChords = ({
     });
   });
 
-  console.log("End replacing chords");
-
   const sharpChordList = Array.from(chordsMap.values()).map((chordName) =>
     new Chord(chordName).toSharp()
   );
 
   const chordsList = sharpChordList.map((chordName) => new Chord(chordName));
 
-  console.log("End parsing lyrics chords");
   return { chordsLines, chordsList, sharpChordList };
 };

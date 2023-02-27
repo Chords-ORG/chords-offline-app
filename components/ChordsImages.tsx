@@ -6,6 +6,7 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  Animated,
 } from "react-native";
 import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import { Chord } from "../services/chords";
@@ -13,6 +14,7 @@ import GuitarChord from "./GuitarChord";
 import PianoChord from "./PianoChord";
 import { ChordsImageStateProps } from "../hooks/useChordsImageState";
 import { ThemeContext } from "../providers/ThemeProvider";
+import { Icon, IconButton, Stack } from "@react-native-material/core";
 
 interface ChordsImagesProps {
   state: ChordsImageStateProps;
@@ -23,16 +25,46 @@ export default function ChordsImages({
   state,
   selectedCapo = 0,
 }: ChordsImagesProps): JSX.Element {
-  const up_arrow = require("../assets/images/up_arrow.png");
-  const down_arrow = require("../assets/images/down_arrow.png");
-  const { styleSheet: themeStyle }  = React.useContext(ThemeContext)
+  const { styleSheet: themeStyle, colors: themeColors } =
+    React.useContext(ThemeContext);
   const { chordType, instrument } = useLocalConfiguration();
+
+  const totalViewSize = instrument === "guitar" ? 150 : 100;
 
   const { chordsList, selectedNote, scrollRef, visible, open, close } = state;
 
+  const viewSize = React.useRef(new Animated.Value(0)).current;
+
+  React.useEffect(() => {
+    Animated.timing(viewSize, {
+      toValue: visible ? totalViewSize : 0,
+      duration: 200,
+      useNativeDriver: false,
+    }).start();
+  }, [visible]);
+
   return (
-    <>
-      <View style={styles.chords_container}>
+    <Stack>
+      <IconButton
+        onPress={() => {
+          if (visible) {
+            close();
+          } else {
+            open();
+          }
+        }}
+        icon={(props) => (
+          <Icon
+            name={visible ? "arrow-down-bold" : "arrow-up-bold"}
+            {...props}
+            color={themeColors.buttonTint}
+          />
+        )}
+        color={themeColors.buttonBackground}
+        style={{ width: "100%", height: 35 }}
+      />
+
+      <Animated.View style={[styles.chords_container, { height: viewSize }]}>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -41,13 +73,7 @@ export default function ChordsImages({
           {chordsList.map((chordName, i) => {
             const selected = chordName === selectedNote;
             return (
-              <View
-                key={chordName}
-                style={[
-                  styles.chord_container,
-                  { height: visible ? undefined : 0 },
-                ]}
-              >
+              <View key={i} style={[styles.chord_container]}>
                 {instrument === "guitar" ? (
                   <GuitarChord capo={selectedCapo} chordName={chordName} />
                 ) : null}
@@ -71,25 +97,8 @@ export default function ChordsImages({
             );
           })}
         </ScrollView>
-      </View>
-      <TouchableOpacity
-        onPress={() => {
-          if (visible) {
-            close();
-          } else {
-            open();
-          }
-        }}
-        style={{
-          width: "100%",
-        }}
-      >
-        <Image
-          style={styles.arrow_icon}
-          source={visible ? up_arrow : down_arrow}
-        />
-      </TouchableOpacity>
-    </>
+      </Animated.View>
+    </Stack>
   );
 }
 

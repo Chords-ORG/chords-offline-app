@@ -26,22 +26,19 @@ export default function useChordsImageState(
     (chordName: string) => {
       if (!visible) setVisible(true);
       setSelectedNote(Chord.toChord(chordName, chordType));
-      var pos = chordsList.indexOf(Chord.toChord(chordName, chordType));
-      var width = 0;
-      if (instrument == "guitar") width = 100;
-      if (instrument == "piano") width = 200;
+      const pos = chordsList.indexOf(Chord.toChord(chordName, chordType));
+      const width = instrument == "guitar" ? 100 : 150;
 
       scrollRef.current?.scrollTo({ x: width * pos });
     },
     [
-      chordsList,
       chordType,
       instrument,
+      chordsList,
       selectedNote,
       setSelectedNote,
       visible,
       setVisible,
-      scrollRef,
     ]
   );
 
