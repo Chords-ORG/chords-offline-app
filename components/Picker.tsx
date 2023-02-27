@@ -105,9 +105,9 @@ function PickerDialog<T>({
         {itemsColumns.map((itemsColumn, i) => {
           return (
             <Stack key={i} divider={<Stack style={{ height: 5 }} />}>
-              {itemsColumn.map(({ label, helpText, value }, i) => {
+              {itemsColumn.map(({ label, helpText, value }, j) => {
                 return (
-                  <>
+                  <Stack key={j}>
                     {value === selectedValue ? (
                       <Stack
                         style={{
@@ -115,7 +115,6 @@ function PickerDialog<T>({
                           width: buttonWidth,
                           padding: 15,
                         }}
-                        key={i}
                       >
                         <Text style={{ color: themeColors.buttonTint }}>
                           {label}
@@ -135,7 +134,6 @@ function PickerDialog<T>({
                           padding: 15,
                           width: buttonWidth,
                         }}
-                        key={i}
                         onPress={() => {
                           onValueChange(value);
                           state.hide();
@@ -159,7 +157,7 @@ function PickerDialog<T>({
                         </Text>
                       </Pressable>
                     )}
-                  </>
+                  </Stack>
                 );
               })}
               <Spacer />

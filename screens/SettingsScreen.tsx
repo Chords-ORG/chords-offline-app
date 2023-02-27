@@ -37,7 +37,7 @@ export default function SettingsScreen({}: StackScreenProps<
 
   return (
     <View>
-      <Header title="Configurações" showLogo={false} />
+      <Header title="Configurações" showLogo={false} showBackButton={false} />
       <Stack style={[styles.content, themeStyle.content]}>
         <Stack>
           <Image

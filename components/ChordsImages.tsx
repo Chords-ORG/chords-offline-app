@@ -57,10 +57,9 @@ export default function ChordsImages({
           <Icon
             name={visible ? "arrow-down-bold" : "arrow-up-bold"}
             {...props}
-            color={themeColors.buttonTint}
+            color={themeColors.textPrimary}
           />
         )}
-        color={themeColors.buttonBackground}
         style={{ width: "100%", height: 35 }}
       />
 
@@ -89,8 +88,7 @@ export default function ChordsImages({
                     themeStyle.bold,
                   ]}
                 >
-                  {" "}
-                  {Chord.toChord(chordName, chordType)}{" "}
+                  {Chord.toChord(chordName, chordType)}
                 </Text>
                 {selected ? <View style={themeStyle.selected_line} /> : null}
               </View>

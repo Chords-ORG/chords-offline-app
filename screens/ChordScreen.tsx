@@ -72,8 +72,8 @@ export default function ChordScreen({
 
       <Divider
         color={themeColors.divider}
-        leadingInset={30}
-        trailingInset={30}
+        leadingInset={100}
+        trailingInset={100}
       />
 
       <ChordsImages state={chordsImagesState} selectedCapo={capo} />

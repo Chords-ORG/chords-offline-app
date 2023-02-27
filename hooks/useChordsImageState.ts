@@ -25,8 +25,8 @@ export default function useChordsImageState(
   const scrollToChord = React.useCallback(
     (chordName: string) => {
       if (!visible) setVisible(true);
-      setSelectedNote(Chord.toChord(chordName, chordType));
-      const pos = chordsList.indexOf(Chord.toChord(chordName, chordType));
+      setSelectedNote(Chord.toChord(chordName, 'sharp'));
+      const pos = chordsList.indexOf(Chord.toChord(chordName, 'sharp'));
       const width = instrument == "guitar" ? 100 : 150;
 
       scrollRef.current?.scrollTo({ x: width * pos });

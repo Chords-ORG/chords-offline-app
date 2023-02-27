@@ -27,7 +27,7 @@ export default function ToneDialog({
       selectedValue={selectedTone}
       onValueChange={onSelectTone}
       columns={2}
-      buttonWidth={60}
+      buttonWidth={100}
       style={{
         flex: 1,
       }}
