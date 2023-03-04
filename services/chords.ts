@@ -52,28 +52,48 @@ export const bemolDict: Record<number, string> = {
   11: "B",
 };
 
-class Note {
+export class Note {
   base: number;
   complement: string;
   valid: boolean;
   rawString: string;
+  minor: boolean = false;
   constructor(note: string) {
     this.rawString = note;
-    if (note.length === 0) {
+    const iterator = note[Symbol.iterator]();
+    this.complement = "";
+    let current = iterator.next();
+    if (current.value === undefined) {
       this.base = 0;
-      this.complement = "";
       this.valid = false;
       return;
     }
-    let base = note[0];
-    if (note.length > 1 && (note[1] == "#" || note[1] == "b")) base += note[1];
+    let base = current.value;
+    current = iterator.next();
+    if (!current.done && (current.value === "#" || current.value === "b")) {
+      base += current.value;
+      current = iterator.next();
+    }
+    if (!current.done && current.value === "m") {
+      this.minor = true;
+    }
     this.base = noteDict[base];
     this.complement = note.substring(base.length) || "";
-    this.valid = this.base !== undefined && this.complement !== undefined;
+
+    // TODO: add regex validation
+    this.valid = this.base !== undefined;
   }
-  public toString = (): string => {
-    return this.rawString;
+  public toString = (
+    chordType: string,
+    includeComplement: boolean = true
+  ): string => {
+    if (!this.valid) return this.rawString;
+    let baseNote =
+      chordType === "bemol" ? bemolDict[this.base] : sharpDict[this.base];
+    if (this.minor) baseNote += "m";
+    return baseNote + (includeComplement ? this.complement : "");
   };
+
   public add(n: number) {
     if (n < 0) n = (11 * -n) % 12;
     this.base = (this.base + n) % 12;

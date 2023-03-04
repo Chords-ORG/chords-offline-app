@@ -1,9 +1,6 @@
 import * as React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { RootStackParamList } from "../navigation/navigationTypes";
-import { StackScreenProps } from "@react-navigation/stack";
 import { Header } from "../components/Header";
-import { Button, Divider } from "@react-native-material/core";
+import { Button, Divider, Stack } from "@react-native-material/core";
 import { ThemeContext } from "../providers/ThemeProvider";
 
 // { navigation }: StackScreenProps<RootStackParamList, 'SampleScreen'>
@@ -11,9 +8,9 @@ export default function SampleScreen() {
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   return (
-    <View>
+    <Stack>
       <Header showBackButton={false} />
-      <View style={[themeStyle.content, { padding: 10 }]}>
+      <Stack style={[themeStyle.content, { padding: 10 }]}>
         <Button
           title="Button 1"
           color={themeStyle.button.backgroundColor}
@@ -27,7 +24,7 @@ export default function SampleScreen() {
           tintColor={themeStyle.button.color}
           title="Button 2"
         />
-      </View>
-    </View>
+      </Stack>
+    </Stack>
   );
 }

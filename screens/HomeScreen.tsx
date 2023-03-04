@@ -3,14 +3,12 @@ import { Alert, View } from "react-native";
 import { RootStackParamList } from "../navigation/navigationTypes";
 import { StackScreenProps } from "@react-navigation/stack";
 import {
-  Box,
   Button,
   Divider,
   HStack,
   Spacer,
   Stack,
   Text,
-  Pressable,
 } from "@react-native-material/core";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
@@ -54,7 +52,7 @@ export default function HomeScreen({
             tintColor={themeStyle.button.color}
             title="Escrever cifra"
             onPress={() => {
-              navigation.navigate("WriteChordScreen", { music: undefined });
+              navigation.navigate("WriteChordScreen", { musicId: undefined });
             }}
           />
           <Spacer />

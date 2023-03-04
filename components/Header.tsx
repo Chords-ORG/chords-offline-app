@@ -1,5 +1,5 @@
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
-import { Icon, IconButton, Stack } from "@react-native-material/core";
+import { Icon, IconButton, Spacer, Stack } from "@react-native-material/core";
 import { ThemeContext } from "../providers/ThemeProvider";
 import React from "react";
 
@@ -8,14 +8,18 @@ export interface HeaderProps {
   subTitle?: string;
   showBackButton?: boolean;
   showLogo?: boolean;
-  onPressBackButton?: () => void;
+  showEditButton?: boolean;
+  onEditButtonPress?: () => void;
+  onBackButtonPress?: () => void;
 }
 export const Header = ({
   title = "Chords",
   subTitle = "",
   showBackButton: backVisible = true,
   showLogo = true,
-  onPressBackButton: onBackPress = () => {},
+  onBackButtonPress = () => {},
+  showEditButton = false,
+  onEditButtonPress = () => {},
 }: HeaderProps) => {
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
@@ -31,7 +35,7 @@ export const Header = ({
           <IconButton
             color={themeStyle.header_tint_color.color}
             icon={(props) => <Icon name="arrow-left" {...props} />}
-            onPress={onBackPress}
+            onPress={onBackButtonPress}
           />
         )}
         {showLogo && (
@@ -61,6 +65,14 @@ export const Header = ({
             </Text>
           )}
         </Stack>
+        <Spacer />
+        {showEditButton && (
+          <IconButton
+            color={themeStyle.header_tint_color.color}
+            icon={(props) => <Icon name="pencil" {...props} />}
+            onPress={onEditButtonPress}
+          />
+        )}
       </View>
     </View>
   );

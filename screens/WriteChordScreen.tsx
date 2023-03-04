@@ -6,9 +6,11 @@ import { Button, HStack, Stack } from "@react-native-material/core";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
 import NumberedTextInput from "../components/NumberedTextInput";
-import { Chord } from "../services/chords";
+import { Note } from "../services/chords";
 import TextInput from "../components/TextInput";
 import { Music, emptyMusic } from "../types";
+import { getMusic } from "../services/musicStorage";
+import { LocalSettingsContext } from "../providers/LocalSettingsProvider";
 
 type ErrorType = {
   tone?: string;
@@ -19,16 +21,33 @@ export default function WriteChordScreen({
   navigation,
   route,
 }: StackScreenProps<RootStackParamList, "WriteChordScreen">) {
-  const { music: routeMusic } = route.params;
-  const [music, setMusic] = useState<Music>(routeMusic || emptyMusic);
+  const { musicId } = route.params;
+  const [music, setMusic] = useState<Music>(emptyMusic);
   const [capo, setCapo] = useState("0");
   const [errors, setErrors] = useState<ErrorType>({});
 
+  const { chordType } = React.useContext(LocalSettingsContext);
+
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+
+  React.useEffect(() => {
+    if (musicId) {
+      getMusic(musicId).then((music) => {
+        if (music) {
+          setMusic(music);
+          setCapo(music.capo.toString());
+        }
+      });
+    } else {
+      setMusic(emptyMusic);
+      setCapo("");
+    }
+  }, [musicId]);
 
   const validate = () => {
     let errors = {};
-    if (new Chord(music.originalTone).valid === false) {
+    const toneNote = new Note(music.originalTone);
+    if (!toneNote.valid) {
       errors = { ...errors, tone: "Tom inválido" };
     }
     if (isNaN(parseInt(capo)) || parseInt(capo) < 0 || parseInt(capo) > 10) {
@@ -43,10 +62,12 @@ export default function WriteChordScreen({
 
   const handlePreview = () => {
     if (validate()) {
+      const toneNote = new Note(music.originalTone);
       navigation.push("PreviewScreen", {
         music: {
           ...music,
           capo: parseInt(capo),
+          originalTone: toneNote.toString(chordType, false),
         },
       });
     }
@@ -55,8 +76,8 @@ export default function WriteChordScreen({
   return (
     <View>
       <Header
-        onPressBackButton={() => navigation.goBack()}
-        title="Criação de cifra"
+        onBackButtonPress={() => navigation.goBack()}
+        title="Criação/Edição de cifra"
       />
       <View style={[themeStyle.content]}>
         <Button

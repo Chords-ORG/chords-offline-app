@@ -9,11 +9,12 @@ import useChordsState from "../hooks/useChordsState";
 import ToneDialog from "../components/ToneDialog";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
-import { Divider, HStack, Stack } from "@react-native-material/core";
+import { Button, Divider, HStack, Stack } from "@react-native-material/core";
 import { Music } from "../types";
 import { getMusic } from "../services/musicStorage";
 import Spinner from "../components/Spinner";
 import { RootStackParamList } from "../navigation/navigationTypes";
+import { Note } from "../services/chords";
 
 export default function ChordScreen({
   navigation,
@@ -50,7 +51,7 @@ export default function ChordScreen({
     setTone,
   } = useChordsState({
     lyrics: music?.lyricsWithChords,
-    originalTone: music?.originalTone,
+    originalTone: music?.originalTone.toString(),
     originalCapo: music?.capo,
   });
   const chordsImagesState = useChordsImageState(stringChordList);
@@ -58,15 +59,25 @@ export default function ChordScreen({
   return (
     <Stack style={themeStyle.content}>
       <Header
-        onPressBackButton={navigation.goBack}
-        title={music?.name}
-        subTitle={music?.author}
+        onBackButtonPress={navigation.goBack}
+        title={music?.name || "Sem título"}
+        subTitle={music?.author || "Sem autor"}
+        showEditButton={music?.id !== undefined && !isSampleMusic}
+        onEditButtonPress={() => {
+          navigation.push("WriteChordScreen", {
+            musicId: music?.id,
+          });
+        }}
       />
       <Spinner visible={loadingChords} />
       <ScrollView style={styles.content}>
         <HStack divider={<Stack style={{ width: 10 }} />} m={10}>
           <CapoDialog selectedCapo={capo} tone={tone} onSelect={setCapo} />
-          <ToneDialog selectedTone={tone} onSelectTone={setTone} />
+          <ToneDialog
+            selectedTone={tone}
+            onSelectTone={setTone}
+            minor={new Note(music?.originalTone || "").minor}
+          />
         </HStack>
         <Stack>
           <ChordView

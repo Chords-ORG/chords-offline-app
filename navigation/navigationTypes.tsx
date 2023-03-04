@@ -4,7 +4,7 @@ export type RootStackParamList = {
   Root: undefined;
   ChordScreen: { musicId?: string; sampleMusic?: boolean };
   WriteChordScreen: {
-    music?: Music;
+    musicId?: string;
   };
   PreviewScreen: {
     music: Music;

@@ -1,6 +1,5 @@
 import React from "react";
 import { Alert, View } from "react-native";
-import { Music } from "../types";
 import { StackScreenProps } from "@react-navigation/stack";
 import { ScrollView } from "react-native-gesture-handler";
 import ChordView from "../components/ChordsView";
@@ -55,7 +54,7 @@ export default function PreviewScreen({
   return (
     <View>
       <Header
-        onPressBackButton={() => navigation.goBack()}
+        onBackButtonPress={() => navigation.goBack()}
         title={`${music.name} (Pré-visualização)`}
         subTitle={music.author}
       />
