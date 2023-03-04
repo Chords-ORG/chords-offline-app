@@ -6,11 +6,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import ChordView from "../components/ChordsView";
 import useChordsState from "../hooks/useChordsState";
 import { Header } from "../components/Header";
-import {
-  Button,
-  Stack,
-  Text,
-} from "@react-native-material/core";
+import { Button, Stack, Text } from "@react-native-material/core";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { saveMusic } from "../services/musicStorage";
 import { RootStackParamList } from "../navigation";
@@ -27,13 +23,13 @@ export default function PreviewScreen({
     tone: originalTone,
     capo: originalCapo,
   } = route.params;
-  const { rawChordList, chordsLines, capo, tone } = useChordsState({
+  const { sharpChordList, chordsLines, capo, tone } = useChordsState({
     lyrics,
     originalTone: originalTone,
     originalCapo: originalCapo,
   });
 
-  const errorChords = rawChordList.filter((chord) => !new Chord(chord).valid);
+  const errorChords = sharpChordList.filter((chord) => !new Chord(chord).valid);
   const { styleSheet: themeStyle, colors: themeColors } =
     React.useContext(ThemeContext);
 
