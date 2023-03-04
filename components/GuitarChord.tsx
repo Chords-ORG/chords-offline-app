@@ -89,7 +89,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
     );
   } else {
     const tam = guitarChords[chordName].length;
-    var slash_house_style = styles.slash_house_1;
+    let slash_house_style = styles.slash_house_1;
     if (chords[idx].fingers[0].house == 2)
       slash_house_style = styles.slash_house_2;
     else if (chords[idx].fingers[0].house == 3)

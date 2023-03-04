@@ -127,7 +127,7 @@ export class Chord {
 
   public toBemol = (): string => {
     if (!this.valid) return this.rawString;
-    var res = `${bemolDict[this.base.base]}${this.base.complement}`;
+    let res = `${bemolDict[this.base.base]}${this.base.complement}`;
     if (this.inversion)
       res += `/${bemolDict[this.inversion.base]}${this.inversion.complement}`;
     return res.replace("\\", "/");
@@ -155,24 +155,24 @@ export const addSemiTonesToChordLine = (
   value: number,
   dict: string = "sharp"
 ): string => {
-  var delta = 0;
-  var spaces = 0;
-  var i = 0;
-  var n = chordsLine.length;
-  var ans = "";
+  let delta = 0;
+  let spaces = 0;
+  let i = 0;
+  const n = chordsLine.length;
+  let ans = "";
   while (i < n) {
     if (chordsLine[i] == " ") {
       spaces += 1;
       ++i;
     } else {
-      var note = "";
+      let note = "";
       while (i < n && chordsLine[i] != " ") {
         note += chordsLine[i];
         ++i;
       }
-      var chord = new Chord(note);
+      let chord = new Chord(note);
       chord.add(value);
-      var new_note = dict == "bemol" ? chord.toBemol() : chord.toSharp();
+      let new_note = dict == "bemol" ? chord.toBemol() : chord.toSharp();
       spaces = Math.max(1, spaces + delta);
       while (spaces--) ans += " ";
       ans += new_note;
