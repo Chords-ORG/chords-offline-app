@@ -14,7 +14,7 @@ import GuitarChord from "./GuitarChord";
 import PianoChord from "./PianoChord";
 import { ChordsImageStateProps } from "../hooks/useChordsImageState";
 import { ThemeContext } from "../providers/ThemeProvider";
-import { Icon, IconButton, Stack } from "@react-native-material/core";
+import { Divider, Icon, IconButton, Stack } from "@react-native-material/core";
 
 interface ChordsImagesProps {
   state: ChordsImageStateProps;
@@ -44,7 +44,12 @@ export default function ChordsImages({
   }, [visible]);
 
   return (
-    <Stack>
+    <Stack
+      style={{
+        borderTopColor: themeColors.divider,
+        borderTopWidth: 1,
+      }}
+    >
       <IconButton
         onPress={() => {
           if (visible) {
@@ -57,7 +62,7 @@ export default function ChordsImages({
           <Icon
             name={visible ? "arrow-down-bold" : "arrow-up-bold"}
             {...props}
-            color={themeColors.textPrimary}
+            color={themeColors.textSecondary}
           />
         )}
         style={{ width: "100%", height: 35 }}
@@ -73,6 +78,17 @@ export default function ChordsImages({
             const selected = chordName === selectedNote;
             return (
               <View key={i} style={[styles.chord_container]}>
+                <View
+                  style={[
+                    styles.selected_line,
+                    {
+                      borderBottomColor: selected
+                        ? themeColors.textHighlight
+                        : themeColors.textPrimary,
+                    },
+                  ]}
+                />
+                <Divider color={themeColors.textHighlight} />
                 {instrument === "guitar" ? (
                   <GuitarChord capo={selectedCapo} chordName={chordName} />
                 ) : null}
@@ -90,7 +106,6 @@ export default function ChordsImages({
                 >
                   {Chord.toChord(chordName, chordType)}
                 </Text>
-                {selected ? <View style={themeStyle.selected_line} /> : null}
               </View>
             );
           })}
@@ -103,16 +118,17 @@ export default function ChordsImages({
 const styles = StyleSheet.create({
   chords_container: {
     flexDirection: "row",
-    paddingBottom: 10,
+    marginBottom: 10,
     //height: 170,
   },
   chord_container: {
     alignItems: "center",
     marginRight: 20,
   },
-  arrow_icon: {
-    height: 13,
-    width: 20,
-    alignSelf: "center",
+  selected_line: {
+    width: "100%",
+    borderBottomWidth: 2,
+    marginTop: 5,
+    marginBottom: 5,
   },
 });

@@ -13,6 +13,7 @@ import { Divider, HStack, Stack } from "@react-native-material/core";
 import { RootStackParamList } from "../navigation";
 import { Music } from "../types";
 import { getMusic } from "../services/musicStorage";
+import Spinner from "../components/Spinner";
 
 export default function ChordScreen({
   navigation,
@@ -39,12 +40,19 @@ export default function ChordScreen({
     fetchMusic();
   }, [musicId, setMusic]);
 
-  const { sharpChordList, chordsLines, capo, setCapo, tone, setTone } =
-    useChordsState({
-      lyrics: music?.lyricsWithChords,
-      originalTone: music?.originalTone,
-      originalCapo: music?.capo,
-    });
+  const {
+    loading: loadingChords,
+    sharpChordList,
+    chordsLines,
+    capo,
+    setCapo,
+    tone,
+    setTone,
+  } = useChordsState({
+    lyrics: music?.lyricsWithChords,
+    originalTone: music?.originalTone,
+    originalCapo: music?.capo,
+  });
   const chordsImagesState = useChordsImageState(sharpChordList);
 
   return (
@@ -54,6 +62,7 @@ export default function ChordScreen({
         title={music?.name}
         subTitle={music?.author}
       />
+      <Spinner visible={loadingChords} />
       <ScrollView style={styles.content}>
         <HStack divider={<Stack style={{ width: 10 }} />} m={10}>
           <CapoDialog selectedCapo={capo} tone={tone} onSelect={setCapo} />
@@ -66,16 +75,9 @@ export default function ChordScreen({
               chordsImagesState.scrollToChord(chordName)
             }
           />
-          <View style={{ height: 300 }} />
+          <View style={{ height: 200 }} />
         </Stack>
       </ScrollView>
-
-      <Divider
-        color={themeColors.divider}
-        leadingInset={100}
-        trailingInset={100}
-      />
-
       <ChordsImages state={chordsImagesState} selectedCapo={capo} />
     </Stack>
   );
