@@ -18,7 +18,7 @@ export default function useChordsState({
   const { chordType } = useLocalConfiguration();
   const [chordsLines, setChordsLines] = React.useState<ChordLineType[]>([]);
   const [chordsList, setChordsList] = React.useState<Chord[]>([]);
-  const [sharpChordList, setSharpChordList] = React.useState<string[]>([]);
+  const [stringChordList, setStringChordList] = React.useState<string[]>([]);
   const [tone, setToneState] = React.useState<string>(originalTone);
   const [capo, setCapoState] = React.useState<number>(originalCapo);
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -36,7 +36,7 @@ export default function useChordsState({
       async ({ lyrics, tone, originalTone, capo, originalCapo, chordType }) => {
         setLoading(true);
         try {
-          const { chordsLines, chordsList, sharpChordList } =
+          const { chordsLines, chordsList, stringChordList } =
             await parseLyricsChords({
               lyrics,
               tone,
@@ -47,7 +47,7 @@ export default function useChordsState({
             });
           setChordsLines(chordsLines);
           setChordsList(chordsList);
-          setSharpChordList(sharpChordList);
+          setStringChordList(stringChordList);
           setLoading(false);
         } catch (e) {
           setLoading(false);
@@ -77,7 +77,7 @@ export default function useChordsState({
     chordType,
     setChordsLines,
     setChordsList,
-    setSharpChordList,
+    setStringChordList,
     setLoading,
   ]);
 
@@ -99,7 +99,7 @@ export default function useChordsState({
 
   return {
     loading,
-    sharpChordList,
+    stringChordList,
     chordsLines,
     chordsList,
     setCapo,

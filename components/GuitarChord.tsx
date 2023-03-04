@@ -3,6 +3,7 @@ import { StyleSheet, View, Image, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import useGuitarChordImages from "../hooks/useGuitarChordImages";
 import { ThemeContext } from "../providers/ThemeProvider";
+import { Chord } from "../services/chords";
 
 type DictStyle = Record<
   number,
@@ -60,7 +61,6 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
     finger_2,
     finger_3,
     finger_4,
-
     finger_p,
   } = useGuitarChordImages();
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
@@ -70,7 +70,8 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
     GuitarChordPosition[]
   > = require("../constants/guitar_chords.json");
 
-  const chords = guitarChords[chordName];
+  const sharpChordName = Chord.toChord(chordName, "sharp");
+  const chords = guitarChords[sharpChordName];
   const [idx, setIdx] = useState(0);
   if (!chords || chords.length == 0) {
     return (
@@ -80,7 +81,10 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
           { justifyContent: "center", alignItems: "center" },
         ]}
       >
-        <Text style={[styles.message, themeStyle.primary_color]}> Acorde Indisponível </Text>
+        <Text style={[styles.message, themeStyle.primary_color]}>
+          {" "}
+          Acorde Indisponível{" "}
+        </Text>
       </View>
     );
   } else {
@@ -94,7 +98,6 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
       slash_house_style = styles.slash_house_4;
     const startHouse = chords[idx].startHouse + (capo != 0 ? capo + 1 : 0);
 
-    
     return (
       <TouchableOpacity
         style={styles.container}

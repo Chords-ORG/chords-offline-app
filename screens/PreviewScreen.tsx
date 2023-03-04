@@ -9,40 +9,37 @@ import { Header } from "../components/Header";
 import { Button, Stack, Text } from "@react-native-material/core";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { saveMusic } from "../services/musicStorage";
-import { RootStackParamList } from "../navigation";
+import { RootStackParamList } from "../navigation/navigationTypes";
 import { Chord } from "../services/chords";
+import Spinner from "../components/Spinner";
 
 export default function PreviewScreen({
   navigation,
   route,
 }: StackScreenProps<RootStackParamList, "PreviewScreen">) {
+  const { music } = route.params;
   const {
-    lyrics,
-    authorName,
-    musicName,
-    tone: originalTone,
-    capo: originalCapo,
-  } = route.params;
-  const { sharpChordList, chordsLines, capo, tone } = useChordsState({
-    lyrics,
-    originalTone: originalTone,
-    originalCapo: originalCapo,
+    stringChordList,
+    chordsLines,
+    capo,
+    tone,
+    loading: previewLoading,
+  } = useChordsState({
+    lyrics: music.lyricsWithChords,
+    originalTone: music.originalTone,
+    originalCapo: music.capo,
   });
 
-  const errorChords = sharpChordList.filter((chord) => !new Chord(chord).valid);
+  const errorChords = stringChordList.filter(
+    (chord) => !new Chord(chord).valid
+  );
+
   const { styleSheet: themeStyle, colors: themeColors } =
     React.useContext(ThemeContext);
 
   const [loading, setLoading] = React.useState(false);
 
   const handleSave = async () => {
-    const music: Music = {
-      lyricsWithChords: lyrics,
-      author: authorName,
-      name: musicName,
-      originalTone: originalTone,
-      capo: originalCapo,
-    };
     try {
       setLoading(true);
       await saveMusic(music);
@@ -59,9 +56,10 @@ export default function PreviewScreen({
     <View>
       <Header
         onPressBackButton={() => navigation.goBack()}
-        title={`${authorName} (Pré-visualização)`}
-        subTitle={musicName}
+        title={`${music.name} (Pré-visualização)`}
+        subTitle={music.author}
       />
+      <Spinner visible={loading || previewLoading} />
       <Button
         disabled={errorChords.length > 0}
         title="Salvar cifra"
@@ -75,9 +73,10 @@ export default function PreviewScreen({
           <Stack p={10}>
             <Text style={themeStyle.text_primary}>
               As seguintes notas não são válidas:{" "}
-              {errorChords.map((chord) => {
+              {errorChords.map((chord, i) => {
                 return (
                   <Text
+                    key={i}
                     style={[
                       themeStyle.chordText,
                       { color: themeColors.chordErrorColor },

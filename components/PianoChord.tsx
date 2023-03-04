@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { ThemeContext } from "../providers/ThemeProvider";
+import { Chord } from "../services/chords";
 
 export interface PianoChordProps {
   chordName: string;
 }
 
-export default function PianoChord(props: PianoChordProps) {
+export default function PianoChord({ chordName }: PianoChordProps) {
   const piano_back = require("../assets/images/piano_chord/piano_back.png");
   const black_finger = require("../assets/images/piano_chord/black_finger.png");
   const white_finger = require("../assets/images/piano_chord/white_finger.png");
@@ -17,7 +18,8 @@ export default function PianoChord(props: PianoChordProps) {
 
   var piano_chords = require("../constants/piano_chords.json");
 
-  const chords = piano_chords[props.chordName];
+  const sharpChordName = Chord.toChord(chordName, "sharp");
+  const chords = piano_chords[sharpChordName];
   const [idx, setIdx] = useState(0);
   if (!chords || chords.length == 0) {
     return (
@@ -27,7 +29,10 @@ export default function PianoChord(props: PianoChordProps) {
           { justifyContent: "center", alignItems: "center" },
         ]}
       >
-        <Text style={[styles.message, themeStyle.primary_color]}> Acorde Indisponível </Text>
+        <Text style={[styles.message, themeStyle.primary_color]}>
+          {" "}
+          Acorde Indisponível{" "}
+        </Text>
       </View>
     );
   } else {

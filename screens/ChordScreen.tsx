@@ -10,10 +10,10 @@ import ToneDialog from "../components/ToneDialog";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { Divider, HStack, Stack } from "@react-native-material/core";
-import { RootStackParamList } from "../navigation";
 import { Music } from "../types";
 import { getMusic } from "../services/musicStorage";
 import Spinner from "../components/Spinner";
+import { RootStackParamList } from "../navigation/navigationTypes";
 
 export default function ChordScreen({
   navigation,
@@ -42,7 +42,7 @@ export default function ChordScreen({
 
   const {
     loading: loadingChords,
-    sharpChordList,
+    stringChordList,
     chordsLines,
     capo,
     setCapo,
@@ -53,7 +53,7 @@ export default function ChordScreen({
     originalTone: music?.originalTone,
     originalCapo: music?.capo,
   });
-  const chordsImagesState = useChordsImageState(sharpChordList);
+  const chordsImagesState = useChordsImageState(stringChordList);
 
   return (
     <Stack style={themeStyle.content}>

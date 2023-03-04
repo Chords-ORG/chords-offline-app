@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import { View, ScrollView } from "react-native";
-import { RootStackParamList } from "../navigation";
+import { RootStackParamList } from "../navigation/navigationTypes";
 import { StackScreenProps } from "@react-navigation/stack";
-import {
-  Button,
-  HStack,
-  Stack,
-} from "@react-native-material/core";
+import { Button, HStack, Stack } from "@react-native-material/core";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
 import NumberedTextInput from "../components/NumberedTextInput";
 import { Chord } from "../services/chords";
 import TextInput from "../components/TextInput";
+import { Music, emptyMusic } from "../types";
 
 type ErrorType = {
   tone?: string;
@@ -20,18 +17,18 @@ type ErrorType = {
 
 export default function WriteChordScreen({
   navigation,
-}: StackScreenProps<RootStackParamList>) {
-  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
-  const [authorName, setAuthorName] = useState("");
-  const [musicName, setMusicName] = useState("");
-  const [tone, setTone] = useState("C");
+  route,
+}: StackScreenProps<RootStackParamList, "WriteChordScreen">) {
+  const { music: routeMusic } = route.params;
+  const [music, setMusic] = useState<Music>(routeMusic || emptyMusic);
   const [capo, setCapo] = useState("0");
-  const [lyrics, setLyrics] = useState("");
   const [errors, setErrors] = useState<ErrorType>({});
+
+  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   const validate = () => {
     let errors = {};
-    if (new Chord(tone).valid === false) {
+    if (new Chord(music.originalTone).valid === false) {
       errors = { ...errors, tone: "Tom inválido" };
     }
     if (isNaN(parseInt(capo)) || parseInt(capo) < 0 || parseInt(capo) > 10) {
@@ -47,11 +44,10 @@ export default function WriteChordScreen({
   const handlePreview = () => {
     if (validate()) {
       navigation.push("PreviewScreen", {
-        lyrics,
-        musicName,
-        authorName,
-        tone,
-        capo: parseInt(capo),
+        music: {
+          ...music,
+          capo: parseInt(capo),
+        },
       });
     }
   };
@@ -73,19 +69,34 @@ export default function WriteChordScreen({
           <Stack style={{ margin: 5 }} p={2}>
             <TextInput
               label="Nome do autor"
-              onChange={(e) => setAuthorName(e.nativeEvent.text)}
-              value={authorName}
+              onChange={(e) =>
+                setMusic((prevState) => ({
+                  ...prevState,
+                  author: e.nativeEvent.text,
+                }))
+              }
+              value={music.author}
             />
             <TextInput
               label="Nome da música"
-              onChange={(e) => setMusicName(e.nativeEvent.text)}
-              value={musicName}
+              onChange={(e) =>
+                setMusic((prevState) => ({
+                  ...prevState,
+                  name: e.nativeEvent.text,
+                }))
+              }
+              value={music.name}
             />
             <HStack>
               <TextInput
                 label="Tom"
-                onChange={(e) => setTone(e.nativeEvent.text)}
-                value={tone}
+                onChange={(e) =>
+                  setMusic((prevState) => ({
+                    ...prevState,
+                    originalTone: e.nativeEvent.text,
+                  }))
+                }
+                value={music.originalTone}
                 error={errors.tone}
                 style={[{ width: 100 }]}
               />
@@ -102,8 +113,13 @@ export default function WriteChordScreen({
             <View style={{ marginVertical: 20 }} />
             <NumberedTextInput
               label="Letra"
-              onChange={(e) => setLyrics(e.nativeEvent.text)}
-              value={lyrics}
+              onChange={(e) =>
+                setMusic((prevState) => ({
+                  ...prevState,
+                  lyricsWithChords: e.nativeEvent.text,
+                }))
+              }
+              value={music.lyricsWithChords}
               numberOfLines={40}
               style={{ height: 800 }}
               editable

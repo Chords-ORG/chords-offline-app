@@ -14,7 +14,7 @@ type ParseLyricsChordsProps = {
 type ParseLyricsChordsReturnType = {
   chordsLines: ChordLineType[];
   chordsList: Chord[];
-  sharpChordList: string[];
+  stringChordList: string[];
 };
 
 const getToneDelta = (
@@ -75,15 +75,13 @@ export const parseLyricsChords = ({
           });
         });
 
-        const sharpChordList = Array.from(chordsMap.values()).map((chordName) =>
-          new Chord(chordName).toSharp()
-        );
+        const stringChordList = Array.from(chordsMap.values());
 
-        const chordsList = sharpChordList.map(
+        const chordsList = stringChordList.map(
           (chordName) => new Chord(chordName)
         );
 
-        resolve({ chordsLines, chordsList, sharpChordList });
+        resolve({ chordsLines, chordsList, stringChordList });
       }, 0);
     } catch (e) {
       reject(e);

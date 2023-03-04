@@ -14,7 +14,8 @@ export default function MusicsInfoList({
   onPress = () => {},
   onDelete = () => {},
 }: MusicsInfoListProps) {
-  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+  const { styleSheet: themeStyle, colors: themeColors } =
+    React.useContext(ThemeContext);
 
   return (
     <Stack spacing={10}>
@@ -46,11 +47,11 @@ export default function MusicsInfoList({
                 ]);
               }}
             >
-              <Text style={{ color: themeStyle.primary_color.color }}>
-                {music.name}
+              <Text style={{ color: themeColors.textPrimary }}>
+                {music.name || "Sem título"}
               </Text>
-              <Text style={{ color: themeStyle.secondary_color.color }}>
-                {music.author}
+              <Text style={{ color: themeColors.textSecondary }}>
+                {music.author || "Sem autor"}
               </Text>
             </Pressable>
           )

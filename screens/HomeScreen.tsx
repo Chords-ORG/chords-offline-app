@@ -1,6 +1,6 @@
 import React from "react";
 import { Alert, View } from "react-native";
-import { RootStackParamList } from "../navigation";
+import { RootStackParamList } from "../navigation/navigationTypes";
 import { StackScreenProps } from "@react-navigation/stack";
 import {
   Box,
@@ -54,7 +54,7 @@ export default function HomeScreen({
             tintColor={themeStyle.button.color}
             title="Escrever cifra"
             onPress={() => {
-              navigation.navigate("WriteChordScreen");
+              navigation.navigate("WriteChordScreen", { music: undefined });
             }}
           />
           <Spacer />

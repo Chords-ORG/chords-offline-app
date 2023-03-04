@@ -10,31 +10,21 @@ import { IconComponentProvider } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import { LocalSettingsProvider } from "../providers/LocalSettingsProvider";
+import { Music } from "../types";
+import { RootStackParamList } from "./navigationTypes";
 
-export type RootStackParamList = {
-  Root: undefined;
-  ChordScreen: { musicId?: string; sampleMusic?: boolean };
-  WriteChordScreen: undefined;
-  PreviewScreen: {
-    lyrics: string;
-    musicName: string;
-    authorName: string;
-    tone: string;
-    capo: number;
-  };
-};
 
 export default function Navigation() {
   return (
-      <LocalSettingsProvider>
-        <ThemeProvider>
-          <IconComponentProvider IconComponent={MaterialCommunityIcons}>
-            <NavigationContainer>
-              <RootNavigator />
-            </NavigationContainer>
-          </IconComponentProvider>
-        </ThemeProvider>
-      </LocalSettingsProvider>
+    <LocalSettingsProvider>
+      <ThemeProvider>
+        <IconComponentProvider IconComponent={MaterialCommunityIcons}>
+          <NavigationContainer>
+            <RootNavigator />
+          </NavigationContainer>
+        </IconComponentProvider>
+      </ThemeProvider>
+    </LocalSettingsProvider>
   );
 }
 
