@@ -27,7 +27,7 @@ export default function ChordScreen({
 
   const fetchMusic = React.useCallback(async () => {
     if (isSampleMusic) {
-      const sampleMusic: Music = require("../assets/sample_muisc.json");
+      const sampleMusic: Music = require("../assets/data/sample_muisc.json");
       setMusic(sampleMusic);
       return;
     }

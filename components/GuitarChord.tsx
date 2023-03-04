@@ -68,7 +68,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
   const guitarChords: Record<
     string,
     GuitarChordPosition[]
-  > = require("../constants/guitar_chords.json");
+  > = require("../assets/data/guitar_chords.json");
 
   const sharpChordName = Chord.toChord(chordName, "sharp");
   const chords = guitarChords[sharpChordName];
@@ -103,7 +103,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
         style={styles.container}
         onPress={() => setIdx((idx + 1) % tam)}
       >
-        <Text style={[styles.house_text, themeStyle.primary_color]}>
+        <Text style={[styles.houseText, themeStyle.primary_color]}>
           {startHouse != 0 ? `${startHouse}ª` : "   "}
         </Text>
         <View>
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: "center",
   },
-  house_text: {
+  houseText: {
     marginTop: 25,
     fontFamily: "roboto-bold",
     fontSize: 12,

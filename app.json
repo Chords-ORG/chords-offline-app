@@ -25,10 +25,15 @@
     "android": {
       "package": "com.gustavolima00.chordsapp",
       "versionCode": 6,
-      "permissions":[]
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "24e48368-7fc7-431b-8dc1-bbb8a3021d3a"
+      }
     }
   }
 }

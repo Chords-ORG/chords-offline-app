@@ -60,7 +60,7 @@ export default function ChordsImages({
         style={{ width: "100%", height: 35 }}
       />
 
-      <Animated.View style={[styles.chords_container, { height: viewSize }]}>
+      <Animated.View style={[styles.chordsContainer, { height: viewSize }]}>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -69,10 +69,10 @@ export default function ChordsImages({
           {chordsList.map((chordName, i) => {
             const selected = chordName === selectedNote;
             return (
-              <View key={i} style={[styles.chord_container]}>
+              <View key={i} style={[styles.chordContainer]}>
                 <View
                   style={[
-                    styles.selected_line,
+                    styles.selectedLine,
                     {
                       borderBottomColor: selected
                         ? themeColors.textHighlight
@@ -108,16 +108,16 @@ export default function ChordsImages({
 }
 
 const styles = StyleSheet.create({
-  chords_container: {
+  chordsContainer: {
     flexDirection: "row",
     marginBottom: 10,
     //height: 170,
   },
-  chord_container: {
+  chordContainer: {
     alignItems: "center",
     marginRight: 20,
   },
-  selected_line: {
+  selectedLine: {
     width: "100%",
     borderBottomWidth: 2,
     marginTop: 5,

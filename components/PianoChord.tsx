@@ -16,10 +16,13 @@ export default function PianoChord({ chordName }: PianoChordProps) {
 
   const white_fingers_houses = [2, 4, 7, 9, 11, 14, 16, 19, 21, 23, 26, 28];
 
-  var piano_chords = require("../constants/piano_chords.json");
+  const pianoChords: Record<
+    string,
+    string[][]
+  > = require("../assets/data/piano_chords.json");
 
   const sharpChordName = Chord.toChord(chordName, "sharp");
-  const chords = piano_chords[sharpChordName];
+  const chords = pianoChords[sharpChordName];
   const [idx, setIdx] = useState(0);
   if (!chords || chords.length == 0) {
     return (
@@ -43,7 +46,7 @@ export default function PianoChord({ chordName }: PianoChordProps) {
         onPress={() => setIdx((idx + 1) % tam)}
       >
         <Image source={piano_back} style={styles.piano_back} />
-        {chords[idx].map((_house: string, i: string) => {
+        {chords[idx].map((_house: string, i: number) => {
           const house = parseInt(_house);
           return (
             <Image

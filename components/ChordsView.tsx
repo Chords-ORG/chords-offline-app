@@ -48,7 +48,7 @@ export default function ChordView({
           </View>
           <Text
             style={[
-              styles.lyrics_text,
+              styles.lyricsText,
               themeStyle.text_primary,
               { fontFamily: "monospace" },
             ]}
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
   },
-  lyrics_text: {
+  lyricsText: {
     fontFamily: "monospace",
     fontSize: 14,
   },
