@@ -25,7 +25,7 @@ const getToneDelta = (
 ) => {
   const toneBaseNote = new Chord(tone).base.base;
   const originalToneBaseNote = new Chord(originalTone).base.base;
-  return originalToneBaseNote - toneBaseNote - (originalCapo - capo);
+  return originalToneBaseNote + toneBaseNote + (originalCapo - capo);
 };
 
 export const parseLyricsChords = ({
