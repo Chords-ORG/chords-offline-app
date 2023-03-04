@@ -2,7 +2,6 @@ import React from "react";
 import { Chord } from "../services/chords";
 import Picker from "./Picker";
 import { LocalSettingsContext } from "../providers/LocalSettingsProvider";
-import { ThemeContext } from "../providers/ThemeProvider";
 
 export interface CapoDialogProps {
   selectedCapo: number;

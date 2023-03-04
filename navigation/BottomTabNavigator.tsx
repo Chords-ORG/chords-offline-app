@@ -2,7 +2,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as React from "react";
 import HomeStack from "./HomeStack";
 import SettingsStack from "./SettingsStack";
-import { Image } from "react-native";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { Icon } from "@react-native-material/core";
 

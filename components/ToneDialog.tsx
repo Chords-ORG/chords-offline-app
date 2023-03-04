@@ -1,7 +1,7 @@
 import React from "react";
 import { bemolDict, sharpDict } from "../services/chords";
-import useLocalConfiguration from "../hooks/useLocalConfiguration";
 import Picker from "./Picker";
+import { LocalSettingsContext } from "../providers/LocalSettingsProvider";
 
 export interface ToneDialogProps {
   onSelectTone?: (tone: string) => void;
@@ -14,7 +14,7 @@ export default function ToneDialog({
   selectedTone = "C",
   minor = false,
 }: ToneDialogProps) {
-  const { chordType } = useLocalConfiguration();
+  const { chordType } = React.useContext(LocalSettingsContext);
   const toneDict = chordType === "sharp" ? sharpDict : bemolDict;
   const pickerItems = Object.values(toneDict).map((tone) => ({
     label: tone + (minor ? "m" : ""),

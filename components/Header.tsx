@@ -1,4 +1,4 @@
-import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
+import { View, Image, Text, StyleSheet } from "react-native";
 import { Icon, IconButton, Spacer, Stack } from "@react-native-material/core";
 import { ThemeContext } from "../providers/ThemeProvider";
 import React from "react";

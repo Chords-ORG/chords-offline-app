@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView } from "react-native";
 import { Chord } from "../services/chords";
-import useLocalConfiguration from "./useLocalConfiguration";
+import { LocalSettingsContext } from "../providers/LocalSettingsProvider";
 
 export interface ChordsImageStateProps {
   chordsList: string[];
@@ -17,7 +17,7 @@ export default function useChordsImageState(
 ): ChordsImageStateProps {
   const [visible, setVisible] = React.useState(false);
   const [selectedNote, setSelectedNote] = React.useState("");
-  const { chordType, instrument } = useLocalConfiguration();
+  const { chordType, instrument } = React.useContext(LocalSettingsContext);
   const [scrollRef, _] = React.useState<React.RefObject<ScrollView>>(
     React.createRef<ScrollView>()
   );

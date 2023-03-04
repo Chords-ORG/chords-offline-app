@@ -1,9 +1,9 @@
 import React from "react";
 import { Chord } from "../services/chords";
 import { ChordLineType } from "../types";
-import useLocalConfiguration from "./useLocalConfiguration";
 import { parseLyricsChords } from "../services/lyrics";
 import { debounce } from "lodash";
+import { LocalSettingsContext } from "../providers/LocalSettingsProvider";
 
 export interface ChordStateProps {
   lyrics?: string;
@@ -15,7 +15,7 @@ export default function useChordsState({
   originalTone = "C",
   originalCapo = 0,
 }: ChordStateProps) {
-  const { chordType } = useLocalConfiguration();
+  const { chordType } = React.useContext(LocalSettingsContext);
   const [chordsLines, setChordsLines] = React.useState<ChordLineType[]>([]);
   const [chordsList, setChordsList] = React.useState<Chord[]>([]);
   const [stringChordList, setStringChordList] = React.useState<string[]>([]);

@@ -1,8 +1,4 @@
-import {
-  Stack,
-  Text,
-  TextInput as MaterialTextInput,
-} from "@react-native-material/core";
+import { Stack, Text } from "@react-native-material/core";
 import React from "react";
 import {
   TextInput as RNTextInput,

@@ -1,20 +1,12 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  Animated,
-} from "react-native";
-import useLocalConfiguration from "../hooks/useLocalConfiguration";
+import { StyleSheet, Text, View, ScrollView, Animated } from "react-native";
 import { Chord } from "../services/chords";
 import GuitarChord from "./GuitarChord";
 import PianoChord from "./PianoChord";
 import { ChordsImageStateProps } from "../hooks/useChordsImageState";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { Divider, Icon, IconButton, Stack } from "@react-native-material/core";
+import { LocalSettingsContext } from "../providers/LocalSettingsProvider";
 
 interface ChordsImagesProps {
   state: ChordsImageStateProps;
@@ -27,7 +19,7 @@ export default function ChordsImages({
 }: ChordsImagesProps): JSX.Element {
   const { styleSheet: themeStyle, colors: themeColors } =
     React.useContext(ThemeContext);
-  const { chordType, instrument } = useLocalConfiguration();
+  const { chordType, instrument } = React.useContext(LocalSettingsContext);
 
   const totalViewSize = instrument === "guitar" ? 150 : 100;
 
