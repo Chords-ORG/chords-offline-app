@@ -15,7 +15,8 @@ export default function useChordsState({
   originalTone = "C",
   originalCapo = 0,
 }: ChordStateProps) {
-  const { chordType, capoConfig } = React.useContext(LocalSettingsContext);
+  const { chordType, capoConfig, instrument } =
+    React.useContext(LocalSettingsContext);
   const [chordsLines, setChordsLines] = React.useState<ChordLineType[]>([]);
   const [chordsList, setChordsList] = React.useState<Chord[]>([]);
   const [stringChordList, setStringChordList] = React.useState<string[]>([]);
@@ -28,9 +29,9 @@ export default function useChordsState({
   }, [originalTone]);
 
   React.useEffect(() => {
-    if (capoConfig === "auto") {
+    if (capoConfig === "auto" || instrument === "guitar") {
       setCapoState(originalCapo);
-    } else if (capoConfig === "never") {
+    } else {
       setCapoState(0);
     }
   }, [originalCapo, capoConfig]);

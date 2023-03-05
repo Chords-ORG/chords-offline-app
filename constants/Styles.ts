@@ -34,6 +34,7 @@ export type ColorsType = {
 
   // Card
   cardBackground: string;
+  disabledCardBackground: string;
 
   // Divider
   divider: string;
@@ -64,6 +65,7 @@ export const LightColors: ColorsType = {
   dialogBackground: "#FFFFFF",
   dialogTint: "#333333",
   cardBackground: "#F2F2F2",
+  disabledCardBackground: "#E4E4E4",
   divider: "#E4E4E4",
   textInputBackground: "#FFFFFF",
   textInputTint: "#333333",
@@ -90,6 +92,7 @@ export const DarkColors: ColorsType = {
   dialogBackground: "#313337",
   dialogTint: "#FFFFFF",
   cardBackground: "#313337",
+  disabledCardBackground: "#828282",
   divider: "#828282",
   textInputBackground: "#313337",
   textInputTint: "#FFFFFF",

@@ -44,7 +44,7 @@ export default function PreviewScreen({
       await saveMusic(music);
       setLoading(false);
       Alert.alert("Sucesso", "Cifra salva com sucesso!");
-      navigation.push("Root");
+      navigation.navigate("Root");
     } catch (err) {
       setLoading(false);
       Alert.alert("Erro", "Erro ao salvar cifra!");

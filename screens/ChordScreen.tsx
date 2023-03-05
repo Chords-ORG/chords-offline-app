@@ -9,12 +9,13 @@ import useChordsState from "../hooks/useChordsState";
 import ToneDialog from "../components/ToneDialog";
 import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
-import { Button, Divider, HStack, Stack } from "@react-native-material/core";
+import { HStack, Stack } from "@react-native-material/core";
 import { Music } from "../types";
 import { getMusic } from "../services/musicStorage";
 import Spinner from "../components/Spinner";
 import { RootStackParamList } from "../navigation/navigationTypes";
 import { Note } from "../services/chords";
+import { LocalSettingsContext } from "../providers/LocalSettingsProvider";
 
 export default function ChordScreen({
   navigation,
@@ -22,6 +23,9 @@ export default function ChordScreen({
 }: StackScreenProps<RootStackParamList, "ChordScreen">) {
   const { styleSheet: themeStyle, colors: themeColors } =
     React.useContext(ThemeContext);
+
+  const { instrument } = React.useContext(LocalSettingsContext);
+
   const { musicId, sampleMusic: isSampleMusic = false } = route.params;
   const [music, setMusic] = useState<Music | undefined>(undefined);
 
@@ -72,7 +76,12 @@ export default function ChordScreen({
       <Spinner visible={loadingChords} />
       <ScrollView style={styles.content}>
         <HStack divider={<Stack style={{ width: 10 }} />} m={10}>
-          <CapoDialog selectedCapo={capo} tone={tone} onSelect={setCapo} />
+          <CapoDialog
+            selectedCapo={capo}
+            tone={tone}
+            onSelect={setCapo}
+            disabled={instrument !== "guitar"}
+          />
           <ToneDialog
             selectedTone={tone}
             onSelectTone={setTone}

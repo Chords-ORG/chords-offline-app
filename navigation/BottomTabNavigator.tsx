@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as React from "react";
-import HomeStack from "./HomeStack";
-import SettingsStack from "./SettingsStack";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { Icon } from "@react-native-material/core";
+import SettingsScreen from "../screens/SettingsScreen";
+import HomeScreen from "../screens/HomeScreen";
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -35,7 +35,7 @@ export default function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="Home"
-        component={HomeStack}
+        component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <Icon
@@ -48,7 +48,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Settings"
-        component={SettingsStack}
+        component={SettingsScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <Icon

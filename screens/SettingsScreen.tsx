@@ -4,7 +4,6 @@ import { StackScreenProps } from "@react-navigation/stack";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { Pressable, Stack, Text } from "@react-native-material/core";
 import { Header } from "../components/Header";
-import { SettingsStackParamList } from "../navigation/SettingsStack";
 import {
   CapoConfig,
   ChordType,
@@ -13,9 +12,10 @@ import {
   LocalSettingsContext,
 } from "../providers/LocalSettingsProvider";
 import Picker from "../components/Picker";
+import { BottomTabParamList } from "../navigation/BottomTabNavigator";
 
 export default function SettingsScreen({}: StackScreenProps<
-  SettingsStackParamList,
+  BottomTabParamList,
   "Settings"
 >) {
   const {

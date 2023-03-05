@@ -52,7 +52,7 @@ export default function HomeScreen({
             tintColor={themeStyle.button.color}
             title="Escrever cifra"
             onPress={() => {
-              navigation.navigate("WriteChordScreen", { musicId: undefined });
+              navigation.push("WriteChordScreen", { musicId: undefined });
             }}
           />
           <Spacer />
@@ -61,7 +61,7 @@ export default function HomeScreen({
             color={themeStyle.button.backgroundColor}
             tintColor={themeStyle.button.color}
             onPress={() => {
-              navigation.navigate("ChordScreen", { sampleMusic: true });
+              navigation.push("ChordScreen", { sampleMusic: true });
             }}
           />
         </HStack>

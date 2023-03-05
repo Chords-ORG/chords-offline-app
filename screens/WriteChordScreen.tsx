@@ -76,7 +76,7 @@ export default function WriteChordScreen({
   return (
     <View>
       <Header
-        onBackButtonPress={() => navigation.goBack()}
+        onBackButtonPress={navigation.goBack}
         title="Criação/Edição de cifra"
       />
       <View style={[themeStyle.content]}>

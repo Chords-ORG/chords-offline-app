@@ -25,6 +25,7 @@ export interface PickerProps<T> extends PressableProps {
   onValueChange?: (value: T) => void;
   columns?: number;
   buttonWidth?: number;
+  disabled?: boolean;
 }
 export default function Picker<T>(props: PickerProps<T>) {
   const {
@@ -34,9 +35,11 @@ export default function Picker<T>(props: PickerProps<T>) {
     onValueChange = () => {},
     columns,
     buttonWidth,
+    disabled = false,
   } = props;
   const modalDialogState = useModalDialogState();
-  const { styleSheet: themeStyle } = React.useContext(ThemeContext);
+  const { styleSheet: themeStyle, colors: themeColors } =
+    React.useContext(ThemeContext);
   const labelSelected = items.find(
     (item) => item.value === selectedValue
   )?.label;
@@ -44,7 +47,17 @@ export default function Picker<T>(props: PickerProps<T>) {
     <Pressable
       onPress={modalDialogState.show}
       {...props}
-      style={[themeStyle.card, { padding: 10 }, props.style]}
+      style={[
+        {
+          padding: 10,
+          backgroundColor: disabled
+            ? themeColors.disabledCardBackground
+            : themeColors.cardBackground,
+          borderRadius: 5,
+        },
+        props.style,
+      ]}
+      disabled={disabled}
     >
       <PickerDialog
         state={modalDialogState}
@@ -54,10 +67,8 @@ export default function Picker<T>(props: PickerProps<T>) {
         columns={columns}
         buttonWidth={buttonWidth}
       />
-      <Text style={{ color: themeStyle.primary_color.color }}>{label}</Text>
-      <Text style={{ color: themeStyle.secondary_color.color }}>
-        {labelSelected}
-      </Text>
+      <Text style={{ color: themeColors.textPrimary }}>{label}</Text>
+      <Text style={{ color: themeColors.textSecondary }}>{labelSelected}</Text>
     </Pressable>
   );
 }

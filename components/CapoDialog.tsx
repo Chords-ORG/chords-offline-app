@@ -7,12 +7,14 @@ export interface CapoDialogProps {
   selectedCapo: number;
   tone: string;
   onSelect: (value: number) => void;
+  disabled?: boolean;
 }
 
 export default function CapoDialog({
   selectedCapo,
   tone,
   onSelect,
+  disabled = false,
 }: CapoDialogProps) {
   const { chordType } = React.useContext(LocalSettingsContext);
 
@@ -48,6 +50,7 @@ export default function CapoDialog({
       style={{
         flex: 1,
       }}
+      disabled={disabled}
     />
   );
 }

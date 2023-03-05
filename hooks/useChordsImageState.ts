@@ -22,11 +22,17 @@ export default function useChordsImageState(
     React.createRef<ScrollView>()
   );
 
+  React.useEffect(() => {
+    return function cleanup() {
+      setVisible(false);
+    };
+  }, []);
+
   const scrollToChord = React.useCallback(
     (chordName: string) => {
       if (!visible) setVisible(true);
-      setSelectedNote(Chord.toChord(chordName, 'sharp'));
-      const pos = chordsList.indexOf(Chord.toChord(chordName, 'sharp'));
+      setSelectedNote(Chord.toChord(chordName, "sharp"));
+      const pos = chordsList.indexOf(Chord.toChord(chordName, "sharp"));
       const width = instrument == "guitar" ? 100 : 150;
 
       scrollRef.current?.scrollTo({ x: width * pos });
