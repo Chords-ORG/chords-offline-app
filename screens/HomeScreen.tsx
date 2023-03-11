@@ -38,7 +38,10 @@ export default function HomeScreen({
   };
 
   React.useEffect(() => {
-    fetchMusics();
+    const unsubscribe = navigation.addListener("focus", () => {
+      fetchMusics();
+    });
+    return unsubscribe;
   }, []);
 
   return (
