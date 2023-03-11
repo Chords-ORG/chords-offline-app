@@ -40,7 +40,7 @@ export default function WriteChordScreen({
       });
     } else {
       setMusic(emptyMusic);
-      setCapo("");
+      setCapo("0");
     }
   }, [musicId]);
 
@@ -127,7 +127,6 @@ export default function WriteChordScreen({
                 onChange={(e) => setCapo(e.nativeEvent.text)}
                 value={capo}
                 style={[{ width: 100 }]}
-                keyboardType="numeric"
                 error={errors.capo}
               />
             </HStack>

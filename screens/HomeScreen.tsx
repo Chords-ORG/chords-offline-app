@@ -14,7 +14,6 @@ import { Header } from "../components/Header";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { MusicInfo } from "../types";
 import { deleteMusic, getMusicsInfo } from "../services/musicStorage";
-import { ScrollView } from "react-native-gesture-handler";
 import MusicsList from "../components/MusicsInfoList";
 
 export default function HomeScreen({
@@ -73,18 +72,16 @@ export default function HomeScreen({
           trailingInset={10}
           color={themeStyle.divider.color}
         />
-
-        <ScrollView>
-          <MusicsList
-            musics={musics}
-            onPress={(musicId) => {
-              navigation.navigate("ChordScreen", {
-                musicId: musicId,
-              });
-            }}
-            onDelete={onDeleteMusic}
-          />
-        </ScrollView>
+        <MusicsList
+          musics={musics}
+          onPress={(musicId) => {
+            navigation.navigate("ChordScreen", {
+              musicId: musicId,
+            });
+          }}
+          onDelete={onDeleteMusic}
+          onRefresh={fetchMusics}
+        />
       </Stack>
     </View>
   );

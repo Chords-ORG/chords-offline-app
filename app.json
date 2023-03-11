@@ -2,7 +2,7 @@
   "expo": {
     "name": "Chords",
     "slug": "Chords",
-    "version": "0.1.5.1",
+    "version": "1.0.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "chordsapp",
@@ -19,12 +19,12 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.gustavolima00.chordsapp",
-      "buildNumber": "1.0.1"
+      "bundleIdentifier": "com.gustavoMCoding.ChordsOffline",
+      "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.gustavolima00.chordsapp",
-      "versionCode": 6,
+      "package": "com.gustavoMCoding.ChordsOffline",
+      "versionCode": 1,
       "permissions": []
     },
     "web": {
