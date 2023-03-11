@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Spinner/> rendering invisible 1`] = `
+<Modal
+  hardwareAccelerated={false}
+  transparent={true}
+  visible={false}
+/>
+`;
+
+exports[`<Spinner/> rendering visible 1`] = `
+<Modal
+  hardwareAccelerated={false}
+  transparent={true}
+  visible={true}
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#00000066",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <ActivityIndicator
+      color="#FFFFFF"
+      size="large"
+    />
+  </View>
+</Modal>
+`;
