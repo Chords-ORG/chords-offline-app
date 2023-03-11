@@ -21,9 +21,10 @@ export const ThemeContext = React.createContext<ThemeContextProps>({
   colors: LightColors,
 });
 
-interface ThemeProviderProps {
+export interface ThemeProviderProps {
   children: React.ReactNode;
 }
+
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = React.useState<"light" | "dark">("light");
   const systemColorScheme = useColorScheme();

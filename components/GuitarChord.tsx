@@ -46,22 +46,22 @@ export type GuitarChordPosition = {
 
 export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
   const {
-    guitar_base,
-    guitar_capo,
-    guitar_front,
-    bass_string,
-    none_string,
-    normal_string,
-    slash_2,
-    slash_3,
-    slash_4,
-    slash_5,
-    slash_6,
-    finger_1,
-    finger_2,
-    finger_3,
-    finger_4,
-    finger_p,
+    guitarBase,
+    guitarCapo,
+    guitarFront,
+    bassString,
+    noneString,
+    normalString,
+    slash2,
+    slash3,
+    slash4,
+    slash5,
+    slash6,
+    finger1,
+    finger2,
+    finger3,
+    finger4,
+    fingerP,
   } = useGuitarChordImages();
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
@@ -110,16 +110,16 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
           <Image
             source={
               capo != 0
-                ? guitar_capo
+                ? guitarCapo
                 : chords[idx].startHouse != 0
-                ? guitar_front
-                : guitar_base
+                ? guitarFront
+                : guitarBase
             }
             style={styles.back_image}
           />
 
           <Image
-            source={finger_1}
+            source={finger1}
             style={[
               chords[idx].fingers[0].size == 1
                 ? styles.finger
@@ -129,7 +129,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
             ]}
           />
           <Image
-            source={slash_2}
+            source={slash2}
             style={[
               styles.slash_2,
               chords[idx].fingers[0].size == 2
@@ -138,7 +138,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
             ]}
           />
           <Image
-            source={slash_3}
+            source={slash3}
             style={[
               styles.slash_3,
               chords[idx].fingers[0].size == 3
@@ -147,7 +147,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
             ]}
           />
           <Image
-            source={slash_4}
+            source={slash4}
             style={[
               styles.slash_4,
               chords[idx].fingers[0].size == 4
@@ -156,7 +156,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
             ]}
           />
           <Image
-            source={slash_5}
+            source={slash5}
             style={[
               styles.slash_5,
               chords[idx].fingers[0].size == 5
@@ -165,7 +165,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
             ]}
           />
           <Image
-            source={slash_6}
+            source={slash6}
             style={[
               styles.slash_6,
               chords[idx].fingers[0].size == 6
@@ -175,7 +175,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
           />
 
           <Image
-            source={finger_2}
+            source={finger2}
             style={[
               styles.finger,
               houseDict[chords[idx].fingers[1].house],
@@ -183,7 +183,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
             ]}
           />
           <Image
-            source={finger_3}
+            source={finger3}
             style={[
               styles.finger,
               houseDict[chords[idx].fingers[2].house],
@@ -191,7 +191,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
             ]}
           />
           <Image
-            source={finger_4}
+            source={finger4}
             style={[
               styles.finger,
               houseDict[chords[idx].fingers[3].house],
@@ -199,7 +199,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
             ]}
           />
           <Image
-            source={finger_p}
+            source={fingerP}
             style={[
               styles.finger,
               houseDict[chords[idx].fingers[4].house],
@@ -209,60 +209,60 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
           <Image
             source={
               chords[idx].strings[0] == "b"
-                ? bass_string
+                ? bassString
                 : chords[idx].strings[0] == "x"
-                ? none_string
-                : normal_string
+                ? noneString
+                : normalString
             }
             style={styles.string_1}
           />
           <Image
             source={
               chords[idx].strings[1] == "b"
-                ? bass_string
+                ? bassString
                 : chords[idx].strings[1] == "x"
-                ? none_string
-                : normal_string
+                ? noneString
+                : normalString
             }
             style={styles.string_2}
           />
           <Image
             source={
               chords[idx].strings[2] == "b"
-                ? bass_string
+                ? bassString
                 : chords[idx].strings[2] == "x"
-                ? none_string
-                : normal_string
+                ? noneString
+                : normalString
             }
             style={styles.string_3}
           />
           <Image
             source={
               chords[idx].strings[3] == "b"
-                ? bass_string
+                ? bassString
                 : chords[idx].strings[3] == "x"
-                ? none_string
-                : normal_string
+                ? noneString
+                : normalString
             }
             style={styles.string_4}
           />
           <Image
             source={
               chords[idx].strings[4] == "b"
-                ? bass_string
+                ? bassString
                 : chords[idx].strings[4] == "x"
-                ? none_string
-                : normal_string
+                ? noneString
+                : normalString
             }
             style={styles.string_5}
           />
           <Image
             source={
               chords[idx].strings[5] == "b"
-                ? bass_string
+                ? bassString
                 : chords[idx].strings[5] == "x"
-                ? none_string
-                : normal_string
+                ? noneString
+                : normalString
             }
             style={styles.string_6}
           />
