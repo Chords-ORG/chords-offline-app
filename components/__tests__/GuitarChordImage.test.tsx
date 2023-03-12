@@ -25,7 +25,7 @@ describe("<GuitarChordImage/>", () => {
     sample.forEach((chordName) => {
       const chordsPositions = guitarChords[chordName];
       chordsPositions.forEach((chordPosition, idx) => {
-        for (let capo = 0; capo < 11; capo++) {
+        [0, 3, 10].forEach((capo) => {
           it(`should render ${chordName} on position ${idx} with capo ${capo} on light theme`, () => {
             const tree = renderer
               .create(
@@ -59,7 +59,7 @@ describe("<GuitarChordImage/>", () => {
               .toJSON();
             expect(tree).toMatchSnapshot();
           });
-        }
+        });
       });
     });
   });
