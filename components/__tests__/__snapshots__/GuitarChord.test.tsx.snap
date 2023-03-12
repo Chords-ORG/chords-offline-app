@@ -1,312 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<GuitarChordImage/> should render C on position 0 with capo 0 on dark theme 1`] = `
-<RNGestureHandlerButton
-  collapsable={false}
-  delayLongPress={600}
-  enabled={true}
-  exclusive={true}
-  handlerTag={2}
-  handlerType="NativeViewGestureHandler"
-  onGestureEvent={[Function]}
-  onGestureHandlerEvent={[Function]}
-  onGestureHandlerStateChange={[Function]}
-  onHandlerStateChange={[Function]}
-  rippleColor={0}
-  touchSoundDisabled={false}
->
-  <View
-    accessible={true}
-    collapsable={false}
-    style={
-      {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
-        "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
-      }
-    }
-  >
-    <Text
-      style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#FFFFFF",
-          },
-        ]
-      }
-    >
-         
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 30,
-            },
-            {
-              "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
-    </View>
-  </View>
-</RNGestureHandlerButton>
-`;
-
-exports[`<GuitarChordImage/> should render C on position 0 with capo 0 on light theme 1`] = `
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -612,13 +306,3669 @@ exports[`<GuitarChordImage/> should render C on position 0 with capo 0 on light 
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> should render C on position 0 with capo 4 on dark theme 1`] = `
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 2`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
   enabled={true}
   exclusive={true}
-  handlerTag={4}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+         
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 15,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 47,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 1,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 3`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+         
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 15,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 47,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 4`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+         
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "position": "absolute",
+              "right": 1,
+              "top": 65,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 97,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 97,
+            },
+            {
+              "right": 28,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 97,
+            },
+            {
+              "right": 15,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 5`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+      5ª
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "position": "absolute",
+              "right": 1,
+              "top": 32,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 80,
+            },
+            {
+              "right": 68,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 80,
+            },
+            {
+              "right": 1,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 6`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+      5ª
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "position": "absolute",
+              "right": 1,
+              "top": 32,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 80,
+            },
+            {
+              "right": 68,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 7`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+      8ª
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 68,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "position": "absolute",
+              "right": 1,
+              "top": 32,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 47,
+            },
+            {
+              "right": 28,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 8`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+      8ª
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 15,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 1,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 47,
+            },
+            {
+              "right": 28,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 9`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+      10ª
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 28,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 1,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 80,
+            },
+            {
+              "right": 15,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 10`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+      12ª
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 28,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "position": "absolute",
+              "right": 1,
+              "top": 32,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 47,
+            },
+            {
+              "right": 15,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 80,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 11`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+      12ª
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 28,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 47,
+            },
+            {
+              "right": 15,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 80,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 0 on dark theme 1`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={3}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#FFFFFF",
+          },
+        ]
+      }
+    >
+         
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 15,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 47,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 0 on light theme 1`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={2}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "paddingRight": 10,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontFamily": "roboto-bold",
+            "fontSize": 12,
+            "marginTop": 25,
+          },
+          {
+            "color": "#333333",
+          },
+        ]
+      }
+    >
+         
+    </Text>
+    <View>
+      <Image
+        source={1}
+        style={
+          {
+            "height": 110,
+            "width": 80,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 30,
+            },
+            {
+              "right": 15,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 22,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 36,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 49,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 63,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 7,
+              "position": "absolute",
+              "width": 79,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 47,
+            },
+            {
+              "right": 41,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "top": 63,
+            },
+            {
+              "right": 55,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          [
+            {
+              "height": 12,
+              "position": "absolute",
+              "width": 12,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+            {
+              "height": 0,
+              "width": 0,
+            },
+          ]
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 2,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 15,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 29,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 42,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 56,
+            "width": 8,
+          }
+        }
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 0,
+            "height": 8,
+            "position": "absolute",
+            "right": 70,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 4 on dark theme 1`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={5}
   handlerType="NativeViewGestureHandler"
   onGestureEvent={[Function]}
   onGestureHandlerEvent={[Function]}
@@ -918,13 +4268,13 @@ exports[`<GuitarChordImage/> should render C on position 0 with capo 4 on dark t
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> should render C on position 0 with capo 4 on light theme 1`] = `
+exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 4 on light theme 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
   enabled={true}
   exclusive={true}
-  handlerTag={3}
+  handlerTag={4}
   handlerType="NativeViewGestureHandler"
   onGestureEvent={[Function]}
   onGestureHandlerEvent={[Function]}
@@ -1224,13 +4574,13 @@ exports[`<GuitarChordImage/> should render C on position 0 with capo 4 on light 
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> should render C on position 0 with capo 9 on dark theme 1`] = `
+exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 9 on dark theme 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
   enabled={true}
   exclusive={true}
-  handlerTag={6}
+  handlerTag={7}
   handlerType="NativeViewGestureHandler"
   onGestureEvent={[Function]}
   onGestureHandlerEvent={[Function]}
@@ -1530,13 +4880,13 @@ exports[`<GuitarChordImage/> should render C on position 0 with capo 9 on dark t
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> should render C on position 0 with capo 9 on light theme 1`] = `
+exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 9 on light theme 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
   enabled={true}
   exclusive={true}
-  handlerTag={5}
+  handlerTag={6}
   handlerType="NativeViewGestureHandler"
   onGestureEvent={[Function]}
   onGestureHandlerEvent={[Function]}
