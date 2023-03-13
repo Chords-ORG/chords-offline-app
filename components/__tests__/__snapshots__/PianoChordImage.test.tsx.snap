@@ -1,0 +1,829 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render C9 on position 0 on dark theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 2,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 14,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 26,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 49,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render C9 on position 0 on light theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 2,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 14,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 26,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 49,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render Dm7 on position 0 on dark theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 14,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 37,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 61,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 85,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render Dm7 on position 0 on light theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 14,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 37,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 61,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 85,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render Dm7 on position 1 on dark theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 14,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 37,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 61,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 85,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 14,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render Dm7 on position 1 on light theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 14,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 37,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 61,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 85,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 14,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render F/A on position 0 on dark theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 61,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 120,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 61,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 85,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render F/A on position 0 on light theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 61,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 120,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 61,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 85,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render G on position 0 on dark theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 49,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 73,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 96,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render G on position 0 on light theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 49,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 73,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 96,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render G/B on position 0 on dark theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 73,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 132,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 73,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 96,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<PianoChordImage/> Testing sample chords positions on database should render G/B on position 0 on light theme 1`] = `
+<View
+  style={
+    {
+      "height": 50,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      {
+        "height": 50,
+        "width": 200,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 73,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 132,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 73,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+  <Image
+    source={1}
+    style={
+      {
+        "bottom": 2,
+        "height": 8,
+        "left": 96,
+        "position": "absolute",
+        "width": 8,
+      }
+    }
+  />
+</View>
+`;
