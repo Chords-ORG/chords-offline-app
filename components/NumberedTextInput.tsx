@@ -1,7 +1,4 @@
-import {
-  Stack,
-  Text,
-} from "@react-native-material/core";
+import { Stack, Text } from "@react-native-material/core";
 import TextInput from "./TextInput";
 import React from "react";
 import { StyleSheet, TextInputProps } from "react-native";
@@ -11,10 +8,17 @@ export interface NumberedTextInputProps extends TextInputProps {
   label?: string;
   helperText?: string;
   error?: string;
+  highlightEvenLine?: boolean;
 }
 
 const NumberedTextInput = (props: NumberedTextInputProps) => {
-  const { label = "", value, helperText, error } = props;
+  const {
+    label = "",
+    value,
+    helperText,
+    error,
+    highlightEvenLine = true,
+  } = props;
 
   const lines = value?.split("\n") || [];
   const lineNumbers = Array.from({ length: lines.length }, (_, i) =>
@@ -46,6 +50,7 @@ const NumberedTextInput = (props: NumberedTextInputProps) => {
     label: undefined,
     helperText: undefined,
   };
+
   return (
     <Stack>
       <Text style={{ color: error ? "red" : themeColors.textInputTint }}>
@@ -61,7 +66,9 @@ const NumberedTextInput = (props: NumberedTextInputProps) => {
           {lineNumbers.map((lineNumber, i) => (
             <Text
               key={lineNumber}
-              style={i % 2 === 0 ? lineEvenStyle : lineOddStyle}
+              style={
+                i % 2 === 0 && highlightEvenLine ? lineEvenStyle : lineOddStyle
+              }
             >
               {`${lineNumber}|\n`}
             </Text>

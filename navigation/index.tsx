@@ -4,7 +4,7 @@ import * as React from "react";
 
 import BottomTabNavigator from "./BottomTabNavigator";
 import ChordScreen from "../screens/ChordScreen";
-import WriteChordScreen from "../screens/WriteChordScreen";
+import EditChordScreen from "../screens/EditChordScreen";
 import PreviewScreen from "../screens/PreviewScreen";
 import { IconComponentProvider } from "@react-native-material/core";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
@@ -34,7 +34,7 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="ChordScreen" component={ChordScreen} />
-      <Stack.Screen name="WriteChordScreen" component={WriteChordScreen} />
+      <Stack.Screen name="WriteChordScreen" component={EditChordScreen} />
       <Stack.Screen name="PreviewScreen" component={PreviewScreen} />
     </Stack.Navigator>
   );

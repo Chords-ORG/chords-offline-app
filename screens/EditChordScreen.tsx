@@ -11,13 +11,14 @@ import TextInput from "../components/TextInput";
 import { Music, emptyMusic } from "../types";
 import { getMusic } from "../services/musicStorage";
 import { LocalSettingsContext } from "../providers/LocalSettingsProvider";
+import ChordsWrittenTextInput from "../components/ChordsWrittenTextInput";
 
 type ErrorType = {
   tone?: string;
   capo?: string;
 };
 
-export default function WriteChordScreen({
+export default function EditChordScreen({
   navigation,
   route,
 }: StackScreenProps<RootStackParamList, "WriteChordScreen">) {
@@ -131,27 +132,17 @@ export default function WriteChordScreen({
               />
             </HStack>
             <View style={{ marginVertical: 20 }} />
-            <NumberedTextInput
-              label="Letra"
-              onChange={(e) =>
+            <ChordsWrittenTextInput
+              text={music.lyricsWithChords}
+              onChange={(text) =>
                 setMusic((prevState) => ({
                   ...prevState,
-                  lyricsWithChords: e.nativeEvent.text,
+                  lyricsWithChords: text,
                 }))
               }
-              value={music.lyricsWithChords}
-              numberOfLines={40}
-              style={{ height: 800 }}
-              editable
-              textAlignVertical="top"
-              autoComplete="off"
-              autoCorrect={false}
-              autoCapitalize="none"
-              keyboardType="ascii-capable"
-              helperText="Utilize as linhas azuis para inserir os acordes e as demais linhas para a letra."
             />
           </Stack>
-          <View style={{ marginVertical: 400 }} />
+          <View style={{ marginVertical: 100 }} />
         </ScrollView>
       </View>
     </View>
