@@ -29,9 +29,7 @@ exports[`<PianoChord /> Testing chord not found should render correctly when the
       ]
     }
   >
-     
     Acorde Indisponível
-     
   </Text>
 </View>
 `;
@@ -56,57 +54,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -131,57 +136,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -206,57 +218,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -281,57 +300,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -356,57 +382,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -431,57 +464,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -506,57 +546,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -581,57 +628,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -656,57 +710,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -731,57 +792,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -806,57 +874,64 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -881,57 +956,64 @@ exports[`<PianoChord /> Testing rendering should render C on dark theme 1`] = `
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
@@ -956,57 +1038,64 @@ exports[`<PianoChord /> Testing rendering should render C on light theme 1`] = `
     collapsable={false}
     style={
       {
-        "height": 50,
         "opacity": 1,
-        "width": 200,
       }
     }
   >
-    <Image
-      source={1}
+    <View
       style={
         {
           "height": 50,
           "width": 200,
         }
       }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 2,
-          "position": "absolute",
-          "width": 8,
+    >
+      <Image
+        source={1}
+        style={
+          {
+            "height": 50,
+            "width": 200,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 26,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 2,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
-    <Image
-      source={1}
-      style={
-        {
-          "bottom": 2,
-          "height": 8,
-          "left": 49,
-          "position": "absolute",
-          "width": 8,
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 26,
+            "position": "absolute",
+            "width": 8,
+          }
         }
-      }
-    />
+      />
+      <Image
+        source={1}
+        style={
+          {
+            "bottom": 2,
+            "height": 8,
+            "left": 49,
+            "position": "absolute",
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
 </RNGestureHandlerButton>
 `;
