@@ -4,6 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import useGuitarChordImages from "../hooks/useGuitarChordImages";
 import { ThemeContext } from "../providers/ThemeProvider";
 import { Chord } from "../services/chords";
+import GuitarChordImage from "./GuitarChordImage";
 
 type DictStyle = Record<
   number,
@@ -45,24 +46,6 @@ export type GuitarChordPosition = {
 };
 
 export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
-  const {
-    guitarBase,
-    guitarCapo,
-    guitarFront,
-    bassString,
-    noneString,
-    normalString,
-    slash2,
-    slash3,
-    slash4,
-    slash5,
-    slash6,
-    finger1,
-    finger2,
-    finger3,
-    finger4,
-    fingerP,
-  } = useGuitarChordImages();
   const { styleSheet: themeStyle } = React.useContext(ThemeContext);
 
   const guitarChords: Record<
@@ -73,6 +56,7 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
   const sharpChordName = Chord.toChord(chordName, "sharp");
   const chords = guitarChords[sharpChordName];
   const [idx, setIdx] = useState(0);
+
   if (!chords || chords.length == 0) {
     return (
       <View
@@ -89,184 +73,9 @@ export default function GuitarChord({ capo, chordName }: GuitarChordProps) {
     );
   } else {
     const tam = guitarChords[chordName].length;
-    let slash_house_style = styles.slash_house_1;
-    if (chords[idx].fingers[0].house == 2)
-      slash_house_style = styles.slash_house_2;
-    else if (chords[idx].fingers[0].house == 3)
-      slash_house_style = styles.slash_house_3;
-    else if (chords[idx].fingers[0].house == 4)
-      slash_house_style = styles.slash_house_4;
-    const startHouse = chords[idx].startHouse + (capo != 0 ? capo + 1 : 0);
-
     return (
-      <TouchableOpacity
-        style={styles.container}
-        onPress={() => setIdx((idx + 1) % tam)}
-      >
-        <Text style={[styles.houseText, themeStyle.primary_color]}>
-          {startHouse != 0 ? `${startHouse}ª` : "   "}
-        </Text>
-        <View>
-          <Image
-            source={
-              capo != 0
-                ? guitarCapo
-                : chords[idx].startHouse != 0
-                ? guitarFront
-                : guitarBase
-            }
-            style={styles.back_image}
-          />
-
-          <Image
-            source={finger1}
-            style={[
-              chords[idx].fingers[0].size == 1
-                ? styles.finger
-                : styles.unactive,
-              houseDict[chords[idx].fingers[0].house],
-              stringDict[chords[idx].fingers[0].string],
-            ]}
-          />
-          <Image
-            source={slash2}
-            style={[
-              styles.slash_2,
-              chords[idx].fingers[0].size == 2
-                ? slash_house_style
-                : styles.unactive,
-            ]}
-          />
-          <Image
-            source={slash3}
-            style={[
-              styles.slash_3,
-              chords[idx].fingers[0].size == 3
-                ? slash_house_style
-                : styles.unactive,
-            ]}
-          />
-          <Image
-            source={slash4}
-            style={[
-              styles.slash_4,
-              chords[idx].fingers[0].size == 4
-                ? slash_house_style
-                : styles.unactive,
-            ]}
-          />
-          <Image
-            source={slash5}
-            style={[
-              styles.slash_5,
-              chords[idx].fingers[0].size == 5
-                ? slash_house_style
-                : styles.unactive,
-            ]}
-          />
-          <Image
-            source={slash6}
-            style={[
-              styles.slash_6,
-              chords[idx].fingers[0].size == 6
-                ? slash_house_style
-                : styles.unactive,
-            ]}
-          />
-
-          <Image
-            source={finger2}
-            style={[
-              styles.finger,
-              houseDict[chords[idx].fingers[1].house],
-              stringDict[chords[idx].fingers[1].string],
-            ]}
-          />
-          <Image
-            source={finger3}
-            style={[
-              styles.finger,
-              houseDict[chords[idx].fingers[2].house],
-              stringDict[chords[idx].fingers[2].string],
-            ]}
-          />
-          <Image
-            source={finger4}
-            style={[
-              styles.finger,
-              houseDict[chords[idx].fingers[3].house],
-              stringDict[chords[idx].fingers[3].string],
-            ]}
-          />
-          <Image
-            source={fingerP}
-            style={[
-              styles.finger,
-              houseDict[chords[idx].fingers[4].house],
-              stringDict[chords[idx].fingers[4].string],
-            ]}
-          />
-          <Image
-            source={
-              chords[idx].strings[0] == "b"
-                ? bassString
-                : chords[idx].strings[0] == "x"
-                ? noneString
-                : normalString
-            }
-            style={styles.string_1}
-          />
-          <Image
-            source={
-              chords[idx].strings[1] == "b"
-                ? bassString
-                : chords[idx].strings[1] == "x"
-                ? noneString
-                : normalString
-            }
-            style={styles.string_2}
-          />
-          <Image
-            source={
-              chords[idx].strings[2] == "b"
-                ? bassString
-                : chords[idx].strings[2] == "x"
-                ? noneString
-                : normalString
-            }
-            style={styles.string_3}
-          />
-          <Image
-            source={
-              chords[idx].strings[3] == "b"
-                ? bassString
-                : chords[idx].strings[3] == "x"
-                ? noneString
-                : normalString
-            }
-            style={styles.string_4}
-          />
-          <Image
-            source={
-              chords[idx].strings[4] == "b"
-                ? bassString
-                : chords[idx].strings[4] == "x"
-                ? noneString
-                : normalString
-            }
-            style={styles.string_5}
-          />
-          <Image
-            source={
-              chords[idx].strings[5] == "b"
-                ? bassString
-                : chords[idx].strings[5] == "x"
-                ? noneString
-                : normalString
-            }
-            style={styles.string_6}
-          />
-        </View>
+      <TouchableOpacity onPress={() => setIdx((idx + 1) % tam)}>
+        <GuitarChordImage capo={capo} chordPosition={chords[idx]} />
       </TouchableOpacity>
     );
   }

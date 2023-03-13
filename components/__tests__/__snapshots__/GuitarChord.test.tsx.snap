@@ -20,287 +20,294 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-         
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+           
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -326,285 +333,292 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-         
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+           
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 1,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 1,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -630,287 +644,294 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-         
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+           
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -936,285 +957,292 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-         
-    </Text>
-    <View>
-      <Image
-        source={1}
+      <Text
         style={
-          {
-            "height": 110,
-            "width": 80,
+          [
+            {
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+           
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "position": "absolute",
+                "right": 1,
+                "top": 65,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 97,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 97,
+              },
+              {
+                "right": 28,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 97,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 22,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "position": "absolute",
-              "right": 1,
-              "top": 65,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 97,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 97,
-            },
-            {
-              "right": 28,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 97,
-            },
-            {
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 29,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -1240,285 +1268,292 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      5ª
-    </Text>
-    <View>
-      <Image
-        source={1}
+      <Text
         style={
-          {
-            "height": 110,
-            "width": 80,
+          [
+            {
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+        5ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "top": 30,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "position": "absolute",
-              "right": 1,
-              "top": 32,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 80,
-            },
-            {
-              "right": 68,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 80,
-            },
-            {
-              "right": 1,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 41,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "position": "absolute",
+                "right": 1,
+                "top": 32,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 80,
+              },
+              {
+                "right": 68,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 80,
+              },
+              {
+                "right": 1,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 15,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
+          }
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -1544,287 +1579,294 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      5ª
-    </Text>
-    <View>
-      <Image
-        source={1}
+      <Text
         style={
-          {
-            "height": 110,
-            "width": 80,
+          [
+            {
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+        5ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "top": 30,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "position": "absolute",
-              "right": 1,
-              "top": 32,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 80,
-            },
-            {
-              "right": 68,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 41,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "position": "absolute",
+                "right": 1,
+                "top": 32,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 80,
+              },
+              {
+                "right": 68,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 15,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
+          }
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -1850,285 +1892,292 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      8ª
-    </Text>
-    <View>
-      <Image
-        source={1}
+      <Text
         style={
-          {
-            "height": 110,
-            "width": 80,
+          [
+            {
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+        8ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "top": 30,
-            },
-            {
-              "right": 68,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "position": "absolute",
-              "right": 1,
-              "top": 32,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 28,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 68,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "position": "absolute",
+                "right": 1,
+                "top": 32,
+              },
+            ]
           }
-        }
-      />
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 28,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 15,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
+          }
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -2154,285 +2203,292 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      8ª
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+        8ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 1,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 28,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 30,
-            },
-            {
-              "right": 1,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 28,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -2458,285 +2514,292 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      10ª
-    </Text>
-    <View>
-      <Image
-        source={1}
+      <Text
         style={
-          {
-            "height": 110,
-            "width": 80,
+          [
+            {
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+        10ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 28,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 1,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 80,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 28,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 1,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 80,
-            },
-            {
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 29,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -2762,285 +2825,292 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      12ª
-    </Text>
-    <View>
-      <Image
-        source={1}
+      <Text
         style={
-          {
-            "height": 110,
-            "width": 80,
+          [
+            {
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+        12ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 28,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "position": "absolute",
+                "right": 1,
+                "top": 32,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 80,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "top": 30,
-            },
-            {
-              "right": 28,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 22,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 36,
-            },
-            {
-              "position": "absolute",
-              "right": 1,
-              "top": 32,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 29,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 63,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 42,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 80,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 56,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -3066,285 +3136,292 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      12ª
-    </Text>
-    <View>
-      <Image
-        source={1}
+      <Text
         style={
-          {
-            "height": 110,
-            "width": 80,
+          [
+            {
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+        12ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 28,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 80,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
-              "right": 28,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 29,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 63,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 42,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 80,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 56,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
-          }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -3370,287 +3447,294 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#FFFFFF",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-         
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#FFFFFF",
+            },
+          ]
+        }
+      >
+           
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -3676,287 +3760,294 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-         
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+           
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -3982,287 +4073,294 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#FFFFFF",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      5ª
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#FFFFFF",
+            },
+          ]
+        }
+      >
+        5ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -4288,287 +4386,294 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      5ª
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+        5ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -4594,287 +4699,294 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#FFFFFF",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      10ª
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#FFFFFF",
+            },
+          ]
+        }
+      >
+        10ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
@@ -4900,287 +5012,294 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
     collapsable={false}
     style={
       {
-        "flexDirection": "row",
-        "height": 120,
-        "justifyContent": "space-between",
         "opacity": 1,
-        "paddingRight": 10,
-        "width": 100,
       }
     }
   >
-    <Text
+    <View
       style={
-        [
-          {
-            "fontFamily": "roboto-bold",
-            "fontSize": 12,
-            "marginTop": 25,
-          },
-          {
-            "color": "#333333",
-          },
-        ]
+        {
+          "flexDirection": "row",
+          "height": 120,
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+          "width": 100,
+        }
       }
     >
-      10ª
-    </Text>
-    <View>
-      <Image
-        source={1}
-        style={
-          {
-            "height": 110,
-            "width": 80,
-          }
-        }
-      />
-      <Image
-        source={1}
+      <Text
         style={
           [
             {
-              "height": 12,
+              "fontFamily": "roboto-bold",
+              "fontSize": 12,
+              "marginTop": 25,
+            },
+            {
+              "color": "#333333",
+            },
+          ]
+        }
+      >
+        10ª
+      </Text>
+      <View>
+        <Image
+          source={1}
+          style={
+            {
+              "height": 110,
+              "width": 80,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 30,
+              },
+              {
+                "right": 15,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 22,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 36,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 49,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 63,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 7,
+                "position": "absolute",
+                "width": 79,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 47,
+              },
+              {
+                "right": 41,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "top": 63,
+              },
+              {
+                "right": 55,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            [
+              {
+                "height": 12,
+                "position": "absolute",
+                "width": 12,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+              {
+                "height": 0,
+                "width": 0,
+              },
+            ]
+          }
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
               "position": "absolute",
-              "width": 12,
-            },
+              "right": 2,
+              "width": 8,
+            }
+          }
+        />
+        <Image
+          source={1}
+          style={
             {
-              "top": 30,
-            },
-            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
               "right": 15,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 22,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 36,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 49,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 63,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 7,
-              "position": "absolute",
-              "width": 79,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 47,
-            },
-            {
-              "right": 41,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "top": 63,
-            },
-            {
-              "right": 55,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          [
-            {
-              "height": 12,
-              "position": "absolute",
-              "width": 12,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-            {
-              "height": 0,
-              "width": 0,
-            },
-          ]
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 2,
-            "width": 8,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 15,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 29,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 29,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 42,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 42,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 56,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 56,
-            "width": 8,
+        />
+        <Image
+          source={1}
+          style={
+            {
+              "bottom": 0,
+              "height": 8,
+              "position": "absolute",
+              "right": 70,
+              "width": 8,
+            }
           }
-        }
-      />
-      <Image
-        source={1}
-        style={
-          {
-            "bottom": 0,
-            "height": 8,
-            "position": "absolute",
-            "right": 70,
-            "width": 8,
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </RNGestureHandlerButton>
