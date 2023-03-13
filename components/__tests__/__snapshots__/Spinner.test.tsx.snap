@@ -16,7 +16,7 @@ exports[`<Spinner/> rendering visible 1`] = `
 >
   <View
     style={
-      {
+      Object {
         "alignItems": "center",
         "backgroundColor": "#00000066",
         "flex": 1,

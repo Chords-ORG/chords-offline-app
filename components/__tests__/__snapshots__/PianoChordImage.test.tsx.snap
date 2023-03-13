@@ -3,7 +3,7 @@
 exports[`<PianoChordImage/> Testing sample chords positions on database should render C9 on position 0 on dark theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -12,7 +12,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -21,7 +21,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 2,
@@ -33,7 +33,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 14,
@@ -45,7 +45,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 26,
@@ -57,7 +57,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 49,
@@ -72,7 +72,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render C9 on position 0 on light theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -81,7 +81,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -90,7 +90,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 2,
@@ -102,7 +102,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 14,
@@ -114,7 +114,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 26,
@@ -126,7 +126,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 49,
@@ -141,7 +141,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render Dm7 on position 0 on dark theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -150,7 +150,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -159,7 +159,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 14,
@@ -171,7 +171,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 37,
@@ -183,7 +183,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 61,
@@ -195,7 +195,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 85,
@@ -210,7 +210,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render Dm7 on position 0 on light theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -219,7 +219,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -228,7 +228,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 14,
@@ -240,7 +240,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 37,
@@ -252,7 +252,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 61,
@@ -264,7 +264,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 85,
@@ -279,7 +279,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render Dm7 on position 1 on dark theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -288,7 +288,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -297,7 +297,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 14,
@@ -309,7 +309,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 37,
@@ -321,7 +321,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 61,
@@ -333,7 +333,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 85,
@@ -345,7 +345,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 14,
@@ -360,7 +360,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render Dm7 on position 1 on light theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -369,7 +369,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -378,7 +378,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 14,
@@ -390,7 +390,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 37,
@@ -402,7 +402,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 61,
@@ -414,7 +414,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 85,
@@ -426,7 +426,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 14,
@@ -441,7 +441,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render F/A on position 0 on dark theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -450,7 +450,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -459,7 +459,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 61,
@@ -471,7 +471,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 120,
@@ -483,7 +483,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 61,
@@ -495,7 +495,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 85,
@@ -510,7 +510,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render F/A on position 0 on light theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -519,7 +519,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -528,7 +528,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 61,
@@ -540,7 +540,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 120,
@@ -552,7 +552,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 61,
@@ -564,7 +564,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 85,
@@ -579,7 +579,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render G on position 0 on dark theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -588,7 +588,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -597,7 +597,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 49,
@@ -609,7 +609,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 73,
@@ -621,7 +621,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 96,
@@ -636,7 +636,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render G on position 0 on light theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -645,7 +645,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -654,7 +654,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 49,
@@ -666,7 +666,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 73,
@@ -678,7 +678,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 96,
@@ -693,7 +693,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render G/B on position 0 on dark theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -702,7 +702,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -711,7 +711,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 73,
@@ -723,7 +723,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 132,
@@ -735,7 +735,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 73,
@@ -747,7 +747,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 96,
@@ -762,7 +762,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
 exports[`<PianoChordImage/> Testing sample chords positions on database should render G/B on position 0 on light theme 1`] = `
 <View
   style={
-    {
+    Object {
       "height": 50,
       "width": 200,
     }
@@ -771,7 +771,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "height": 50,
         "width": 200,
       }
@@ -780,7 +780,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 73,
@@ -792,7 +792,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 132,
@@ -804,7 +804,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 73,
@@ -816,7 +816,7 @@ exports[`<PianoChordImage/> Testing sample chords positions on database should r
   <Image
     source={1}
     style={
-      {
+      Object {
         "bottom": 2,
         "height": 8,
         "left": 96,

@@ -3,12 +3,12 @@
 exports[`<PianoChord /> Testing chord not found should render correctly when the chord is not found 1`] = `
 <View
   style={
-    [
-      {
+    Array [
+      Object {
         "height": 50,
         "width": 200,
       },
-      {
+      Object {
         "alignItems": "center",
         "justifyContent": "center",
       },
@@ -17,13 +17,13 @@ exports[`<PianoChord /> Testing chord not found should render correctly when the
 >
   <Text
     style={
-      [
-        {
+      Array [
+        Object {
           "fontFamily": "roboto-bold",
           "fontSize": 12,
           "textAlign": "center",
         },
-        {
+        Object {
           "color": "#333333",
         },
       ]
@@ -53,14 +53,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -69,7 +69,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -78,7 +78,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -90,7 +90,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -102,7 +102,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -135,14 +135,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -151,7 +151,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -160,7 +160,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -172,7 +172,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -184,7 +184,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -217,14 +217,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -233,7 +233,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -242,7 +242,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -254,7 +254,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -266,7 +266,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -299,14 +299,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -315,7 +315,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -324,7 +324,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -336,7 +336,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -348,7 +348,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -381,14 +381,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -397,7 +397,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -406,7 +406,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -418,7 +418,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -430,7 +430,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -463,14 +463,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -479,7 +479,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -488,7 +488,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -500,7 +500,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -512,7 +512,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -545,14 +545,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -561,7 +561,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -570,7 +570,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -582,7 +582,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -594,7 +594,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -627,14 +627,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -643,7 +643,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -652,7 +652,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -664,7 +664,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -676,7 +676,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -709,14 +709,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -725,7 +725,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -734,7 +734,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -746,7 +746,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -758,7 +758,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -791,14 +791,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -807,7 +807,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -816,7 +816,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -828,7 +828,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -840,7 +840,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -873,14 +873,14 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -889,7 +889,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -898,7 +898,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -910,7 +910,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -922,7 +922,7 @@ exports[`<PianoChord /> Testing clicking and changing note should render correcl
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -955,14 +955,14 @@ exports[`<PianoChord /> Testing rendering should render C on dark theme 1`] = `
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -971,7 +971,7 @@ exports[`<PianoChord /> Testing rendering should render C on dark theme 1`] = `
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -980,7 +980,7 @@ exports[`<PianoChord /> Testing rendering should render C on dark theme 1`] = `
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -992,7 +992,7 @@ exports[`<PianoChord /> Testing rendering should render C on dark theme 1`] = `
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -1004,7 +1004,7 @@ exports[`<PianoChord /> Testing rendering should render C on dark theme 1`] = `
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,
@@ -1037,14 +1037,14 @@ exports[`<PianoChord /> Testing rendering should render C on light theme 1`] = `
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "height": 50,
           "width": 200,
         }
@@ -1053,7 +1053,7 @@ exports[`<PianoChord /> Testing rendering should render C on light theme 1`] = `
       <Image
         source={1}
         style={
-          {
+          Object {
             "height": 50,
             "width": 200,
           }
@@ -1062,7 +1062,7 @@ exports[`<PianoChord /> Testing rendering should render C on light theme 1`] = `
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 2,
@@ -1074,7 +1074,7 @@ exports[`<PianoChord /> Testing rendering should render C on light theme 1`] = `
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 26,
@@ -1086,7 +1086,7 @@ exports[`<PianoChord /> Testing rendering should render C on light theme 1`] = `
       <Image
         source={1}
         style={
-          {
+          Object {
             "bottom": 2,
             "height": 8,
             "left": 49,

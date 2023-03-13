@@ -3,15 +3,15 @@
 exports[`<GuitarChord /> Testing chord not found should render correctly when the chord is not found 1`] = `
 <View
   style={
-    [
-      {
+    Array [
+      Object {
         "flexDirection": "row",
         "height": 120,
         "justifyContent": "space-between",
         "paddingRight": 10,
         "width": 100,
       },
-      {
+      Object {
         "alignItems": "center",
         "justifyContent": "center",
       },
@@ -20,13 +20,13 @@ exports[`<GuitarChord /> Testing chord not found should render correctly when th
 >
   <Text
     style={
-      [
-        {
+      Array [
+        Object {
           "fontFamily": "roboto-bold",
           "fontSize": 12,
           "textAlign": "center",
         },
-        {
+        Object {
           "color": "#333333",
         },
       ]
@@ -58,14 +58,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -76,13 +76,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -94,7 +94,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -103,16 +103,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -121,13 +121,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -137,13 +137,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -153,13 +153,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -169,13 +169,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -185,13 +185,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -201,16 +201,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -219,16 +219,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -237,17 +237,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -257,17 +257,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -277,7 +277,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -289,7 +289,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -301,7 +301,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -313,7 +313,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -325,7 +325,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -337,7 +337,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -371,14 +371,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -389,13 +389,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -407,7 +407,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -416,16 +416,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -434,13 +434,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -450,13 +450,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -466,13 +466,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -482,13 +482,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -498,13 +498,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -514,16 +514,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -532,16 +532,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -550,16 +550,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 1,
               },
             ]
@@ -568,17 +568,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -588,7 +588,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -600,7 +600,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -612,7 +612,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -624,7 +624,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -636,7 +636,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -648,7 +648,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -682,14 +682,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -700,13 +700,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -718,7 +718,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -727,16 +727,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -745,13 +745,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -761,13 +761,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -777,13 +777,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -793,13 +793,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -809,13 +809,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -825,16 +825,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -843,16 +843,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -861,17 +861,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -881,17 +881,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -901,7 +901,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -913,7 +913,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -925,7 +925,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -937,7 +937,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -949,7 +949,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -961,7 +961,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -995,14 +995,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -1013,13 +1013,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -1031,7 +1031,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -1040,15 +1040,15 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -1057,13 +1057,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1073,13 +1073,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1089,13 +1089,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1105,13 +1105,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "position": "absolute",
                 "right": 1,
                 "top": 65,
@@ -1122,13 +1122,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1138,16 +1138,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 97,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -1156,16 +1156,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 97,
               },
-              {
+              Object {
                 "right": 28,
               },
             ]
@@ -1174,16 +1174,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 97,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -1192,17 +1192,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1212,7 +1212,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1224,7 +1224,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1236,7 +1236,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1248,7 +1248,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1260,7 +1260,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1272,7 +1272,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1306,14 +1306,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -1324,13 +1324,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -1342,7 +1342,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -1351,15 +1351,15 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -1368,13 +1368,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1384,13 +1384,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1400,13 +1400,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "position": "absolute",
                 "right": 1,
                 "top": 32,
@@ -1417,13 +1417,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1433,13 +1433,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1449,16 +1449,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -1467,16 +1467,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 80,
               },
-              {
+              Object {
                 "right": 68,
               },
             ]
@@ -1485,16 +1485,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 80,
               },
-              {
+              Object {
                 "right": 1,
               },
             ]
@@ -1503,17 +1503,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1523,7 +1523,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1535,7 +1535,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1547,7 +1547,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1559,7 +1559,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1571,7 +1571,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1583,7 +1583,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1617,14 +1617,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -1635,13 +1635,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -1653,7 +1653,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -1662,15 +1662,15 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -1679,13 +1679,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1695,13 +1695,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1711,13 +1711,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "position": "absolute",
                 "right": 1,
                 "top": 32,
@@ -1728,13 +1728,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1744,13 +1744,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1760,17 +1760,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1780,16 +1780,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -1798,16 +1798,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 80,
               },
-              {
+              Object {
                 "right": 68,
               },
             ]
@@ -1816,17 +1816,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -1836,7 +1836,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1848,7 +1848,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1860,7 +1860,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1872,7 +1872,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1884,7 +1884,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1896,7 +1896,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -1930,14 +1930,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -1948,13 +1948,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -1966,7 +1966,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -1975,15 +1975,15 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 68,
               },
             ]
@@ -1992,13 +1992,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2008,13 +2008,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2024,13 +2024,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2040,13 +2040,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2056,13 +2056,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "position": "absolute",
                 "right": 1,
                 "top": 32,
@@ -2073,16 +2073,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 28,
               },
             ]
@@ -2091,16 +2091,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -2109,16 +2109,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -2127,17 +2127,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2147,7 +2147,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2159,7 +2159,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2171,7 +2171,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2183,7 +2183,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2195,7 +2195,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2207,7 +2207,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2241,14 +2241,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -2259,13 +2259,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -2277,7 +2277,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -2286,16 +2286,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -2304,13 +2304,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2320,13 +2320,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2336,13 +2336,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2352,13 +2352,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2368,13 +2368,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2384,16 +2384,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 1,
               },
             ]
@@ -2402,16 +2402,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 28,
               },
             ]
@@ -2420,16 +2420,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -2438,17 +2438,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2458,7 +2458,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2470,7 +2470,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2482,7 +2482,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2494,7 +2494,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2506,7 +2506,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2518,7 +2518,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2552,14 +2552,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -2570,13 +2570,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -2588,7 +2588,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -2597,16 +2597,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -2615,13 +2615,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2631,13 +2631,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2647,13 +2647,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2663,13 +2663,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2679,13 +2679,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2695,16 +2695,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 28,
               },
             ]
@@ -2713,16 +2713,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 1,
               },
             ]
@@ -2731,16 +2731,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 80,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -2749,17 +2749,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2769,7 +2769,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2781,7 +2781,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2793,7 +2793,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2805,7 +2805,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2817,7 +2817,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2829,7 +2829,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -2863,14 +2863,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -2881,13 +2881,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -2899,7 +2899,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -2908,15 +2908,15 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 28,
               },
             ]
@@ -2925,13 +2925,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2941,13 +2941,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "position": "absolute",
                 "right": 1,
                 "top": 32,
@@ -2958,13 +2958,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2974,13 +2974,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -2990,13 +2990,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3006,16 +3006,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -3024,16 +3024,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -3042,16 +3042,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 80,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -3060,17 +3060,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3080,7 +3080,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3092,7 +3092,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3104,7 +3104,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3116,7 +3116,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3128,7 +3128,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3140,7 +3140,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3174,14 +3174,14 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -3192,13 +3192,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -3210,7 +3210,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -3219,16 +3219,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 28,
               },
             ]
@@ -3237,13 +3237,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3253,13 +3253,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3269,13 +3269,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3285,13 +3285,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3301,13 +3301,13 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3317,16 +3317,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -3335,16 +3335,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -3353,16 +3353,16 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 80,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -3371,17 +3371,17 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3391,7 +3391,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3403,7 +3403,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3415,7 +3415,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3427,7 +3427,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3439,7 +3439,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3451,7 +3451,7 @@ exports[`<GuitarChord /> Testing clicking and changing note should render correc
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3485,14 +3485,14 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -3503,13 +3503,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#FFFFFF",
             },
           ]
@@ -3521,7 +3521,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -3530,16 +3530,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -3548,13 +3548,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3564,13 +3564,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3580,13 +3580,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3596,13 +3596,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3612,13 +3612,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3628,16 +3628,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -3646,16 +3646,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -3664,17 +3664,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3684,17 +3684,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3704,7 +3704,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3716,7 +3716,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3728,7 +3728,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3740,7 +3740,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3752,7 +3752,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3764,7 +3764,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -3798,14 +3798,14 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -3816,13 +3816,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -3834,7 +3834,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -3843,16 +3843,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -3861,13 +3861,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3877,13 +3877,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3893,13 +3893,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3909,13 +3909,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3925,13 +3925,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3941,16 +3941,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -3959,16 +3959,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -3977,17 +3977,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -3997,17 +3997,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4017,7 +4017,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4029,7 +4029,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4041,7 +4041,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4053,7 +4053,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4065,7 +4065,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4077,7 +4077,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4111,14 +4111,14 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -4129,13 +4129,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#FFFFFF",
             },
           ]
@@ -4147,7 +4147,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -4156,16 +4156,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -4174,13 +4174,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4190,13 +4190,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4206,13 +4206,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4222,13 +4222,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4238,13 +4238,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4254,16 +4254,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -4272,16 +4272,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -4290,17 +4290,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4310,17 +4310,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4330,7 +4330,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4342,7 +4342,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4354,7 +4354,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4366,7 +4366,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4378,7 +4378,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4390,7 +4390,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4424,14 +4424,14 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -4442,13 +4442,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -4460,7 +4460,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -4469,16 +4469,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -4487,13 +4487,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4503,13 +4503,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4519,13 +4519,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4535,13 +4535,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4551,13 +4551,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4567,16 +4567,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -4585,16 +4585,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -4603,17 +4603,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4623,17 +4623,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4643,7 +4643,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4655,7 +4655,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4667,7 +4667,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4679,7 +4679,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4691,7 +4691,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4703,7 +4703,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4737,14 +4737,14 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -4755,13 +4755,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#FFFFFF",
             },
           ]
@@ -4773,7 +4773,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -4782,16 +4782,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -4800,13 +4800,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4816,13 +4816,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4832,13 +4832,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4848,13 +4848,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4864,13 +4864,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4880,16 +4880,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -4898,16 +4898,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -4916,17 +4916,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4936,17 +4936,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -4956,7 +4956,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4968,7 +4968,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4980,7 +4980,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -4992,7 +4992,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -5004,7 +5004,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -5016,7 +5016,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -5050,14 +5050,14 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     accessible={true}
     collapsable={false}
     style={
-      {
+      Object {
         "opacity": 1,
       }
     }
   >
     <View
       style={
-        {
+        Object {
           "flexDirection": "row",
           "height": 120,
           "justifyContent": "space-between",
@@ -5068,13 +5068,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
     >
       <Text
         style={
-          [
-            {
+          Array [
+            Object {
               "fontFamily": "roboto-bold",
               "fontSize": 12,
               "marginTop": 25,
             },
-            {
+            Object {
               "color": "#333333",
             },
           ]
@@ -5086,7 +5086,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "height": 110,
               "width": 80,
             }
@@ -5095,16 +5095,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 30,
               },
-              {
+              Object {
                 "right": 15,
               },
             ]
@@ -5113,13 +5113,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 22,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -5129,13 +5129,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 36,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -5145,13 +5145,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 49,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -5161,13 +5161,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 63,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -5177,13 +5177,13 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 7,
                 "position": "absolute",
                 "width": 79,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -5193,16 +5193,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 47,
               },
-              {
+              Object {
                 "right": 41,
               },
             ]
@@ -5211,16 +5211,16 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "top": 63,
               },
-              {
+              Object {
                 "right": 55,
               },
             ]
@@ -5229,17 +5229,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -5249,17 +5249,17 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            [
-              {
+            Array [
+              Object {
                 "height": 12,
                 "position": "absolute",
                 "width": 12,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
-              {
+              Object {
                 "height": 0,
                 "width": 0,
               },
@@ -5269,7 +5269,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -5281,7 +5281,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -5293,7 +5293,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -5305,7 +5305,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -5317,7 +5317,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
@@ -5329,7 +5329,7 @@ exports[`<GuitarChord /> Testing rendering on diferent capos should render C on 
         <Image
           source={1}
           style={
-            {
+            Object {
               "bottom": 0,
               "height": 8,
               "position": "absolute",
