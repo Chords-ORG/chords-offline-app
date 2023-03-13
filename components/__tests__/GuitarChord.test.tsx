@@ -78,4 +78,23 @@ describe("<GuitarChordImage/>", () => {
       }
     });
   });
+
+  describe("Testing chord not found", () => {
+    it("should render correctly when the chord is not found", () => {
+      const tree = renderer
+        .create(
+          <ThemeContext.Provider
+            value={{
+              styleSheet: LightStyle,
+              colors: LightColors,
+              theme: "light",
+            }}
+          >
+            <GuitarChord chordName="C#dajsklkj" capo={0} />
+          </ThemeContext.Provider>
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  });
 });

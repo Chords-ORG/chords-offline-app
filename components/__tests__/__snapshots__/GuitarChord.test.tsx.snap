@@ -1,5 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<GuitarChordImage/> Testing chord not found should render correctly when the chord is not found 1`] = `
+<View
+  style={
+    [
+      {
+        "flexDirection": "row",
+        "height": 120,
+        "justifyContent": "space-between",
+        "paddingRight": 10,
+        "width": 100,
+      },
+      {
+        "alignItems": "center",
+        "justifyContent": "center",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontFamily": "roboto-bold",
+          "fontSize": 12,
+          "textAlign": "center",
+        },
+        {
+          "color": "#333333",
+        },
+      ]
+    }
+  >
+     
+    Acorde Indisponível
+     
+  </Text>
+</View>
+`;
+
 exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
