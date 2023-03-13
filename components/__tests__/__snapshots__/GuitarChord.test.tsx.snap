@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<GuitarChordImage/> Testing chord not found should render correctly when the chord is not found 1`] = `
+exports[`<GuitarChord /> Testing chord not found should render correctly when the chord is not found 1`] = `
 <View
   style={
     [
@@ -39,7 +39,7 @@ exports[`<GuitarChordImage/> Testing chord not found should render correctly whe
 </View>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 1`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -352,7 +352,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 2`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 2`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -663,7 +663,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 3`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 3`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -976,7 +976,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 4`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 4`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -1287,7 +1287,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 5`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 5`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -1598,7 +1598,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 6`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 6`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -1911,7 +1911,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 7`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 7`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -2222,7 +2222,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 8`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 8`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -2533,7 +2533,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 9`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 9`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -2844,7 +2844,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 10`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 10`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -3155,7 +3155,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing clicking and changing note should render correcly after changing the chord form 11`] = `
+exports[`<GuitarChord /> Testing clicking and changing note should render correcly after changing the chord form 11`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -3466,7 +3466,7 @@ exports[`<GuitarChordImage/> Testing clicking and changing note should render co
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 0 on dark theme 1`] = `
+exports[`<GuitarChord /> Testing rendering on diferent capos should render C on position 0 with capo 0 on dark theme 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -3779,7 +3779,7 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 0 on light theme 1`] = `
+exports[`<GuitarChord /> Testing rendering on diferent capos should render C on position 0 with capo 0 on light theme 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -4092,7 +4092,7 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 4 on dark theme 1`] = `
+exports[`<GuitarChord /> Testing rendering on diferent capos should render C on position 0 with capo 4 on dark theme 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -4405,7 +4405,7 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 4 on light theme 1`] = `
+exports[`<GuitarChord /> Testing rendering on diferent capos should render C on position 0 with capo 4 on light theme 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -4718,7 +4718,7 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 9 on dark theme 1`] = `
+exports[`<GuitarChord /> Testing rendering on diferent capos should render C on position 0 with capo 9 on dark theme 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}
@@ -5031,7 +5031,7 @@ exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C
 </RNGestureHandlerButton>
 `;
 
-exports[`<GuitarChordImage/> Testing rendering on diferent capos should render C on position 0 with capo 9 on light theme 1`] = `
+exports[`<GuitarChord /> Testing rendering on diferent capos should render C on position 0 with capo 9 on light theme 1`] = `
 <RNGestureHandlerButton
   collapsable={false}
   delayLongPress={600}

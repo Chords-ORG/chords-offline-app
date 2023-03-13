@@ -1,0 +1,1012 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PianoChord /> Testing chord not found should render correctly when the chord is not found 1`] = `
+<View
+  style={
+    [
+      {
+        "height": 50,
+        "width": 200,
+      },
+      {
+        "alignItems": "center",
+        "justifyContent": "center",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontFamily": "roboto-bold",
+          "fontSize": 12,
+          "textAlign": "center",
+        },
+        {
+          "color": "#333333",
+        },
+      ]
+    }
+  >
+     
+    Acorde Indisponível
+     
+  </Text>
+</View>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 1`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 2`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 3`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 4`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 5`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 6`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 7`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 8`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 9`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 10`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing clicking and changing note should render correcly after changing the chord form 11`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={1}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing rendering should render C on dark theme 1`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={3}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;
+
+exports[`<PianoChord /> Testing rendering should render C on light theme 1`] = `
+<RNGestureHandlerButton
+  collapsable={false}
+  delayLongPress={600}
+  enabled={true}
+  exclusive={true}
+  handlerTag={2}
+  handlerType="NativeViewGestureHandler"
+  onGestureEvent={[Function]}
+  onGestureHandlerEvent={[Function]}
+  onGestureHandlerStateChange={[Function]}
+  onHandlerStateChange={[Function]}
+  rippleColor={0}
+  touchSoundDisabled={false}
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    style={
+      {
+        "height": 50,
+        "opacity": 1,
+        "width": 200,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        {
+          "height": 50,
+          "width": 200,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 2,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 26,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+    <Image
+      source={1}
+      style={
+        {
+          "bottom": 2,
+          "height": 8,
+          "left": 49,
+          "position": "absolute",
+          "width": 8,
+        }
+      }
+    />
+  </View>
+</RNGestureHandlerButton>
+`;

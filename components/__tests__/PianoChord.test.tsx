@@ -7,7 +7,7 @@ import {
   LightColors,
   LightStyle,
 } from "../../constants/Styles";
-import GuitarChord from "../GuitarChord";
+import PianoChord from "../PianoChord";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { act } from "react-dom/test-utils";
 
@@ -15,43 +15,41 @@ jest.mock("@react-native-async-storage/async-storage", () =>
   require("@react-native-async-storage/async-storage/jest/async-storage-mock")
 );
 
-describe("<GuitarChord />", () => {
-  describe("Testing rendering on diferent capos", () => {
-    [0, 4, 9].forEach((capo) => {
-      it(`should render C on position 0 with capo ${capo} on light theme`, () => {
-        const tree = renderer
-          .create(
-            <ThemeContext.Provider
-              value={{
-                styleSheet: LightStyle,
-                colors: LightColors,
-                theme: "light",
-              }}
-            >
-              <GuitarChord chordName="C" capo={capo} />
-            </ThemeContext.Provider>
-          )
-          .toJSON();
-        expect(tree).toMatchSnapshot();
-      });
+describe("<PianoChord />", () => {
+  describe("Testing rendering", () => {
+    it(`should render C on light theme`, () => {
+      const tree = renderer
+        .create(
+          <ThemeContext.Provider
+            value={{
+              styleSheet: LightStyle,
+              colors: LightColors,
+              theme: "light",
+            }}
+          >
+            <PianoChord chordName="C" />
+          </ThemeContext.Provider>
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
 
-      it(`should render C on position 0 with capo ${capo} on dark theme`, () => {
-        const tree = renderer
+    it(`should render C on dark theme`, () => {
+      const tree = renderer
 
-          .create(
-            <ThemeContext.Provider
-              value={{
-                styleSheet: DarkStyle,
-                colors: DarkColors,
-                theme: "dark",
-              }}
-            >
-              <GuitarChord chordName="C" capo={capo} />
-            </ThemeContext.Provider>
-          )
-          .toJSON();
-        expect(tree).toMatchSnapshot();
-      });
+        .create(
+          <ThemeContext.Provider
+            value={{
+              styleSheet: DarkStyle,
+              colors: DarkColors,
+              theme: "dark",
+            }}
+          >
+            <PianoChord chordName="C" />
+          </ThemeContext.Provider>
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
     });
   });
 
@@ -64,7 +62,7 @@ describe("<GuitarChord />", () => {
           theme: "light",
         }}
       >
-        <GuitarChord chordName="C" capo={0} />
+        <PianoChord chordName="C" />
       </ThemeContext.Provider>
     );
 
@@ -90,7 +88,7 @@ describe("<GuitarChord />", () => {
               theme: "light",
             }}
           >
-            <GuitarChord chordName="C#dajsklkj" capo={0} />
+            <PianoChord chordName="a#dajsklkj" />
           </ThemeContext.Provider>
         )
         .toJSON();
